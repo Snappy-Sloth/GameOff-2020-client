@@ -1,3 +1,4 @@
+import ui.TitleScreen;
 import Data;
 import hxd.Key;
 
@@ -59,7 +60,18 @@ class Main extends dn.Process {
 
 		// Start
 		new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
-		delayer.addF( startGame, 1 );
+		// delayer.addF( startGame, 1 );
+		delayer.addF( startTitleScreen, 1 );
+	}
+
+	public function clean() {
+		if (TitleScreen.ME != null) TitleScreen.ME.destroy();
+		if (Game.ME != null) Game.ME.destroy();
+	}
+
+	public function startTitleScreen() {
+		clean();
+		new TitleScreen();
 	}
 
 	public function startGame() {
