@@ -67,6 +67,9 @@ class Main extends dn.Process {
 	public function clean() {
 		if (TitleScreen.ME != null) TitleScreen.ME.destroy();
 		if (Game.ME != null) Game.ME.destroy();
+		if (Manual.ME != null) Manual.ME.destroy();
+		if (Communication.ME != null)  Communication.ME.destroy();
+		if (Modules.ME != null) Modules.ME.destroy();
 	}
 
 	public function startTitleScreen() {
@@ -75,22 +78,22 @@ class Main extends dn.Process {
 	}
 
 	public function startManual() {
-
-	}
-
-	public function startBunker() {
-
+		clean();
+		new Manual();
 	}
 
 	public function startComm() {
-
+		clean();
+		new Communication();
 	}
 
 	public function startModules() {
-
+		clean();
+		new Modules();
 	}
 
 	public function startGame() {
+		clean();
 		if( Game.ME!=null ) {
 			Game.ME.destroy();
 			delayer.addF(function() {
