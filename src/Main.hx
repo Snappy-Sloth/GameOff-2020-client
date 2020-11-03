@@ -74,6 +74,22 @@ class Main extends dn.Process {
 		new TitleScreen();
 	}
 
+	public function startManual() {
+
+	}
+
+	public function startBunker() {
+
+	}
+
+	public function startComm() {
+
+	}
+
+	public function startModules() {
+
+	}
+
 	public function startGame() {
 		if( Game.ME!=null ) {
 			Game.ME.destroy();
