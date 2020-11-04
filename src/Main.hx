@@ -1,4 +1,3 @@
-import ui.TitleScreen;
 import Data;
 import hxd.Key;
 
@@ -65,31 +64,31 @@ class Main extends dn.Process {
 	}
 
 	public function clean() {
-		if (TitleScreen.ME != null) TitleScreen.ME.destroy();
+		if (screens.TitleScreen.ME != null) screens.TitleScreen.ME.destroy();
 		if (Game.ME != null) Game.ME.destroy();
-		if (Manual.ME != null) Manual.ME.destroy();
-		if (Communication.ME != null)  Communication.ME.destroy();
-		if (Modules.ME != null) Modules.ME.destroy();
+		if (screens.Manual.ME != null) screens.Manual.ME.destroy();
+		if (screens.Communication.ME != null) screens.Communication.ME.destroy();
+		if (screens.Modules.ME != null) screens.Modules.ME.destroy();
 	}
 
 	public function startTitleScreen() {
 		clean();
-		new TitleScreen();
+		new screens.TitleScreen();
 	}
 
 	public function startManual() {
-		clean();
-		new Manual();
+		startGame();
+		Game.ME.showManual();
 	}
 
 	public function startComm() {
-		clean();
-		new Communication();
+		startGame();
+		Game.ME.showComm();
 	}
 
 	public function startModules() {
-		clean();
-		new Modules();
+		startGame();
+		Game.ME.showModules();
 	}
 
 	public function startGame() {

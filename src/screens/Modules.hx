@@ -1,9 +1,13 @@
+package screens;
+
 class Modules extends dn.Process {
     public static var ME : Modules;
 
     public function new() {
-        super(Main.ME);
+        super(Game.ME);
 
         ME = this;
+
+        createRoot();
     }
 }

@@ -1,9 +1,13 @@
+package screens;
+
 class Manual extends dn.Process {
     public static var ME : Manual;
 
     public function new() {
-        super(Main.ME);
+        super(Game.ME);
 
         ME = this;
+
+        createRoot();
     }
 }

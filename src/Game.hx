@@ -11,6 +11,10 @@ class Game extends Process {
 	public var level : Level;
 	public var hud : ui.Hud;
 
+	public var manual : screens.Manual;
+	public var communication : screens.Communication;
+	public var modules : screens.Modules;
+
 	public function new() {
 		super(Main.ME);
 		ME = this;
@@ -28,8 +32,27 @@ class Game extends Process {
 		fx = new Fx();
 		hud = new ui.Hud();
 
+		manual = new screens.Manual();
+		manual.root.visible = false;
+		communication = new screens.Communication();
+		communication.root.visible = false;
+		modules = new screens.Modules();
+		modules.root.visible = false;
+
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
+	}
+
+	public function showManual() {
+		manual.root.visible = true;
+	}
+
+	public function showComm() {
+		communication.root.visible = true;
+	}
+
+	public function showModules() {
+		modules.root.visible = true;
 	}
 
 	public function onCdbReload() {
