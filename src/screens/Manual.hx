@@ -17,14 +17,18 @@ class Manual extends dn.Process {
 
 		createRoot();
 
-		var screen = new h2d.Interactive((w() / Const.SCALE), (h() / Const.SCALE), root);
+		var screen = new h2d.Interactive((w() / Const.SCALE), (h() / Const.SCALE));
+		root.add(screen, 10);
 		// screen.backgroundColor = 0xFFFF00FF;
+		screen.propagateEvents = true;
+
 		screen.onMove = function (e) {
 			if (currentSheet != null) {
 				var deltaX = e.relX - mouseX;
 				var deltaY = e.relY - mouseY;
 				currentSheet.x += deltaX;
 				currentSheet.y += deltaY;
+				currentSheet.rotate(deltaX * 0.001);
 			}
 			mouseX = e.relX;
 			mouseY = e.relY;
@@ -34,7 +38,7 @@ class Manual extends dn.Process {
 			var sheet = new Sheet();
 			sheet.setPosition((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5,
 							(((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5);
-			root.addChild(sheet);
+			root.add(sheet, 0);
 		}
 
 		onResize();
@@ -42,6 +46,7 @@ class Manual extends dn.Process {
 
 	public function selectSheet(sheet:Sheet) {
 		currentSheet = sheet;
+		root.add(currentSheet, 0);
 	}
 
 	override function onResize() {
