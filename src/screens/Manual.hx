@@ -31,10 +31,29 @@ class Manual extends dn.Process {
 			if (currentSheet != null) {
 				var deltaX = e.relX - mouseX;
 				var deltaY = e.relY - mouseY;
+				
 				currentSheet.x += deltaX;
+				if (currentSheet.x < -(Const.SHEET_WIDTH / 2)) {
+					currentSheet.x = -(Const.SHEET_WIDTH / 2);
+				}
+				else {
+					if (currentSheet.x > ((w() / Const.SCALE) - (Const.SHEET_WIDTH / 2))) {
+						currentSheet.x = (w() / Const.SCALE) - (Const.SHEET_WIDTH / 2);
+					}
+					else {
+						currentSheet.rotate(deltaX * Const.SHEET_ANGLE);
+					}
+				}
+
 				currentSheet.y += deltaY;
-				currentSheet.rotate(deltaX * Const.SHEET_ANGLE);
+				if (currentSheet.y < -(Const.SHEET_HEIGHT / 2)) {
+					currentSheet.y = -(Const.SHEET_HEIGHT / 2);
+				}
+				if (currentSheet.y > ((h() / Const.SCALE) - (Const.SHEET_HEIGHT / 2))) {
+					currentSheet.y = (h() / Const.SCALE) - (Const.SHEET_HEIGHT / 2);
+				}
 			}
+
 			mouseX = e.relX;
 			mouseY = e.relY;
 		};
@@ -69,7 +88,7 @@ class Manual extends dn.Process {
 
 	public function setSheetsToInitialPosition() {
 		for (i in 0...arSheet.length) {
-			arSheet[i].rotate((arInitialPositionX[i] - arSheet[i].x) * Const.SHEET_ANGLE);
+			arSheet[i].rotation = 0;
 			arSheet[i].setPosition(arInitialPositionX[i], arInitialPositionY[i]);
 			root.add(arSheet[i], 0);
 		}
