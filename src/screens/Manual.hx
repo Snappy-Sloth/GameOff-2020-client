@@ -8,7 +8,12 @@ class Manual extends dn.Process {
 
 	public var currentSheet : Sheet = null;
 
-	// var arSheet : Array<Sheet> = [];
+	var arSheet : Array<Sheet> = [];
+
+	var initialPositionX : Float;
+	var initialPositionY : Float;
+	var arInitialPositionX : Array<Float> = [];
+	var arInitialPositionY : Array<Float> = [];
 
 	public function new() {
 		super(Game.ME);
@@ -28,7 +33,7 @@ class Manual extends dn.Process {
 				var deltaY = e.relY - mouseY;
 				currentSheet.x += deltaX;
 				currentSheet.y += deltaY;
-				currentSheet.rotate(deltaX * 0.001);
+				currentSheet.rotate(deltaX * Const.SHEET_ANGLE);
 			}
 			mouseX = e.relX;
 			mouseY = e.relY;
@@ -36,10 +41,23 @@ class Manual extends dn.Process {
 
 		for (i in 0...10) {
 			var sheet = new Sheet();
-			sheet.setPosition((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5,
-							(((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5);
+			
+			initialPositionX = (((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5;
+			arInitialPositionX.push(initialPositionX);
+
+			initialPositionY = (((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5;
+			arInitialPositionY.push(initialPositionY);
+
+			sheet.setPosition(initialPositionX, initialPositionY);
+
 			root.add(sheet, 0);
+
+			arSheet.push(sheet);
 		}
+
+		var sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
+		sortSheetsBtn.setPosition(10, 10);
+		root.add(sortSheetsBtn, 1);
 
 		onResize();
 	}
@@ -47,6 +65,14 @@ class Manual extends dn.Process {
 	public function selectSheet(sheet:Sheet) {
 		currentSheet = sheet;
 		root.add(currentSheet, 0);
+	}
+
+	public function setSheetsToInitialPosition() {
+		for (i in 0...arSheet.length) {
+			arSheet[i].rotate((arInitialPositionX[i] - arSheet[i].x) * Const.SHEET_ANGLE);
+			arSheet[i].setPosition(arInitialPositionX[i], arInitialPositionY[i]);
+			root.add(arSheet[i], 0);
+		}
 	}
 
 	override function onResize() {

@@ -25,4 +25,5 @@ class Const {
 
 	public static inline var SHEET_WIDTH = 420;
 	public static inline var SHEET_HEIGHT = 594;
+	public static inline var SHEET_ANGLE = 0.0006;
 }
