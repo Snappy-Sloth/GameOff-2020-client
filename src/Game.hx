@@ -12,6 +12,12 @@ class Game extends Process {
 	public var communication : screens.Communication;
 	public var moduleScreen : screens.ModuleScreen;
 
+	public var timer(default, null) : Float;
+
+	public var currentAlert : Null<Data.AlertsKind> = null;
+
+	public var alertIsActive(get, never) : Bool; inline function get_alertIsActive() return currentAlert != null;
+
 	public function new() {
 		super(Main.ME);
 		ME = this;
@@ -60,6 +66,21 @@ class Game extends Process {
 		root.setScale(Const.SCALE);
 	}
 
+	function launchAlert(ak:Data.AlertsKind) {
+		moduleScreen.reset();
+		currentAlert = ak;
+		hud.showTimer();
+	}
+
+	public function onError() {
+		timer += 10 * Const.FPS;
+		hud.redWarning();
+	}
+
+	public function stopCurrentAlert() {
+		currentAlert = null;
+		hud.hideTimer();
+	}
 
 	function gc() {}
 
@@ -87,6 +108,9 @@ class Game extends Process {
 	override function update() {
 		super.update();
 
+		if (alertIsActive)
+			timer += tmod;
+
 		if( !ui.Console.ME.isActive() && !ui.Modal.hasAny() ) {
 			#if hl
 			// Exit
@@ -100,6 +124,12 @@ class Game extends Process {
 			// Restart
 			if( ca.selectPressed() )
 				Main.ME.startGame();
+
+			#if debug
+				if (ca.isKeyboardPressed(hxd.Key.F1)) {
+					launchAlert(A3);
+				}
+			#end
 		}
 	}
 }

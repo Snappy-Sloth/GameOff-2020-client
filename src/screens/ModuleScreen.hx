@@ -5,6 +5,8 @@ class ModuleScreen extends dn.Process {
 
 	var goToCommBtn : ui.Button;
 
+	var arModules : Array<Module> = [];
+
 	public function new() {
 		super(Game.ME);
 
@@ -15,7 +17,16 @@ class ModuleScreen extends dn.Process {
 		goToCommBtn = new ui.Button("Comm", Game.ME.showComm);
 		root.add(goToCommBtn, 1);
 
+		var btnModule = new module.Buttons();
+		arModules.push(btnModule);
+
 		onResize();
+	}
+
+	public function reset() {
+		for (module in arModules) {
+			module.reset();
+		}
 	}
 
 	override function onResize() {

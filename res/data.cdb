@@ -63,11 +63,16 @@
 									"timeBefore": 0
 								}
 							],
+							"alerts": []
+						},
+						{
+							"talks": [],
 							"alerts": [
 								{
 									"Tasks": [
 										{
-											"task": "A1"
+											"task": "A1",
+											"text": "\"J'ai une diode rouge qui s'allume !\""
 										}
 									]
 								}
@@ -80,7 +85,7 @@
 			"props": {}
 		},
 		{
-			"name": "alarms",
+			"name": "alerts",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -106,8 +111,14 @@
 					"Commentaire": "Buttons: click 3 time on white button"
 				}
 			],
-			"separators": [],
-			"props": {}
+			"props": {
+				"separatorTitles": [
+					"Buttons"
+				]
+			},
+			"separatorIds": [
+				"A1"
+			]
 		},
 		{
 			"name": "days@events",
@@ -202,8 +213,13 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:alarms",
+					"typeStr": "6:alerts",
 					"name": "task"
+				},
+				{
+					"typeStr": "1",
+					"name": "text",
+					"kind": "localizable"
 				}
 			]
 		}

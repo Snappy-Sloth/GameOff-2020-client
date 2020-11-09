@@ -202,9 +202,9 @@ class Communication extends dn.Process {
 			}
 		}
 
-		if (hxd.Key.isPressed(hxd.Key.F1)) {
-			launchTalk();
-		}
+		// if (hxd.Key.isPressed(hxd.Key.F1)) {
+		// 	launchTalk();
+		// }
 		// if (hxd.Key.isPressed(hxd.Key.F2)) {
 		// 	newMessage("Hello, I'm a test!");
 		// }
