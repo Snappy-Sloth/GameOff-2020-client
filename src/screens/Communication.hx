@@ -46,12 +46,6 @@ class Communication extends dn.Process {
 		isOfflineText.text = Lang.t._("::name:: est hors ligne...", {name: "XXX"});
 		isOfflineText.alpha = 0;
 
-		// @:privateAccess for (t in Lang.t.texts.keys()) {
-		// 	trace("----");
-		// 	trace(t);
-		// 	@:privateAccess trace(Lang.t.texts.get(t));
-		// }
-
 		goToManualBtn = new ui.Button("Manual", Game.ME.showManual);
 		root.add(goToManualBtn, 1);
 
@@ -111,9 +105,7 @@ class Communication extends dn.Process {
 		authorText.text = from != null ? from : "You";
 
 		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
-		// trace(text);
 		messageText.text = Lang.t.get(text);
-		// trace(Lang.t.get(text.split("||")[0]));
 
 		messageFlow.reflow();
 		messageFlow.setPosition(from != null ? mainWrapperPadding : mainWrapper.width - messageFlow.outerWidth - mainWrapperPadding, mainWrapper.height + 5);

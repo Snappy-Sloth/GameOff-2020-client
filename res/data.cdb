@@ -63,9 +63,47 @@
 									"timeBefore": 0
 								}
 							],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"task": "A1"
+										}
+									]
+								}
+							]
 						}
 					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "alarms",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "ID",
+					"scope": null
+				},
+				{
+					"typeStr": "1",
+					"name": "Commentaire"
+				}
+			],
+			"lines": [
+				{
+					"ID": "A1",
+					"Commentaire": "Buttons: click 1 time on white button"
+				},
+				{
+					"ID": "A2",
+					"Commentaire": "Buttons: click 2 time on white button"
+				},
+				{
+					"ID": "A3",
+					"Commentaire": "Buttons: click 3 time on white button"
 				}
 			],
 			"separators": [],
@@ -148,7 +186,26 @@
 			},
 			"separators": [],
 			"lines": [],
-			"columns": []
+			"columns": [
+				{
+					"typeStr": "8",
+					"name": "Tasks"
+				}
+			]
+		},
+		{
+			"name": "days@events@alerts@Tasks",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:alarms",
+					"name": "task"
+				}
+			]
 		}
 	],
 	"customTypes": [],
