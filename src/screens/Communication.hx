@@ -22,6 +22,9 @@ class Communication extends dn.Process {
 
 	var forcedMessage : {text:String, author:String} = null;
 
+	var goToManualBtn : ui.Button;
+	var goToModulesBtn : ui.Button;
+
 	public function new() {
 		super(Game.ME);
 
@@ -48,6 +51,14 @@ class Communication extends dn.Process {
 		// 	trace(t);
 		// 	@:privateAccess trace(Lang.t.texts.get(t));
 		// }
+
+		goToManualBtn = new ui.Button("Manual", Game.ME.showManual);
+		root.add(goToManualBtn, 1);
+
+		goToModulesBtn = new ui.Button("Modules", Game.ME.showModules);
+		root.add(goToModulesBtn, 1);
+
+		onResize();
 	}
 
 	public function launchTalk() {
@@ -177,6 +188,9 @@ class Communication extends dn.Process {
 		super.onResize();
 
 		root.setScale(Const.SCALE);
+
+		goToManualBtn.setPosition((w() / Const.SCALE) - goToManualBtn.wid - 7, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
+		goToModulesBtn.setPosition(7, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
 
 		bgWrapper.scaleX = mainWrapper.width;
 		bgWrapper.scaleY = mainWrapper.height;
