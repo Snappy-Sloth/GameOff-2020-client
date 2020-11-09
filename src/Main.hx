@@ -69,7 +69,7 @@ class Main extends dn.Process {
 		if (Game.ME != null) Game.ME.destroy();
 		if (screens.Manual.ME != null) screens.Manual.ME.destroy();
 		if (screens.Communication.ME != null) screens.Communication.ME.destroy();
-		if (screens.Modules.ME != null) screens.Modules.ME.destroy();
+		if (screens.ModuleScreen.ME != null) screens.ModuleScreen.ME.destroy();
 	}
 
 	public function startTitleScreen() {

@@ -1,7 +1,7 @@
 package screens;
 
-class Modules extends dn.Process {
-	public static var ME : Modules;
+class ModuleScreen extends dn.Process {
+	public static var ME : ModuleScreen;
 
 	public function new() {
 		super(Game.ME);

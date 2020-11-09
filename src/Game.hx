@@ -13,7 +13,7 @@ class Game extends Process {
 
 	public var manual : screens.Manual;
 	public var communication : screens.Communication;
-	public var modules : screens.Modules;
+	public var modules : screens.ModuleScreen;
 
 	public function new() {
 		super(Main.ME);
@@ -36,7 +36,7 @@ class Game extends Process {
 		manual.root.visible = false;
 		communication = new screens.Communication();
 		communication.root.visible = false;
-		modules = new screens.Modules();
+		modules = new screens.ModuleScreen();
 		modules.root.visible = false;
 
 		Process.resizeAll();

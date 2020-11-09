@@ -22,8 +22,8 @@ class TitleScreen extends dn.Process {
 
 		flow.addSpacing(30);
 
-		var startGameBtn = new ui.Button('Game (Bunker)', Main.ME.startGame);
-		flow.addChild(startGameBtn);
+		/* var startGameBtn = new ui.Button('Game (Bunker)', Main.ME.startGame);
+		flow.addChild(startGameBtn); */
 
 		var startManualBtn = new ui.Button('Manual', Main.ME.startManual);
 		flow.addChild(startManualBtn);
