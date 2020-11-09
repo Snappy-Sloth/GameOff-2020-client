@@ -4,12 +4,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "MIME-Version: 1.0\n"
 
-#: src/Game.hx:30
+#: src/Game.hx:43
 msgid "Game is ready."
 msgstr ""
 
-#: src/Game.hx:69
+#: src/Game.hx:114
 msgid "Press ESCAPE again to exit."
+msgstr ""
+
+#: src/screens/Communication.hx:38 src/screens/Communication.hx:60 src/screens/Communication.hx:121
+msgid "::name:: est en train d'écrire..."
+msgstr ""
+
+#: src/screens/Communication.hx:43
+msgid "::name:: est hors ligne..."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#0.text
+msgid "Ici le commandant de la mission PROTEC."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#1.text
+msgid ""
+"Bonjour Commandant, je serais votre référent technique durant toute la durée de "
+"la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon "
+"aide."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#2.text
+msgid ""
+"Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos "
+"arrières quand même."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#4.text
+msgid "Bref ! Nous avons l'autorisation de décoller. Terminé."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#5.text
+msgid "Bon vol."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#0.text
+msgid "Je ne fais que mon travail, Monsieur."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#1.text
+msgid "Tout le plaisir est pour moi !"
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#0.answer
+msgid "Un homme qui le sens des responsabilité ! C'est tellement rare de nos jours..."
+msgstr ""
+
+#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#1.answer
+msgid ""
+"Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte "
+"pas préjudice."
 msgstr ""
 
 

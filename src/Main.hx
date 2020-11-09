@@ -43,6 +43,7 @@ class Main extends dn.Process {
 		// Assets & data init
 		Assets.init();
 		new ui.Console(Assets.fontTiny, s);
+		// Lang.init("fr_FR");
 		Lang.init("en");
 		Data.load( hxd.Res.data.entry.getText() );
 

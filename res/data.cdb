@@ -1,5 +1,156 @@
 {
-	"sheets": [],
+	"sheets": [
+		{
+			"name": "days",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "8",
+					"name": "events"
+				}
+			],
+			"lines": [
+				{
+					"id": "Day_1",
+					"events": [
+						{
+							"talks": [
+								{
+									"author": "Astro",
+									"text": "Ici le commandant de la mission PROTEC.",
+									"anwsers": [],
+									"timeBefore": 0
+								},
+								{
+									"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
+									"anwsers": [],
+									"timeBefore": 0
+								},
+								{
+									"author": "Astro",
+									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même.",
+									"anwsers": [],
+									"timeBefore": 0
+								},
+								{
+									"text": "",
+									"anwsers": [
+										{
+											"text": "Je ne fais que mon travail, Monsieur.",
+											"answer": "Un homme qui le sens des responsabilité ! C'est tellement rare de nos jours...",
+											"author": "Astro"
+										},
+										{
+											"text": "Tout le plaisir est pour moi !",
+											"answer": "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte pas préjudice.",
+											"author": "Astro"
+										}
+									],
+									"timeBefore": 0
+								},
+								{
+									"author": "Astro",
+									"text": "Bref ! Nous avons l'autorisation de décoller. Terminé.",
+									"anwsers": [],
+									"timeBefore": 0
+								},
+								{
+									"text": "Bon vol.",
+									"anwsers": [],
+									"timeBefore": 0
+								}
+							],
+							"alerts": []
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "days@events",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "8",
+					"name": "talks"
+				},
+				{
+					"typeStr": "8",
+					"name": "alerts"
+				}
+			]
+		},
+		{
+			"name": "days@events@talks",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "author",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "text",
+					"kind": "localizable"
+				},
+				{
+					"typeStr": "8",
+					"name": "anwsers"
+				},
+				{
+					"typeStr": "4",
+					"name": "timeBefore"
+				}
+			]
+		},
+		{
+			"name": "days@events@talks@anwsers",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "text",
+					"kind": "localizable"
+				},
+				{
+					"typeStr": "1",
+					"name": "answer",
+					"kind": "localizable"
+				},
+				{
+					"typeStr": "1",
+					"name": "author"
+				}
+			]
+		},
+		{
+			"name": "days@events@alerts",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": []
+		}
+	],
 	"customTypes": [],
 	"compress": false
 }
