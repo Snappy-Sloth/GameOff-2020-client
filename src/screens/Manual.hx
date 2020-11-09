@@ -15,6 +15,9 @@ class Manual extends dn.Process {
 	var arInitialPositionX : Array<Float> = [];
 	var arInitialPositionY : Array<Float> = [];
 
+	var sortSheetsBtn : ui.Button;
+	var goToCommBtn : ui.Button;
+
 	public function new() {
 		super(Game.ME);
 
@@ -74,9 +77,11 @@ class Manual extends dn.Process {
 			arSheet.push(sheet);
 		}
 
-		var sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
-		sortSheetsBtn.setPosition(10, 10);
+		sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
 		root.add(sortSheetsBtn, 1);
+
+		goToCommBtn = new ui.Button("Comm", Game.ME.showComm);
+		root.add(goToCommBtn, 1);
 
 		onResize();
 	}
@@ -98,5 +103,8 @@ class Manual extends dn.Process {
 		super.onResize();
 
 		root.setScale(Const.SCALE);
+
+		sortSheetsBtn.setPosition(((w() / Const.SCALE) - sortSheetsBtn.wid) / 2, 7);
+		goToCommBtn.setPosition(7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
 	}
 }
