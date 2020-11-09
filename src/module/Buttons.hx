@@ -49,14 +49,20 @@ class Buttons extends Module {
 	}
 
 	function onClick(bt:Button) {
-		switch Game.ME.currentAlert {
-			case null:
-			case A1, A2, A3:
-				if (bt.bt == WhiteNormal) bt.numClick++;
-				else {
-					Game.ME.onError();
-				}
+		var isError = true;
+
+		for (t in Game.ME.currentTasks) {
+			switch (t.taskKind) {
+				case A1, A2, A3:
+					if (bt.bt == WhiteNormal) {
+						bt.numClick++;
+						isError = false;
+					}
+			}
 		}
+
+		if (isError)
+			Game.ME.onError();
 
 		checkValidate();
 	}
@@ -64,27 +70,29 @@ class Buttons extends Module {
 	override function checkValidate() {
 		super.checkValidate();
 
-		var isValidated = switch (Game.ME.currentAlert) {
-			case null: true;
-			case A1:
-				if (getButton(WhiteNormal).numClick == 1)
-					true;
-				else 
-					false;
-			case A2: true;
-				if (getButton(WhiteNormal).numClick == 2)
-					true;
-				else 
-					false;
-			case A3: true;
-				if (getButton(WhiteNormal).numClick == 3)
-					true;
-				else 
-					false;
-		}
+		for (t in Game.ME.currentTasks.copy()) {
+			var isValidated = switch (t.taskKind) {
+				case null: true;
+				case A1:
+					if (getButton(WhiteNormal).numClick == 1)
+						true;
+					else 
+						false;
+				case A2: true;
+					if (getButton(WhiteNormal).numClick == 2)
+						true;
+					else 
+						false;
+				case A3: true;
+					if (getButton(WhiteNormal).numClick == 3)
+						true;
+					else 
+						false;
+			}
 
-		if (isValidated) {
-			Game.ME.stopCurrentAlert();
+			if (isValidated) {
+				Game.ME.onCompleteTask(t);
+			}
 		}
 	}
 }

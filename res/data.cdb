@@ -1,7 +1,7 @@
 {
 	"sheets": [
 		{
-			"name": "days",
+			"name": "day",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -72,7 +72,8 @@
 									"Tasks": [
 										{
 											"task": "A1",
-											"text": "\"J'ai une diode rouge qui s'allume !\""
+											"text": "\"J'ai une diode rouge qui s'allume !\"",
+											"author": "Astro"
 										}
 									]
 								}
@@ -85,7 +86,7 @@
 			"props": {}
 		},
 		{
-			"name": "alerts",
+			"name": "task",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -121,7 +122,7 @@
 			]
 		},
 		{
-			"name": "days@events",
+			"name": "day@events",
 			"props": {
 				"hide": true
 			},
@@ -139,7 +140,7 @@
 			]
 		},
 		{
-			"name": "days@events@talks",
+			"name": "day@events@talks",
 			"props": {
 				"hide": true
 			},
@@ -167,7 +168,7 @@
 			]
 		},
 		{
-			"name": "days@events@talks@anwsers",
+			"name": "day@events@talks@anwsers",
 			"props": {
 				"hide": true
 			},
@@ -191,7 +192,7 @@
 			]
 		},
 		{
-			"name": "days@events@alerts",
+			"name": "day@events@alerts",
 			"props": {
 				"hide": true
 			},
@@ -205,7 +206,7 @@
 			]
 		},
 		{
-			"name": "days@events@alerts@Tasks",
+			"name": "day@events@alerts@Tasks",
 			"props": {
 				"hide": true
 			},
@@ -213,13 +214,17 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:alerts",
+					"typeStr": "6:task",
 					"name": "task"
 				},
 				{
 					"typeStr": "1",
 					"name": "text",
 					"kind": "localizable"
+				},
+				{
+					"typeStr": "1",
+					"name": "author"
 				}
 			]
 		}

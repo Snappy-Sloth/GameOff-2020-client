@@ -16,7 +16,7 @@ class Communication extends dn.Process {
 	var isTypingText : h2d.Text;
 	var isOfflineText : h2d.Text;
 
-	var currentTalk : Array<Data.Days_events_talks>;
+	var currentTalk : Array<Data.Day_events_talks>;
 	var currentTalkProgress : Int;
 	var waitForPlayer = false;
 
@@ -56,7 +56,7 @@ class Communication extends dn.Process {
 	}
 
 	public function launchTalk() {
-		currentTalk = Data.days.get(Day_1).events[0].talks.toArrayCopy();
+		currentTalk = Data.day.get(Day_1).events[0].talks.toArrayCopy();
 		currentTalkProgress = 0;
 
 		tw.createS(isTypingText.alpha, 1, 0.5);
@@ -71,7 +71,9 @@ class Communication extends dn.Process {
 		if (forcedMessage != null) {
 			showMessage(forcedMessage.text, forcedMessage.author);
 			forcedMessage = null;
-			currentTalkProgress++;
+
+			if (currentTalk != null)
+				currentTalkProgress++;
 		}
 		else if (currentTalk[currentTalkProgress].anwsers.length > 0) {
 			showAnswers();
@@ -120,10 +122,14 @@ class Communication extends dn.Process {
 
 		cd.setS("newText", 1 + text.length * 0.03);
 		
-		if (nextMessageIsNotFromYou()) {
+		if (currentTalk != null && nextMessageIsNotFromYou()) {
 			isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentTalk[currentTalkProgress + 1].author});
 			delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 1);
 		}
+	}
+
+	public function forceMessage(text:String, author:String) {
+		forcedMessage = {text: text, author: author};
 	}
 
 	public function showAnswers() {
@@ -160,7 +166,7 @@ class Communication extends dn.Process {
 					flowAnswers.remove();
 
 					showMessage(a.text);
-					forcedMessage = {text: a.answer, author: a.author};
+					forceMessage(a.answer, a.author);
 					waitForPlayer = false;
 				}, 0.21);
 			}
@@ -196,7 +202,7 @@ class Communication extends dn.Process {
 	override function update() {
 		super.update();
 
-		if (currentTalk != null) {
+		if (currentTalk != null || forcedMessage != null) {
 			if (!waitForPlayer && !cd.has("newText")) {
 				nextMessage();
 			}

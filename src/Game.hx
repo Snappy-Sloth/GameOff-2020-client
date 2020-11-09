@@ -14,9 +14,12 @@ class Game extends Process {
 
 	public var timer(default, null) : Float;
 
-	public var currentAlert : Null<Data.AlertsKind> = null;
+	// public var currentAlert : Null<Data.AlertsKind> = null;
 
-	public var alertIsActive(get, never) : Bool; inline function get_alertIsActive() return currentAlert != null;
+	public var currentAlerts : Array<Array<TaskData>> = [];
+	public var currentTasks : Array<TaskData> = null;
+
+	public var alertIsActive(get, never) : Bool; inline function get_alertIsActive() return currentTasks != null;
 
 	public function new() {
 		super(Main.ME);
@@ -66,20 +69,55 @@ class Game extends Process {
 		root.setScale(Const.SCALE);
 	}
 
-	function launchAlert(ak:Data.AlertsKind) {
+	function nextAlert() {
+		currentAlerts = [];
+		currentTasks = null;
+
+		for (de in Data.day.get(Day_1).events) {
+			if (de.alerts.length > 0) {
+				for (dea in de.alerts) {
+					var t = [];
+					for (tasks in dea.Tasks) {
+						t.push({taskKind:tasks.taskId, text:tasks.text, author:tasks.author});
+					}
+					currentAlerts.push(t);
+				}
+			}
+		}
+
+		nextTasks();
+	}
+
+	function nextTasks() {
 		moduleScreen.reset();
-		currentAlert = ak;
 		hud.showTimer();
+
+		currentTasks = currentAlerts.pop();
+		communication.forceMessage(currentTasks[0].text, currentTasks[0].author);
+	}
+
+	public function onCompleteTask(td:TaskData) {
+		currentTasks.remove(td);
+		checkEndTasks();
+	}
+
+	function checkEndTasks() {
+		if (currentTasks.length == 0) {
+			currentTasks = null;
+			if (currentAlerts.length > 0)
+				nextTasks();
+			else
+				endAlert();
+		}
+	}
+
+	function endAlert() {
+		hud.hideTimer();
 	}
 
 	public function onError() {
 		timer += 10 * Const.FPS;
 		hud.redWarning();
-	}
-
-	public function stopCurrentAlert() {
-		currentAlert = null;
-		hud.hideTimer();
 	}
 
 	function gc() {}
@@ -127,7 +165,7 @@ class Game extends Process {
 
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
-					launchAlert(A3);
+					nextAlert();
 				}
 			#end
 		}
