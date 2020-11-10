@@ -40,8 +40,8 @@ class Hud extends dn.Process {
 
 	override function onResize() {
 		super.onResize();
+		
 		timerText.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
-		root.setScale(Const.UI_SCALE);
 	}
 
 	public inline function invalidate() invalidated = true;

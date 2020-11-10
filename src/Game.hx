@@ -92,7 +92,11 @@ class Game extends Process {
 		hud.showTimer();
 
 		currentTasks = currentAlerts.shift();
-		communication.forceMessage(currentTasks[0].text, currentTasks[0].author);
+		var message = "";
+		for (i in 0...currentTasks.length) {
+			message += (i > 0 ? "\n" : "") + currentTasks[i].text;
+		}
+		communication.forceMessage(message, currentTasks[0].author);
 	}
 
 	public function onCompleteTask(td:TaskData) {

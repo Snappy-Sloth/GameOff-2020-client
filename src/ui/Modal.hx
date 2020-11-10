@@ -47,8 +47,8 @@ class Modal extends ui.Window {
 	override function onResize() {
 		super.onResize();
 		if( mask!=null ) {
-			var w = M.ceil( w()/Const.UI_SCALE );
-			var h = M.ceil( h()/Const.UI_SCALE );
+			var w = M.ceil( w()/Const.SCALE );
+			var h = M.ceil( h()/Const.SCALE );
 			mask.scaleX = w;
 			mask.scaleY = h;
 		}

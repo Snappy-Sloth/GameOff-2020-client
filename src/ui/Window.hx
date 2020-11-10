@@ -31,10 +31,10 @@ class Window extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		root.scale(Const.UI_SCALE);
+		root.scale(Const.SCALE);
 
-		var w = M.ceil( w()/Const.UI_SCALE );
-		var h = M.ceil( h()/Const.UI_SCALE );
+		var w = M.ceil( w()/Const.SCALE );
+		var h = M.ceil( h()/Const.SCALE );
 		win.x = Std.int( w*0.5 - win.outerWidth*0.5 );
 		win.y = Std.int( h*0.5 - win.outerHeight*0.5 );
 	}

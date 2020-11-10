@@ -83,6 +83,11 @@
 											"task": "A2",
 											"text": "J'ai une diode bleue qui s'allume maintenant !",
 											"author": "Astro"
+										},
+										{
+											"task": "A1",
+											"text": "J'ai le mot \"RIGHT\" qui s'affiche sur une console aussi !",
+											"author": "Astro"
 										}
 									]
 								}
@@ -119,6 +124,10 @@
 				{
 					"ID": "A3",
 					"Commentaire": "Buttons: click 3 time on white button"
+				},
+				{
+					"ID": "A4",
+					"Commentaire": "Click 1 time on red button"
 				}
 			],
 			"props": {

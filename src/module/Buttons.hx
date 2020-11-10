@@ -61,6 +61,11 @@ class Buttons extends Module {
 						bt.numClick++;
 						isError = false;
 					}
+				case A4:
+					if (bt.bt == RedNormal) {
+						bt.numClick++;
+						isError = false;
+					}
 			}
 		}
 
@@ -88,6 +93,11 @@ class Buttons extends Module {
 						false;
 				case A3: true;
 					if (getButton(WhiteNormal).numClick == 3)
+						true;
+					else 
+						false;
+				case A4: true;
+					if (getButton(RedNormal).numClick == 1)
 						true;
 					else 
 						false;
