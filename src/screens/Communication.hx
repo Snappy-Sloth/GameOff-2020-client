@@ -222,6 +222,10 @@ class Communication extends dn.Process {
 
 		flowAnswers.reflow();
 		flowAnswers.setPosition(mainWrapper.width - flowAnswers.outerWidth, mainWrapper.height - flowAnswers.outerHeight);
+
+		flowAnswers.x += flowAnswers.outerWidth;
+		tw.createS(flowAnswers.alpha, 0 > 1, 0.2);
+		tw.createS(flowAnswers.x, flowAnswers.x - flowAnswers.outerWidth, 0.2);
 	}
 
 	public function nextMessageIsNotFromYou() : Bool return currentTalk[currentTalkProgress + 1] != null && currentTalk[currentTalkProgress + 1].author != null;
