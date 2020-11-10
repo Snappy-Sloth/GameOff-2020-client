@@ -12,11 +12,6 @@ class Manual extends dn.Process {
 
 	var arSheet : Array<Sheet> = [];
 
-	var initialPositionX : Float;
-	var initialPositionY : Float;
-	var arInitialPositionX : Array<Float> = [];
-	var arInitialPositionY : Array<Float> = [];
-
 	var sortSheetsBtn : ui.Button;
 	var goToCommBtn : ui.Button;
 
@@ -65,14 +60,7 @@ class Manual extends dn.Process {
 
 		for (i in 0...10) {
 			var sheet = new Sheet();
-			
-			initialPositionX = (((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5;
-			arInitialPositionX.push(initialPositionX);
-
-			initialPositionY = (((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5;
-			arInitialPositionY.push(initialPositionY);
-
-			sheet.setPosition(initialPositionX, initialPositionY);
+			sheet.setPosition((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5, (((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5);
 
 			root.add(sheet, 0);
 
@@ -95,8 +83,9 @@ class Manual extends dn.Process {
 
 	public function setSheetsToInitialPosition() {
 		for (i in 0...arSheet.length) {
-			arSheet[i].rotation = 0;
-			arSheet[i].setPosition(arInitialPositionX[i], arInitialPositionY[i]);
+			tw.createS(arSheet[i].rotation, 0, 0.3);
+			tw.createS(arSheet[i].x, ((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5), 0.3);
+			tw.createS(arSheet[i].y, ((((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5), 0.3);
 			root.add(arSheet[i], 0);
 		}
 	}
