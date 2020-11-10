@@ -2,6 +2,9 @@ package screens;
 
 class Manual extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
+	
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
 
 	public static var ME : Manual;
 

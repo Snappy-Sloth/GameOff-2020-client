@@ -3,6 +3,9 @@ package screens;
 class ModuleScreen extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public static var ME : ModuleScreen;
+	
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
 
 	var goToCommBtn : ui.Button;
 

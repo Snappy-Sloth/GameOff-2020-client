@@ -3,6 +3,9 @@ import hxd.Key;
 
 class Game extends Process {
 	public static var ME : Game;
+	
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
 
 	public var ca : dn.heaps.Controller.ControllerAccess;
 	public var fx : Fx;
@@ -11,6 +14,8 @@ class Game extends Process {
 	public var manual : screens.Manual;
 	public var communication : screens.Communication;
 	public var moduleScreen : screens.ModuleScreen;
+
+	public var currentScreen : Process;
 
 	public var timer(default, null) : Float;
 
@@ -49,14 +54,18 @@ class Game extends Process {
 	}
 
 	public function showManual() {
+		currentScreen = manual;
 		tw.createS(wrapperScreens.x, -w() / Const.SCALE, 0.3);
 	}
 
 	public function showComm() {
+		currentScreen = communication;
 		tw.createS(wrapperScreens.x, 0, 0.3);
+		hud.hideNewMessage();
 	}
 
 	public function showModules() {
+		currentScreen = moduleScreen;
 		tw.createS(wrapperScreens.x, w() / Const.SCALE, 0.3);
 	}
 
@@ -97,6 +106,9 @@ class Game extends Process {
 			message += (i > 0 ? "\n" : "") + currentTasks[i].text;
 		}
 		communication.forceMessage(message, currentTasks[0].author);
+
+		if (currentScreen != communication)
+			hud.showNewMessage();
 	}
 
 	public function onCompleteTask(td:TaskData) {
@@ -117,6 +129,8 @@ class Game extends Process {
 
 	function endAlert() {
 		hud.hideTimer();
+
+		communication.showSystemMessage("ALERTE TERMINÉE");
 	}
 
 	public function onError() {

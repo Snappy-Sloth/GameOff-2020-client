@@ -3,11 +3,16 @@ package ui;
 class Hud extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public var fx(get,never) : Fx; inline function get_fx() return Game.ME.fx;
+	
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
 
 	var flow : h2d.Flow;
 	var invalidated = true;
 
 	var timerText : h2d.Text;
+
+	var newMessageText : h2d.Text;
 
 	public function new() {
 		super(Game.ME);
@@ -20,6 +25,10 @@ class Hud extends dn.Process {
 		timerText = new h2d.Text(Assets.fontLarge, root);
 		timerText.textColor = 0xe72727;
 		timerText.y = -timerText.textHeight;
+
+		newMessageText = new h2d.Text(Assets.fontMedium, root);
+		newMessageText.textColor = 0xFFFFFF;
+		newMessageText.text = "New message!";
 	}
 	
 	public function showTimer() {
@@ -28,6 +37,14 @@ class Hud extends dn.Process {
 	
 	public function hideTimer() {
 		tw.createS(timerText.y, -timerText.textHeight, 0.3);
+	}
+	
+	public function showNewMessage() {
+		tw.createS(newMessageText.y, 0, 0.3);
+	}
+	
+	public function hideNewMessage() {
+		tw.createS(newMessageText.y, -newMessageText.textHeight, 0.3);
 	}
 
 	public function redWarning() {
@@ -40,7 +57,10 @@ class Hud extends dn.Process {
 
 	override function onResize() {
 		super.onResize();
-		
+
+		newMessageText.x = wid - newMessageText.textWidth - 10;
+		newMessageText.y = - newMessageText.textHeight;
+
 		timerText.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
 	}
 

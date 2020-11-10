@@ -129,6 +129,33 @@ class Communication extends dn.Process {
 		}
 	}
 
+	public function showSystemMessage(text:String) {
+		var messageFlow = new h2d.Flow(mainWrapper);
+		messageFlow.backgroundTile = h2d.Tile.fromColor(0x2f2c3a);
+		messageFlow.padding = 10;
+		messageFlow.verticalSpacing = 5;
+		messageFlow.layout = Vertical;
+		messageFlow.horizontalAlign = Middle;
+		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
+		arMessages.push(messageFlow);
+
+		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
+		messageText.text = Lang.t.get(text);
+
+		messageFlow.reflow();
+		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
+
+		var dist = messageFlow.outerHeight + mainWrapperPadding + 30;
+
+		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		for (flow in arMessages) {
+			tw.createS(flow.y, flow.y - dist, 0.2);
+		}
+
+		cd.setS("newText", 1 + text.length * 0.03);
+	}
+
 	public function forceMessage(text:String, author:String) {
 		forcedMessage = {text: text, author: author};
 	}
