@@ -218,7 +218,7 @@ class Game extends Process {
 
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
-					launchDay(Day_1);
+					launchDay(Day_Test);
 				}
 			#end
 		}

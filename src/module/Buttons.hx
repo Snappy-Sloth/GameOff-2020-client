@@ -142,6 +142,19 @@ class Button extends h2d.Layers {
         inter.onClick = function(e) {
 			onClick(this);
 		}
+		inter.onOver = function (e) {
+			inter.backgroundColor = 0xFFacaaaa;
+		}
+		inter.onOut = function (e) {
+			inter.backgroundColor = 0xFF7F7F7F;
+		}
+
+		inter.onPush = function (e) {
+			inter.backgroundColor = 0xFF575757;
+		}
+		inter.onRelease = function (e) {
+			inter.backgroundColor = 0xFF7F7F7F;
+		}
 
         var text = new h2d.Text(Assets.fontPixel, this);
         text.text = bt.getName();

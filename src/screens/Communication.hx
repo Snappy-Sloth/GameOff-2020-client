@@ -17,6 +17,8 @@ class Communication extends dn.Process {
 	var isTypingText : h2d.Text;
 	var isOfflineText : h2d.Text;
 
+	var currentAuthor : Null<String> = null;
+
 	var currentTalk : Array<Data.Day_events_talks>;
 	var currentTalkProgress : Int;
 	var waitForPlayer = false;
@@ -62,10 +64,18 @@ class Communication extends dn.Process {
 
 		tw.createS(isTypingText.alpha, 1, 0.5);
 
-		if (currentTalk[currentTalkProgress].author != null) {
-			isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentTalk[currentTalkProgress].author});
-			cd.setS("newText", 2);
+		var i = 0;
+		while (currentTalk[i].author == null)
+			i++;
+
+		if (currentAuthor != currentTalk[i].author) {
+			currentAuthor = currentTalk[i].author;
+			showSystemMessage(Lang.t._("::name:: est en ligne", {name:currentAuthor}));
 		}
+		isOfflineText.text = Lang.t._("::name:: est hors ligne...", {name: currentAuthor});
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
+
+		cd.setS("newText", 2);
 	}
 
 	public function nextMessage() {
