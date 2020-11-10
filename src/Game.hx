@@ -33,11 +33,10 @@ class Game extends Process {
 		hud = new ui.Hud();
 
 		manual = new screens.Manual();
-		manual.root.visible = false;
+		manual.root.x = w() / Const.SCALE;
 		communication = new screens.Communication();
-		communication.root.visible = false;
 		moduleScreen = new screens.ModuleScreen();
-		moduleScreen.root.visible = false;
+		moduleScreen.root.x = -w() / Const.SCALE;
 
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
@@ -46,19 +45,15 @@ class Game extends Process {
 	}
 
 	public function showManual() {
-		if (communication.root.visible) communication.root.visible = false;
-		manual.root.visible = true;
+		tw.createS(root.x, -w() / Const.SCALE, 0.3);
 	}
 
 	public function showComm() {
-		if (manual.root.visible) manual.root.visible = false;
-		if (moduleScreen.root.visible) moduleScreen.root.visible = false;
-		communication.root.visible = true;
+		tw.createS(root.x, 0, 0.3);
 	}
 
 	public function showModules() {
-		if (communication.root.visible) communication.root.visible = false;
-		moduleScreen.root.visible = true;
+		tw.createS(root.x, w() / Const.SCALE, 0.3);
 	}
 
 	public function onCdbReload() {
@@ -92,7 +87,7 @@ class Game extends Process {
 		moduleScreen.reset();
 		hud.showTimer();
 
-		currentTasks = currentAlerts.pop();
+		currentTasks = currentAlerts.shift();
 		communication.forceMessage(currentTasks[0].text, currentTasks[0].author);
 	}
 

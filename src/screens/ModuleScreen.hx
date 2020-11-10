@@ -37,8 +37,6 @@ class ModuleScreen extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		root.setScale(Const.SCALE);
-
 		goToCommBtn.setPosition((w() / Const.SCALE) - goToCommBtn.wid - 7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
 
 		flowModule.setPosition(	Std.int((w() / Const.SCALE) - flowModule.outerWidth) >> 1,

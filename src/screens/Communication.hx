@@ -185,8 +185,6 @@ class Communication extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		root.setScale(Const.SCALE);
-
 		goToManualBtn.setPosition((w() / Const.SCALE) - goToManualBtn.wid - 7, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
 		goToModulesBtn.setPosition(7, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
 

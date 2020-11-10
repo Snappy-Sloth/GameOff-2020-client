@@ -102,8 +102,6 @@ class Manual extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		root.setScale(Const.SCALE);
-
 		sortSheetsBtn.setPosition(((w() / Const.SCALE) - sortSheetsBtn.wid) / 2, 7);
 		goToCommBtn.setPosition(7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
 	}
