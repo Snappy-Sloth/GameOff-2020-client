@@ -23,10 +23,24 @@ class Game extends Process {
 
 	public var wrapperScreens(default, null) : h2d.Object;
 
+	// Progress
+	public var currentDay : Data.Day;
+	public var currentEventId : Int;
+	public var currentEvent(get, never) : Data.Day_events;		inline function get_currentEvent() return currentDay.events[currentEventId];
+
 	public var currentAlerts : Array<Array<TaskData>> = [];
 	public var currentTasks : Array<TaskData> = null;
 
-	public var alertIsActive(get, never) : Bool; inline function get_alertIsActive() return currentTasks != null;
+	public var alertIsActive(get, never) : Bool;				inline function get_alertIsActive() return currentTasks != null;
+	public var thereAreStillTalks(get, never) : Bool;			inline function get_thereAreStillTalks() {
+		var out = false;
+		for (i in currentEventId...currentDay.events.length) {
+			if (currentDay.events[i].talks.length > 0)
+				out = true;
+		}
+
+		return out;
+	}
 
 	public function new() {
 		super(Main.ME);
@@ -77,20 +91,39 @@ class Game extends Process {
 		root.setScale(Const.SCALE);
 	}
 
+	function launchDay(day:Data.DayKind) {
+		currentDay = Data.day.get(day);
+		currentEventId = -1;
+
+		nextEvent();
+	}
+
+	public function nextEvent() {
+		currentEventId++;
+
+		if (currentEvent == null) {
+			communication.showOffline();
+		}
+		else {
+			if (currentEvent.talks.length > 0) {	// TALKS
+				communication.launchTalk();
+			}
+			else {									// ALERTS
+				nextAlert();
+			}
+		}
+	}
+
 	function nextAlert() {
 		currentAlerts = [];
 		currentTasks = null;
 
-		for (de in Data.day.get(Day_1).events) {
-			if (de.alerts.length > 0) {
-				for (dea in de.alerts) {
-					var t = [];
-					for (tasks in dea.Tasks) {
-						t.push({taskKind:tasks.taskId, text:tasks.text, author:tasks.author});
-					}
-					currentAlerts.push(t);
-				}
+		for (dea in currentEvent.alerts) {
+			var t = [];
+			for (tasks in dea.Tasks) {
+				t.push({taskKind:tasks.taskId, text:tasks.text, author:tasks.author});
 			}
+			currentAlerts.push(t);
 		}
 
 		nextTasks();
@@ -131,6 +164,8 @@ class Game extends Process {
 		hud.hideTimer();
 
 		communication.showSystemMessage("ALERTE TERMINÉE");
+
+		nextEvent();
 	}
 
 	public function onError() {
@@ -183,7 +218,7 @@ class Game extends Process {
 
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
-					nextAlert();
+					launchDay(Day_1);
 				}
 			#end
 		}

@@ -52,6 +52,11 @@ class Buttons extends Module {
 	}
 
 	function onClick(bt:Button) {
+		if (Game.ME.currentTasks == null) {
+			Game.ME.onError();
+			return;
+		}
+
 		var isError = true;
 
 		for (t in Game.ME.currentTasks) {

@@ -92,6 +92,17 @@
 									]
 								}
 							]
+						},
+						{
+							"talks": [
+								{
+									"text": "Merci, heureusement que vous étiez là !",
+									"anwsers": [],
+									"timeBefore": 0,
+									"author": "Astro"
+								}
+							],
+							"alerts": []
 						}
 					]
 				}

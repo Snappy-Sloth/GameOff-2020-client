@@ -57,7 +57,7 @@ class Communication extends dn.Process {
 	}
 
 	public function launchTalk() {
-		currentTalk = Data.day.get(Day_1).events[0].talks.toArrayCopy();
+		currentTalk = game.currentEvent.talks.toArrayCopy();
 		currentTalkProgress = 0;
 
 		tw.createS(isTypingText.alpha, 1, 0.5);
@@ -85,9 +85,15 @@ class Communication extends dn.Process {
 			if (currentTalkProgress >= currentTalk.length) {
 				currentTalk = null;
 				
-				delayer.addS(()->tw.createS(isOfflineText.alpha, 1, 1), 1);
+				delayer.addS(function(){
+					game.nextEvent();
+				}, 1);
 			}
 		}
+	}
+
+	public function showOffline() {
+		tw.createS(isOfflineText.alpha, 1, 1);
 	}
 
 	public function showMessage(text:String, from:Null<String> = null) { // if from == null => it's the hero
@@ -139,7 +145,7 @@ class Communication extends dn.Process {
 		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
 		arMessages.push(messageFlow);
 
-		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
+		var messageText = new h2d.Text(Assets.fontMedium, messageFlow);
 		messageText.text = Lang.t.get(text);
 
 		messageFlow.reflow();
