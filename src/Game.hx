@@ -16,6 +16,8 @@ class Game extends Process {
 
 	// public var currentAlert : Null<Data.AlertsKind> = null;
 
+	public var wrapperScreens(default, null) : h2d.Object;
+
 	public var currentAlerts : Array<Array<TaskData>> = [];
 	public var currentTasks : Array<TaskData> = null;
 
@@ -32,6 +34,8 @@ class Game extends Process {
 		fx = new Fx();
 		hud = new ui.Hud();
 
+		wrapperScreens = new h2d.Object(root);
+
 		manual = new screens.Manual();
 		manual.root.x = w() / Const.SCALE;
 		communication = new screens.Communication();
@@ -45,15 +49,15 @@ class Game extends Process {
 	}
 
 	public function showManual() {
-		tw.createS(root.x, -w() / Const.SCALE, 0.3);
+		tw.createS(wrapperScreens.x, -w() / Const.SCALE, 0.3);
 	}
 
 	public function showComm() {
-		tw.createS(root.x, 0, 0.3);
+		tw.createS(wrapperScreens.x, 0, 0.3);
 	}
 
 	public function showModules() {
-		tw.createS(root.x, w() / Const.SCALE, 0.3);
+		tw.createS(wrapperScreens.x, w() / Const.SCALE, 0.3);
 	}
 
 	public function onCdbReload() {
@@ -93,6 +97,7 @@ class Game extends Process {
 
 	public function onCompleteTask(td:TaskData) {
 		currentTasks.remove(td);
+		hud.goodWarning();
 		checkEndTasks();
 	}
 

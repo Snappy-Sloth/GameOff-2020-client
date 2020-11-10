@@ -1,6 +1,7 @@
 package screens;
 
 class Communication extends dn.Process {
+	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public static var ME : Communication;
 	
 	public var wid(get, never):Int;		inline function get_wid() return Std.int(w() / Const.SCALE);
@@ -30,7 +31,7 @@ class Communication extends dn.Process {
 
 		ME = this;
 
-		createRoot();
+		createRoot(Game.ME.wrapperScreens);
 		
 		mainWrapper = new h2d.Mask(Std.int(wid * 0.75), Std.int(hei * 0.75), root);
 		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x5e5e5e), mainWrapper);

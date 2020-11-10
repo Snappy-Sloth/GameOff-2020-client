@@ -34,6 +34,10 @@ class Hud extends dn.Process {
 		fx.flashBangS(0xe72727, 0.5, 0.2);
 	}
 
+	public function goodWarning() {
+		fx.flashBangS(0x27e72e, 0.5, 0.5);
+	}
+
 	override function onResize() {
 		super.onResize();
 		timerText.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;

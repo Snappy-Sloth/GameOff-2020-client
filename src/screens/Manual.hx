@@ -1,6 +1,8 @@
 package screens;
 
 class Manual extends dn.Process {
+	public var game(get,never) : Game; inline function get_game() return Game.ME;
+
 	public static var ME : Manual;
 
 	public var mouseX : Float = -1;
@@ -23,7 +25,7 @@ class Manual extends dn.Process {
 
 		ME = this;
 
-		createRoot();
+		createRoot(Game.ME.wrapperScreens);
 
 		var screen = new h2d.Interactive((w() / Const.SCALE), (h() / Const.SCALE));
 		root.add(screen, 10);

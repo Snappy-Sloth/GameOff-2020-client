@@ -1,6 +1,7 @@
 package screens;
 
 class ModuleScreen extends dn.Process {
+	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public static var ME : ModuleScreen;
 
 	var goToCommBtn : ui.Button;
@@ -14,7 +15,7 @@ class ModuleScreen extends dn.Process {
 
 		ME = this;
 
-		createRoot();
+		createRoot(Game.ME.wrapperScreens);
 
 		goToCommBtn = new ui.Button("Comm", Game.ME.showComm);
 		root.add(goToCommBtn, 1);
