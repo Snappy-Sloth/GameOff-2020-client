@@ -5,6 +5,8 @@ enum ButtonType {
 	WhiteTexted;
 	RedNormal;
 	RedTexted;
+	BlueNormal;
+	BlueTexted;
 }
 
 class Buttons extends Module {
@@ -17,8 +19,9 @@ class Buttons extends Module {
 		var flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = Const.MODULE_WIDTH;
 		flow.minHeight = flow.maxHeight = Const.MODULE_HEIGHT;
+		flow.multiline = true;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.horizontalSpacing = 30;
+		flow.horizontalSpacing = flow.verticalSpacing = 30;
 
 		btns = [];
 
