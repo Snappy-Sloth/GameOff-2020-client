@@ -106,7 +106,7 @@ class Game extends Process {
 		}
 		else {
 			if (currentEvent.talks.length > 0) {	// TALKS
-				communication.launchTalk();
+				communication.initTalk();
 			}
 			else {									// ALERTS
 				nextAlert();
@@ -136,9 +136,9 @@ class Game extends Process {
 		currentTasks = currentAlerts.shift();
 		var message = "";
 		for (i in 0...currentTasks.length) {
-			message += (i > 0 ? "\n" : "") + currentTasks[i].text;
+			message += (i > 0 ? "\n" : "") + Lang.t.get(currentTasks[i].text);
 		}
-		communication.forceMessage(message, currentTasks[0].author);
+		communication.forceOutsideMessage({text: message, author: currentEvent.author, bgColor: 0x973030});
 
 		if (currentScreen != communication)
 			hud.showNewMessage();
@@ -163,7 +163,7 @@ class Game extends Process {
 	function endAlert() {
 		hud.hideTimer();
 
-		communication.showSystemMessage("ALERTE TERMINÉE");
+		communication.forceSystemMessage("ALERTE TERMINÉE");
 
 		nextEvent();
 	}

@@ -4,63 +4,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "MIME-Version: 1.0\n"
 
-#: src/Game.hx:43
+#: src/Game.hx:65
 msgid "Game is ready."
 msgstr ""
 
-#: src/Game.hx:114
+#: src/Game.hx:210
 msgid "Press ESCAPE again to exit."
 msgstr ""
 
-#: src/screens/Communication.hx:38 src/screens/Communication.hx:60 src/screens/Communication.hx:121
+#: src/screens/Communication.hx:45 src/screens/Communication.hx:85 src/screens/Communication.hx:239
 msgid "::name:: est en train d'écrire..."
 msgstr ""
 
-#: src/screens/Communication.hx:43
+#: src/screens/Communication.hx:82
+msgid "::name:: est en ligne"
+msgstr ""
+
+#: src/screens/Communication.hx:171
+msgid "Vous"
+msgstr ""
+
+#: src/screens/Communication.hx:250
 msgid "::name:: est hors ligne..."
 msgstr ""
 
-#: res/data.cdb:days/#0.events/#0.talks/#0.text
+#: res/data.cdb:day/#0.events/#0.talks/#0.text
 msgid "Ici le commandant de la mission PROTEC."
 msgstr ""
 
-#: res/data.cdb:days/#0.events/#0.talks/#1.text
+#: res/data.cdb:day/#0.events/#0.talks/#2.text
+msgid ""
+"Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos "
+"arrières quand même."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#0.talks/#4.text
+msgid "Bref ! Nous avons l'autorisation de décoller. Terminé."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#2.talks/#0.text
+msgid "Merci, heureusement que vous étiez là !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#0.talks/#1.answers/#0.text
 msgid ""
 "Bonjour Commandant, je serais votre référent technique durant toute la durée de "
 "la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon "
 "aide."
 msgstr ""
 
-#: res/data.cdb:days/#0.events/#0.talks/#2.text
-msgid ""
-"Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos "
-"arrières quand même."
-msgstr ""
-
-#: res/data.cdb:days/#0.events/#0.talks/#4.text
-msgid "Bref ! Nous avons l'autorisation de décoller. Terminé."
-msgstr ""
-
-#: res/data.cdb:days/#0.events/#0.talks/#5.text
-msgid "Bon vol."
-msgstr ""
-
-#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#0.text
+#: res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.text
 msgid "Je ne fais que mon travail, Monsieur."
 msgstr ""
 
-#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#1.text
+#: res/data.cdb:day/#0.events/#0.talks/#3.answers/#1.text
 msgid "Tout le plaisir est pour moi !"
 msgstr ""
 
-#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#0.answer
+#: res/data.cdb:day/#0.events/#0.talks/#5.answers/#0.text
+msgid "Bon vol."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.answer
 msgid "Un homme qui le sens des responsabilité ! C'est tellement rare de nos jours..."
 msgstr ""
 
-#: res/data.cdb:days/#0.events/#0.talks/#3.anwsers/#1.answer
+#: res/data.cdb:day/#0.events/#0.talks/#3.answers/#1.answer
 msgid ""
 "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte "
 "pas préjudice."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#1.alerts/#0.Tasks/#0.text
+msgid "J'ai une diode rouge qui s'allume !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#1.alerts/#1.Tasks/#0.text
+msgid "J'ai une diode bleue qui s'allume maintenant !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#1.alerts/#1.Tasks/#1.text
+msgid "J'ai le mot \"RIGHT\" qui s'affiche sur une console aussi !"
 msgstr ""
 
 

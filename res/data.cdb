@@ -19,51 +19,56 @@
 						{
 							"talks": [
 								{
-									"author": "Astro",
 									"text": "Ici le commandant de la mission PROTEC.",
-									"anwsers": [],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"answers": []
 								},
 								{
-									"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
-									"anwsers": [],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"answers": [
+										{
+											"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
+											"customAuthor": ""
+										}
+									]
 								},
 								{
-									"author": "Astro",
 									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même.",
-									"anwsers": [],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"answers": []
 								},
 								{
-									"text": "",
-									"anwsers": [
+									"timeBefore": 0,
+									"answers": [
 										{
 											"text": "Je ne fais que mon travail, Monsieur.",
 											"answer": "Un homme qui le sens des responsabilité ! C'est tellement rare de nos jours...",
-											"author": "Astro"
+											"customAuthor": "Astro"
 										},
 										{
 											"text": "Tout le plaisir est pour moi !",
 											"answer": "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte pas préjudice.",
-											"author": "Astro"
+											"customAuthor": "Astro"
 										}
-									],
-									"timeBefore": 0
+									]
 								},
 								{
-									"author": "Astro",
 									"text": "Bref ! Nous avons l'autorisation de décoller. Terminé.",
-									"anwsers": [],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"answers": []
 								},
 								{
-									"text": "Bon vol.",
-									"anwsers": [],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"answers": [
+										{
+											"text": "Bon vol.",
+											"customAuthor": ""
+										}
+									]
 								}
 							],
-							"alerts": []
+							"alerts": [],
+							"author": "Astro"
 						},
 						{
 							"talks": [],
@@ -91,18 +96,20 @@
 										}
 									]
 								}
-							]
+							],
+							"author": "Astro"
 						},
 						{
 							"talks": [
 								{
 									"text": "Merci, heureusement que vous étiez là !",
-									"anwsers": [],
 									"timeBefore": 0,
-									"author": "Astro"
+									"customAuthor": "Astro",
+									"answers": []
 								}
 							],
-							"alerts": []
+							"alerts": [],
+							"author": "Astro"
 						}
 					]
 				}
@@ -159,6 +166,10 @@
 			"lines": [],
 			"columns": [
 				{
+					"typeStr": "1",
+					"name": "author"
+				},
+				{
 					"typeStr": "8",
 					"name": "talks"
 				},
@@ -178,17 +189,23 @@
 			"columns": [
 				{
 					"typeStr": "1",
-					"name": "author",
+					"name": "customAuthor",
 					"opt": true
 				},
 				{
 					"typeStr": "1",
 					"name": "text",
-					"kind": "localizable"
+					"kind": "localizable",
+					"opt": true
+				},
+				{
+					"typeStr": "11",
+					"name": "customBGColor",
+					"opt": true
 				},
 				{
 					"typeStr": "8",
-					"name": "anwsers"
+					"name": "answers"
 				},
 				{
 					"typeStr": "4",
@@ -197,7 +214,7 @@
 			]
 		},
 		{
-			"name": "day@events@talks@anwsers",
+			"name": "day@events@talks@answers",
 			"props": {
 				"hide": true
 			},
@@ -212,11 +229,17 @@
 				{
 					"typeStr": "1",
 					"name": "answer",
-					"kind": "localizable"
+					"kind": "localizable",
+					"opt": true
 				},
 				{
 					"typeStr": "1",
-					"name": "author"
+					"name": "customAuthor"
+				},
+				{
+					"typeStr": "11",
+					"name": "customBGColor",
+					"opt": true
 				}
 			]
 		},

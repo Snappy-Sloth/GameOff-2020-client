@@ -12,21 +12,22 @@ class Communication extends dn.Process {
 
 	var bgWrapper : h2d.Bitmap;
 
-	var arMessages : Array<h2d.Flow>;
+	var arMessageFlow : Array<h2d.Flow>;
 
 	var isTypingText : h2d.Text;
-	var isOfflineText : h2d.Text;
 
-	var currentAuthor : Null<String> = null;
-
-	var currentTalk : Array<Data.Day_events_talks>;
-	var currentTalkProgress : Int;
 	var waitForPlayer = false;
-
-	var forcedMessage : {text:String, author:String} = null;
+	
+	var currentAuthor : Null<String> = null;
+	
+	var pendingMessages : Array<TalkType>;
+	var currentMessage : TalkType;
+	var nextMessage(get, never) : Null<TalkType>;		inline function get_nextMessage() return pendingMessages[0];
 
 	var goToManualBtn : ui.Button;
 	var goToModulesBtn : ui.Button;
+
+	var lastMessage : TalkType;
 
 	public function new() {
 		super(Game.ME);
@@ -38,16 +39,11 @@ class Communication extends dn.Process {
 		mainWrapper = new h2d.Mask(Std.int(wid * 0.75), Std.int(hei * 0.75), root);
 		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x5e5e5e), mainWrapper);
 
-		arMessages = [];
+		arMessageFlow = [];
 
 		isTypingText = new h2d.Text(Assets.fontSmall, mainWrapper);
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
 		isTypingText.alpha = 0;
-
-		isOfflineText = new h2d.Text(Assets.fontSmall, mainWrapper);
-		isOfflineText.textColor = 0x9e9e9e;
-		isOfflineText.text = Lang.t._("::name:: est hors ligne...", {name: "XXX"});
-		isOfflineText.alpha = 0;
 
 		goToManualBtn = new ui.Button("Manual", Game.ME.showManual);
 		root.add(goToManualBtn, 1);
@@ -55,131 +51,63 @@ class Communication extends dn.Process {
 		goToModulesBtn = new ui.Button("Modules", Game.ME.showModules);
 		root.add(goToModulesBtn, 1);
 
+		pendingMessages = [];
+
 		onResize();
 	}
 
-	public function launchTalk() {
-		currentTalk = game.currentEvent.talks.toArrayCopy();
-		currentTalkProgress = 0;
+	public function initTalk() {
+		pendingMessages = [];
 
-		tw.createS(isTypingText.alpha, 1, 0.5);
-
-		var i = 0;
-		while (currentTalk[i].author == null)
-			i++;
-
-		if (currentAuthor != currentTalk[i].author) {
-			currentAuthor = currentTalk[i].author;
-			showSystemMessage(Lang.t._("::name:: est en ligne", {name:currentAuthor}));
-		}
-		isOfflineText.text = Lang.t._("::name:: est hors ligne...", {name: currentAuthor});
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
-
-		cd.setS("newText", 2);
-	}
-
-	public function nextMessage() {
-		if (forcedMessage != null) {
-			showMessage(forcedMessage.text, forcedMessage.author);
-			forcedMessage = null;
-
-			if (currentTalk != null)
-				currentTalkProgress++;
-		}
-		else if (currentTalk[currentTalkProgress].anwsers.length > 0) {
-			showAnswers();
-		}
-		else {
-			showMessage(currentTalk[currentTalkProgress].text, currentTalk[currentTalkProgress].author);
-			currentTalkProgress++;
-			if (currentTalkProgress >= currentTalk.length) {
-				currentTalk = null;
-				
-				delayer.addS(function(){
-					game.nextEvent();
-				}, 1);
+		for (det in game.currentEvent.talks) {
+			if (det.answers.length > 0) {
+				var texts : Array<PlayerTalkData> = [];
+				for (answer in det.answers) {
+					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, bgColor: answer.customBGColor} : null});
+				}
+				pendingMessages.push(Player(texts));
+			}
+			else if (det.customAuthor == "System") {
+				pendingMessages.push(System({author:"System", text: det.text, bgColor: det.customBGColor}));
+			}
+			else {
+				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, bgColor: det.customBGColor}));
 			}
 		}
-	}
 
-	public function showOffline() {
-		tw.createS(isOfflineText.alpha, 1, 1);
-	}
+		lastMessage = pendingMessages[pendingMessages.length - 1];
 
-	public function showMessage(text:String, from:Null<String> = null) { // if from == null => it's the hero
-		if (from != null) {
-			tw.createS(isTypingText.alpha, 0, 0.2);
+		if (currentAuthor != game.currentEvent.author) {
+			currentAuthor = game.currentEvent.author;
+			forceSystemMessage(Lang.t._("::name:: est en ligne", {name:currentAuthor}));
 		}
 
-		var messageFlow = new h2d.Flow(mainWrapper);
-		messageFlow.backgroundTile = h2d.Tile.fromColor(from != null ? 0x439d2a : 0x28749a);
-		messageFlow.padding = 10;
-		messageFlow.verticalSpacing = 5;
-		messageFlow.layout = Vertical;
-		messageFlow.horizontalAlign = from != null ? Left : Right;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.75);
-		arMessages.push(messageFlow);
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
 
-		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
-		authorText.text = from != null ? from : "You";
-
-		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
-		messageText.text = Lang.t.get(text);
-
-		messageFlow.reflow();
-		messageFlow.setPosition(from != null ? mainWrapperPadding : mainWrapper.width - messageFlow.outerWidth - mainWrapperPadding, mainWrapper.height + 5);
-
-		var dist = messageFlow.outerHeight + mainWrapperPadding + 30;
-
-		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
-
-		for (flow in arMessages) {
-			tw.createS(flow.y, flow.y - dist, 0.2);
-		}
-
-		cd.setS("newText", 1 + text.length * 0.03);
-		
-		if (currentTalk != null && nextMessageIsNotFromYou()) {
-			isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentTalk[currentTalkProgress + 1].author});
-			delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 1);
+		switch (nextMessage) {
+			case Player(ptd):
+			case System(td):
+			case Outside(td):
+				tw.createS(isTypingText.alpha, 1, 0.5);
+				cd.setS("newText", 2);
 		}
 	}
 
-	public function showSystemMessage(text:String) {
-		var messageFlow = new h2d.Flow(mainWrapper);
-		messageFlow.backgroundTile = h2d.Tile.fromColor(0x2f2c3a);
-		messageFlow.padding = 10;
-		messageFlow.verticalSpacing = 5;
-		messageFlow.layout = Vertical;
-		messageFlow.horizontalAlign = Middle;
-		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
-		arMessages.push(messageFlow);
+	public function showNextMessage() {
+		currentMessage = pendingMessages.shift();
 
-		var messageText = new h2d.Text(Assets.fontMedium, messageFlow);
-		messageText.text = Lang.t.get(text);
-
-		messageFlow.reflow();
-		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
-
-		var dist = messageFlow.outerHeight + mainWrapperPadding + 30;
-
-		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
-
-		for (flow in arMessages) {
-			tw.createS(flow.y, flow.y - dist, 0.2);
+		switch (currentMessage) {
+			case Player(ptds):
+				showPlayerAnswers(ptds);
+			case System(td):
+				showSystemMessage(td);
+			case Outside(td):
+				showOutsideMessage(td);
 		}
-
-		cd.setS("newText", 1 + text.length * 0.03);
 	}
 
-	public function forceMessage(text:String, author:String) {
-		forcedMessage = {text: text, author: author};
-	}
-
-	public function showAnswers() {
+	function showPlayerAnswers(ptds:Array<PlayerTalkData>) {
 		waitForPlayer = true;
-
-		// var answers = ["I'm a the first anwser", "I am the second answer and I'm very very very very very very very very very long", "I am the third answer"];
 
 		var flowAnswers = new h2d.Flow(mainWrapper);
 		flowAnswers.layout = Vertical;
@@ -189,7 +117,7 @@ class Communication extends dn.Process {
 		flowAnswers.padding = 5;
 		flowAnswers.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
 		
-		for (a in currentTalk[currentTalkProgress].anwsers) {
+		for (a in ptds) {
 			var flow = new h2d.Flow(flowAnswers);
 			flow.paddingHorizontal = 5;
 			flow.paddingVertical = 15;
@@ -209,8 +137,9 @@ class Communication extends dn.Process {
 					flowAnswers.removeChildren();
 					flowAnswers.remove();
 
-					showMessage(a.text);
-					forceMessage(a.answer, a.author);
+					showPlayerMessage(a.text);
+					if (a.answer != null)
+						forceOutsideMessage(a.answer);
 					waitForPlayer = false;
 				}, 0.21);
 			}
@@ -228,7 +157,115 @@ class Communication extends dn.Process {
 		tw.createS(flowAnswers.x, flowAnswers.x - flowAnswers.outerWidth, 0.2);
 	}
 
-	public function nextMessageIsNotFromYou() : Bool return currentTalk[currentTalkProgress + 1] != null && currentTalk[currentTalkProgress + 1].author != null;
+	function showPlayerMessage(text:String) {
+		var messageFlow = new h2d.Flow(mainWrapper);
+		messageFlow.backgroundTile = h2d.Tile.fromColor(0x28749a);
+		messageFlow.padding = 10;
+		messageFlow.verticalSpacing = 5;
+		messageFlow.layout = Vertical;
+		messageFlow.horizontalAlign = Right;
+		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.75);
+		arMessageFlow.push(messageFlow);
+
+		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
+		authorText.text = Lang.t._("Vous");
+
+		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
+		messageText.text = Lang.t.get(text);
+
+		messageFlow.reflow();
+		messageFlow.setPosition(mainWrapper.width - messageFlow.outerWidth - mainWrapperPadding, mainWrapper.height + 5);
+
+		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+		
+		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, text);
+	}
+
+	function showSystemMessage(td:TalkData) {
+		var messageFlow = new h2d.Flow(mainWrapper);
+		messageFlow.backgroundTile = h2d.Tile.fromColor(0x2f2c3a);
+		messageFlow.padding = 10;
+		messageFlow.verticalSpacing = 5;
+		messageFlow.layout = Vertical;
+		messageFlow.horizontalAlign = Middle;
+		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
+		arMessageFlow.push(messageFlow);
+
+		var messageText = new h2d.Text(Assets.fontMedium, messageFlow);
+		messageText.text = Lang.t.get(td.text);
+
+		messageFlow.reflow();
+		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
+
+		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
+	}
+
+	function showOutsideMessage(td:TalkData) {
+		tw.createS(isTypingText.alpha, 0, 0.2);
+
+		var messageFlow = new h2d.Flow(mainWrapper);
+		messageFlow.backgroundTile = h2d.Tile.fromColor(td.bgColor != null ? td.bgColor : 0x439d2a);
+		messageFlow.padding = 10;
+		messageFlow.verticalSpacing = 5;
+		messageFlow.layout = Vertical;
+		messageFlow.horizontalAlign = Left;
+		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.75);
+		arMessageFlow.push(messageFlow);
+
+		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
+		authorText.text = td.author != null ? td.author : currentAuthor;
+
+		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
+		messageText.text = Lang.t.get(td.text);
+
+		messageFlow.reflow();
+		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
+
+		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
+	}
+
+	function updatePostedMessages(dist:Float, text:String) {
+		for (flow in arMessageFlow) {
+			tw.createS(flow.y, flow.y - dist, 0.2);
+		}
+
+		cd.setS("newText", 0.5 + text.length * 0.03);
+		
+		if (nextMessageIsFromOutside()) {
+			isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
+			delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 1);
+		}
+
+		if (currentMessage == lastMessage) {
+			lastMessage = null;
+			delayer.addS(game.nextEvent, 1);
+		}
+	}
+
+	public function showOffline() {
+		forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: currentAuthor}));
+	}
+
+	public function forceSystemMessage(text:String) {
+		pendingMessages.unshift(System({author:"System", text: text, bgColor: null}));
+	}
+
+	public function forceOutsideMessage(td:TalkData) {
+		pendingMessages.unshift(Outside({author:td.author, text: td.text, bgColor: td.bgColor}));
+	}
+
+	public function nextMessageIsFromOutside() : Bool {
+		return switch nextMessage {
+			case Player(ptd): false;
+			case null : false;
+			case System(td) : false;
+			case Outside(td) : true;
+		}
+	}
 	
 	override function onResize() {
 		super.onResize();
@@ -242,23 +279,15 @@ class Communication extends dn.Process {
 		mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
 
 		isTypingText.setPosition(mainWrapperPadding + 5, mainWrapper.height - mainWrapperPadding - isTypingText.textHeight);
-		isOfflineText.setPosition(mainWrapperPadding + 5, mainWrapper.height - mainWrapperPadding - isOfflineText.textHeight);
 	}
 
 	override function update() {
 		super.update();
 
-		if (currentTalk != null || forcedMessage != null) {
+		if (nextMessage != null) {
 			if (!waitForPlayer && !cd.has("newText")) {
-				nextMessage();
+				showNextMessage();
 			}
 		}
-
-		// if (hxd.Key.isPressed(hxd.Key.F1)) {
-		// 	launchTalk();
-		// }
-		// if (hxd.Key.isPressed(hxd.Key.F2)) {
-		// 	newMessage("Hello, I'm a test!");
-		// }
 	}
 }
