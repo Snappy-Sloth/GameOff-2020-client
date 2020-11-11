@@ -37,15 +37,44 @@ class Levers extends Module {
 	}
 
 	function onClick(l:Lever) {
+		if (Game.ME.currentTasks == null) {
+			Game.ME.onError();
+			return;
+		}
+
 		for (i in l.lights) {
 			levers[i].switchLight();
+		}
+
+		checkValidate();
+	}
+
+	override function checkValidate() {
+		super.checkValidate();
+
+		for (t in Game.ME.currentTasks.copy()) {
+			if (Data.task.get(t.taskKind).group == Data.Task_group.Levers) {
+				var isValidated = true; 
+				var dataText = Data.task.get(t.taskKind).data;
+				var data = dataText.split(" ");
+				for (i in 0...data.length) {
+					if ((data[i] == "-" && levers[i].isLightOn) || (data[i] == "X" && !levers[i].isLightOn)) {
+						isValidated = false;
+						break;
+					}
+				}
+
+				if (isValidated) {
+					Game.ME.onCompleteTask(t);
+				}
+			}
 		}
 	}
 }
 
 class Lever extends h2d.Object {
 
-	var isLightOn : Bool = false;
+	public var isLightOn(default, null) : Bool = false;
 
 	public var lights(default, null) : Array<Int>;
 

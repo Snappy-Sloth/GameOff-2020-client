@@ -71,6 +71,10 @@ class Buttons extends Module {
 						bt.numClick++;
 						isError = false;
 					}
+
+				default:
+					if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons)
+						throw "You forget to add " + t.taskKind + " to the switch in Buttons";
 			}
 		}
 
@@ -91,25 +95,30 @@ class Buttons extends Module {
 						true;
 					else 
 						false;
-				case A2: true;
+				case A2:
 					if (getButton(WhiteNormal).numClick == 2)
 						true;
 					else 
 						false;
-				case A3: true;
+				case A3:
 					if (getButton(WhiteNormal).numClick == 3)
 						true;
 					else 
 						false;
-				case A4: true;
+				case A4:
 					if (getButton(RedNormal).numClick == 1)
 						true;
 					else 
 						false;
+				default:
+					if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons)
+						throw "You forget to add " + t.taskKind + " to the switch in Buttons";
+					false;
 			}
 
 			if (isValidated) {
 				Game.ME.onCompleteTask(t);
+				break;
 			}
 		}
 	}

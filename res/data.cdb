@@ -112,6 +112,26 @@
 							"author": "Astro"
 						}
 					]
+				},
+				{
+					"id": "Day_Test_Alert",
+					"events": [
+						{
+							"author": "Astro",
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"task": "C2",
+											"text": "Trololo",
+											"author": ""
+										}
+									]
+								}
+							]
+						}
+					]
 				}
 			],
 			"separators": [],
@@ -127,34 +147,103 @@
 				},
 				{
 					"typeStr": "1",
-					"name": "Commentaire"
+					"name": "data"
 				}
 			],
 			"lines": [
 				{
 					"ID": "A1",
-					"Commentaire": "Buttons: click 1 time on white button"
+					"group": 0,
+					"data": "Buttons: click 1 time on white button"
 				},
 				{
 					"ID": "A2",
-					"Commentaire": "Buttons: click 2 time on white button"
+					"group": 0,
+					"data": "Buttons: click 2 time on white button"
 				},
 				{
 					"ID": "A3",
-					"Commentaire": "Buttons: click 3 time on white button"
+					"group": 0,
+					"data": "Buttons: click 3 time on white button"
 				},
 				{
 					"ID": "A4",
-					"Commentaire": "Click 1 time on red button"
+					"group": 0,
+					"data": "Click 1 time on red button"
+				},
+				{
+					"ID": "B1",
+					"group": 1,
+					"data": "- - - - - X"
+				},
+				{
+					"ID": "B2",
+					"group": 1,
+					"data": "X X - - - -"
+				},
+				{
+					"ID": "B3",
+					"group": 1,
+					"data": "- - X - - X"
+				},
+				{
+					"ID": "B4",
+					"group": 1,
+					"data": "- X - X X -"
+				},
+				{
+					"ID": "B5",
+					"group": 1,
+					"data": "X X - X - -"
+				},
+				{
+					"ID": "B6",
+					"group": 1,
+					"data": "X - X X - X"
+				},
+				{
+					"ID": "B7",
+					"group": 1,
+					"data": "- X X X X -"
+				},
+				{
+					"ID": "B8",
+					"group": 1,
+					"data": "X X X - X X"
+				},
+				{
+					"ID": "B9",
+					"group": 1,
+					"data": "X - X X X X"
+				},
+				{
+					"ID": "B10",
+					"group": 1,
+					"data": "X X X X X X"
+				},
+				{
+					"ID": "C1",
+					"data": "- - C -\nC - - -\n- - - C\n- C - -",
+					"group": 2
+				},
+				{
+					"ID": "C2",
+					"data": "T - - -\nT - C -\nC - - T\n- - - -",
+					"group": 2
 				}
 			],
 			"props": {
 				"separatorTitles": [
-					"Buttons"
-				]
+					"Buttons",
+					"Levers",
+					"Grid"
+				],
+				"hasGroup": true
 			},
 			"separatorIds": [
-				"A1"
+				"A1",
+				"B1",
+				"C1"
 			]
 		},
 		{
