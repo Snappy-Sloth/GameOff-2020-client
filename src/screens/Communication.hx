@@ -131,6 +131,9 @@ class Communication extends dn.Process {
 			var inter = new h2d.Interactive(1, 1, flow);
 			flow.getProperties(inter).isAbsolute = true;
 			inter.onClick = function (e) {
+				if (!waitForPlayer)
+					return;
+				
 				tw.createS(flowAnswers.alpha, 0, 0.2);
 				tw.createS(flowAnswers.y, flowAnswers.y + flowAnswers.outerHeight, 0.2);
 				delayer.addS(function () {
@@ -233,11 +236,14 @@ class Communication extends dn.Process {
 			tw.createS(flow.y, flow.y - dist, 0.2);
 		}
 
-		cd.setS("newText", 0.5 + text.length * 0.03);
-		
-		if (nextMessageIsFromOutside()) {
-			isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
-			delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 1);
+		switch (nextMessage) {
+			case null :
+			case Player(ptd): cd.setS("newText", 1);
+			case System(td) : cd.setS("newText", 0.5);
+			case Outside(td) :
+				cd.setS("newText", td.text.length * 0.04);
+				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
+				delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
 		}
 
 		if (currentMessage == lastMessage) {
@@ -258,15 +264,6 @@ class Communication extends dn.Process {
 		pendingMessages.unshift(Outside({author:td.author, text: td.text, bgColor: td.bgColor}));
 	}
 
-	public function nextMessageIsFromOutside() : Bool {
-		return switch nextMessage {
-			case Player(ptd): false;
-			case null : false;
-			case System(td) : false;
-			case Outside(td) : true;
-		}
-	}
-	
 	override function onResize() {
 		super.onResize();
 
