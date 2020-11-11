@@ -4,6 +4,20 @@ size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+globalRedGlow
+  rotate: false
+  xy: 1, 1
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+greenGlowTimer
+  rotate: false
+  xy: 1757, 1
+  size: 203, 102
+  orig: 400, 114
+  offset: 99, 6
+  index: -1
 manual/page_A
   rotate: false
   xy: 445, 1293
@@ -13,7 +27,7 @@ manual/page_A
   index: -1
 pageGlowMove
   rotate: false
-  xy: 1, 1
+  xy: 1283, 1
   size: 472, 644
   orig: 500, 707
   offset: 14, 31
@@ -27,8 +41,15 @@ pageGlowNormal
   index: -1
 pageGlowOver
   rotate: false
-  xy: 1, 647
+  xy: 1283, 647
   size: 472, 644
   orig: 500, 707
   offset: 14, 31
+  index: -1
+redGlowTimer
+  rotate: false
+  xy: 1757, 105
+  size: 203, 102
+  orig: 400, 114
+  offset: 99, 6
   index: -1

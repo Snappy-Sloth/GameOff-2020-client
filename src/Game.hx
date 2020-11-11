@@ -161,7 +161,7 @@ class Game extends Process {
 	}
 
 	function endAlert() {
-		hud.hideTimer();
+		hud.endAlert();
 
 		communication.forceSystemMessage("ALERTE TERMINÉE");
 
@@ -219,6 +219,7 @@ class Game extends Process {
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
 					launchDay(Day_Test);
+					// hud.showTimer();
 				}
 			#end
 		}

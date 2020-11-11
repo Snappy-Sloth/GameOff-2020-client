@@ -10,6 +10,10 @@ class Hud extends dn.Process {
 	var flow : h2d.Flow;
 	var invalidated = true;
 
+	var globalGlow : HSprite;
+
+	var wrapperTimer : h2d.Object;
+	var glowTimer : HSprite;
 	var timerText : h2d.Text;
 
 	var newMessageText : h2d.Text;
@@ -22,21 +26,40 @@ class Hud extends dn.Process {
 
 		flow = new h2d.Flow(root);
 
-		timerText = new h2d.Text(Assets.fontLarge, root);
-		timerText.textColor = 0xe72727;
-		timerText.y = -timerText.textHeight;
+		globalGlow = Assets.tiles.h_get("globalRedGlow", 0.5, 0.5, root);
+		globalGlow.setScale(1.2);
 
+		{ // TIMER
+			wrapperTimer = new h2d.Object(root);
+	
+			glowTimer = Assets.tiles.h_get("redGlowTimer", 0.5, 0.5, wrapperTimer);
+	
+			timerText = new h2d.Text(Assets.fontLarge, wrapperTimer);
+			timerText.textColor = 0xe72727; //0x27e761
+			
+			wrapperTimer.y = -timerText.textHeight - 50;
+		}
+		
 		newMessageText = new h2d.Text(Assets.fontMedium, root);
 		newMessageText.textColor = 0xFFFFFF;
 		newMessageText.text = "New message!";
 	}
 	
 	public function showTimer() {
-		tw.createS(timerText.y, 0, 0.3);
+		glowTimer.set("redGlowTimer");
+		tw.createS(wrapperTimer.y, 0, 0.3);
+		tw.createS(globalGlow.scaleX, 1, 0.6);
+		tw.createS(globalGlow.scaleY, 1, 0.6);
 	}
 	
-	public function hideTimer() {
-		tw.createS(timerText.y, -timerText.textHeight, 0.3);
+	public function endAlert() {
+		glowTimer.set("greenGlowTimer");
+		timerText.textColor = 0x27e761;
+		tw.createS(globalGlow.scaleX, 1.2, 0.6);
+		tw.createS(globalGlow.scaleY, 1.2, 0.6);
+		delayer.addS(function() {
+			tw.createS(wrapperTimer.y, -timerText.textHeight - 50, 0.3);
+		}, 2);
 	}
 	
 	public function showNewMessage() {
@@ -61,7 +84,11 @@ class Hud extends dn.Process {
 		newMessageText.x = wid - newMessageText.textWidth - 10;
 		newMessageText.y = - newMessageText.textHeight;
 
-		timerText.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
+		timerText.text = prettyTimer((Game.ME.timer / Const.FPS) * 100);
+		wrapperTimer.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
+		glowTimer.setPosition(timerText.textWidth * 0.5, timerText.textHeight * 0.5);
+
+		globalGlow.setPos(wid >> 1, hei >> 1);
 	}
 
 	public inline function invalidate() invalidated = true;
@@ -72,6 +99,11 @@ class Hud extends dn.Process {
 		super.postUpdate();
 
 		timerText.text = prettyTimer((Game.ME.timer / Const.FPS) * 100);
+
+		if (game.alertIsActive) {
+			globalGlow.alpha = 0.75 + 0.25 * Math.cos(5 + (ftime / 10));
+			glowTimer.alpha = 0.75 + 0.25 * Math.cos(ftime / 10);
+		}
 
 		if( invalidated ) {
 			invalidated = false;
