@@ -28,6 +28,14 @@ class Levers extends Module {
 		}
 	}
 
+	override function reset() {
+		super.reset();
+
+		for (l in levers) {
+			l.forceLightStatus(false);
+		}
+	}
+
 	function onClick(l:Lever) {
 		for (i in l.lights) {
 			levers[i].switchLight();
@@ -65,6 +73,12 @@ class Lever extends h2d.Object {
 
 	public function switchLight() {
 		isLightOn = !isLightOn;
+
+		lightSpr.set(isLightOn ? "leverLightOn" : "leverLightOff");
+	}
+
+	public function forceLightStatus(lightOn:Bool) {
+		isLightOn = lightOn;
 
 		lightSpr.set(isLightOn ? "leverLightOn" : "leverLightOff");
 	}

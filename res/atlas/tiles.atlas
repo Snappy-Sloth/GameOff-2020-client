@@ -25,16 +25,44 @@ manual/page_A
   orig: 420, 594
   offset: 0, 0
   index: -1
-module/leverLightOff
+module/gridBlueCircle
+  rotate: false
+  xy: 2014, 1
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+module/gridCell
   rotate: false
   xy: 1962, 1
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+module/gridGreenRect
+  rotate: false
+  xy: 2014, 31
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+module/gridRedTriangle
+  rotate: false
+  xy: 1962, 91
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+module/leverLightOff
+  rotate: false
+  xy: 1962, 53
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
   index: -1
 module/leverLightOn
   rotate: false
-  xy: 2000, 1
+  xy: 2000, 61
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
