@@ -24,10 +24,15 @@ class ModuleScreen extends dn.Process {
 		root.add(goToCommBtn, 1);
 
 		flowModule = new h2d.Flow(root);
+		flowModule.horizontalSpacing = 10;
 
 		var btnModule = new module.Buttons();
 		flowModule.addChild(btnModule.root);
 		arModules.push(btnModule);
+
+		var levelModule = new module.Levers();
+		flowModule.addChild(levelModule.root);
+		arModules.push(levelModule);
 
 		onResize();
 	}

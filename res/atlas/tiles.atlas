@@ -25,6 +25,20 @@ manual/page_A
   orig: 420, 594
   offset: 0, 0
   index: -1
+module/leverLightOff
+  rotate: false
+  xy: 1962, 1
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+module/leverLightOn
+  rotate: false
+  xy: 2000, 1
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
 pageGlowMove
   rotate: false
   xy: 1283, 1

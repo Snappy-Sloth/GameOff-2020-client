@@ -158,6 +158,93 @@
 			]
 		},
 		{
+			"name": "lever",
+			"columns": [
+				{
+					"typeStr": "8",
+					"name": "lights"
+				}
+			],
+			"lines": [
+				{
+					"lights": [
+						{
+							"lightNum": 1
+						},
+						{
+							"lightNum": 4
+						}
+					]
+				},
+				{
+					"lights": [
+						{
+							"lightNum": 1
+						},
+						{
+							"lightNum": 3
+						}
+					]
+				},
+				{
+					"lights": [
+						{
+							"lightNum": 4
+						}
+					]
+				},
+				{
+					"lights": [
+						{
+							"lightNum": 5
+						},
+						{
+							"lightNum": 3
+						}
+					]
+				},
+				{
+					"lights": [
+						{
+							"lightNum": 2
+						},
+						{
+							"lightNum": 4
+						},
+						{
+							"lightNum": 6
+						}
+					]
+				},
+				{
+					"lights": [
+						{
+							"lightNum": 6
+						},
+						{
+							"lightNum": 5
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "lever@lights",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "lightNum"
+				}
+			]
+		},
+		{
 			"name": "day@events",
 			"props": {
 				"hide": true
