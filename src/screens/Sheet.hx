@@ -2,6 +2,9 @@ package screens;
 
 class Sheet extends h2d.Layers {
 	public static var ME : Sheet;
+	
+	public var wid(get,never) : Int; inline function get_wid() return Const.SHEET_WIDTH;
+	public var hei(get,never) : Int; inline function get_hei() return Const.SHEET_HEIGHT;
 
 	public function new() {
 		super();
@@ -9,15 +12,44 @@ class Sheet extends h2d.Layers {
 		ME = this;
 
 		var sheet = new h2d.Interactive(Const.SHEET_WIDTH, Const.SHEET_HEIGHT, this);
-		sheet.backgroundColor = Color.addAlphaF(Color.randomColor(Math.random(), 0.5, 0.4));
-		// sheet.propagateEvents = true;
 
+		var glowOver = Assets.tiles.h_get("pageGlowOver", 0.5, 0.5, this);
+		glowOver.setPos(wid >> 1, hei >> 1);
+		glowOver.visible = false;
+		
+		var glowMove = Assets.tiles.h_get("pageGlowMove", 0.5, 0.5, this);
+		glowMove.setPos(wid >> 1, hei >> 1);
+		glowMove.visible = false;
+		
+		var glowNormal = Assets.tiles.h_get("pageGlowNormal", 0.5, 0.5, this);
+		glowNormal.setPos(wid >> 1, hei >> 1);
+		
+		var spr = Assets.tiles.h_get("page_A", this);
+		
+		sheet.onOver = function(e) {
+			if (Manual.ME.currentSheet == null) {
+				glowNormal.visible = false;
+				glowOver.visible = true;
+			}
+		}
+		sheet.onOut = function(e) {
+			if (Manual.ME.currentSheet == null) {
+				glowNormal.visible = true;
+				glowOver.visible = false;
+			}
+		}
+		
 		sheet.onPush = function (e) {
 			Manual.ME.selectSheet(this);
+			glowOver.visible = false;
+			glowNormal.visible = false;
+			glowMove.visible = true;
 		};
-
+		
 		sheet.onRelease = function (e) {
-			Manual.ME.currentSheet = null;			
+			Manual.ME.currentSheet = null;	
+			glowMove.visible = false;
+			glowOver.visible = true;
 		};
 	}
 }
