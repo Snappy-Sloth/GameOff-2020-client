@@ -103,7 +103,7 @@
 								}
 							],
 							"author": "Astro",
-							"timeBeforeS": 0
+							"timeBeforeS": 5
 						},
 						{
 							"talks": [
@@ -137,7 +137,7 @@
 							],
 							"alerts": [],
 							"author": "Astro",
-							"timeBeforeS": 0
+							"timeBeforeS": 1
 						},
 						{
 							"author": "Astro",
@@ -159,7 +159,7 @@
 								}
 							],
 							"alerts": [],
-							"timeBeforeS": 0
+							"timeBeforeS": 7
 						},
 						{
 							"author": "Astro",
@@ -193,7 +193,7 @@
 									]
 								}
 							],
-							"timeBeforeS": 0
+							"timeBeforeS": 5
 						},
 						{
 							"author": "Astro",
@@ -205,7 +205,7 @@
 								}
 							],
 							"alerts": [],
-							"timeBeforeS": 0
+							"timeBeforeS": 1
 						}
 					]
 				},
