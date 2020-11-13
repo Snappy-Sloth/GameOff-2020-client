@@ -105,12 +105,14 @@ class Game extends Process {
 			communication.showOffline();
 		}
 		else {
-			if (currentEvent.talks.length > 0) {	// TALKS
-				communication.initTalk();
-			}
-			else {									// ALERTS
-				nextAlert();
-			}
+			delayer.addS(function() {
+				if (currentEvent.talks.length > 0) {	// TALKS
+					communication.initTalk();
+				}
+				else {									// ALERTS
+					nextAlert();
+				}
+			}, currentEvent.timeBeforeS);
 		}
 	}
 

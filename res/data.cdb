@@ -68,7 +68,8 @@
 								}
 							],
 							"alerts": [],
-							"author": "Astro"
+							"author": "Astro",
+							"timeBeforeS": 0
 						},
 						{
 							"talks": [],
@@ -101,7 +102,8 @@
 									]
 								}
 							],
-							"author": "Astro"
+							"author": "Astro",
+							"timeBeforeS": 0
 						},
 						{
 							"talks": [
@@ -134,7 +136,8 @@
 								}
 							],
 							"alerts": [],
-							"author": "Astro"
+							"author": "Astro",
+							"timeBeforeS": 0
 						},
 						{
 							"author": "Astro",
@@ -155,7 +158,8 @@
 									"timeBefore": 0
 								}
 							],
-							"alerts": []
+							"alerts": [],
+							"timeBeforeS": 0
 						},
 						{
 							"author": "Astro",
@@ -188,7 +192,8 @@
 										}
 									]
 								}
-							]
+							],
+							"timeBeforeS": 0
 						},
 						{
 							"author": "Astro",
@@ -199,7 +204,8 @@
 									"text": "Merci, alerte terminée. Bonne nuit, agent."
 								}
 							],
-							"alerts": []
+							"alerts": [],
+							"timeBeforeS": 0
 						}
 					]
 				},
@@ -219,7 +225,8 @@
 										}
 									]
 								}
-							]
+							],
+							"timeBeforeS": 0
 						}
 					]
 				}
@@ -474,6 +481,10 @@
 				{
 					"typeStr": "1",
 					"name": "author"
+				},
+				{
+					"typeStr": "4",
+					"name": "timeBeforeS"
 				},
 				{
 					"typeStr": "8",
