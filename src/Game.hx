@@ -223,6 +223,11 @@ class Game extends Process {
 				if (ca.isKeyboardPressed(hxd.Key.F2)) {
 					launchDay(Day_Test_Alert);
 				}
+
+				if (ca.isKeyboardPressed(hxd.Key.F5)) {
+					if (currentTasks != null)
+						onCompleteTask(currentTasks[0]);
+				}
 			#end
 		}
 	}

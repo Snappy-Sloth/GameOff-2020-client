@@ -140,9 +140,13 @@ class Communication extends dn.Process {
 					flowAnswers.removeChildren();
 					flowAnswers.remove();
 
+					if (a.answer != null) {
+						var m = forceOutsideMessage(a.answer);
+						if (lastMessage == currentMessage) {
+							lastMessage = m;
+						}
+					}
 					showPlayerMessage(a.text);
-					if (a.answer != null)
-						forceOutsideMessage(a.answer);
 					waitForPlayer = false;
 				}, 0.21);
 			}
@@ -167,7 +171,7 @@ class Communication extends dn.Process {
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Right;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.75);
+		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.5);
 		arMessageFlow.push(messageFlow);
 
 		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
@@ -214,7 +218,7 @@ class Communication extends dn.Process {
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Left;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.75);
+		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.5);
 		arMessageFlow.push(messageFlow);
 
 		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
@@ -260,8 +264,10 @@ class Communication extends dn.Process {
 		pendingMessages.unshift(System({author:"System", text: text, bgColor: null}));
 	}
 
-	public function forceOutsideMessage(td:TalkData) {
-		pendingMessages.unshift(Outside({author:td.author, text: td.text, bgColor: td.bgColor}));
+	public function forceOutsideMessage(td:TalkData):TalkType {
+		var m = Outside(td);
+		pendingMessages.unshift(m);
+		return m;
 	}
 
 	override function onResize() {
