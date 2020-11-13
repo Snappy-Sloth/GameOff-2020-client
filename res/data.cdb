@@ -85,13 +85,17 @@
 								{
 									"Tasks": [
 										{
-											"task": "A2",
-											"text": "J'ai une diode bleue qui s'allume maintenant !",
+											"task": "C8",
+											"text": "J'ai 2 diodes jaunes qui s'allument et clignotent maintenant !",
 											"author": "Astro"
-										},
+										}
+									]
+								},
+								{
+									"Tasks": [
 										{
-											"task": "A4",
-											"text": "J'ai le mot \"RIGHT\" qui s'affiche sur une console aussi !",
+											"task": "B10",
+											"text": "J'ai le mot \"WIN\" qui s'affiche sur une console aussi !",
 											"author": "Astro"
 										}
 									]
@@ -102,14 +106,100 @@
 						{
 							"talks": [
 								{
-									"text": "Merci, heureusement que vous étiez là !",
+									"text": "Merci, tout est redevenu normal, heureusement que vous étiez là.",
 									"timeBefore": 0,
 									"customAuthor": "Astro",
 									"answers": []
+								},
+								{
+									"answers": [
+										{
+											"text": "Je pensais que vous étiez autonomes !",
+											"customAuthor": "Astro",
+											"answer": "Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à rédiger au terme de la mission."
+										},
+										{
+											"text": "Toujours prêt à vous venir en aide !",
+											"customAuthor": "Astro",
+											"answer": "Heureux de savoir que nous pouvons compter sur vous."
+										}
+									],
+									"timeBefore": 0
+								},
+								{
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Restez en stand-by, on ne sait jamais.",
+									"customAuthor": "Astro"
 								}
 							],
 							"alerts": [],
 							"author": "Astro"
+						},
+						{
+							"author": "Astro",
+							"talks": [
+								{
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez vous reçu des instructions spécifiques de la part des directeurs ?"
+								},
+								{
+									"answers": [
+										{
+											"text": "Rien de spécifique. J'ai juste à attendre vos communications.",
+											"customAuthor": "Astro",
+											"answer": "Bien. Soyez à la hauteur."
+										}
+									],
+									"timeBefore": 0
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"task": "B3",
+											"text": "J'ai une diode jaune qui clignote !",
+											"author": "Astro"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"task": "C7",
+											"text": "Bien, maintenant j'ai un message d'erreur qui s'affiche. Le numéro d'erreur est le suivant : 6PCK2M",
+											"author": "Astro"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"task": "A4",
+											"text": "Le mot \"PRESS\" vient de s'afficher sur mon terminal !",
+											"author": "Astro"
+										}
+									]
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"talks": [
+								{
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Merci, alerte terminée. Bonne nuit, agent."
+								}
+							],
+							"alerts": []
 						}
 					]
 				},
@@ -228,7 +318,47 @@
 				},
 				{
 					"ID": "C2",
+					"data": "T - - -\n- - - T\n- T - -\n- - T -",
+					"group": 2
+				},
+				{
+					"ID": "C3",
+					"data": "- - C -\n- T - -\n- C - -\n- T - -",
+					"group": 2
+				},
+				{
+					"ID": "C4",
 					"data": "T - - -\nT - C -\nC - - T\n- - - -",
+					"group": 2
+				},
+				{
+					"ID": "C5",
+					"data": "R - - -\n- - - C\n- R R -\n- - - -",
+					"group": 2
+				},
+				{
+					"ID": "C6",
+					"data": "C - - -\n- - R R\n- R - -\n- - - -",
+					"group": 2
+				},
+				{
+					"ID": "C7",
+					"data": "- - R -\nR T - -\n- T - R\n- - T -",
+					"group": 2
+				},
+				{
+					"ID": "C8",
+					"data": "T R - -\n- T T -\n- - - -\n- - R -",
+					"group": 2
+				},
+				{
+					"ID": "C9",
+					"data": "- C - -\nT - R R\nR - T -\n- - - C",
+					"group": 2
+				},
+				{
+					"ID": "C10",
+					"data": "- C - R\nC T - -\n- T - -\nR - - T",
 					"group": 2
 				}
 			],

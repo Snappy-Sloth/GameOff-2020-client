@@ -12,7 +12,7 @@ msgstr ""
 msgid "Press ESCAPE again to exit."
 msgstr ""
 
-#: src/screens/Communication.hx:45 src/screens/Communication.hx:85 src/screens/Communication.hx:239
+#: src/screens/Communication.hx:45 src/screens/Communication.hx:85 src/screens/Communication.hx:245
 msgid "::name:: est en train d'écrire..."
 msgstr ""
 
@@ -20,11 +20,11 @@ msgstr ""
 msgid "::name:: est en ligne"
 msgstr ""
 
-#: src/screens/Communication.hx:171
+#: src/screens/Communication.hx:174
 msgid "Vous"
 msgstr ""
 
-#: src/screens/Communication.hx:250
+#: src/screens/Communication.hx:256
 msgid "::name:: est hors ligne..."
 msgstr ""
 
@@ -43,7 +43,21 @@ msgid "Bref ! Nous avons l'autorisation de décoller. Terminé."
 msgstr ""
 
 #: res/data.cdb:day/#0.events/#2.talks/#0.text
-msgid "Merci, heureusement que vous étiez là !"
+msgid "Merci, tout est redevenu normal, heureusement que vous étiez là."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#2.talks/#2.text
+msgid "Restez en stand-by, on ne sait jamais."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#3.talks/#0.text
+msgid ""
+"Nous avons fait le tour des instruments, tout est normal, nous avançons bien. "
+"Avez vous reçu des instructions spécifiques de la part des directeurs ?"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#5.talks/#0.text
+msgid "Merci, alerte terminée. Bonne nuit, agent."
 msgstr ""
 
 #: res/data.cdb:day/#0.events/#0.talks/#1.answers/#0.text
@@ -65,6 +79,18 @@ msgstr ""
 msgid "Bon vol."
 msgstr ""
 
+#: res/data.cdb:day/#0.events/#2.talks/#1.answers/#0.text
+msgid "Je pensais que vous étiez autonomes !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#2.talks/#1.answers/#1.text
+msgid "Toujours prêt à vous venir en aide !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#3.talks/#1.answers/#0.text
+msgid "Rien de spécifique. J'ai juste à attendre vos communications."
+msgstr ""
+
 #: res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.answer
 msgid "Un homme qui le sens des responsabilité ! C'est tellement rare de nos jours..."
 msgstr ""
@@ -75,16 +101,48 @@ msgid ""
 "pas préjudice."
 msgstr ""
 
+#: res/data.cdb:day/#0.events/#2.talks/#1.answers/#0.answer
+msgid ""
+"Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à "
+"rédiger au terme de la mission."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#2.talks/#1.answers/#1.answer
+msgid "Heureux de savoir que nous pouvons compter sur vous."
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#3.talks/#1.answers/#0.answer
+msgid "Bien. Soyez à la hauteur."
+msgstr ""
+
 #: res/data.cdb:day/#0.events/#1.alerts/#0.Tasks/#0.text
 msgid "J'ai une diode rouge qui s'allume !"
 msgstr ""
 
 #: res/data.cdb:day/#0.events/#1.alerts/#1.Tasks/#0.text
-msgid "J'ai une diode bleue qui s'allume maintenant !"
+msgid "J'ai 2 diodes jaunes qui s'allument et clignotent maintenant !"
 msgstr ""
 
-#: res/data.cdb:day/#0.events/#1.alerts/#1.Tasks/#1.text
-msgid "J'ai le mot \"RIGHT\" qui s'affiche sur une console aussi !"
+#: res/data.cdb:day/#0.events/#1.alerts/#2.Tasks/#0.text
+msgid "J'ai le mot \"WIN\" qui s'affiche sur une console aussi !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#4.alerts/#0.Tasks/#0.text
+msgid "J'ai une diode jaune qui clignote !"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#4.alerts/#1.Tasks/#0.text
+msgid ""
+"Bien, maintenant j'ai un message d'erreur qui s'affiche. Le numéro d'erreur est "
+"le suivant : 6PCK2M"
+msgstr ""
+
+#: res/data.cdb:day/#0.events/#4.alerts/#2.Tasks/#0.text
+msgid "Le mot \"PRESS\" vient de s'afficher sur mon terminal !"
+msgstr ""
+
+#: res/data.cdb:day/#1.events/#0.alerts/#0.Tasks/#0.text
+msgid "Trololo"
 msgstr ""
 
 
