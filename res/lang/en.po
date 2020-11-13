@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-11-13 11:01+0100\n"
+"PO-Revision-Date: 2020-11-13 16:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -17,12 +17,12 @@ msgstr ""
 msgid "Game is ready."
 msgstr "Game is ready."
 
-#: src/Game.hx:210
+#: src/Game.hx:212
 msgid "Press ESCAPE again to exit."
 msgstr "Press ESCAPE again to exit."
 
 #: src/screens/Communication.hx:45 src/screens/Communication.hx:85
-#: src/screens/Communication.hx:245
+#: src/screens/Communication.hx:249
 msgid "::name:: est en train d'écrire..."
 msgstr "::name:: is typing..."
 
@@ -30,11 +30,11 @@ msgstr "::name:: is typing..."
 msgid "::name:: est en ligne"
 msgstr "::name:: is online"
 
-#: src/screens/Communication.hx:174
+#: src/screens/Communication.hx:178
 msgid "Vous"
 msgstr "You"
 
-#: src/screens/Communication.hx:256
+#: src/screens/Communication.hx:260
 msgid "::name:: est hors ligne..."
 msgstr "::name:: is offline..."
 
@@ -109,7 +109,7 @@ msgstr "Nothing specific. I just have to wait for your communications."
 
 #: res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.answer
 msgid ""
-"Un homme qui le sens des responsabilité ! C'est tellement rare de nos "
+"Un homme qui a le sens des responsabilité ! C'est tellement rare de nos "
 "jours..."
 msgstr "A man with a sense of responsibility! It's so rare these days..."
 

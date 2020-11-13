@@ -8,11 +8,11 @@ msgstr ""
 msgid "Game is ready."
 msgstr ""
 
-#: src/Game.hx:210
+#: src/Game.hx:212
 msgid "Press ESCAPE again to exit."
 msgstr ""
 
-#: src/screens/Communication.hx:45 src/screens/Communication.hx:85 src/screens/Communication.hx:245
+#: src/screens/Communication.hx:45 src/screens/Communication.hx:85 src/screens/Communication.hx:249
 msgid "::name:: est en train d'écrire..."
 msgstr ""
 
@@ -20,11 +20,11 @@ msgstr ""
 msgid "::name:: est en ligne"
 msgstr ""
 
-#: src/screens/Communication.hx:174
+#: src/screens/Communication.hx:178
 msgid "Vous"
 msgstr ""
 
-#: src/screens/Communication.hx:256
+#: src/screens/Communication.hx:260
 msgid "::name:: est hors ligne..."
 msgstr ""
 
@@ -92,7 +92,7 @@ msgid "Rien de spécifique. J'ai juste à attendre vos communications."
 msgstr ""
 
 #: res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.answer
-msgid "Un homme qui le sens des responsabilité ! C'est tellement rare de nos jours..."
+msgid "Un homme qui a le sens des responsabilité ! C'est tellement rare de nos jours..."
 msgstr ""
 
 #: res/data.cdb:day/#0.events/#0.talks/#3.answers/#1.answer
