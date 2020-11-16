@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-11-13 16:15+0100\n"
+"PO-Revision-Date: 2020-11-16 11:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -151,7 +151,7 @@ msgstr "I have the word \"WIN\" that appears on a console too!"
 
 #: res/data.cdb:day/#0.events/#4.alerts/#0.Tasks/#0.text
 msgid "J'ai une diode jaune qui clignote !"
-msgstr "I have a yellow diode that lights up!"
+msgstr "I have a yellow diode that lights up and flash!"
 
 #: res/data.cdb:day/#0.events/#4.alerts/#1.Tasks/#0.text
 msgid ""
