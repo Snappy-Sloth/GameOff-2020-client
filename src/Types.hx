@@ -20,3 +20,15 @@ typedef TalkData = {
 	var author : Null<String>;
 	var bgColor : Null<UInt>;
 }
+
+enum VType {
+	Value1;
+	Value2;
+	Value3;
+	Value4;
+}
+
+typedef ValueData = {
+	var vt : VType;
+	var v : Int;
+}

@@ -41,6 +41,10 @@ class ModuleScreen extends dn.Process {
 		flowModule.addChild(gridModule.root);
 		arModules.push(gridModule);
 
+		var values = new module.Values();
+		flowModule.addChild(values.root);
+		arModules.push(values);
+
 		onResize();
 	}
 

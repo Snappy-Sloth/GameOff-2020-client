@@ -23,6 +23,8 @@ class Game extends Process {
 
 	public var wrapperScreens(default, null) : h2d.Object;
 
+	public var valueDatas : Array<Types.ValueData> = [];
+
 	// Progress
 	public var currentDay : Data.Day;
 	public var currentEventId : Int;
@@ -55,6 +57,8 @@ class Game extends Process {
 
 		wrapperScreens = new h2d.Object(root);
 
+		initData();
+
 		manual = new screens.Manual();
 		manual.root.x = w() / Const.SCALE;
 		communication = new screens.Communication();
@@ -65,6 +69,12 @@ class Game extends Process {
 		trace(Lang.t._("Game is ready."));
 
 		showComm();
+	}
+
+	function initData() {
+		for (type in VType.createAll()) {
+			valueDatas.push({vt:type, v: 0});		
+		}
 	}
 
 	public function showManual() {

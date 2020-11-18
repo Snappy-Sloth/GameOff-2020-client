@@ -219,7 +219,7 @@
 								{
 									"Tasks": [
 										{
-											"task": "C2",
+											"task": "D2",
 											"text": "Trololo",
 											"author": ""
 										}
@@ -367,20 +367,37 @@
 					"ID": "C10",
 					"data": "- C - R\nC T - -\n- T - -\nR - - T",
 					"group": 2
+				},
+				{
+					"ID": "D1",
+					"data": "42 - - -",
+					"group": 3
+				},
+				{
+					"ID": "D2",
+					"data": "23 - 6 -",
+					"group": 3
+				},
+				{
+					"ID": "D3",
+					"data": "- 59 - -",
+					"group": 3
 				}
 			],
 			"props": {
 				"separatorTitles": [
 					"Buttons",
 					"Levers",
-					"Grid"
+					"Grid",
+					"Values"
 				],
 				"hasGroup": true
 			},
 			"separatorIds": [
 				"A1",
 				"B1",
-				"C1"
+				"C1",
+				"D1"
 			]
 		},
 		{
