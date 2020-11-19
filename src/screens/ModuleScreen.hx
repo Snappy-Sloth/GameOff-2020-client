@@ -26,7 +26,7 @@ class ModuleScreen extends dn.Process {
 		flowModule = new h2d.Flow(root);
 		flowModule.horizontalSpacing = flowModule.verticalSpacing = 10;
 		flowModule.debug = true;
-		flowModule.minWidth = flowModule.maxWidth = Std.int(wid * 0.9);
+		flowModule.minWidth = flowModule.maxWidth = Std.int(wid * 0.8);
 		flowModule.multiline = true;
 
 		var btnModule = new module.Buttons();
@@ -44,6 +44,14 @@ class ModuleScreen extends dn.Process {
 		var values = new module.Values();
 		flowModule.addChild(values.root);
 		arModules.push(values);
+
+		var symbols = new module.Symbols();
+		flowModule.addChild(symbols.root);
+		arModules.push(symbols);
+
+		var numPad = new module.NumPad();
+		flowModule.addChild(numPad.root);
+		arModules.push(numPad);
 
 		onResize();
 	}

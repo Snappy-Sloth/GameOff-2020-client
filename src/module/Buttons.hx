@@ -124,7 +124,7 @@ class Buttons extends Module {
 	}
 }
 
-class Button extends h2d.Layers {
+private class Button extends h2d.Layers {
 	public static var ME : Button;
 	
 	public var bt(default, null) : ButtonType;

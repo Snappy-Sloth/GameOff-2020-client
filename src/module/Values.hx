@@ -68,7 +68,10 @@ class Values extends Module {
 	}
 	
 	override function checkValidate() {
-		super.checkValidate();
+		if (Game.ME.currentTasks == null) {
+			Game.ME.onError();
+			return;
+		}
 
 		for (t in Game.ME.currentTasks.copy()) {
 			if (Data.task.get(t.taskKind).group == Data.Task_group.Values) {
