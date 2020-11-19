@@ -53,6 +53,10 @@ class ModuleScreen extends dn.Process {
 		flowModule.addChild(numPad.root);
 		arModules.push(numPad);
 
+		var wires = new module.Wires();
+		flowModule.addChild(wires.root);
+		arModules.push(wires);
+
 		onResize();
 	}
 

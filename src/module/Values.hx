@@ -78,11 +78,11 @@ class Values extends Module {
 				var isValidated = true; 
 				var dataText = Data.task.get(t.taskKind).data;
 				var data = dataText.split(" ");
-					for (j in 0...data.length) {
-						if (data[j] != "-") {
-							if (game.valueDatas[j].v != Std.parseInt(data[j]))
-								isValidated = false;
-						}
+				for (j in 0...data.length) {
+					if (data[j] != "-") {
+						if (game.valueDatas[j].v != Std.parseInt(data[j]))
+							isValidated = false;
+					}
 				}
 
 				if (isValidated) {
