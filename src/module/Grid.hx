@@ -67,6 +67,7 @@ class Grid extends Module {
 
 				if (isValidated) {
 					Game.ME.onCompleteTask(t);
+					break;
 				}
 			}
 		}

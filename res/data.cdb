@@ -219,7 +219,7 @@
 								{
 									"Tasks": [
 										{
-											"task": "E1",
+											"task": "F1",
 											"text": "Trololo",
 											"author": ""
 										}
@@ -392,6 +392,11 @@
 					"ID": "E2",
 					"data": "6 4 3",
 					"group": 4
+				},
+				{
+					"ID": "F1",
+					"data": "1 4 8 6 2 5",
+					"group": 5
 				}
 			],
 			"props": {
@@ -400,7 +405,8 @@
 					"Levers",
 					"Grid",
 					"Values",
-					"Symbols"
+					"Symbols",
+					"NumPad"
 				],
 				"hasGroup": true
 			},
@@ -409,7 +415,8 @@
 				"B1",
 				"C1",
 				"D1",
-				"E1"
+				"E1",
+				"F1"
 			]
 		},
 		{

@@ -173,6 +173,7 @@ class Game extends Process {
 	}
 
 	function endAlert() {
+		moduleScreen.reset();
 		hud.endAlert();
 
 		communication.forceSystemMessage(Lang.t._("ALERTE TERMINÉE"));

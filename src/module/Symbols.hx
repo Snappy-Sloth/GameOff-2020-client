@@ -106,6 +106,7 @@ class Symbols extends Module {
 
 				if (isValidated) {
 					Game.ME.onCompleteTask(t);
+					break;
 				}
 			}
 		}
