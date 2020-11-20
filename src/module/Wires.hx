@@ -12,22 +12,20 @@ class Wires extends Module {
 	var wires : Array<{w:h2d.Graphics, top:Int, bot:Int}> = [];
 
 	public function new() {
-		super(250, 250, 0x258d41);
+		super(200, 220, 0x258d41);
 
 		wires = [];
 
 		for (i in 0...6) {
 			var slot = new Slot(this, i, true);
-			slot.x = 30 * (i + 1);
+			slot.x = 30 * (i) + 10;
 			slot.y = 20;
 			topSlots.push(slot);
-		}
 
-		for (i in 0...6) {
 			var slot = new Slot(this, i, false);
-			slot.x = 30 * (i + 1);
+			slot.x = 30 * (i) + 10;
 			slot.y = hei - 50;
-			topSlots.push(slot);
+			botSlots.push(slot);
 		}
 	}
 

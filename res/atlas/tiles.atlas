@@ -4,6 +4,13 @@ size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+gaugeArrow
+  rotate: false
+  xy: 1999, 240
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
 globalRedGlow
   rotate: false
   xy: 1, 1

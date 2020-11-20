@@ -8,7 +8,7 @@ class Values extends Module {
 	var vtText : h2d.Text;
 
 	public function new() {
-		super(270, 150, 0xa4afb2);
+		super(200, 130, 0xa4afb2);
 
 		var flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = wid;
@@ -25,7 +25,7 @@ class Values extends Module {
 		flowTop.verticalSpacing = 10;
 		flowTop.layout = Vertical;
 
-		vtText = new h2d.Text(Assets.fontMedium, flowTop);
+		vtText = new h2d.Text(Assets.fontSmall, flowTop);
 		vtText.text = currentVD.vt.getName();
 
 		var flowBtns = new h2d.Flow(flowTop);
@@ -39,17 +39,16 @@ class Values extends Module {
 		
 		// Bottom
 		var flowBottom = new h2d.Flow(flow);
-		flowBottom.debug = true;
+		// flowBottom.debug = true;
 		flowBottom.horizontalSpacing = 30;
 		flowBottom.horizontalAlign = flowBottom.verticalAlign = Middle;
 
 		var leftBtn = new Button(this, flowBottom, -1);
 
-		valueText = new h2d.Text(Assets.fontLarge, flowBottom);
+		valueText = new h2d.Text(Assets.fontMedium, flowBottom);
 		valueText.text = Std.string(currentVD.v);
-		valueText.maxWidth = 100;
 		valueText.textAlign = Center;
-		flowBottom.getProperties(valueText).minWidth = 100;
+		valueText.maxWidth = flowBottom.getProperties(valueText).minWidth = 50;
 
 		var rightBtn = new Button(this, flowBottom, 1);
 	}
@@ -112,7 +111,7 @@ private class Button extends dn.Process {
 		
 		createRoot(parent);
 
-		var inter = new h2d.Interactive(50, 75, root);
+		var inter = new h2d.Interactive(30, 50, root);
 		inter.backgroundColor = 0x55FF00FF;
 		inter.onPush = function (e) {
 			isClicked = true;

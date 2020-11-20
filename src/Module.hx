@@ -15,7 +15,7 @@ class Module extends dn.Process {
 		var bg = new h2d.Bitmap(h2d.Tile.fromColor(colorBG, wid, hei), root);
 	}
 
-	function checkValidate() {}
+	public function checkValidate() {}
 
 	public function reset() {}
 }

@@ -25,7 +25,7 @@ class ModuleScreen extends dn.Process {
 
 		flowModule = new h2d.Flow(root);
 		flowModule.horizontalSpacing = flowModule.verticalSpacing = 10;
-		flowModule.debug = true;
+		// flowModule.debug = true;
 		flowModule.minWidth = flowModule.maxWidth = Std.int(wid * 0.8);
 		flowModule.multiline = true;
 
@@ -56,6 +56,10 @@ class ModuleScreen extends dn.Process {
 		var wires = new module.Wires();
 		flowModule.addChild(wires.root);
 		arModules.push(wires);
+
+		var gauges = new module.Gauges();
+		flowModule.addChild(gauges.root);
+		arModules.push(gauges);
 
 		onResize();
 	}

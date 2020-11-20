@@ -14,11 +14,11 @@ class Buttons extends Module {
 	var btns : Array<Button>;
 
 	public function new() {
-		super();
+		super(500, 150);
 
 		var flow = new h2d.Flow(root);
-		flow.minWidth = flow.maxWidth = Const.MODULE_WIDTH;
-		flow.minHeight = flow.maxHeight = Const.MODULE_HEIGHT;
+		flow.minWidth = flow.maxWidth = wid;
+		flow.minHeight = flow.maxHeight = hei;
 		flow.multiline = true;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
 		flow.horizontalSpacing = flow.verticalSpacing = 30;

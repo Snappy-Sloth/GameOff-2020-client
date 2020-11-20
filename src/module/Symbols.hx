@@ -14,7 +14,7 @@ class Symbols extends Module {
 	var flow : h2d.Flow;
 
 	public function new() {
-		super(345, 150, 0xa0a1b6);
+		super(350, 130, 0xa0a1b6);
 
 		flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = wid;
