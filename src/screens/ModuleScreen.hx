@@ -29,37 +29,45 @@ class ModuleScreen extends dn.Process {
 		flowModule.minWidth = flowModule.maxWidth = Std.int(wid * 0.8);
 		flowModule.multiline = true;
 
-		var btnModule = new module.Buttons();
-		flowModule.addChild(btnModule.root);
-		arModules.push(btnModule);
+		// var btnModule = new module.Buttons();
+		// flowModule.addChild(btnModule.root);
+		// arModules.push(btnModule);
 
-		var levelModule = new module.Levers();
-		flowModule.addChild(levelModule.root);
-		arModules.push(levelModule);
+		// var levelModule = new module.Levers();
+		// flowModule.addChild(levelModule.root);
+		// arModules.push(levelModule);
 
-		var gridModule = new module.Grid();
-		flowModule.addChild(gridModule.root);
-		arModules.push(gridModule);
+		// var gridModule = new module.Grid();
+		// flowModule.addChild(gridModule.root);
+		// arModules.push(gridModule);
 
-		var values = new module.Values();
-		flowModule.addChild(values.root);
-		arModules.push(values);
+		// var values = new module.Values();
+		// flowModule.addChild(values.root);
+		// arModules.push(values);
 
-		var symbols = new module.Symbols();
-		flowModule.addChild(symbols.root);
-		arModules.push(symbols);
+		// var symbols = new module.Symbols();
+		// flowModule.addChild(symbols.root);
+		// arModules.push(symbols);
 
-		var numPad = new module.NumPad();
-		flowModule.addChild(numPad.root);
-		arModules.push(numPad);
+		// var numPad = new module.NumPad();
+		// flowModule.addChild(numPad.root);
+		// arModules.push(numPad);
 
-		var wires = new module.Wires();
-		flowModule.addChild(wires.root);
-		arModules.push(wires);
+		// var wires = new module.Wires();
+		// flowModule.addChild(wires.root);
+		// arModules.push(wires);
 
-		var gauges = new module.Gauges();
-		flowModule.addChild(gauges.root);
-		arModules.push(gauges);
+		// var gauges = new module.Gauges();
+		// flowModule.addChild(gauges.root);
+		// arModules.push(gauges);
+
+		// var gauges = new module.Gauges();
+		// flowModule.addChild(gauges.root);
+		// arModules.push(gauges);
+
+		var bars = new module.Bars();
+		flowModule.addChild(bars.root);
+		arModules.push(bars);
 
 		onResize();
 	}
