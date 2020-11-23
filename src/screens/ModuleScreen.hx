@@ -61,13 +61,13 @@ class ModuleScreen extends dn.Process {
 		// flowModule.addChild(gauges.root);
 		// arModules.push(gauges);
 
-		// var gauges = new module.Gauges();
-		// flowModule.addChild(gauges.root);
-		// arModules.push(gauges);
+		var gauges = new module.Gauges();
+		flowModule.addChild(gauges.root);
+		arModules.push(gauges);
 
-		var bars = new module.Bars();
-		flowModule.addChild(bars.root);
-		arModules.push(bars);
+		// var bars = new module.Bars();
+		// flowModule.addChild(bars.root);
+		// arModules.push(bars);
 
 		onResize();
 	}

@@ -36,9 +36,11 @@ class Gauges extends Module {
 				var dataText = Data.task.get(t.taskKind).data;
 				var data = dataText.split(" ");
 				for (i in 0...4) {
-					if (Std.int(gauges[i].currentRatio * 10) != Std.parseInt(data[i]))
+					if (Math.round(gauges[i].currentRatio * 10) != Std.parseInt(data[i]))
 						isValidated = false;
 				}
+
+				trace(isValidated);
 
 				if (isValidated) {
 					Game.ME.onCompleteTask(t);
@@ -72,9 +74,9 @@ private class Gauge extends h2d.Object {
 		}
 		inter.onMove = function (e) {
 			if (isClicked) {
-				currentRatio = snap((e.relY / inter.height));
+				currentRatio = 1 - snap((e.relY / inter.height));
 
-				arrow.y = currentRatio * inter.height;
+				arrow.y = (1 - currentRatio) * inter.height;
 			}
 		}
 		inter.onRelease = function (e) {
