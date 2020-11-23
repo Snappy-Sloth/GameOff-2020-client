@@ -83,7 +83,7 @@ private class Gauge extends h2d.Object {
 			isClicked = false;
 		}
 
-		arrow.y = currentRatio * inter.height;
+		arrow.y = (1 - currentRatio) * inter.height;
 	}
 
 	inline function snap(ratio:Float) {
