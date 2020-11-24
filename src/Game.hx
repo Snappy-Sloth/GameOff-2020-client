@@ -102,6 +102,8 @@ class Game extends Process {
 	}
 
 	function launchDay(day:Data.DayKind) {
+		communication.clearAll();
+
 		currentDay = Data.day.get(day);
 		currentEventId = -1;
 
@@ -186,6 +188,38 @@ class Game extends Process {
 		hud.redWarning();
 	}
 
+	function showDebugMenu() {
+		var inter = new h2d.Interactive(wid, hei);
+		inter.backgroundColor = 0xAA000000;
+		root.addChild(inter);
+
+		var flow = new h2d.Flow(root);
+		flow.layout = Vertical;
+		flow.backgroundTile = h2d.Tile.fromColor(0x454545);
+		flow.horizontalAlign = Middle;
+		flow.verticalSpacing = 10;
+		flow.padding = 10;
+
+		new h2d.Text(Assets.fontMedium, flow).text = "DEBUG MENU";
+
+		for (day in Data.day.all) {
+			var btn = new ui.Button(day.id.toString(), function() {
+				launchDay(day.id);
+				inter.remove();
+				flow.remove();
+			});
+			flow.addChild(btn);
+		}
+
+		flow.reflow();
+		flow.setPosition((wid - flow.outerWidth) >> 1, (hei - flow.outerHeight) >> 1);
+
+		// Appear anim
+		tw.createS(inter.alpha, 0 > 1, 0.2);
+		tw.createS(flow.alpha, 0 > 1, 0.2);
+		tw.createS(flow.y, flow.y - 20 > flow.y, 0.2);
+	}
+
 	function gc() {}
 
 	override function onDispose() {
@@ -231,11 +265,12 @@ class Game extends Process {
 
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
-					launchDay(Day_Test);
+					// launchDay(Day_Test);
+					showDebugMenu();
 				}
-				if (ca.isKeyboardPressed(hxd.Key.F2)) {
-					launchDay(Day_Test_Alert);
-				}
+				// if (ca.isKeyboardPressed(hxd.Key.F2)) {
+				// 	launchDay(Day_Test_Alert);
+				// }
 
 				if (ca.isKeyboardPressed(hxd.Key.F5)) {
 					if (currentTasks != null)

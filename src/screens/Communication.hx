@@ -37,13 +37,6 @@ class Communication extends dn.Process {
 		createRoot(Game.ME.wrapperScreens);
 		
 		mainWrapper = new h2d.Mask(Std.int(wid * 0.75), Std.int(hei * 0.75), root);
-		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x5e5e5e), mainWrapper);
-
-		arMessageFlow = [];
-
-		isTypingText = new h2d.Text(Assets.fontSmall, mainWrapper);
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
-		isTypingText.alpha = 0;
 
 		goToManualBtn = new ui.Button("Manual", Game.ME.showManual);
 		root.add(goToManualBtn, 1);
@@ -51,9 +44,29 @@ class Communication extends dn.Process {
 		goToModulesBtn = new ui.Button("Modules", Game.ME.showModules);
 		root.add(goToModulesBtn, 1);
 
-		pendingMessages = [];
+		initScreen();
 
 		onResize();
+	}
+
+	function initScreen() {
+		mainWrapper.removeChildren();
+
+		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x5e5e5e), mainWrapper);
+
+		isTypingText = new h2d.Text(Assets.fontSmall, mainWrapper);
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
+		isTypingText.alpha = 0;
+
+		currentAuthor = null;
+		waitForPlayer = false;
+
+		cd.reset();
+
+		arMessageFlow = [];
+		pendingMessages = [];
+
+		lastMessage = null;
 	}
 
 	public function initTalk() {
@@ -254,6 +267,12 @@ class Communication extends dn.Process {
 			lastMessage = null;
 			delayer.addS(game.nextEvent, 1);
 		}
+	}
+
+	public function clearAll() {
+		initScreen();
+
+		onResize();
 	}
 
 	public function showOffline() {
