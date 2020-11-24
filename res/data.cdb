@@ -229,6 +229,27 @@
 							"timeBeforeS": 0
 						}
 					]
+				},
+				{
+					"id": "Day_Test_Alert_2",
+					"events": [
+						{
+							"author": "Astro",
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"task": "H1",
+											"text": "Trololo",
+											"author": ""
+										}
+									]
+								}
+							],
+							"timeBeforeS": 0
+						}
+					]
 				}
 			],
 			"separators": [],

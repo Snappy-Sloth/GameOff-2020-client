@@ -113,8 +113,10 @@ class Game extends Process {
 	public function nextEvent() {
 		currentEventId++;
 
-		if (currentEvent == null) {
+		if (currentEvent == null) { // End of the day
 			communication.showOffline();
+			delayer.addS(showEndDay, 2);
+			// showEndDay();
 		}
 		else {
 			delayer.addS(function() {
@@ -186,6 +188,47 @@ class Game extends Process {
 	public function onError() {
 		timer += 10 * Const.FPS;
 		hud.redWarning();
+	}
+
+	function showEndDay() {
+		var inter = new h2d.Interactive(wid, hei);
+		inter.backgroundColor = 0xFF000000;
+		root.addChild(inter);
+
+		var flow = new h2d.Flow(root);
+		flow.layout = Vertical;
+		flow.backgroundTile = h2d.Tile.fromColor(0x454545);
+		flow.horizontalAlign = Middle;
+		flow.verticalSpacing = 10;
+		flow.padding = 10;
+		flow.alpha = 0;
+
+		new h2d.Text(Assets.fontMedium, flow).text = "END OF THE DAY";
+
+		var btn = new ui.Button("NextDay", function() {
+			for (i in 0...Data.day.all.length) {
+				if (Data.day.all[i] == currentDay && Data.day.all[i + 1] != null) {
+					launchDay(Data.day.all[i + 1].id);
+					inter.remove();
+					flow.remove();
+					return;
+				}
+			}
+
+			trace("No day after " + currentDay.id);
+			inter.remove();
+			flow.remove();
+		});
+		flow.addChild(btn);
+
+		flow.reflow();
+		flow.setPosition((wid - flow.outerWidth) >> 1, (hei - flow.outerHeight) >> 1);
+
+		// Appear anim
+		tw.createS(inter.alpha, 0 > 1, 1).onEnd = function () {
+			tw.createS(flow.alpha, 0 > 1, 0.2);
+			tw.createS(flow.y, flow.y - 20 > flow.y, 0.2);
+		}
 	}
 
 	function showDebugMenu() {
