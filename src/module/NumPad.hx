@@ -9,29 +9,36 @@ class NumPad extends Module {
 	var numsClicked : Array<Int> = [];
 
 	var answerText : h2d.Text;
+
+	var screen : HSprite;
 	
 	public function new() {
 		super(250, 250, 0x306082);
+
+		var bg = Assets.tiles.h_get("bgNumpad");
+		root.addChild(bg);
 
 		flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = wid;
 		flow.minHeight = flow.maxHeight = hei;
 		flow.multiline = true;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.horizontalSpacing = flow.verticalSpacing = 20;
+		flow.horizontalSpacing = flow.verticalSpacing = 10;
+		flow.paddingTop = 11;
 
 		btns = [];
 
-		answerText = new h2d.Text(Assets.fontMedium, flow);
-		answerText.letterSpacing = 10;
-		flow.getProperties(answerText).minWidth = Std.int(wid * 0.8);
-		flow.getProperties(answerText).minHeight = 25;
+		screen = Assets.tiles.h_get("screenNumpad", flow);
 
-		for (i in 0...3) {
-			for (j in 0...3) {
-				var btn = new Button(9 - ((3 - j) + i * 3) + 1, onClick);
-				flow.addChild(btn);
-			}
+		answerText = new h2d.Text(Assets.fontSinsgold32, screen);
+		answerText.textColor = 0x282f2e;
+		answerText.letterSpacing = 5;
+		answerText.setPosition(	Std.int(screen.tile.width - answerText.textWidth) >> 1,
+								Std.int(screen.tile.height - answerText.textHeight) >> 1);
+
+		for (i in 0...9) {
+			var btn = new Button(i + 1, onClick);
+			flow.addChild(btn);
 		}
 	}
 
@@ -67,11 +74,14 @@ class NumPad extends Module {
 
 						answerText.text = "";
 						for (i in numsClicked) {
-							answerText.text += i + " ";
+							answerText.text += i;
 						}
 					}
 				}
 			}
+
+			answerText.setPosition(	Std.int(screen.tile.width - answerText.textWidth) >> 1,
+									Std.int(screen.tile.height - answerText.textHeight) >> 1);
 
 			checkValidate();
 		}
@@ -108,14 +118,15 @@ private class Button extends h2d.Object {
 
 		this.id = id;
 
-		var bmp = new h2d.Bitmap(h2d.Tile.fromColor(0xe8e8e8, 50, 50));
-		this.addChild(bmp);
+		// var bmp = new h2d.Bitmap(h2d.Tile.fromColor(0xe8e8e8, 50, 50));
+		// this.addChild(bmp);
+		var spr = Assets.tiles.h_get("numpad", id - 1, this);
 
-		var text = new h2d.Text(Assets.fontLarge, this);
-		text.text = Std.string(id);
-		text.setPosition(Std.int((bmp.tile.width - text.textWidth) * 0.5), Std.int((bmp.tile.height - text.textHeight) * 0.5));
+		// var text = new h2d.Text(Assets.fontLarge, this);
+		// text.text = Std.string(id);
+		// text.setPosition(Std.int((bmp.tile.width - text.textWidth) * 0.5), Std.int((bmp.tile.height - text.textHeight) * 0.5));
 
-		var inter = new h2d.Interactive(50, 50, this);
+		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
 		inter.onClick = function (e) {
 			onClick(this);
 		}

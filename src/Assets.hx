@@ -9,6 +9,7 @@ class Assets {
 	public static var tiles : SpriteLib;
 
 	public static var fontSinsgold16 : h2d.Font;
+	public static var fontSinsgold32 : h2d.Font;
 	public static var fontRise32 : h2d.Font;
 
 	static var initDone = false;
@@ -25,6 +26,7 @@ class Assets {
 		tiles = dn.heaps.assets.Atlas.load("atlas/tiles.atlas");
 
 		fontSinsgold16 = hxd.Res.fonts.sinsgold_medium_16.toFont();
+		fontSinsgold32 = hxd.Res.fonts.sinsgold_medium_32.toFont();
 		fontRise32 = hxd.Res.fonts.rise_regular_32.toFont();
 	}
 }
