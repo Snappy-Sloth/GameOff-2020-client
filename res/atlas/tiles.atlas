@@ -6,7 +6,7 @@ filter: Linear,Linear
 repeat: none
 gaugeArrow
   rotate: false
-  xy: 1959, 435
+  xy: 2022, 569
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
@@ -34,7 +34,7 @@ manual/page_A
   index: -1
 module/gridBlueCircle
   rotate: false
-  xy: 1959, 405
+  xy: 1959, 480
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
@@ -48,31 +48,101 @@ module/gridCell
   index: -1
 module/gridGreenRect
   rotate: false
-  xy: 1989, 405
+  xy: 1909, 493
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/gridRedTriangle
   rotate: false
-  xy: 2019, 405
+  xy: 1939, 510
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/leverLightOff
   rotate: false
-  xy: 2002, 148
+  xy: 2011, 71
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
   index: -1
 module/leverLightOn
   rotate: false
-  xy: 1962, 171
+  xy: 1959, 299
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
+  index: -1
+module/switchs/baseLight
+  rotate: false
+  xy: 2002, 186
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+module/switchs/baseSwitch
+  rotate: false
+  xy: 1993, 512
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+module/switchs/bgSwitch
+  rotate: false
+  xy: 445, 1889
+  size: 300, 150
+  orig: 300, 150
+  offset: 0, 0
+  index: -1
+module/switchs/switchDown
+  rotate: false
+  xy: 1969, 510
+  size: 22, 55
+  orig: 59, 133
+  offset: 18, 16
+  index: -1
+module/switchs/switchLightGlow
+  rotate: false
+  xy: 1962, 53
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+module/switchs/switchLightOff
+  rotate: false
+  xy: 1993, 542
+  size: 27, 27
+  orig: 31, 31
+  offset: 2, 2
+  index: -1
+module/switchs/switchLightOn
+  rotate: false
+  xy: 1757, 506
+  size: 27, 27
+  orig: 31, 31
+  offset: 2, 2
+  index: -1
+module/switchs/switchShadowDown
+  rotate: false
+  xy: 1994, 439
+  size: 32, 71
+  orig: 59, 133
+  offset: 27, 0
+  index: -1
+module/switchs/switchShadowUp
+  rotate: false
+  xy: 1959, 442
+  size: 31, 36
+  orig: 59, 133
+  offset: 28, 62
+  index: -1
+module/switchs/switchUp
+  rotate: false
+  xy: 2023, 512
+  size: 22, 55
+  orig: 59, 133
+  offset: 18, 61
   index: -1
 module/symbols/bgSymbol
   rotate: false
@@ -97,56 +167,56 @@ module/symbols/symbol1
   index: -1
 module/symbols/symbol2
   rotate: false
-  xy: 2000, 186
+  xy: 1997, 299
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol3
   rotate: false
-  xy: 1959, 300
+  xy: 1997, 334
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol4
   rotate: false
-  xy: 1994, 300
+  xy: 1959, 337
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol5
   rotate: false
-  xy: 1959, 335
+  xy: 1994, 369
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol6
   rotate: false
-  xy: 1994, 335
+  xy: 1959, 372
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol7
   rotate: false
-  xy: 1959, 370
+  xy: 1994, 404
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbolShadow
   rotate: false
-  xy: 1994, 370
+  xy: 1959, 407
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbolSlot
   rotate: false
-  xy: 1962, 53
+  xy: 1962, 102
   size: 39, 39
   orig: 39, 39
   offset: 0, 0
@@ -160,28 +230,28 @@ module/values/bgValues
   index: -1
 module/values/btnSelectedValues
   rotate: false
-  xy: 2029, 300
+  xy: 2029, 369
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 module/values/btnUnselectedValues
   rotate: false
-  xy: 2029, 318
+  xy: 2029, 387
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 module/values/leftArrowValues
   rotate: false
-  xy: 2003, 71
+  xy: 2003, 109
   size: 38, 75
   orig: 38, 75
   offset: 0, 0
   index: -1
 module/values/rightArrowValues
   rotate: false
-  xy: 1962, 94
+  xy: 1962, 143
   size: 38, 75
   orig: 38, 75
   offset: 0, 0
@@ -195,7 +265,7 @@ module/values/screenTypeValues
   index: -1
 module/values/screenValues
   rotate: false
-  xy: 1959, 221
+  xy: 1959, 220
   size: 86, 77
   orig: 86, 77
   offset: 0, 0

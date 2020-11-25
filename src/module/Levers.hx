@@ -7,6 +7,9 @@ class Levers extends Module {
 	public function new() {
 		super(300, 150);
 
+		var bg = Assets.tiles.h_get("bgSwitch");
+		root.addChild(bg);
+
 		var flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = wid;
 		flow.minHeight = flow.maxHeight = hei;
@@ -23,8 +26,10 @@ class Levers extends Module {
 			}
 
 			var lever = new Lever(onClick, lights);
+			lever.x = 25 + 50 * levers.length;
+			lever.y = 55;
 			levers.push(lever);
-			flow.addChild(lever);
+			root.addChild(lever);
 		}
 	}
 
@@ -41,6 +46,8 @@ class Levers extends Module {
 			Game.ME.onError();
 			return;
 		}
+
+		l.toggle();
 
 		for (i in l.lights) {
 			levers[i].switchLight();
@@ -80,37 +87,61 @@ class Lever extends h2d.Object {
 	public var lights(default, null) : Array<Int>;
 
 	var lightSpr : HSprite;
+	var shadow : HSprite;
+	var lever : HSprite;
+	var glow : HSprite;
+
+	var isUp : Bool = true;
 
 	public function new(onClick:Lever->Void, lights:Array<Int>) {
 		super();
 
 		this.lights = lights;
 
-		var flow = new h2d.Flow(this);
-		flow.layout = Vertical;
-		flow.verticalSpacing = 20;
-		flow.horizontalAlign = Middle;
+		var base = Assets.tiles.h_get("baseSwitch", 0.5, 0.5, this);
 
-		var inter = new h2d.Interactive(30, 75, flow);
-		inter.backgroundColor = 0x55FF00FF;
+		shadow = Assets.tiles.h_get("switchShadowUp", 0.5, 0.5, this);
 
+		lever = Assets.tiles.h_get("switchUp", 0.5, 0.5, this);
+
+		var inter = new h2d.Interactive(40, 100, this);
+		inter.x = -inter.width * 0.5;
+		inter.y = -inter.height * 0.5;
+		// inter.backgroundColor = 0x55FF00FF;
 		inter.onClick = function (e) {
 			onClick(this);
 		}
 
-		lightSpr = Assets.tiles.h_get("leverLightOff", flow);
+		var baseLight = Assets.tiles.h_get("baseLight", 0.5, 0, this);
+		baseLight.y = (Std.int(inter.height) >> 1) + 5;
+		lightSpr = Assets.tiles.h_get("switchLightOff", 0.5, 0, this);
+		lightSpr.y = baseLight.y;
+
+		glow = Assets.tiles.h_get("switchLightGlow", 0.5, 0.5, this);
+		glow.blendMode = h2d.BlendMode.Add;
+		glow.y = baseLight.y + (Std.int(baseLight.tile.height) >> 1);
+
+		forceLightStatus(false);
+	}
+
+	public function toggle() {
+		isUp = !isUp;
+		shadow.set(isUp ? "switchShadowUp" : "switchShadowDown");
+		lever.set(isUp ? "switchUp" : "switchDown");
 	}
 
 	public function switchLight() {
 		isLightOn = !isLightOn;
 
-		lightSpr.set(isLightOn ? "leverLightOn" : "leverLightOff");
+		lightSpr.set(isLightOn ? "switchLightOn" : "switchLightOff");
+		glow.visible = isLightOn;
 	}
 
 	public function forceLightStatus(lightOn:Bool) {
 		isLightOn = lightOn;
 
-		lightSpr.set(isLightOn ? "leverLightOn" : "leverLightOff");
+		lightSpr.set(isLightOn ? "switchLightOn" : "switchLightOff");
+		glow.visible = isLightOn;
 	}
 
 }
