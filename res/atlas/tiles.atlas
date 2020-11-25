@@ -6,7 +6,7 @@ filter: Linear,Linear
 repeat: none
 gaugeArrow
   rotate: false
-  xy: 1999, 240
+  xy: 1959, 435
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
@@ -34,7 +34,7 @@ manual/page_A
   index: -1
 module/gridBlueCircle
   rotate: false
-  xy: 2014, 1
+  xy: 1959, 405
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
@@ -48,30 +48,156 @@ module/gridCell
   index: -1
 module/gridGreenRect
   rotate: false
-  xy: 2014, 31
+  xy: 1989, 405
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/gridRedTriangle
   rotate: false
-  xy: 1999, 210
+  xy: 2019, 405
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/leverLightOff
   rotate: false
-  xy: 2004, 61
+  xy: 2002, 148
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
   index: -1
 module/leverLightOn
   rotate: false
-  xy: 1962, 95
+  xy: 1962, 171
   size: 36, 36
   orig: 36, 36
+  offset: 0, 0
+  index: -1
+module/symbols/bgSymbol
+  rotate: false
+  xy: 1757, 209
+  size: 200, 150
+  orig: 200, 150
+  offset: 0, 0
+  index: -1
+module/symbols/symbol0
+  rotate: false
+  xy: 2014, 1
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol1
+  rotate: false
+  xy: 2014, 36
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol2
+  rotate: false
+  xy: 2000, 186
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol3
+  rotate: false
+  xy: 1959, 300
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol4
+  rotate: false
+  xy: 1994, 300
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol5
+  rotate: false
+  xy: 1959, 335
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol6
+  rotate: false
+  xy: 1994, 335
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbol7
+  rotate: false
+  xy: 1959, 370
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbolShadow
+  rotate: false
+  xy: 1994, 370
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+module/symbols/symbolSlot
+  rotate: false
+  xy: 1962, 53
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+module/values/bgValues
+  rotate: false
+  xy: 1757, 361
+  size: 200, 130
+  orig: 200, 130
+  offset: 0, 0
+  index: -1
+module/values/btnSelectedValues
+  rotate: false
+  xy: 2029, 300
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+module/values/btnUnselectedValues
+  rotate: false
+  xy: 2029, 318
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+module/values/leftArrowValues
+  rotate: false
+  xy: 2003, 71
+  size: 38, 75
+  orig: 38, 75
+  offset: 0, 0
+  index: -1
+module/values/rightArrowValues
+  rotate: false
+  xy: 1962, 94
+  size: 38, 75
+  orig: 38, 75
+  offset: 0, 0
+  index: -1
+module/values/screenTypeValues
+  rotate: false
+  xy: 1757, 493
+  size: 150, 11
+  orig: 150, 11
+  offset: 0, 0
+  index: -1
+module/values/screenValues
+  rotate: false
+  xy: 1959, 221
+  size: 86, 77
+  orig: 86, 77
   offset: 0, 0
   index: -1
 pageGlowMove
@@ -101,53 +227,4 @@ redGlowTimer
   size: 203, 102
   orig: 400, 114
   offset: 99, 6
-  index: -1
-symbol0
-  rotate: false
-  xy: 2000, 99
-  size: 35, 35
-  orig: 35, 35
-  offset: 0, 0
-  index: -1
-symbol1
-  rotate: false
-  xy: 1962, 133
-  size: 35, 35
-  orig: 35, 35
-  offset: 0, 0
-  index: -1
-symbol2
-  rotate: false
-  xy: 1999, 136
-  size: 35, 35
-  orig: 35, 35
-  offset: 0, 0
-  index: -1
-symbol3
-  rotate: false
-  xy: 1962, 170
-  size: 35, 35
-  orig: 35, 35
-  offset: 0, 0
-  index: -1
-symbol4
-  rotate: false
-  xy: 1999, 173
-  size: 35, 35
-  orig: 35, 35
-  offset: 0, 0
-  index: -1
-symbol5
-  rotate: false
-  xy: 1962, 207
-  size: 35, 35
-  orig: 35, 35
-  offset: 0, 0
-  index: -1
-symbol_slot
-  rotate: false
-  xy: 1962, 53
-  size: 40, 40
-  orig: 40, 40
-  offset: 0, 0
   index: -1

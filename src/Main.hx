@@ -117,5 +117,8 @@ class Main extends dn.Process {
 	override function update() {
 		Assets.tiles.tmod = tmod;
 		super.update();
+
+		if (Key.isPressed(Key.F11))
+			engine.fullScreen = !engine.fullScreen;
 	}
 }

@@ -64,11 +64,13 @@ class Wires extends Module {
 			}
 
 			currentWire.clear();
-			currentWire.lineStyle(5, 0xFFFFFFFF);
+			currentWire.lineStyle(8, 0xFFFF0000);
 			currentWire.moveTo(from.centerX, from.centerY);
 			var pos = root.globalToLocal(to.localToGlobal(new h2d.col.Point(10, 10)));
 			currentWire.lineTo(pos.x, pos.y);
 			wires.push({w: currentWire, top:from.isTop ? from.id : to.id, bot:from.isTop ? to.id : from.id});
+			// trace(wires[wires.length - 1].top + " " + wires[wires.length - 1].bot);
+			// currentWire.filter = new h2d.filter.Outline(1);
 		}
 		from = null;
 		currentWire = null;
@@ -111,7 +113,7 @@ class Wires extends Module {
 
 		if (from != null) {
 			currentWire.clear();
-			currentWire.lineStyle(5, 0xFFFFFFFF);
+			currentWire.lineStyle(8, 0xFFFF0000);
 			currentWire.moveTo(from.centerX, from.centerY);
 			var pos = root.globalToLocal(new h2d.col.Point(Boot.ME.s2d.mouseX, Boot.ME.s2d.mouseY));
 			currentWire.lineTo(pos.x, pos.y);

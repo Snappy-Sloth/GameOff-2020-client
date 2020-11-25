@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Font size="32" family="ChevyRay - Rise" height="35" style="Regular">
+ <Char width="9" offset="0 0" rect="1 1 6 32" code="!"/>
+ <Char width="19" offset="0 0" rect="8 1 16 10" code="&quot;"/>
+ <Char width="35" offset="0 0" rect="25 1 32 32" code="#"/>
+ <Char width="25" offset="0 0" rect="58 1 22 32" code="$"/>
+ <Char width="35" offset="0 0" rect="81 1 32 32" code="%"/>
+ <Char width="32" offset="0 0" rect="114 1 29 32" code="&amp;"/>
+ <Char width="9" offset="0 0" rect="144 1 6 10" code="'"/>
+ <Char width="16" offset="0 0" rect="151 1 13 32" code="("/>
+ <Char width="16" offset="0 0" rect="165 1 13 32" code=")"/>
+ <Char width="19" offset="0 0" rect="179 1 16 17" code="*"/>
+ <Char width="29" offset="0 4" rect="196 5 26 25" code="+"/>
+ <Char width="9" offset="0 25" rect="223 26 6 11" code=",">
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+  <Kerning advance="-3" id="T"/>
+  <Kerning advance="-3" id="V"/>
+ </Char>
+ <Char width="25" offset="0 13" rect="230 14 22 6" code="-"/>
+ <Char width="9" offset="0 26" rect="253 27 6 6" code=".">
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+  <Kerning advance="-3" id="T"/>
+  <Kerning advance="-3" id="V"/>
+ </Char>
+ <Char width="35" offset="0 0" rect="260 1 32 32" code="/"/>
+ <Char width="25" offset="0 0" rect="293 1 22 32" code="0"/>
+ <Char width="22" offset="0 0" rect="316 1 19 32" code="1">
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="336 1 22 32" code="2">
+  <Kerning advance="-3" id="4"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="359 1 22 32" code="3"/>
+ <Char width="25" offset="0 0" rect="382 1 22 32" code="4"/>
+ <Char width="25" offset="0 0" rect="405 1 22 32" code="5">
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="428 1 22 32" code="6">
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+  <Kerning advance="-3" id="T"/>
+  <Kerning advance="-3" id="t"/>
+ </Char>
+ <Char width="26" offset="0 0" rect="451 1 23 32" code="7">
+  <Kerning advance="-3" id=","/>
+  <Kerning advance="-3" id="."/>
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="_"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="475 1 22 32" code="8"/>
+ <Char width="25" offset="0 0" rect="1 38 22 32" code="9"/>
+ <Char width="9" offset="0 13" rect="24 51 6 19" code=":"/>
+ <Char width="9" offset="0 13" rect="31 51 6 23" code=";"/>
+ <Char width="19" offset="0 4" rect="38 42 16 25" code="&lt;"/>
+ <Char width="22" offset="0 7" rect="55 45 19 19" code="="/>
+ <Char width="19" offset="0 4" rect="75 42 16 25" code=">"/>
+ <Char width="25" offset="0 0" rect="92 38 22 32" code="?"/>
+ <Char width="25" offset="0 0" rect="115 38 22 32" code="@"/>
+ <Char width="25" offset="0 0" rect="138 38 22 32" code="A"/>
+ <Char width="25" offset="0 0" rect="161 38 22 32" code="B"/>
+ <Char width="25" offset="0 0" rect="184 38 22 32" code="C"/>
+ <Char width="25" offset="0 0" rect="207 38 22 32" code="D"/>
+ <Char width="22" offset="0 0" rect="230 38 19 32" code="E"/>
+ <Char width="22" offset="0 0" rect="250 38 19 32" code="F"/>
+ <Char width="25" offset="0 0" rect="270 38 22 32" code="G">
+  <Kerning advance="-3" id="T"/>
+  <Kerning advance="-3" id="t"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="293 38 22 32" code="H"/>
+ <Char width="22" offset="0 0" rect="316 38 19 32" code="I"/>
+ <Char width="25" offset="0 0" rect="336 38 22 32" code="J"/>
+ <Char width="25" offset="0 0" rect="359 38 22 32" code="K"/>
+ <Char width="22" offset="0 0" rect="382 38 19 32" code="L">
+  <Kerning advance="-6" id="4"/>
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+  <Kerning advance="-6" id="T"/>
+  <Kerning advance="-3" id="V"/>
+  <Kerning advance="-6" id="t"/>
+  <Kerning advance="-3" id="v"/>
+ </Char>
+ <Char width="32" offset="0 0" rect="402 38 29 32" code="M"/>
+ <Char width="25" offset="0 0" rect="432 38 22 32" code="N"/>
+ <Char width="25" offset="0 0" rect="455 38 22 32" code="O"/>
+ <Char width="25" offset="0 0" rect="478 38 22 32" code="P">
+  <Kerning advance="-3" id=","/>
+  <Kerning advance="-3" id="."/>
+  <Kerning advance="-3" id="_"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="1 75 22 32" code="Q"/>
+ <Char width="25" offset="0 0" rect="24 75 22 32" code="R"/>
+ <Char width="25" offset="0 0" rect="47 75 22 32" code="S"/>
+ <Char width="25" offset="0 0" rect="70 75 22 32" code="T">
+  <Kerning advance="-3" id=","/>
+  <Kerning advance="-3" id="."/>
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="J"/>
+  <Kerning advance="-3" id="_"/>
+  <Kerning advance="-3" id="j"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="93 75 22 32" code="U"/>
+ <Char width="25" offset="0 0" rect="116 75 22 32" code="V">
+  <Kerning advance="-3" id=","/>
+  <Kerning advance="-3" id="."/>
+  <Kerning advance="-3" id="_"/>
+ </Char>
+ <Char width="32" offset="0 0" rect="139 75 29 32" code="W"/>
+ <Char width="25" offset="0 0" rect="169 75 22 32" code="X"/>
+ <Char width="25" offset="0 0" rect="192 75 22 32" code="Y"/>
+ <Char width="29" offset="0 0" rect="215 75 26 32" code="Z"/>
+ <Char width="16" offset="0 0" rect="242 75 13 32" code="["/>
+ <Char width="35" offset="0 0" rect="256 75 32 32" code="\"/>
+ <Char width="16" offset="0 0" rect="289 75 13 32" code="]"/>
+ <Char width="29" offset="0 0" rect="303 75 26 16" code="^"/>
+ <Char width="25" offset="0 26" rect="330 101 22 6" code="_">
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+  <Kerning advance="-3" id="T"/>
+  <Kerning advance="-3" id="V"/>
+ </Char>
+ <Char width="12" offset="0 0" rect="353 75 10 10" code="`"/>
+ <Char width="25" offset="0 0" rect="364 75 22 32" code="a"/>
+ <Char width="25" offset="0 0" rect="387 75 22 32" code="b"/>
+ <Char width="25" offset="0 0" rect="410 75 22 32" code="c"/>
+ <Char width="25" offset="0 0" rect="433 75 22 32" code="d"/>
+ <Char width="22" offset="0 0" rect="456 75 19 32" code="e"/>
+ <Char width="22" offset="0 0" rect="476 75 19 32" code="f"/>
+ <Char width="25" offset="0 0" rect="1 108 22 32" code="g">
+  <Kerning advance="-3" id="T"/>
+  <Kerning advance="-3" id="t"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="24 108 22 32" code="h"/>
+ <Char width="22" offset="0 0" rect="47 108 19 32" code="i"/>
+ <Char width="25" offset="0 0" rect="67 108 22 32" code="j"/>
+ <Char width="25" offset="0 0" rect="90 108 22 32" code="k"/>
+ <Char width="22" offset="0 0" rect="113 108 19 32" code="l">
+  <Kerning advance="-6" id="4"/>
+  <Kerning advance="-3" id="7"/>
+  <Kerning advance="-3" id="9"/>
+  <Kerning advance="-6" id="T"/>
+  <Kerning advance="-3" id="V"/>
+  <Kerning advance="-6" id="t"/>
+  <Kerning advance="-3" id="v"/>
+ </Char>
+ <Char width="32" offset="0 0" rect="133 108 29 32" code="m"/>
+ <Char width="25" offset="0 0" rect="163 108 22 32" code="n"/>
+ <Char width="25" offset="0 0" rect="186 108 22 32" code="o"/>
+ <Char width="25" offset="0 0" rect="209 108 22 32" code="p"/>
+ <Char width="25" offset="0 0" rect="232 108 22 32" code="q"/>
+ <Char width="25" offset="0 0" rect="255 108 22 32" code="r"/>
+ <Char width="25" offset="0 0" rect="278 108 22 32" code="s"/>
+ <Char width="25" offset="0 0" rect="301 108 22 32" code="t">
+  <Kerning advance="-3" id="4"/>
+  <Kerning advance="-3" id="J"/>
+  <Kerning advance="-3" id="j"/>
+ </Char>
+ <Char width="25" offset="0 0" rect="324 108 22 32" code="u"/>
+ <Char width="25" offset="0 0" rect="347 108 22 32" code="v"/>
+ <Char width="32" offset="0 0" rect="370 108 29 32" code="w"/>
+ <Char width="25" offset="0 0" rect="400 108 22 32" code="x"/>
+ <Char width="25" offset="0 0" rect="423 108 22 32" code="y"/>
+ <Char width="29" offset="0 0" rect="446 108 26 32" code="z"/>
+ <Char width="19" offset="0 0" rect="473 108 16 32" code="{"/>
+ <Char width="9" offset="0 0" rect="490 108 6 32" code="|"/>
+ <Char width="19" offset="0 0" rect="1 141 17 32" code="}"/>
+ <Char width="28" offset="0 9" rect="19 150 25 13" code="~"/>
+</Font>

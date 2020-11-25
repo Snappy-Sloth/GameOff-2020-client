@@ -7,53 +7,76 @@ class Values extends Module {
 	var valueText : h2d.Text;
 	var vtText : h2d.Text;
 
+	var miniBtns : Array<MiniButton> = [];
+
 	public function new() {
 		super(200, 130, 0xa4afb2);
+
+		var bg = Assets.tiles.h_get("bgValues");
+		root.addChild(bg);
 
 		var flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = wid;
 		flow.minHeight = flow.maxHeight = hei;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.verticalSpacing = 20;
+		flow.verticalSpacing = 7;
 		flow.layout = Vertical;
+		flow.padding = 4;
 
 		currentVD = game.valueDatas[0];
 
 		// Top
 		var flowTop = new h2d.Flow(flow);
 		flowTop.horizontalAlign = Middle;
-		flowTop.verticalSpacing = 10;
+		flowTop.verticalSpacing = 8;
 		flowTop.layout = Vertical;
 
-		vtText = new h2d.Text(Assets.fontSmall, flowTop);
+		var screenText = Assets.tiles.h_get("screenTypeValues", flowTop);
+
+		vtText = new h2d.Text(Assets.fontSinsgold16, screenText);
 		vtText.text = currentVD.vt.getName();
+		// vtText.text = "Température de l'habitacle";
+		vtText.textColor = 0x282f2e;
+		vtText.setPosition(Std.int(screenText.tile.width - vtText.textWidth) >> 1, Std.int(screenText.tile.height - vtText.textHeight) >> 1);
 
 		var flowBtns = new h2d.Flow(flowTop);
 		flowBtns.horizontalSpacing = 10;
 
 		for (i in 0...VType.createAll().length) {
-			var btn = new h2d.Interactive(20, 20, flowBtns);
-			btn.backgroundColor = 0x55FF00FF;
-			btn.onClick = (e)->changeCurrentVD(game.valueDatas[i]);
+			var btn = new MiniButton(this, game.valueDatas[i]);
+			flowBtns.addChild(btn);
+			miniBtns.push(btn);
 		}
+
+		flowTop.reflow();
 		
 		// Bottom
 		var flowBottom = new h2d.Flow(flow);
 		// flowBottom.debug = true;
-		flowBottom.horizontalSpacing = 30;
+		flowBottom.horizontalSpacing = 9;
 		flowBottom.horizontalAlign = flowBottom.verticalAlign = Middle;
 
 		var leftBtn = new Button(this, flowBottom, -1);
 
-		valueText = new h2d.Text(Assets.fontMedium, flowBottom);
+		var screenValue = Assets.tiles.h_get("screenValues", flowBottom);
+
+		valueText = new h2d.Text(Assets.fontRise32, screenValue);
 		valueText.text = Std.string(currentVD.v);
 		valueText.textAlign = Center;
-		valueText.maxWidth = flowBottom.getProperties(valueText).minWidth = 50;
+		valueText.maxWidth = screenValue.tile.width;
+		valueText.textColor = 0x282f2e;
+		valueText.setPosition(0, Std.int(screenValue.tile.height - valueText.textHeight) >> 1);
 
 		var rightBtn = new Button(this, flowBottom, 1);
+
+		flowBottom.reflow();
+
+		miniBtns[0].enable();
 	}
 
 	public function changeCurrentVD(vd:ValueData) {
+		for (button in miniBtns) button.disable();
+
 		currentVD = vd;
 		vtText.text = currentVD.vt.getName();
 		valueText.text = Std.string(currentVD.v);
@@ -61,6 +84,7 @@ class Values extends Module {
 
 	public function modifyValue(d:Int) {
 		currentVD.v += d;
+		currentVD.v = M.clampSym(currentVD.v, 99);
 		valueText.text = Std.string(currentVD.v);
 
 		checkValidate();
@@ -111,8 +135,9 @@ private class Button extends dn.Process {
 		
 		createRoot(parent);
 
-		var inter = new h2d.Interactive(30, 50, root);
-		inter.backgroundColor = 0x55FF00FF;
+		var spr = Assets.tiles.h_get(d < 0 ? "leftArrowValues" : "rightArrowValues", root);
+
+		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, root);
 		inter.onPush = function (e) {
 			isClicked = true;
 		}
@@ -130,5 +155,38 @@ private class Button extends dn.Process {
 			currentCD = Math.max(currentCD / 2, 0.05);
 			values.modifyValue(delta);
 		}
+	}
+}
+
+private class MiniButton extends h2d.Object {
+
+	var isClicked = false;
+
+	var spr : HSprite;
+
+	var values : Values;
+	var vd : ValueData;
+
+	public function new(values:Values, vd:ValueData) {
+		super();
+		
+		this.values = values;
+		this.vd = vd;
+
+		spr = Assets.tiles.h_get("btnUnselectedValues", this);
+		
+		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
+		inter.onClick = function (e) {
+			enable();
+		}
+	}
+
+	public function enable() {
+		values.changeCurrentVD(vd);
+		spr.set("btnSelectedValues");
+	}
+
+	public function disable() {
+		spr.set("btnUnselectedValues");
 	}
 }

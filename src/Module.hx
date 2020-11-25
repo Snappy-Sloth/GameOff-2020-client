@@ -12,7 +12,7 @@ class Module extends dn.Process {
 
 		createRoot();
 		
-		var bg = new h2d.Bitmap(h2d.Tile.fromColor(colorBG, wid, hei), root);
+		// var bg = new h2d.Bitmap(h2d.Tile.fromColor(colorBG, wid, hei), root);
 	}
 
 	public function checkValidate() {}
