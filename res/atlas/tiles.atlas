@@ -6,7 +6,7 @@ filter: Linear,Linear
 repeat: none
 gaugeArrow
   rotate: false
-  xy: 2021, 548
+  xy: 1757, 153
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
@@ -20,126 +20,189 @@ globalRedGlow
   index: -1
 greenGlowTimer
   rotate: false
-  xy: 1757, 253
+  xy: 1781, 253
   size: 203, 102
   orig: 400, 114
   offset: 99, 6
   index: -1
 manual/page_A
   rotate: false
-  xy: 445, 1293
+  xy: 475, 1340
   size: 420, 594
   orig: 420, 594
   offset: 0, 0
   index: -1
+module/buttons/bgButtons
+  rotate: false
+  xy: 1283, 1
+  size: 500, 150
+  orig: 500, 150
+  offset: 0, 0
+  index: -1
+module/buttons/hexagonBtn
+  rotate: false
+  xy: 1943, 858
+  size: 102, 89
+  orig: 102, 89
+  offset: 0, 0
+  index: -1
+module/buttons/hexagonBtnShadow
+  rotate: false
+  xy: 1757, 783
+  size: 122, 108
+  orig: 124, 110
+  offset: 1, 1
+  index: -1
+module/buttons/pentagonBtn
+  rotate: false
+  xy: 93, 799
+  size: 96, 89
+  orig: 96, 89
+  offset: 0, 0
+  index: -1
+module/buttons/pentagonBtnShadow
+  rotate: false
+  xy: 1, 1936
+  size: 114, 108
+  orig: 114, 109
+  offset: 0, 1
+  index: -1
+module/buttons/squareBtn
+  rotate: false
+  xy: 1952, 766
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+module/buttons/squareBtnShadow
+  rotate: false
+  xy: 226, 1936
+  size: 106, 106
+  orig: 106, 106
+  offset: 0, 0
+  index: -1
+module/buttons/triangleBtn
+  rotate: false
+  xy: 1, 799
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+module/buttons/triangleBtnShadow
+  rotate: false
+  xy: 117, 1936
+  size: 107, 106
+  orig: 108, 106
+  offset: 1, 0
+  index: -1
 module/gridBlueCircle
   rotate: false
-  xy: 1997, 437
+  xy: 68, 758
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/gridCell
   rotate: false
-  xy: 1997, 301
+  xy: 1, 893
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 module/gridGreenRect
   rotate: false
-  xy: 1757, 845
+  xy: 70, 723
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/gridRedTriangle
   rotate: false
-  xy: 1787, 845
+  xy: 98, 753
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/leverLightOff
   rotate: false
-  xy: 2009, 155
+  xy: 102, 893
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
   index: -1
 module/leverLightOn
   rotate: false
-  xy: 2009, 193
+  xy: 140, 893
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
   index: -1
 module/numpad/bgNumpad
   rotate: false
-  xy: 1757, 1
+  xy: 1785, 1
   size: 250, 250
   orig: 250, 250
   offset: 0, 0
   index: -1
 module/numpad/numpad0
   rotate: false
-  xy: 1959, 548
+  xy: 1986, 253
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad1
   rotate: false
-  xy: 1959, 610
+  xy: 1986, 315
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad2
   rotate: false
-  xy: 1959, 672
+  xy: 1962, 377
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad3
   rotate: false
-  xy: 1959, 734
+  xy: 1962, 439
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad4
   rotate: false
-  xy: 1944, 796
+  xy: 1959, 580
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad5
   rotate: false
-  xy: 1757, 783
+  xy: 1959, 642
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad6
   rotate: false
-  xy: 1819, 783
+  xy: 1959, 704
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad7
   rotate: false
-  xy: 1881, 805
+  xy: 1881, 811
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 module/numpad/numpad8
   rotate: false
-  xy: 1943, 858
+  xy: 1881, 873
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
@@ -153,70 +216,70 @@ module/numpad/screenNumpad
   index: -1
 module/switchs/baseLight
   rotate: false
-  xy: 2005, 907
+  xy: 35, 758
   size: 31, 31
   orig: 31, 31
   offset: 0, 0
   index: -1
 module/switchs/baseSwitch
   rotate: false
-  xy: 1817, 845
+  xy: 100, 723
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 module/switchs/bgSwitch
   rotate: false
-  xy: 445, 1889
+  xy: 271, 723
   size: 300, 150
   orig: 300, 150
   offset: 0, 0
   index: -1
 module/switchs/switchDown
   rotate: false
-  xy: 2021, 575
+  xy: 1757, 180
   size: 22, 55
   orig: 59, 133
   offset: 18, 16
   index: -1
 module/switchs/switchLightGlow
   rotate: false
-  xy: 1997, 353
+  xy: 53, 893
   size: 47, 47
   orig: 47, 47
   offset: 0, 0
   index: -1
 module/switchs/switchLightOff
   rotate: false
-  xy: 1847, 845
+  xy: 128, 753
   size: 27, 27
   orig: 31, 31
   offset: 2, 2
   index: -1
 module/switchs/switchLightOn
   rotate: false
-  xy: 1876, 867
+  xy: 130, 723
   size: 27, 27
   orig: 31, 31
   offset: 2, 2
   index: -1
 module/switchs/switchShadowDown
   rotate: false
-  xy: 2006, 796
+  xy: 1, 723
   size: 32, 71
   orig: 59, 133
   offset: 27, 0
   index: -1
 module/switchs/switchShadowUp
   rotate: false
-  xy: 2005, 869
+  xy: 178, 893
   size: 31, 36
   orig: 59, 133
   offset: 28, 62
   index: -1
 module/switchs/switchUp
   rotate: false
-  xy: 2021, 632
+  xy: 1757, 237
   size: 22, 55
   orig: 59, 133
   offset: 18, 61
@@ -230,70 +293,70 @@ module/symbols/bgSymbol
   index: -1
 module/symbols/symbol0
   rotate: false
-  xy: 2009, 231
+  xy: 211, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol1
   rotate: false
-  xy: 2003, 266
+  xy: 246, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol2
   rotate: false
-  xy: 1962, 294
+  xy: 281, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol3
   rotate: false
-  xy: 1962, 329
+  xy: 316, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol4
   rotate: false
-  xy: 1962, 364
+  xy: 351, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol5
   rotate: false
-  xy: 1962, 399
+  xy: 386, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol6
   rotate: false
-  xy: 1997, 402
+  xy: 421, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbol7
   rotate: false
-  xy: 1962, 434
+  xy: 456, 893
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbolShadow
   rotate: false
-  xy: 1909, 770
+  xy: 35, 723
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 module/symbols/symbolSlot
   rotate: false
-  xy: 1962, 253
+  xy: 1909, 770
   size: 39, 39
   orig: 39, 39
   offset: 0, 0
@@ -307,28 +370,28 @@ module/values/bgValues
   index: -1
 module/values/btnSelectedValues
   rotate: false
-  xy: 2027, 437
+  xy: 1757, 294
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 module/values/btnUnselectedValues
   rotate: false
-  xy: 2021, 689
+  xy: 1757, 312
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 module/values/leftArrowValues
   rotate: false
-  xy: 2009, 1
+  xy: 191, 799
   size: 38, 75
   orig: 38, 75
   offset: 0, 0
   index: -1
 module/values/rightArrowValues
   rotate: false
-  xy: 2009, 78
+  xy: 231, 799
   size: 38, 75
   orig: 38, 75
   offset: 0, 0
@@ -342,28 +405,28 @@ module/values/screenTypeValues
   index: -1
 module/values/screenValues
   rotate: false
-  xy: 1959, 469
+  xy: 1959, 501
   size: 86, 77
   orig: 86, 77
   offset: 0, 0
   index: -1
 pageGlowMove
   rotate: false
-  xy: 1283, 1
+  xy: 1283, 153
   size: 472, 644
   orig: 500, 707
   offset: 14, 31
   index: -1
 pageGlowNormal
   rotate: false
-  xy: 1, 1293
+  xy: 573, 723
   size: 442, 615
   orig: 500, 707
   offset: 29, 46
   index: -1
 pageGlowOver
   rotate: false
-  xy: 1283, 647
+  xy: 1, 949
   size: 472, 644
   orig: 500, 707
   offset: 14, 31

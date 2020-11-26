@@ -1,12 +1,10 @@
 package module;
 
 enum ButtonType {
-	WhiteNormal;
-	WhiteTexted;
-	RedNormal;
-	RedTexted;
-	BlueNormal;
-	BlueTexted;
+	Square;
+	Triangle;
+	Pentagon;
+	Hexagon;
 }
 
 class Buttons extends Module {
@@ -16,18 +14,18 @@ class Buttons extends Module {
 	public function new() {
 		super(500, 150);
 
-		var flow = new h2d.Flow(root);
-		flow.minWidth = flow.maxWidth = wid;
-		flow.minHeight = flow.maxHeight = hei;
-		flow.multiline = true;
-		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.horizontalSpacing = flow.verticalSpacing = 30;
+		var bg = Assets.tiles.h_get("bgButtons");
+		root.addChild(bg);
+		
+		var wrapperBtns = new h2d.Object(root);
 
 		btns = [];
 
 		for (type in ButtonType.createAll()) {
 			var btn = new Button(type, onClick);
-			flow.addChild(btn);
+			wrapperBtns.addChild(btn);
+			btn.x = 30 + btns.length * 115;
+			btn.y = 30;
 			btns.push(btn);
 		}
 
@@ -62,12 +60,12 @@ class Buttons extends Module {
 		for (t in Game.ME.currentTasks) {
 			switch (t.taskKind) {
 				case A1, A2, A3:
-					if (bt.bt == WhiteNormal) {
+					if (bt.bt == Square) {
 						bt.numClick++;
 						isError = false;
 					}
 				case A4:
-					if (bt.bt == RedNormal) {
+					if (bt.bt == Square) {
 						bt.numClick++;
 						isError = false;
 					}
@@ -91,22 +89,22 @@ class Buttons extends Module {
 			var isValidated = switch (t.taskKind) {
 				case null: true;
 				case A1:
-					if (getButton(WhiteNormal).numClick == 1)
+					if (getButton(Square).numClick == 1)
 						true;
 					else 
 						false;
 				case A2:
-					if (getButton(WhiteNormal).numClick == 2)
+					if (getButton(Square).numClick == 2)
 						true;
 					else 
 						false;
 				case A3:
-					if (getButton(WhiteNormal).numClick == 3)
+					if (getButton(Square).numClick == 3)
 						true;
 					else 
 						false;
 				case A4:
-					if (getButton(RedNormal).numClick == 1)
+					if (getButton(Square).numClick == 1)
 						true;
 					else 
 						false;
@@ -146,30 +144,30 @@ private class Button extends h2d.Layers {
 		
 		numClick = 0;
 
-        var inter = new h2d.Interactive(wid, hei, this);
-        inter.backgroundColor = 0xFF7F7F7F;
+		var wrapperSpr = new h2d.Object(this);
+
+		var shadow = Assets.tiles.h_get(bt.getName().toLowerCase() + "BtnShadow", 0.5, 0.5, wrapperSpr);
+		shadow.setPos(8, 8);
+
+		var spr = Assets.tiles.h_get(bt.getName().toLowerCase() + "Btn", 0.5, 0.5, wrapperSpr);
+		
+		wrapperSpr.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
+
+        var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
         inter.onClick = function(e) {
 			onClick(this);
 		}
-		inter.onOver = function (e) {
-			inter.backgroundColor = 0xFFacaaaa;
-		}
-		inter.onOut = function (e) {
-			inter.backgroundColor = 0xFF7F7F7F;
-		}
 
 		inter.onPush = function (e) {
-			inter.backgroundColor = 0xFF575757;
+			spr.setScale(0.9);
+			shadow.setScale(0.8);
+			shadow.setPos(4, 4);
 		}
 		inter.onRelease = function (e) {
-			inter.backgroundColor = 0xFF7F7F7F;
+			spr.setScale(1);
+			shadow.setScale(1);
+			shadow.setPos(8, 8);
 		}
-
-        var text = new h2d.Text(Assets.fontPixel, this);
-        text.text = bt.getName();
-        text.textAlign = Center;
-        text.maxWidth = wid;
-        text.setPosition(0, Std.int((hei - text.textHeight) / 2));
 	}
 	
 	public function reset() {

@@ -179,11 +179,11 @@ private class MiniButton extends h2d.Object {
 		this.values = values;
 		this.vd = vd;
 
-		var flow = new h2d.Flow(this);
+		var wrapperSpr = new h2d.Object(this);
 
-		spr = Assets.tiles.h_get("btnUnselectedValues", 0.5, 0.5, flow);
+		spr = Assets.tiles.h_get("btnUnselectedValues", 0.5, 0.5, wrapperSpr);
 
-		flow.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
+		wrapperSpr.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
 		
 		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
 		inter.onClick = function (e) {
