@@ -15,7 +15,7 @@ class Button extends h2d.Layers {
         this.hei = hei;
 
         var inter = new h2d.Interactive(wid, hei, this);
-        inter.backgroundColor = 0xFF7F7F7F;
+        inter.backgroundColor = 0xFF872222;
         inter.onClick = (e)->onClick();
 
         var text = new h2d.Text(Assets.fontPixel, this);

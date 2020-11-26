@@ -55,6 +55,8 @@ class Game extends Process {
 		fx = new Fx();
 		hud = new ui.Hud();
 
+		var bg = Assets.tiles.h_get("wallBG", root);
+
 		wrapperScreens = new h2d.Object(root);
 
 		initData();

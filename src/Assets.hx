@@ -10,6 +10,7 @@ class Assets {
 
 	public static var fontSinsgold16 : h2d.Font;
 	public static var fontSinsgold32 : h2d.Font;
+	public static var fontRulergold16 : h2d.Font;
 	public static var fontRise32 : h2d.Font;
 
 	static var initDone = false;
@@ -27,6 +28,7 @@ class Assets {
 
 		fontSinsgold16 = hxd.Res.fonts.sinsgold_medium_16.toFont();
 		fontSinsgold32 = hxd.Res.fonts.sinsgold_medium_32.toFont();
+		fontRulergold16 = hxd.Res.fonts.rulergold_medium_16.toFont();
 		fontRise32 = hxd.Res.fonts.rise_regular_32.toFont();
 	}
 }

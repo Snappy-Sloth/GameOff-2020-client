@@ -35,8 +35,12 @@ class Communication extends dn.Process {
 		ME = this;
 
 		createRoot(Game.ME.wrapperScreens);
+
+		var screen = Assets.tiles.h_get("commScreen", root);
 		
-		mainWrapper = new h2d.Mask(Std.int(wid * 0.75), Std.int(hei * 0.75), root);
+		mainWrapper = new h2d.Mask(916, 410, root);
+
+		var reflect = Assets.tiles.h_get("commScreenReflect", root);
 
 		goToManualBtn = new ui.Button("Manual", Game.ME.showManual);
 		root.add(goToManualBtn, 1);
@@ -52,11 +56,12 @@ class Communication extends dn.Process {
 	function initScreen() {
 		mainWrapper.removeChildren();
 
-		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x5e5e5e), mainWrapper);
+		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x081c0c), mainWrapper);
 
-		isTypingText = new h2d.Text(Assets.fontSmall, mainWrapper);
+		isTypingText = new h2d.Text(Assets.fontSinsgold16, mainWrapper);
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
 		isTypingText.alpha = 0;
+		isTypingText.textColor = 0x43b643;
 
 		currentAuthor = null;
 		waitForPlayer = false;
@@ -128,18 +133,27 @@ class Communication extends dn.Process {
 		flowAnswers.minWidth = flowAnswers.maxWidth = Std.int(mainWrapper.width * 0.5);
 		flowAnswers.verticalSpacing = 2;
 		flowAnswers.padding = 5;
-		flowAnswers.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
+		// flowAnswers.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
+
+		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxAnswer"), 6, 6, flowAnswers);
+		flowAnswers.getProperties(bg).isAbsolute = true;
 		
 		for (a in ptds) {
+			if (a != ptds[0]) {
+				var separation = Assets.tiles.h_get("separationAnswer", flowAnswers);
+				flowAnswers.getProperties(separation).horizontalAlign = Middle;
+			}
+
 			var flow = new h2d.Flow(flowAnswers);
 			flow.paddingHorizontal = 5;
 			flow.paddingVertical = 15;
 			flow.horizontalAlign = Right;
-			flow.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
+			// flow.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
 			flow.minWidth = Std.int(flowAnswers.innerWidth);
 			
-			var text = new h2d.Text(Assets.fontMedium, flow);
+			var text = new h2d.Text(Assets.fontSinsgold16, flow);
 			text.text = Lang.t.get(a.text);
+			text.textColor = 0x081c0c;
 
 			var inter = new h2d.Interactive(1, 1, flow);
 			flow.getProperties(inter).isAbsolute = true;
@@ -172,6 +186,9 @@ class Communication extends dn.Process {
 		flowAnswers.reflow();
 		flowAnswers.setPosition(mainWrapper.width - flowAnswers.outerWidth, mainWrapper.height - flowAnswers.outerHeight);
 
+		bg.width = flowAnswers.outerWidth;
+		bg.height = flowAnswers.outerHeight;
+
 		flowAnswers.x += flowAnswers.outerWidth;
 		tw.createS(flowAnswers.alpha, 0 > 1, 0.2);
 		tw.createS(flowAnswers.x, flowAnswers.x - flowAnswers.outerWidth, 0.2);
@@ -179,7 +196,6 @@ class Communication extends dn.Process {
 
 	function showPlayerMessage(text:String) {
 		var messageFlow = new h2d.Flow(mainWrapper);
-		messageFlow.backgroundTile = h2d.Tile.fromColor(0x28749a);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
@@ -187,16 +203,31 @@ class Communication extends dn.Process {
 		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.5);
 		arMessageFlow.push(messageFlow);
 
-		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
+		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalkNormal"), 6, 6, messageFlow);
+		messageFlow.getProperties(bg).isAbsolute = true;
+
+		var bgName = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxNameNormal"), 6, 6, messageFlow);
+		messageFlow.getProperties(bgName).isAbsolute = true;
+
+		var authorText = new h2d.Text(Assets.fontRulergold16, messageFlow);
+		authorText.textColor = 0x081c0c;
 		authorText.text = Lang.t._("Vous");
 
-		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
+		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
 		messageText.text = Lang.t.get(text);
+		messageText.textColor = 0x43b643;
 
 		messageFlow.reflow();
 		messageFlow.setPosition(mainWrapper.width - messageFlow.outerWidth - mainWrapperPadding, mainWrapper.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		bg.width = messageFlow.outerWidth;
+		bg.height = messageFlow.outerHeight;
+
+		bgName.setPosition(authorText.x - 2, authorText.y);
+		bgName.width = authorText.textWidth + 4;
+		bgName.height = authorText.textHeight;
 		
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, text);
 	}
@@ -211,8 +242,9 @@ class Communication extends dn.Process {
 		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
 		arMessageFlow.push(messageFlow);
 
-		var messageText = new h2d.Text(Assets.fontMedium, messageFlow);
+		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
+		messageText.textColor = 0x43b643;
 
 		messageFlow.reflow();
 		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
@@ -226,7 +258,7 @@ class Communication extends dn.Process {
 		tw.createS(isTypingText.alpha, 0, 0.2);
 
 		var messageFlow = new h2d.Flow(mainWrapper);
-		messageFlow.backgroundTile = h2d.Tile.fromColor(td.bgColor != null ? td.bgColor : 0x439d2a);
+		// messageFlow.backgroundTile = h2d.Tile.fromColor(td.bgColor != null ? td.bgColor : 0x439d2a);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
@@ -234,16 +266,31 @@ class Communication extends dn.Process {
 		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.5);
 		arMessageFlow.push(messageFlow);
 
-		var authorText = new h2d.Text(Assets.fontMedium, messageFlow);
+		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalkNormal"), 6, 6, messageFlow);
+		messageFlow.getProperties(bg).isAbsolute = true;
+
+		var bgName = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxNameNormal"), 6, 6, messageFlow);
+		messageFlow.getProperties(bgName).isAbsolute = true;
+
+		var authorText = new h2d.Text(Assets.fontRulergold16, messageFlow);
+		authorText.textColor = 0x081c0c;
 		authorText.text = td.author != null ? td.author : currentAuthor;
 
-		var messageText = new h2d.Text(Assets.fontSmall, messageFlow);
+		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
+		messageText.textColor = 0x43b643;
 
 		messageFlow.reflow();
 		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		bg.width = messageFlow.outerWidth;
+		bg.height = messageFlow.outerHeight;
+
+		bgName.setPosition(authorText.x - 2, authorText.y);
+		bgName.width = authorText.textWidth + 4;
+		bgName.height = authorText.textHeight;
 
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
 	}
@@ -298,7 +345,8 @@ class Communication extends dn.Process {
 		bgWrapper.scaleX = mainWrapper.width;
 		bgWrapper.scaleY = mainWrapper.height;
 
-		mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
+		// mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
+		mainWrapper.setPosition(182, 135);
 
 		isTypingText.setPosition(mainWrapperPadding + 5, mainWrapper.height - mainWrapperPadding - isTypingText.textHeight);
 	}

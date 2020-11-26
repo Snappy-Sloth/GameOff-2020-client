@@ -15,8 +15,9 @@ class Grid extends Module {
 	public function new() {
 		super(250, 250);
 
-		var bg = Assets.tiles.h_get("bgGrid");
-		root.addChild(bg);
+		var bg = Assets.tiles.h_get("bgGrid", root);
+
+		var shadow = Assets.tiles.h_get("gridShadow", root);
 
 		wrapperCell = new h2d.Object(root);
 
@@ -162,7 +163,7 @@ class Cell extends h2d.Object {
 				id = "btnGridReflect";
 		}
 
-		var sprReflect = Assets.tiles.h_get(id, 0.5, 0.5, wrapperSpr);
+		var sprReflect = Assets.tiles.h_get(id, 0.5, 0.5, spr);
 
 		var inter = new h2d.Interactive(SQUARE_SIZE, SQUARE_SIZE, this);
 		inter.onClick = function (e) {

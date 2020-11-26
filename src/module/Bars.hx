@@ -95,6 +95,7 @@ private class Bar extends h2d.Object {
 		}
 
 		sprCore.scaleY = -currentRatio * 100;
+		sprTop.y = sprCore.y + sprCore.scaleY;
 	}
 
 	inline function snap(ratio:Float) {
