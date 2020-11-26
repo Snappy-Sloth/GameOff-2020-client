@@ -57,22 +57,17 @@ class Buttons extends Module {
 
 		var isError = true;
 
-		for (t in Game.ME.currentTasks) {
-			switch (t.taskKind) {
-				case A1, A2, A3:
-					if (bt.bt == Square) {
-						bt.numClick++;
-						isError = false;
-					}
-				case A4:
-					if (bt.bt == Square) {
-						bt.numClick++;
-						isError = false;
-					}
-
-				default:
-					if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons)
-						throw "You forget to add " + t.taskKind + " to the switch in Buttons";
+		for (t in Game.ME.currentTasks.copy()) {
+			if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons) {
+				var dataText = Data.task.get(t.taskKind).data;
+				var n = 0;
+				var buttonId = Std.parseInt(dataText.charAt(0)) - 1;
+				var numClick = Std.parseInt(dataText.charAt(1));
+				if (bt != btns[buttonId])
+					isError = false;
+				else {
+					bt.numClick++;
+				}
 			}
 		}
 
@@ -86,37 +81,19 @@ class Buttons extends Module {
 		super.checkValidate();
 
 		for (t in Game.ME.currentTasks.copy()) {
-			var isValidated = switch (t.taskKind) {
-				case null: true;
-				case A1:
-					if (getButton(Square).numClick == 1)
-						true;
-					else 
-						false;
-				case A2:
-					if (getButton(Square).numClick == 2)
-						true;
-					else 
-						false;
-				case A3:
-					if (getButton(Square).numClick == 3)
-						true;
-					else 
-						false;
-				case A4:
-					if (getButton(Square).numClick == 1)
-						true;
-					else 
-						false;
-				default:
-					if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons)
-						throw "You forget to add " + t.taskKind + " to the switch in Buttons";
-					false;
-			}
+			if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons) {
+				var isValidated = false;
+				var dataText = Data.task.get(t.taskKind).data;
+				var n = 0;
+				var buttonId = Std.parseInt(dataText.charAt(0)) - 1;
+				var numClick = Std.parseInt(dataText.charAt(1));
+				if (btns[buttonId].numClick == numClick)
+					isValidated = true;
 
-			if (isValidated) {
-				Game.ME.onCompleteTask(t);
-				break;
+				if (isValidated) {
+					Game.ME.onCompleteTask(t);
+					break;
+				}
 			}
 		}
 	}

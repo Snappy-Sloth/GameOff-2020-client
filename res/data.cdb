@@ -219,7 +219,7 @@
 								{
 									"Tasks": [
 										{
-											"task": "F1",
+											"task": "A6",
 											"text": "Trololo",
 											"author": ""
 										}
@@ -272,22 +272,52 @@
 				{
 					"ID": "A1",
 					"group": 0,
-					"data": "Buttons: click 1 time on white button"
+					"data": "21"
 				},
 				{
 					"ID": "A2",
 					"group": 0,
-					"data": "Buttons: click 2 time on white button"
+					"data": "45"
 				},
 				{
 					"ID": "A3",
 					"group": 0,
-					"data": "Buttons: click 3 time on white button"
+					"data": "14"
 				},
 				{
 					"ID": "A4",
 					"group": 0,
-					"data": "Click 1 time on red button"
+					"data": "42"
+				},
+				{
+					"ID": "A5",
+					"data": "31",
+					"group": 0
+				},
+				{
+					"ID": "A6",
+					"data": "34",
+					"group": 0
+				},
+				{
+					"ID": "A7",
+					"data": "15",
+					"group": 0
+				},
+				{
+					"ID": "A8",
+					"data": "12",
+					"group": 0
+				},
+				{
+					"ID": "A9",
+					"data": "26",
+					"group": 0
+				},
+				{
+					"ID": "A10",
+					"data": "23",
+					"group": 0
 				},
 				{
 					"ID": "B1",
