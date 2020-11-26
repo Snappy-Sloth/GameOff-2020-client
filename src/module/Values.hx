@@ -135,16 +135,22 @@ private class Button extends dn.Process {
 		
 		createRoot(parent);
 
-		var spr = Assets.tiles.h_get(d < 0 ? "leftArrowValues" : "rightArrowValues", root);
+		var flow = new h2d.Flow(root);
+
+		var spr = Assets.tiles.h_get(d < 0 ? "leftArrowValues" : "rightArrowValues", 0.5, 0.5, flow);
+
+		flow.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
 
 		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, root);
 		inter.onPush = function (e) {
 			isClicked = true;
+			spr.setScale(0.9);
 		}
 		inter.onRelease = inter.onReleaseOutside = function (e) {
 			isClicked = false;
 			currentCD = 0.5;
 			cd.unset("cd");
+			spr.setScale(1);
 		}
 	}
 
@@ -173,11 +179,21 @@ private class MiniButton extends h2d.Object {
 		this.values = values;
 		this.vd = vd;
 
-		spr = Assets.tiles.h_get("btnUnselectedValues", this);
+		var flow = new h2d.Flow(this);
+
+		spr = Assets.tiles.h_get("btnUnselectedValues", 0.5, 0.5, flow);
+
+		flow.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
 		
 		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
 		inter.onClick = function (e) {
 			enable();
+		}
+		inter.onPush = function (e) {
+			spr.setScale(0.9);
+		}
+		inter.onRelease = function (e) {
+			spr.setScale(1);
 		}
 	}
 

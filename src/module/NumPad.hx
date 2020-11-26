@@ -118,17 +118,21 @@ private class Button extends h2d.Object {
 
 		this.id = id;
 
-		// var bmp = new h2d.Bitmap(h2d.Tile.fromColor(0xe8e8e8, 50, 50));
-		// this.addChild(bmp);
-		var spr = Assets.tiles.h_get("numpad", id - 1, this);
+		var flow = new h2d.Flow(this);
 
-		// var text = new h2d.Text(Assets.fontLarge, this);
-		// text.text = Std.string(id);
-		// text.setPosition(Std.int((bmp.tile.width - text.textWidth) * 0.5), Std.int((bmp.tile.height - text.textHeight) * 0.5));
+		var spr = Assets.tiles.h_get("numpad", id - 1, 0.5, 0.5, flow);
+
+		flow.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
 
 		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
 		inter.onClick = function (e) {
 			onClick(this);
+		}
+		inter.onPush = function (e) {
+			spr.setScale(0.9);
+		}
+		inter.onRelease = function (e) {
+			spr.setScale(1);
 		}
 	}
 
