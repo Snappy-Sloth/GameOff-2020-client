@@ -25,6 +25,7 @@ class Sheet extends h2d.Layers {
 		glowNormal.setPos(wid >> 1, hei >> 1);
 		
 		var spr = Assets.tiles.h_get("manualPage", this);
+		spr.setScale(0.5);
 		
 		sheet.onOver = function(e) {
 			if (Manual.ME.currentSheet == null) {

@@ -22,8 +22,10 @@ class Const {
 	public static inline var BUTTON_WIDTH = 100;
 	public static inline var BUTTON_HEIGHT = 50;
 
-	public static inline var SHEET_WIDTH = 840;
-	public static inline var SHEET_HEIGHT = 1188;
+	// public static inline var SHEET_WIDTH = 840;
+	// public static inline var SHEET_HEIGHT = 1188;
+	public static inline var SHEET_WIDTH = 420;
+	public static inline var SHEET_HEIGHT = 594;
 	public static inline var SHEET_ANGLE = 0.0006;
 
 	public static inline var MODULE_WIDTH = 500;
