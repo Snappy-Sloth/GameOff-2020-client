@@ -15,6 +15,9 @@ class Grid extends Module {
 	public function new() {
 		super(250, 250);
 
+		var bg = Assets.tiles.h_get("bgGrid");
+		root.addChild(bg);
+
 		wrapperCell = new h2d.Object(root);
 
 		for (i in 0...4) {
@@ -97,16 +100,80 @@ class Cell extends h2d.Object {
 		cx = x;
 		cy = y;
 
-		var bmp = Assets.tiles.h_get("gridCell", this);
+		var wrapperSpr = new h2d.Object(this);
 
-		sprSymbol = new HSprite(Assets.tiles, bmp);
+		var id = "btnGridBg";
+		if (y == 0) {
+			if (x == 0)
+				id = "btnGridBgTL";
+			else if (x == 3)
+				id = "btnGridBgTR";
+			else
+				id = "btnGridBgT";
+		}
+		else if (y == 3) {
+			if (x == 0)
+				id = "btnGridBgBL";
+			else if (x == 3)
+				id = "btnGridBgBR";
+			else
+				id = "btnGridBgB";
+		}
+		else {
+			if (x == 0)
+				id = "btnGridBgL";
+			else if (x == 3)
+				id = "btnGridBgR";
+			else
+				id = "btnGridBg";
+		}
+
+		var spr = Assets.tiles.h_get(id, 0.5, 0.5, wrapperSpr);
+
+		wrapperSpr.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
+
+		sprSymbol = new HSprite(Assets.tiles, spr);
 		sprSymbol.setCenterRatio();
-		sprSymbol.setPos(SQUARE_SIZE >> 1, SQUARE_SIZE >> 1);
+		// sprSymbol.setPos(SQUARE_SIZE >> 1, SQUARE_SIZE >> 1);
 		sprSymbol.visible = false;
+
+		var id = "btnGridReflect";
+		if (y == 0) {
+			if (x == 0)
+				id = "btnGridReflectTL";
+			else if (x == 3)
+				id = "btnGridReflectTR";
+			else
+				id = "btnGridReflectT";
+		}
+		else if (y == 3) {
+			if (x == 0)
+				id = "btnGridReflectBL";
+			else if (x == 3)
+				id = "btnGridReflectBR";
+			else
+				id = "btnGridReflectB";
+		}
+		else {
+			if (x == 0)
+				id = "btnGridReflectL";
+			else if (x == 3)
+				id = "btnGridReflectR";
+			else
+				id = "btnGridReflect";
+		}
+
+		var sprReflect = Assets.tiles.h_get(id, 0.5, 0.5, wrapperSpr);
 
 		var inter = new h2d.Interactive(SQUARE_SIZE, SQUARE_SIZE, this);
 		inter.onClick = function (e) {
 			onClick(this);
+		}
+		inter.onPush = function (e) {
+			spr.setScale(0.9);
+		}
+		inter.onRelease = function (e) {
+			spr.setScale(1);
 		}
 
 		setPosition(SQUARE_SIZE * cx, SQUARE_SIZE * cy);
