@@ -134,7 +134,6 @@ class Cell extends h2d.Object {
 
 		sprSymbol = new HSprite(Assets.tiles, spr);
 		sprSymbol.setCenterRatio();
-		// sprSymbol.setPos(SQUARE_SIZE >> 1, SQUARE_SIZE >> 1);
 		sprSymbol.visible = false;
 
 		var id = "btnGridReflect";

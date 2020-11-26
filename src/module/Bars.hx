@@ -7,6 +7,9 @@ class Bars extends Module {
 	public function new() {
 		super(300, 125);
 
+		var bg = Assets.tiles.h_get("bgBars");
+		root.addChild(bg);
+
 		var flow = new h2d.Flow(root);
 		flow.minWidth = flow.maxWidth = wid;
 		flow.minHeight = flow.maxHeight = hei;
@@ -64,12 +67,12 @@ private class Bar extends h2d.Object {
 
 		oldRatio = currentRatio;
 
-		var bmp = new h2d.Bitmap(h2d.Tile.fromColor(0x4be93a, 20, 100), this);
-		bmp.setPosition(bmp.tile.width, bmp.tile.height);
-		bmp.rotation = Math.PI;
+		var sprCore = Assets.tiles.h_get("barsCore", this);
+		sprCore.y = 100;
+
+		var sprTop = Assets.tiles.h_get("barsTop", 0, 0, 1, this);
 
 		var inter = new h2d.Interactive(20, 100, this);
-		// inter.backgroundColor = 0x55FF00FF;
 		inter.onPush = function (e) {
 			isClicked = true;
 			inter.onMove(e);
@@ -80,7 +83,8 @@ private class Bar extends h2d.Object {
 
 				if (oldRatio != currentRatio) {
 					oldRatio = currentRatio;
-					bmp.scaleY = currentRatio;
+					sprCore.scaleY = -currentRatio * 100;
+					sprTop.y = sprCore.y + sprCore.scaleY;
 
 					bars.checkValidate();
 				}
@@ -90,7 +94,7 @@ private class Bar extends h2d.Object {
 			isClicked = false;
 		}
 
-		bmp.scaleY = currentRatio;
+		sprCore.scaleY = -currentRatio * 100;
 	}
 
 	inline function snap(ratio:Float) {
