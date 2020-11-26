@@ -7,31 +7,44 @@ class Wires extends Module {
 
 	var from : Null<Slot> = null;
 
-	var currentWire : Null<h2d.Graphics> = null;
+	var currentWire : Null<HSprite> = null;
 
-	var wires : Array<{w:h2d.Graphics, top:Int, bot:Int}> = [];
+	var wireJack : HSprite;
+
+	var wires : Array<{w:HSprite, top:Int, bot:Int}> = [];
 
 	public function new() {
 		super(200, 220, 0x258d41);
+
+		var bg = Assets.tiles.h_get("bgWires");
+		root.addChild(bg);
 
 		wires = [];
 
 		for (i in 0...6) {
 			var slot = new Slot(this, i, true);
-			slot.x = 30 * (i) + 10;
-			slot.y = 20;
+			slot.x = 29 * (i) + 15;
+			slot.y = 35;
 			topSlots.push(slot);
 
 			var slot = new Slot(this, i, false);
-			slot.x = 30 * (i) + 10;
-			slot.y = hei - 50;
+			slot.x = 29 * (i) + 15;
+			slot.y = hei - 58;
 			botSlots.push(slot);
 		}
+
+		wireJack = Assets.tiles.h_get("wireJack", 0.5, 0.5, root);
+
+		wireJack.visible = false;
 	}
 
 	public function onPush(s:Slot) {
 		from = s;
-		currentWire = new h2d.Graphics(root);
+		currentWire = Assets.tiles.h_get("wireCore", 0.5, 0, root);
+
+		// hxd.System.setCursor(Default);
+
+		wireJack.visible = true;
 
 		for (w in wires.copy()) {
 			if ((s.isTop && w.top == s.id) || (!s.isTop && w.bot == s.id)) {
@@ -51,6 +64,8 @@ class Wires extends Module {
 					from = null;
 					currentWire.remove();
 					currentWire = null;
+					wireJack.visible = false;
+					hxd.System.setCursor(Default);
 				}
 			}, 1);
 			return;
@@ -63,17 +78,16 @@ class Wires extends Module {
 				}
 			}
 
-			currentWire.clear();
-			currentWire.lineStyle(8, 0xFFFF0000);
-			currentWire.moveTo(from.centerX, from.centerY);
-			var pos = root.globalToLocal(to.localToGlobal(new h2d.col.Point(10, 10)));
-			currentWire.lineTo(pos.x, pos.y);
+			currentWire.rotation = Math.atan2(to.centerY - from.centerY, to.centerX - from.centerX) - Math.PI / 2;
+			currentWire.scaleY = M.dist(from.centerX, from.centerY, to.centerX, to.centerY);
 			wires.push({w: currentWire, top:from.isTop ? from.id : to.id, bot:from.isTop ? to.id : from.id});
-			// trace(wires[wires.length - 1].top + " " + wires[wires.length - 1].bot);
-			// currentWire.filter = new h2d.filter.Outline(1);
 		}
+		else 
+			currentWire.remove();
 		from = null;
 		currentWire = null;
+
+		wireJack.visible = false;
 
 		checkValidate();
 	}
@@ -112,11 +126,14 @@ class Wires extends Module {
 		super.update();
 
 		if (from != null) {
-			currentWire.clear();
-			currentWire.lineStyle(8, 0xFFFF0000);
-			currentWire.moveTo(from.centerX, from.centerY);
 			var pos = root.globalToLocal(new h2d.col.Point(Boot.ME.s2d.mouseX, Boot.ME.s2d.mouseY));
-			currentWire.lineTo(pos.x, pos.y);
+
+			currentWire.setPos(from.centerX, from.centerY);
+			currentWire.rotation = Math.atan2(pos.y - from.centerY, pos.x - from.centerX) - Math.PI / 2;
+			currentWire.scaleY = M.dist(from.centerX, from.centerY, pos.x, pos.y) - 10;
+
+			wireJack.setPos(pos.x, pos.y);
+			wireJack.rotation = currentWire.rotation;
 		}
 	}
 }
@@ -137,16 +154,15 @@ private class Slot extends h2d.Object {
 
 		wires.root.addChild(this);
 
-		var inter = new h2d.Interactive(20, 20, this);
-		inter.backgroundColor = 0xFFFF00FF;
+		var spr = Assets.tiles.h_get("wireHoleEmpty", this);
+
+		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
+		// inter.backgroundColor = 0x55FF00FF;
 		inter.onPush = function (e) {
 			wires.onPush(this);
 		}
 		inter.onRelease = function (e) {
 			wires.onRelease(this);
 		}
-		/* inter.onReleaseOutside = function (e) {
-			
-		} */
 	}
 }
