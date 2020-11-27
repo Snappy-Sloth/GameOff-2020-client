@@ -18,15 +18,22 @@ class Manual extends dn.Process {
 	var sortSheetsBtn : ui.Button;
 	var goToCommBtn : ui.Button;
 
+	var mask : h2d.Mask;
+	var wrapper : h2d.Layers;
+
 	public function new() {
 		super(Game.ME);
 
 		ME = this;
 
 		createRoot(Game.ME.wrapperScreens);
+		
+		mask = new h2d.Mask(w(), h(), root);
+
+		wrapper = new h2d.Layers(mask);
 
 		var screen = new h2d.Interactive((w() / Const.SCALE), (h() / Const.SCALE));
-		root.add(screen, 10);
+		wrapper.add(screen, 10);
 		// screen.backgroundColor = 0xFFFF00FF;
 		screen.propagateEvents = true;
 
@@ -65,23 +72,23 @@ class Manual extends dn.Process {
 			var sheet = new Sheet(5 - i);
 			sheet.setPosition((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5, (((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5);
 
-			root.add(sheet, 0);
+			wrapper.add(sheet, 0);
 
 			arSheet.push(sheet);
 		}
 
 		sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
-		root.add(sortSheetsBtn, 1);
+		wrapper.add(sortSheetsBtn, 1);
 
 		goToCommBtn = new ui.Button("Comm", Game.ME.showComm);
-		root.add(goToCommBtn, 1);
+		wrapper.add(goToCommBtn, 1);
 
 		onResize();
 	}
 
 	public function selectSheet(sheet:Sheet) {
 		currentSheet = sheet;
-		root.add(currentSheet, 0);
+		wrapper.add(currentSheet, 0);
 	}
 
 	public function setSheetsToInitialPosition() {
@@ -89,7 +96,7 @@ class Manual extends dn.Process {
 			tw.createS(arSheet[i].rotation, 0, 0.3);
 			tw.createS(arSheet[i].x, ((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5), 0.3);
 			tw.createS(arSheet[i].y, ((((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5), 0.3);
-			root.add(arSheet[i], 0);
+			wrapper.add(arSheet[i], 0);
 		}
 	}
 
@@ -98,5 +105,8 @@ class Manual extends dn.Process {
 
 		sortSheetsBtn.setPosition(((w() / Const.SCALE) - sortSheetsBtn.wid) / 2, 7);
 		goToCommBtn.setPosition(7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
+
+		mask.width = Std.int(w() / Const.SCALE);
+		mask.height = Std.int(h() / Const.SCALE);
 	}
 }

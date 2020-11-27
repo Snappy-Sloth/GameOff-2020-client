@@ -53,6 +53,8 @@ class Hud extends dn.Process {
 		newMessageText.text = Lang.t._("New message!");
 		newMessageText.maxWidth = bgNewMessage.tile.width;
 		newMessageText.setPosition(Std.int(bgNewMessage.tile.width - newMessageText.textWidth) >> 1, Std.int(bgNewMessage.tile.height - newMessageText.textHeight) >> 1);
+
+		wrapperNewMessage.y = -bgNewMessage.tile.height;
 	}
 	
 	public function showTimer() {
