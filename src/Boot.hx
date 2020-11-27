@@ -6,6 +6,12 @@ class Boot extends hxd.App {
 		new Boot();
 	}
 
+	public function reboot() {
+		if (Main.ME != null)
+			Main.ME.destroy();
+		init();
+	}
+
 	// Engine ready
 	override function init() {
 		ME = this;

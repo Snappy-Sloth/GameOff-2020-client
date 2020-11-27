@@ -30,4 +30,26 @@ class Const {
 
 	public static inline var MODULE_WIDTH = 500;
 	public static inline var MODULE_HEIGHT = 150;
+
+	public static var PLAYER_DATA : PlayerData;
+	public static var OPTIONS_DATA : OptionsData;
+	
+	public static function INIT() {
+		PLAYER_DATA = dn.LocalStorage.readObject("playerData", false, {});
+
+		OPTIONS_DATA = dn.LocalStorage.readObject("optionsData", false, {SFX_VOLUME: 1., MUSIC_VOLUME: 1., LOCA : "fr"});
+			// #if debug 
+			// {SFX_VOLUME: 0., MUSIC_VOLUME: 0.}
+			// #else
+			// {SFX_VOLUME: 1., MUSIC_VOLUME: 1.}
+			// #end);
+
+		// Assets.UPDATE_MUSIC_VOLUME();
+	}
+
+	public static function CHANGE_LOCA(loca:String) {
+		OPTIONS_DATA.LOCA = loca;
+
+		dn.LocalStorage.writeObject("optionsData", false, OPTIONS_DATA);
+	}
 }

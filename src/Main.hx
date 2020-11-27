@@ -26,6 +26,8 @@ class Main extends dn.Process {
 		hxd.Res.initEmbed();
 		#end
 
+		Const.INIT();
+
 		// Hot reloading
 		#if debug
 		hxd.res.Resource.LIVE_UPDATE = true;
@@ -43,8 +45,8 @@ class Main extends dn.Process {
 		// Assets & data init
 		Assets.init();
 		new ui.Console(Assets.fontTiny, s);
-		// Lang.init("fr_FR");
-		Lang.init("en");
+		@:privateAccess Lang._initDone = false;
+		Lang.init(Const.OPTIONS_DATA.LOCA);
 		Data.load( hxd.Res.data.entry.getText() );
 
 		// Game controller

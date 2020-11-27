@@ -1,3 +1,14 @@
+typedef PlayerData = {
+	// var scores : Array<Int>;
+	// var maxLevelReached : Int;
+}
+
+typedef OptionsData = {
+	var SFX_VOLUME : Float;
+	var MUSIC_VOLUME : Float;
+	var LOCA : String;
+}
+
 typedef TaskData = {
 	var taskKind : Data.TaskKind;
 	var text : String;

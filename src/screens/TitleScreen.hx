@@ -6,6 +6,7 @@ class TitleScreen extends dn.Process {
 	var flow : h2d.Flow;
 
 	var bg : h2d.Bitmap;
+
 	var sb : HSpriteBatch;
 
 	public function new() {
@@ -15,7 +16,7 @@ class TitleScreen extends dn.Process {
 
 		createRoot();
 
-		bg = new h2d.Bitmap(h2d.Tile.fromColor(0x222034));
+		bg = new h2d.Bitmap(h2d.Tile.fromColor(0x191826));
 		root.add(bg, 0);
 
 		sb = new HSpriteBatch(Assets.tiles.tile);
@@ -36,14 +37,17 @@ class TitleScreen extends dn.Process {
 		var startGameBtn = new ui.Button('Game (Bunker)', Main.ME.startGame);
 		flow.addChild(startGameBtn);
 
-		// var startManualBtn = new ui.Button('Manual', Main.ME.startManual);
-		// flow.addChild(startManualBtn);
+		var frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
+			Const.CHANGE_LOCA("fr");
+			Boot.ME.reboot();
+		});
+		flow.addChild(frenchLocaBtn);
 
-		// var startCommBtn = new ui.Button('Comm', Main.ME.startComm);
-		// flow.addChild(startCommBtn);
-
-		// var startModulesBtn = new ui.Button('Modules', Main.ME.startModules);
-		// flow.addChild(startModulesBtn);
+		var englishLocaBtn = new ui.SpriteButton("btnLocaEN", function () {
+			Const.CHANGE_LOCA("en");
+			Boot.ME.reboot();
+		});
+		flow.addChild(englishLocaBtn);
 
 		onResize();
 	}

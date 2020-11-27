@@ -55,7 +55,7 @@ class Hud extends dn.Process {
 			
 			newMessageText = new h2d.Text(Assets.fontRulergold32, wrapperNewMessage);
 			newMessageText.textColor = 0xFFFFFF;
-			newMessageText.text = Lang.t._("New message!");
+			newMessageText.text = Lang.t._("Nouveau message !");
 			newMessageText.maxWidth = bgNewMessage.tile.width;
 			newMessageText.setPosition(Std.int(bgNewMessage.tile.width - newMessageText.textWidth) >> 1, Std.int(bgNewMessage.tile.height - newMessageText.textHeight) >> 1);
 	
@@ -69,7 +69,7 @@ class Hud extends dn.Process {
 			
 			alertMessageText = new h2d.Text(Assets.fontRulergold32, wrapperAlertMessage);
 			alertMessageText.textColor = 0xFFFFFF;
-			alertMessageText.text = Lang.t._("Don't touch the modules!");
+			alertMessageText.text = Lang.t._("Ne touchez pas aux modules !");
 			alertMessageText.maxWidth = bgAlertMessage.tile.width;
 			alertMessageText.setPosition(Std.int(bgAlertMessage.tile.width - alertMessageText.textWidth) >> 1, Std.int(bgAlertMessage.tile.height - alertMessageText.textHeight) >> 1);
 	
