@@ -16,10 +16,10 @@ class Communication extends dn.Process {
 	var goToManualBtn : ui.Button;
 	var goToModulesBtn : ui.Button;
 
-	var talks : Array<Talk> = [];
+	var talks : Array<Talk>;
 
 	var wrapperTab : h2d.Object;
-	var tabs : Array<Tab> = [];
+	var tabs : Array<Tab>;
 	var currentTabId = 0;
 
 	public function new() {
@@ -49,6 +49,18 @@ class Communication extends dn.Process {
 	function initScreen() {
 		mainWrapper.removeChildren();
 
+		if (talks != null)
+			for (t in talks) {
+				removeAndDestroyChild(t);
+			}
+		if (tabs != null)
+			for (t in tabs) {
+				removeAndDestroyChild(t);
+			}
+
+		talks = [];
+		tabs = [];
+
 		// Content
 		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x081c0c), mainWrapper);
 
@@ -58,7 +70,8 @@ class Communication extends dn.Process {
 		var line = Assets.tiles.h_get("tabLine", wrapperTab);
 		line.y = 16;
 
-		// getTalk("Astro");
+		getTalk("Astro");
+		addTab("Astro");
 	}
 
 	function addTab(author:String) : Tab {
@@ -71,6 +84,9 @@ class Communication extends dn.Process {
 		wrapperTab.addChild(tab.root);
 		tab.root.x = 20 + tabs.length * 101;
 		tabs.push(tab);
+
+		if (tabs.length == 1)
+			selectTab(author);
 
 		return tab;
 	}
@@ -114,9 +130,6 @@ class Communication extends dn.Process {
 		var talk = getTalk(game.currentEvent.author);
 
 		addTab(game.currentEvent.author).newMessage();
-
-		if (talk == talks[0])
-			selectTab(talk.author);
 
 		talk.initNextTalk();
 	}
@@ -250,6 +263,8 @@ private class Talk extends dn.Process {
 
 		arMessageFlow = [];
 
+		pendingMessages = [];
+
 		isTypingText = new h2d.Text(Assets.fontSinsgold16, mask);
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
 		isTypingText.alpha = 0;
@@ -261,8 +276,6 @@ private class Talk extends dn.Process {
 	}
 
 	public function initNextTalk() {
-		pendingMessages = [];
-
 		lastMessage = null;
 
 		for (det in Game.ME.currentEvent.talks) {
@@ -496,6 +509,7 @@ private class Talk extends dn.Process {
 	}
 
 	function updatePostedMessages(dist:Float, text:String) {
+
 		for (flow in arMessageFlow) {
 			tw.createS(flow.y, flow.y - dist, 0.2);
 		}
@@ -509,6 +523,8 @@ private class Talk extends dn.Process {
 				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
 				delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
 		}
+		
+		Game.ME.needNewMessageInfo();
 
 		if (currentMessage == lastMessage) {
 			lastMessage = null;

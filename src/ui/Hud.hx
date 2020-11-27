@@ -16,6 +16,8 @@ class Hud extends dn.Process {
 	var glowTimer : HSprite;
 	var timerText : h2d.Text;
 
+	var bgNewMessage : HSprite;
+	var wrapperNewMessage : h2d.Object;
 	var newMessageText : h2d.Text;
 
 	public function new() {
@@ -31,6 +33,8 @@ class Hud extends dn.Process {
 
 		{ // TIMER
 			wrapperTimer = new h2d.Object(root);
+
+			var bg = Assets.tiles.h_get("bgTimer", 0, 0.5, wrapperTimer);
 	
 			glowTimer = Assets.tiles.h_get("redGlowTimer", 0.5, 0.5, wrapperTimer);
 	
@@ -39,10 +43,16 @@ class Hud extends dn.Process {
 			
 			wrapperTimer.y = -timerText.textHeight - 50;
 		}
+
+		wrapperNewMessage = new h2d.Object(root);
+
+		bgNewMessage = Assets.tiles.h_get("bgNewMessage", wrapperNewMessage);
 		
-		newMessageText = new h2d.Text(Assets.fontMedium, root);
+		newMessageText = new h2d.Text(Assets.fontRulergold32, wrapperNewMessage);
 		newMessageText.textColor = 0xFFFFFF;
-		newMessageText.text = "New message!";
+		newMessageText.text = Lang.t._("New message!");
+		newMessageText.maxWidth = bgNewMessage.tile.width;
+		newMessageText.setPosition(Std.int(bgNewMessage.tile.width - newMessageText.textWidth) >> 1, Std.int(bgNewMessage.tile.height - newMessageText.textHeight) >> 1);
 	}
 	
 	public function showTimer() {
@@ -63,11 +73,11 @@ class Hud extends dn.Process {
 	}
 	
 	public function showNewMessage() {
-		tw.createS(newMessageText.y, 0, 0.3);
+		tw.createS(wrapperNewMessage.y, 0, 0.3);
 	}
 	
 	public function hideNewMessage() {
-		tw.createS(newMessageText.y, -newMessageText.textHeight, 0.3);
+		tw.createS(wrapperNewMessage.y, -bgNewMessage.tile.height, 0.3);
 	}
 
 	public function redWarning() {
@@ -81,12 +91,13 @@ class Hud extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		newMessageText.x = wid - newMessageText.textWidth - 10;
-		newMessageText.y = - newMessageText.textHeight;
+		wrapperNewMessage.x = wid - bgNewMessage.tile.width - 10;
 
 		timerText.text = prettyTimer((Game.ME.timer / Const.FPS) * 100);
-		wrapperTimer.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
-		glowTimer.setPosition(timerText.textWidth * 0.5, timerText.textHeight * 0.5);
+		timerText.x = -Std.int(timerText.textWidth) >> 1;
+		// wrapperTimer.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
+		wrapperTimer.x = Std.int(w() / Const.SCALE) >> 1;
+		glowTimer.setPosition(0, timerText.textHeight * 0.5);
 
 		globalGlow.setPos(wid >> 1, hei >> 1);
 	}
@@ -99,6 +110,9 @@ class Hud extends dn.Process {
 		super.postUpdate();
 
 		timerText.text = prettyTimer((Game.ME.timer / Const.FPS) * 100);
+
+		if (!cd.hasSetS("blinkNewMessage", 0.5))
+			newMessageText.visible = !newMessageText.visible;
 
 		if (game.alertIsActive) {
 			globalGlow.alpha = 0.75 + 0.25 * Math.cos(5 + (ftime / 10));

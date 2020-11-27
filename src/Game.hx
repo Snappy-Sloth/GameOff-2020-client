@@ -157,7 +157,9 @@ class Game extends Process {
 			message += (i > 0 ? "\n" : "") + Lang.t.get(currentTasks[i].text);
 		}
 		communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert});
+	}
 
+	public function needNewMessageInfo() {
 		if (currentScreen != communication)
 			hud.showNewMessage();
 	}
