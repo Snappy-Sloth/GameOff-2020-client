@@ -192,6 +192,9 @@ class Game extends Process {
 	public function onError() {
 		timer += 10 * Const.FPS;
 		hud.redWarning();
+
+		if (currentTasks == null)
+			Game.ME.hud.showAlertMessage();
 	}
 
 	function showEndDay() {
@@ -315,13 +318,13 @@ class Game extends Process {
 					// launchDay(Day_Test);
 					showDebugMenu();
 				}
-				// if (ca.isKeyboardPressed(hxd.Key.F2)) {
-				// 	launchDay(Day_Test_Alert);
-				// }
 
 				if (ca.isKeyboardPressed(hxd.Key.F5)) {
 					if (currentTasks != null)
 						onCompleteTask(currentTasks[0]);
+				}
+				if (ca.isKeyboardPressed(hxd.Key.F6)) {
+					hud.showNewMessage();
 				}
 			#end
 		}

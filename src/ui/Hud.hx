@@ -20,6 +20,10 @@ class Hud extends dn.Process {
 	var wrapperNewMessage : h2d.Object;
 	var newMessageText : h2d.Text;
 
+	var bgAlertMessage : HSprite;
+	var wrapperAlertMessage : h2d.Object;
+	var alertMessageText : h2d.Text;
+
 	public function new() {
 		super(Game.ME);
 
@@ -44,17 +48,33 @@ class Hud extends dn.Process {
 			wrapperTimer.y = -timerText.textHeight - 50;
 		}
 
-		wrapperNewMessage = new h2d.Object(root);
+		{ // NEW MESSAGE
+			wrapperNewMessage = new h2d.Object(root);
+	
+			bgNewMessage = Assets.tiles.h_get("bgNewMessage", wrapperNewMessage);
+			
+			newMessageText = new h2d.Text(Assets.fontRulergold32, wrapperNewMessage);
+			newMessageText.textColor = 0xFFFFFF;
+			newMessageText.text = Lang.t._("New message!");
+			newMessageText.maxWidth = bgNewMessage.tile.width;
+			newMessageText.setPosition(Std.int(bgNewMessage.tile.width - newMessageText.textWidth) >> 1, Std.int(bgNewMessage.tile.height - newMessageText.textHeight) >> 1);
+	
+			wrapperNewMessage.y = -bgNewMessage.tile.height;
+		}
 
-		bgNewMessage = Assets.tiles.h_get("bgNewMessage", wrapperNewMessage);
-		
-		newMessageText = new h2d.Text(Assets.fontRulergold32, wrapperNewMessage);
-		newMessageText.textColor = 0xFFFFFF;
-		newMessageText.text = Lang.t._("New message!");
-		newMessageText.maxWidth = bgNewMessage.tile.width;
-		newMessageText.setPosition(Std.int(bgNewMessage.tile.width - newMessageText.textWidth) >> 1, Std.int(bgNewMessage.tile.height - newMessageText.textHeight) >> 1);
-
-		wrapperNewMessage.y = -bgNewMessage.tile.height;
+		{ // ALERT MESSAGE
+			wrapperAlertMessage = new h2d.Object(root);
+	
+			bgAlertMessage = Assets.tiles.h_get("bgAlertMessage", wrapperAlertMessage);
+			
+			alertMessageText = new h2d.Text(Assets.fontRulergold32, wrapperAlertMessage);
+			alertMessageText.textColor = 0xFFFFFF;
+			alertMessageText.text = Lang.t._("Don't touch the modules!");
+			alertMessageText.maxWidth = bgAlertMessage.tile.width;
+			alertMessageText.setPosition(Std.int(bgAlertMessage.tile.width - alertMessageText.textWidth) >> 1, Std.int(bgAlertMessage.tile.height - alertMessageText.textHeight) >> 1);
+	
+			wrapperAlertMessage.y = hei;
+		}
 	}
 	
 	public function showTimer() {
@@ -83,8 +103,16 @@ class Hud extends dn.Process {
 		tw.createS(wrapperNewMessage.y, -bgNewMessage.tile.height, 0.3);
 	}
 
+	public function showAlertMessage() {
+		tw.createS(wrapperAlertMessage.y, hei - bgAlertMessage.tile.height, 0.3);
+		delayer.cancelById("hideAlertMessage");
+		delayer.addS("hideAlertMessage", function () {
+			tw.createS(wrapperAlertMessage.y, hei, 0.3);
+		}, 3);
+	}
+
 	public function redWarning() {
-		fx.flashBangS(0xe72727, 0.5, 0.2);
+		fx.flashBangS(0xe72727, 0.25, 0.2);
 	}
 
 	public function goodWarning() {
@@ -95,6 +123,7 @@ class Hud extends dn.Process {
 		super.onResize();
 
 		wrapperNewMessage.x = wid - bgNewMessage.tile.width - 10;
+		wrapperAlertMessage.x = Std.int(wid - bgAlertMessage.tile.width) >> 1;
 
 		timerText.text = prettyTimer((Game.ME.timer / Const.FPS) * 100);
 		timerText.x = -Std.int(timerText.textWidth) >> 1;
@@ -116,6 +145,10 @@ class Hud extends dn.Process {
 
 		if (!cd.hasSetS("blinkNewMessage", 0.5))
 			newMessageText.visible = !newMessageText.visible;
+
+		// if (!cd.hasSetS("blinkAlertMessage", 0.25))
+		// 	alertMessageText.visible = !alertMessageText.visible;
+		alertMessageText.alpha = 0.75 + 0.25 * Math.cos(ftime / 2);
 
 		if (game.alertIsActive) {
 			globalGlow.alpha = 0.75 + 0.25 * Math.cos(5 + (ftime / 10));

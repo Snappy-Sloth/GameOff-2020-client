@@ -4,6 +4,13 @@ size: 4096,4096
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+bgAlertMessage
+  rotate: false
+  xy: 36, 1438
+  size: 494, 65
+  orig: 494, 65
+  offset: 0, 0
+  index: -1
 bgNewMessage
   rotate: false
   xy: 3278, 676
@@ -573,7 +580,7 @@ module/switchs/bgSwitch
   index: -1
 module/switchs/switchDown
   rotate: false
-  xy: 36, 1438
+  xy: 475, 788
   size: 22, 55
   orig: 59, 133
   offset: 18, 16
@@ -615,7 +622,7 @@ module/switchs/switchShadowUp
   index: -1
 module/switchs/switchUp
   rotate: false
-  xy: 60, 1438
+  xy: 499, 788
   size: 22, 55
   orig: 59, 133
   offset: 18, 61
@@ -699,7 +706,7 @@ module/symbols/symbolSlot
   index: -1
 module/values/bgValues
   rotate: false
-  xy: 1, 2194
+  xy: 475, 846
   size: 200, 130
   orig: 200, 130
   offset: 0, 0

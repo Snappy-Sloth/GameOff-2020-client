@@ -30,6 +30,7 @@ class ModuleScreen extends dn.Process {
 		// flowModule.multiline = true;
 
 		var wrapperModule = new h2d.Object(root);
+		wrapperModule.y = 40;
 
 		var btnModule = new module.Buttons();
 		wrapperModule.addChild(btnModule.root);
