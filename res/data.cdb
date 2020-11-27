@@ -269,6 +269,59 @@
 							"timeBeforeS": 0
 						}
 					]
+				},
+				{
+					"id": "Day_Test_Multiple_Talkers",
+					"events": [
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Test"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Ok",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Anon",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Teeest"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Ok aussi",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0
+								}
+							],
+							"alerts": []
+						}
+					]
 				}
 			],
 			"separators": [],

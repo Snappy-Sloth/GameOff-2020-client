@@ -8,26 +8,19 @@ class Communication extends dn.Process {
 	public var hei(get, never):Int;		inline function get_hei() return Std.int(h() / Const.SCALE);
 
 	var mainWrapper : h2d.Mask;
-	var mainWrapperPadding : Int = 10;
 
 	var bgWrapper : h2d.Bitmap;
-
-	var arMessageFlow : Array<h2d.Flow>;
-
-	var isTypingText : h2d.Text;
-
-	var waitForPlayer = false;
 	
 	var currentAuthor : Null<String> = null;
-	
-	var pendingMessages : Array<TalkFrom>;
-	var currentMessage : TalkFrom;
-	var nextMessage(get, never) : Null<TalkFrom>;		inline function get_nextMessage() return pendingMessages[0];
 
 	var goToManualBtn : ui.Button;
 	var goToModulesBtn : ui.Button;
 
-	var lastMessage : TalkFrom;
+	var talks : Array<Talk> = [];
+
+	var wrapperTab : h2d.Object;
+	var tabs : Array<Tab> = [];
+	var currentTabId = 0;
 
 	public function new() {
 		super(Game.ME);
@@ -56,14 +49,203 @@ class Communication extends dn.Process {
 	function initScreen() {
 		mainWrapper.removeChildren();
 
+		// Content
 		bgWrapper = new h2d.Bitmap(h2d.Tile.fromColor(0x081c0c), mainWrapper);
 
-		isTypingText = new h2d.Text(Assets.fontSinsgold16, mainWrapper);
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
-		isTypingText.alpha = 0;
-		isTypingText.textColor = 0x43b643;
+		// Tabs
+		wrapperTab = new h2d.Object(mainWrapper);
 
-		currentAuthor = null;
+		var line = Assets.tiles.h_get("tabLine", wrapperTab);
+		line.y = 16;
+
+		// addTab("Toto");
+		// addTab("Tata");
+		// addTab("Tita");
+
+		// selectTab("Toto");
+	}
+
+	function addTab(author:String) : Tab {
+		for (tab in tabs) {
+			if (tab.author == author)
+				return tab;
+		}
+
+		var tab = new Tab(this, author);
+		wrapperTab.addChild(tab.root);
+		tab.root.x = 20 + tabs.length * 101;
+		tabs.push(tab);
+
+		return tab;
+	}
+
+	public function selectTab(author:String) {
+		for (tab in tabs) {
+			if (tab.author == author)
+				tab.select();
+			else
+				tab.unselect();
+		}
+
+		for (talk in talks) {
+			talk.root.visible = talk.author == author;
+		}
+	}
+
+	function getTalk(author:String):Talk {
+		for (talk in talks) {
+			if (talk.author == author)
+				return talk;
+		}
+
+		var talk = new Talk(this, author);
+		talk.root.visible = false;
+		talks.push(talk);
+		talk.root.y = 17;
+		return talk;
+	}
+
+	function getMainTalk():Talk {
+		for (talk in talks) {
+			if (talk.author== "Astro")
+				return talk;
+		}
+
+		return null;
+	}
+
+	public function initTalk() {
+		var talk = getTalk(game.currentEvent.author);
+
+		addTab(game.currentEvent.author).newMessage();
+
+		if (talk == talks[0])
+			selectTab(talk.author);
+	}
+
+	public function clearAll() {
+		initScreen();
+
+		onResize();
+	}
+
+	public function showOffline() {
+		getMainTalk().forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: currentAuthor}));
+	}
+	
+	public function forceOutsideMessage(td:TalkData) {
+		getMainTalk().forceOutsideMessage(td);
+	}
+	
+	public function forceSystemMessage(text:String, type:Data.TalkTypeKind = Normal) {
+		getMainTalk().forceSystemMessage(text, type);
+	}
+
+	override function onResize() {
+		super.onResize();
+
+		goToManualBtn.setPosition((w() / Const.SCALE) - goToManualBtn.wid - 7, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
+		goToModulesBtn.setPosition(7, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
+
+		bgWrapper.scaleX = mainWrapper.width;
+		bgWrapper.scaleY = mainWrapper.height;
+
+		// mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
+		mainWrapper.setPosition(182, 135);
+	}
+}
+
+private class Tab extends dn.Process {
+
+	var bg : HSprite;
+	var text : h2d.Text;
+
+	public var hasNewMessage : Bool = false;
+
+	public var author(default, null) : String;
+
+	public var isSelected = false;
+
+	var blink = false;
+
+	public function new(comm:Communication, author:String) {
+		super(comm);
+
+		createRoot();
+
+		this.author = author;
+
+		bg = Assets.tiles.h_get("tabFGNew", root);
+
+		var inter = new h2d.Interactive(bg.tile.width, bg.tile.height, root);
+		inter.onClick = function (e) {
+			comm.selectTab(author);
+		}
+
+		text = new h2d.Text(Assets.fontRulergold16, root);
+		text.text = author;
+		text.textColor = 0x43b643;
+		text.setPosition(Std.int(bg.tile.width - text.textWidth) >> 1, Std.int(bg.tile.height - text.textHeight) >> 1);
+
+		unselect();
+	}
+
+	public function select() {
+		bg.set("tabCurrent");
+		hasNewMessage = false;
+		text.textColor = 0x43b643;
+	}
+
+	public function newMessage() {
+		hasNewMessage = true;
+		unselect();
+	}
+	
+	public function unselect() {
+		text.textColor = hasNewMessage ? 0x081c0c : 0x43b643;
+		bg.set(hasNewMessage ? "tabFGNew" : "tabFGNormal");
+	}
+
+	override function update() {
+		super.update();
+
+		if (hasNewMessage && !isSelected && !cd.hasSetS("blink", 0.4)) {
+			text.textColor = blink ? 0x081c0c : 0x43b643;
+			bg.set(blink ? "tabFGNew" : "tabFGNormal");
+			blink = !blink;
+		}
+	}
+}
+
+private class Talk extends dn.Process {
+
+	public var author(default, null) : String;
+	
+	var mainWrapperPadding : Int = 10;
+	
+	var pendingMessages : Array<TalkFrom>;
+	var currentMessage : TalkFrom;
+	var nextMessage(get, never) : Null<TalkFrom>;		inline function get_nextMessage() return pendingMessages[0];
+
+	var waitForPlayer = false;
+
+	var lastMessage : TalkFrom;
+
+	var arMessageFlow : Array<h2d.Flow>;
+
+	var isTypingText : h2d.Text;
+
+	var mask : h2d.Mask;
+
+	public function new(comm:Communication, author:String) {
+		super(comm);
+
+		createRoot(@:privateAccess comm.mainWrapper);
+
+		mask = new h2d.Mask(916, 393, root);
+
+		this.author = author;
+
 		waitForPlayer = false;
 
 		cd.reset();
@@ -72,12 +254,13 @@ class Communication extends dn.Process {
 		pendingMessages = [];
 
 		lastMessage = null;
-	}
 
-	public function initTalk() {
-		pendingMessages = [];
+		isTypingText = new h2d.Text(Assets.fontSinsgold16, mask);
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
+		isTypingText.alpha = 0;
+		isTypingText.textColor = 0x43b643;
 
-		for (det in game.currentEvent.talks) {
+		for (det in Game.ME.currentEvent.talks) {
 			if (det.answers.length > 0) {
 				var texts : Array<PlayerTalkData> = [];
 				for (answer in det.answers) {
@@ -95,12 +278,12 @@ class Communication extends dn.Process {
 
 		lastMessage = pendingMessages[pendingMessages.length - 1];
 
-		if (currentAuthor != game.currentEvent.author) {
-			currentAuthor = game.currentEvent.author;
-			forceSystemMessage(Lang.t._("::name:: est en ligne", {name:currentAuthor}));
-		}
+		// if (currentAuthor != game.currentEvent.author) {
+		// 	currentAuthor = game.currentEvent.author;
+			forceSystemMessage(Lang.t._("::name:: est en ligne", {name:author}));
+		// }
 
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
 
 		switch (nextMessage) {
 			case Player(ptd):
@@ -109,6 +292,8 @@ class Communication extends dn.Process {
 				tw.createS(isTypingText.alpha, 1, 0.5);
 				cd.setS("newText", 2);
 		}
+
+		onResize();
 	}
 
 	public function showNextMessage() {
@@ -127,10 +312,10 @@ class Communication extends dn.Process {
 	function showPlayerAnswers(ptds:Array<PlayerTalkData>) {
 		waitForPlayer = true;
 
-		var flowAnswers = new h2d.Flow(mainWrapper);
+		var flowAnswers = new h2d.Flow(mask);
 		flowAnswers.layout = Vertical;
 		flowAnswers.horizontalAlign = Right;
-		flowAnswers.minWidth = flowAnswers.maxWidth = Std.int(mainWrapper.width * 0.5);
+		flowAnswers.minWidth = flowAnswers.maxWidth = Std.int(mask.width * 0.5);
 		flowAnswers.verticalSpacing = 2;
 		flowAnswers.padding = 5;
 
@@ -192,7 +377,7 @@ class Communication extends dn.Process {
 		}
 
 		flowAnswers.reflow();
-		flowAnswers.setPosition(mainWrapper.width - flowAnswers.outerWidth, mainWrapper.height - flowAnswers.outerHeight);
+		flowAnswers.setPosition(mask.width - flowAnswers.outerWidth, mask.height - flowAnswers.outerHeight);
 
 		bg.width = flowAnswers.outerWidth;
 		bg.height = flowAnswers.outerHeight;
@@ -203,12 +388,12 @@ class Communication extends dn.Process {
 	}
 
 	function showPlayerMessage(text:String) {
-		var messageFlow = new h2d.Flow(mainWrapper);
+		var messageFlow = new h2d.Flow(mask);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Right;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.45);
+		messageFlow.maxWidth = Std.int(mask.width * 0.45);
 		arMessageFlow.push(messageFlow);
 
 		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalkNormal"), 6, 6, messageFlow);
@@ -226,7 +411,7 @@ class Communication extends dn.Process {
 		messageText.textColor = 0x43b643;
 
 		messageFlow.reflow();
-		messageFlow.setPosition(mainWrapper.width - messageFlow.outerWidth - mainWrapperPadding, mainWrapper.height + 5);
+		messageFlow.setPosition(mask.width - messageFlow.outerWidth - mainWrapperPadding, mask.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
@@ -241,12 +426,12 @@ class Communication extends dn.Process {
 	}
 
 	function showSystemMessage(td:TalkData) {
-		var messageFlow = new h2d.Flow(mainWrapper);
+		var messageFlow = new h2d.Flow(mask);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Middle;
-		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
+		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mask.width - mainWrapperPadding * 2);
 		arMessageFlow.push(messageFlow);
 
 		var bg = Assets.tiles.h_get("boxSystem" + td.type.toString(), 0.5, 0.5, messageFlow);
@@ -257,7 +442,7 @@ class Communication extends dn.Process {
 		messageText.textColor = 0x081c0c;
 
 		messageFlow.reflow();
-		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
+		messageFlow.setPosition(mainWrapperPadding, mask.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
@@ -269,12 +454,12 @@ class Communication extends dn.Process {
 	function showOutsideMessage(td:TalkData) {
 		tw.createS(isTypingText.alpha, 0, 0.2);
 
-		var messageFlow = new h2d.Flow(mainWrapper);
+		var messageFlow = new h2d.Flow(mask);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Left;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.45);
+		messageFlow.maxWidth = Std.int(mask.width * 0.45);
 		arMessageFlow.push(messageFlow);
 
 		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalk" + td.type.toString()), 6, 6, messageFlow);
@@ -285,7 +470,7 @@ class Communication extends dn.Process {
 
 		var authorText = new h2d.Text(Assets.fontRulergold16, messageFlow);
 		authorText.textColor = 0x081c0c;
-		authorText.text = td.author != null ? td.author : currentAuthor;
+		authorText.text = td.author != null ? td.author : author;
 
 		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
@@ -295,7 +480,7 @@ class Communication extends dn.Process {
 		}
 
 		messageFlow.reflow();
-		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
+		messageFlow.setPosition(mainWrapperPadding, mask.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
@@ -321,29 +506,15 @@ class Communication extends dn.Process {
 			case Player(ptd): cd.setS("newText", 1);
 			case System(td) : cd.setS("newText", 0.5);
 			case Outside(td) :
-				cd.setS("newText", td.text.length * 0.04);
-				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: currentAuthor});
+				cd.setS("newText", 0.5 + td.text.length * 0.04);
+				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
 				delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
 		}
 
 		if (currentMessage == lastMessage) {
 			lastMessage = null;
-			delayer.addS(game.nextEvent, 1);
+			delayer.addS(Game.ME.nextEvent, 1);
 		}
-	}
-
-	public function clearAll() {
-		initScreen();
-
-		onResize();
-	}
-
-	public function showOffline() {
-		forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: currentAuthor}));
-	}
-
-	public function forceSystemMessage(text:String, type:Data.TalkTypeKind = Normal) {
-		pendingMessages.unshift(System({author:"System", text: text, type: type}));
 	}
 
 	public function forceOutsideMessage(td:TalkData):TalkFrom {
@@ -352,19 +523,14 @@ class Communication extends dn.Process {
 		return m;
 	}
 
+	public function forceSystemMessage(text:String, type:Data.TalkTypeKind = Normal) {
+		pendingMessages.unshift(System({author:"System", text: text, type: type}));
+	}
+
 	override function onResize() {
 		super.onResize();
 
-		goToManualBtn.setPosition((w() / Const.SCALE) - goToManualBtn.wid - 7, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
-		goToModulesBtn.setPosition(7, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
-
-		bgWrapper.scaleX = mainWrapper.width;
-		bgWrapper.scaleY = mainWrapper.height;
-
-		// mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
-		mainWrapper.setPosition(182, 135);
-
-		isTypingText.setPosition(mainWrapperPadding + 5, mainWrapper.height - mainWrapperPadding - isTypingText.textHeight);
+		isTypingText.setPosition(mainWrapperPadding + 5, mask.height - mainWrapperPadding - isTypingText.textHeight);
 	}
 
 	override function update() {

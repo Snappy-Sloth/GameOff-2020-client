@@ -46,14 +46,14 @@ class Symbols extends Module {
 
 		for (j in 0...2)
 		for (i in 0...4) {
-			var slot = new SymbolSlot(this, i * (j + 1));
+			var slot = new SymbolSlot(this, i + (j * 2));
 			wrapperSymbol.addChild(slot);
 			// slot.x = i * 50;
 			slot.x = i * (TILE_SIZE + SLOT_OFFSET);
 			slot.y = j * (TILE_SIZE + 10);
 			slots.push(slot);
 
-			var tileSymbol = new SymbolTile(this, i);
+			var tileSymbol = new SymbolTile(this, i + (j * 4));
 			root.addChild(tileSymbol);
 			tileSymbol.setSlot(slot);
 			tiles.push(tileSymbol);
