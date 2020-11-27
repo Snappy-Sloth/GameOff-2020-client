@@ -6,7 +6,7 @@ class Sheet extends h2d.Layers {
 	public var wid(get,never) : Int; inline function get_wid() return Const.SHEET_WIDTH;
 	public var hei(get,never) : Int; inline function get_hei() return Const.SHEET_HEIGHT;
 
-	public function new() {
+	public function new(id:Int) {
 		super();
 
 		ME = this;
@@ -24,9 +24,9 @@ class Sheet extends h2d.Layers {
 		var glowNormal = Assets.tiles.h_get("pageGlowNormal", 0.5, 0.5, this);
 		glowNormal.setPos(wid >> 1, hei >> 1);
 		
-		var spr = Assets.tiles.h_get("manualPage", this);
+		var spr = new h2d.Bitmap(hxd.Res.load("manual/fr/manualPage" + id + ".png").toTile(), this);
 		spr.setScale(0.5);
-		
+
 		sheet.onOver = function(e) {
 			if (Manual.ME.currentSheet == null) {
 				glowNormal.visible = false;

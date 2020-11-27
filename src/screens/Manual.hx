@@ -61,8 +61,8 @@ class Manual extends dn.Process {
 			mouseY = e.relY;
 		};
 
-		for (i in 0...10) {
-			var sheet = new Sheet();
+		for (i in 0...6) {
+			var sheet = new Sheet(5 - i);
 			sheet.setPosition((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5, (((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5);
 
 			root.add(sheet, 0);
