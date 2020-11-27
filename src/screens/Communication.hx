@@ -20,14 +20,14 @@ class Communication extends dn.Process {
 	
 	var currentAuthor : Null<String> = null;
 	
-	var pendingMessages : Array<TalkType>;
-	var currentMessage : TalkType;
-	var nextMessage(get, never) : Null<TalkType>;		inline function get_nextMessage() return pendingMessages[0];
+	var pendingMessages : Array<TalkFrom>;
+	var currentMessage : TalkFrom;
+	var nextMessage(get, never) : Null<TalkFrom>;		inline function get_nextMessage() return pendingMessages[0];
 
 	var goToManualBtn : ui.Button;
 	var goToModulesBtn : ui.Button;
 
-	var lastMessage : TalkType;
+	var lastMessage : TalkFrom;
 
 	public function new() {
 		super(Game.ME);
@@ -81,15 +81,15 @@ class Communication extends dn.Process {
 			if (det.answers.length > 0) {
 				var texts : Array<PlayerTalkData> = [];
 				for (answer in det.answers) {
-					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, bgColor: answer.customBGColor} : null});
+					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, type: answer.TypeId} : null});
 				}
 				pendingMessages.push(Player(texts));
 			}
 			else if (det.customAuthor == "System") {
-				pendingMessages.push(System({author:"System", text: det.text, bgColor: det.customBGColor}));
+				pendingMessages.push(System({author:"System", text: det.text, type: det.TypeId}));
 			}
 			else {
-				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, bgColor: det.customBGColor}));
+				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, type: det.TypeId}));
 			}
 		}
 
@@ -133,10 +133,13 @@ class Communication extends dn.Process {
 		flowAnswers.minWidth = flowAnswers.maxWidth = Std.int(mainWrapper.width * 0.5);
 		flowAnswers.verticalSpacing = 2;
 		flowAnswers.padding = 5;
-		// flowAnswers.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
 
 		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxAnswer"), 6, 6, flowAnswers);
 		flowAnswers.getProperties(bg).isAbsolute = true;
+		
+		var arrow = Assets.tiles.h_get("answerArrow", 0, 1, 0.5, flowAnswers);
+		arrow.x = -5;
+		flowAnswers.getProperties(arrow).isAbsolute = true;
 		
 		for (a in ptds) {
 			if (a != ptds[0]) {
@@ -148,7 +151,6 @@ class Communication extends dn.Process {
 			flow.paddingHorizontal = 5;
 			flow.paddingVertical = 15;
 			flow.horizontalAlign = Right;
-			// flow.backgroundTile = h2d.Tile.fromColor(0, 1, 1, 0.5);
 			flow.minWidth = Std.int(flowAnswers.innerWidth);
 			
 			var text = new h2d.Text(Assets.fontSinsgold16, flow);
@@ -157,6 +159,9 @@ class Communication extends dn.Process {
 
 			var inter = new h2d.Interactive(1, 1, flow);
 			flow.getProperties(inter).isAbsolute = true;
+			inter.onOver = function (e) {
+				arrow.y = flow.y + (flow.outerHeight >> 1);
+			}
 			inter.onClick = function (e) {
 				if (!waitForPlayer)
 					return;
@@ -181,6 +186,9 @@ class Communication extends dn.Process {
 			flow.reflow();
 			inter.width = flow.outerWidth;
 			inter.height = flow.outerHeight;
+
+			if (a == ptds[0])
+				arrow.y = flow.y + (flow.outerHeight >> 1);
 		}
 
 		flowAnswers.reflow();
@@ -200,7 +208,7 @@ class Communication extends dn.Process {
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Right;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.5);
+		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.45);
 		arMessageFlow.push(messageFlow);
 
 		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalkNormal"), 6, 6, messageFlow);
@@ -234,7 +242,6 @@ class Communication extends dn.Process {
 
 	function showSystemMessage(td:TalkData) {
 		var messageFlow = new h2d.Flow(mainWrapper);
-		messageFlow.backgroundTile = h2d.Tile.fromColor(0x2f2c3a);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
@@ -242,14 +249,19 @@ class Communication extends dn.Process {
 		messageFlow.minWidth = messageFlow.maxWidth = Std.int(mainWrapper.width - mainWrapperPadding * 2);
 		arMessageFlow.push(messageFlow);
 
-		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
+		var bg = Assets.tiles.h_get("boxSystem" + td.type.toString(), 0.5, 0.5, messageFlow);
+		messageFlow.getProperties(bg).isAbsolute = true;
+
+		var messageText = new h2d.Text(Assets.fontRulergold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
-		messageText.textColor = 0x43b643;
+		messageText.textColor = 0x081c0c;
 
 		messageFlow.reflow();
 		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		bg.setPos(messageFlow.outerWidth >> 1, messageFlow.outerHeight >> 1);
 
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
 	}
@@ -258,18 +270,17 @@ class Communication extends dn.Process {
 		tw.createS(isTypingText.alpha, 0, 0.2);
 
 		var messageFlow = new h2d.Flow(mainWrapper);
-		// messageFlow.backgroundTile = h2d.Tile.fromColor(td.bgColor != null ? td.bgColor : 0x439d2a);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
 		messageFlow.horizontalAlign = Left;
-		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.5);
+		messageFlow.maxWidth = Std.int(mainWrapper.width * 0.45);
 		arMessageFlow.push(messageFlow);
 
-		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalkNormal"), 6, 6, messageFlow);
+		var bg = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxTalk" + td.type.toString()), 6, 6, messageFlow);
 		messageFlow.getProperties(bg).isAbsolute = true;
 
-		var bgName = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxNameNormal"), 6, 6, messageFlow);
+		var bgName = new h2d.ScaleGrid(Assets.tiles.getTile("sliceboxName" + td.type.toString()), 6, 6, messageFlow);
 		messageFlow.getProperties(bgName).isAbsolute = true;
 
 		var authorText = new h2d.Text(Assets.fontRulergold16, messageFlow);
@@ -278,12 +289,17 @@ class Communication extends dn.Process {
 
 		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
-		messageText.textColor = 0x43b643;
+		messageText.textColor = switch td.type {
+			case Normal: 0x43b643;
+			case Alert: 0xe65b5b;
+		}
 
 		messageFlow.reflow();
 		messageFlow.setPosition(mainWrapperPadding, mainWrapper.height + 5);
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
+
+		// D
 
 		bg.width = messageFlow.outerWidth;
 		bg.height = messageFlow.outerHeight;
@@ -326,11 +342,11 @@ class Communication extends dn.Process {
 		forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: currentAuthor}));
 	}
 
-	public function forceSystemMessage(text:String) {
-		pendingMessages.unshift(System({author:"System", text: text, bgColor: null}));
+	public function forceSystemMessage(text:String, type:Data.TalkTypeKind = Normal) {
+		pendingMessages.unshift(System({author:"System", text: text, type: type}));
 	}
 
-	public function forceOutsideMessage(td:TalkData):TalkType {
+	public function forceOutsideMessage(td:TalkData):TalkFrom {
 		var m = Outside(td);
 		pendingMessages.unshift(m);
 		return m;

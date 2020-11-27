@@ -156,7 +156,7 @@ class Game extends Process {
 		for (i in 0...currentTasks.length) {
 			message += (i > 0 ? "\n" : "") + Lang.t.get(currentTasks[i].text);
 		}
-		communication.forceOutsideMessage({text: message, author: currentEvent.author, bgColor: 0x973030});
+		communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert});
 
 		if (currentScreen != communication)
 			hud.showNewMessage();
@@ -182,7 +182,7 @@ class Game extends Process {
 		moduleScreen.reset();
 		hud.endAlert();
 
-		communication.forceSystemMessage(Lang.t._("ALERTE TERMINÉE"));
+		communication.forceSystemMessage(Lang.t._("ALERTE TERMINÉE"), Alert);
 
 		nextEvent();
 	}

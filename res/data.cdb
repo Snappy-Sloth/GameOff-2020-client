@@ -21,21 +21,25 @@
 								{
 									"text": "Ici le commandant de la mission PROTEC.",
 									"timeBefore": 0,
-									"answers": []
+									"answers": [],
+									"Type": "Normal"
 								},
 								{
 									"timeBefore": 0,
 									"answers": [
 										{
 											"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
-											"customAuthor": ""
+											"customAuthor": "",
+											"Type": "Normal"
 										}
-									]
+									],
+									"Type": "Normal"
 								},
 								{
 									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même.",
 									"timeBefore": 0,
-									"answers": []
+									"answers": [],
+									"Type": "Normal"
 								},
 								{
 									"timeBefore": 0,
@@ -43,28 +47,34 @@
 										{
 											"text": "Je ne fais que mon travail, Monsieur.",
 											"answer": "Un homme qui a le sens des responsabilité ! C'est tellement rare de nos jours...",
-											"customAuthor": "Astro"
+											"customAuthor": "Astro",
+											"Type": "Normal"
 										},
 										{
 											"text": "Tout le plaisir est pour moi !",
 											"answer": "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte pas préjudice.",
-											"customAuthor": "Astro"
+											"customAuthor": "Astro",
+											"Type": "Normal"
 										}
-									]
+									],
+									"Type": "Normal"
 								},
 								{
 									"text": "Bref ! Nous avons l'autorisation de décoller. Terminé.",
 									"timeBefore": 0,
-									"answers": []
+									"answers": [],
+									"Type": "Normal"
 								},
 								{
 									"timeBefore": 0,
 									"answers": [
 										{
 											"text": "Bon vol.",
-											"customAuthor": ""
+											"customAuthor": "",
+											"Type": "Normal"
 										}
-									]
+									],
+									"Type": "Normal"
 								}
 							],
 							"alerts": [],
@@ -111,28 +121,33 @@
 									"text": "Merci, tout est redevenu normal, heureusement que vous étiez là.",
 									"timeBefore": 0,
 									"customAuthor": "Astro",
-									"answers": []
+									"answers": [],
+									"Type": "Normal"
 								},
 								{
 									"answers": [
 										{
 											"text": "Je pensais que vous étiez autonomes !",
 											"customAuthor": "Astro",
-											"answer": "Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à rédiger au terme de la mission."
+											"answer": "Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à rédiger au terme de la mission.",
+											"Type": "Normal"
 										},
 										{
 											"text": "Toujours prêt à vous venir en aide !",
 											"customAuthor": "Astro",
-											"answer": "Heureux de savoir que nous pouvons compter sur vous."
+											"answer": "Heureux de savoir que nous pouvons compter sur vous.",
+											"Type": "Normal"
 										}
 									],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"Type": "Normal"
 								},
 								{
 									"answers": [],
 									"timeBefore": 0,
 									"text": "Restez en stand-by, on ne sait jamais.",
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"Type": "Normal"
 								}
 							],
 							"alerts": [],
@@ -145,17 +160,20 @@
 								{
 									"answers": [],
 									"timeBefore": 0,
-									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez vous reçu des instructions spécifiques de la part des directeurs ?"
+									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez vous reçu des instructions spécifiques de la part des directeurs ?",
+									"Type": "Normal"
 								},
 								{
 									"answers": [
 										{
 											"text": "Rien de spécifique. J'ai juste à attendre vos communications.",
 											"customAuthor": "Astro",
-											"answer": "Bien. Soyez à la hauteur."
+											"answer": "Bien. Soyez à la hauteur.",
+											"Type": "Normal"
 										}
 									],
-									"timeBefore": 0
+									"timeBefore": 0,
+									"Type": "Normal"
 								}
 							],
 							"alerts": [],
@@ -201,7 +219,8 @@
 								{
 									"answers": [],
 									"timeBefore": 0,
-									"text": "Merci, alerte terminée. Bonne nuit, agent."
+									"text": "Merci, alerte terminée. Bonne nuit, agent.",
+									"Type": "Normal"
 								}
 							],
 							"alerts": [],
@@ -565,6 +584,26 @@
 			"props": {}
 		},
 		{
+			"name": "TalkType",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"scope": null
+				}
+			],
+			"lines": [
+				{
+					"id": "Normal"
+				},
+				{
+					"id": "Alert"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
 			"name": "lever@lights",
 			"props": {
 				"hide": true
@@ -624,9 +663,8 @@
 					"opt": true
 				},
 				{
-					"typeStr": "11",
-					"name": "customBGColor",
-					"opt": true
+					"typeStr": "6:TalkType",
+					"name": "Type"
 				},
 				{
 					"typeStr": "8",
@@ -662,9 +700,8 @@
 					"name": "customAuthor"
 				},
 				{
-					"typeStr": "11",
-					"name": "customBGColor",
-					"opt": true
+					"typeStr": "6:TalkType",
+					"name": "Type"
 				}
 			]
 		},

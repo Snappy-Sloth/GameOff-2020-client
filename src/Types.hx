@@ -4,7 +4,7 @@ typedef TaskData = {
 	var author : String;
 }
 
-enum TalkType {
+enum TalkFrom {
 	Player(ptd:Array<PlayerTalkData>);
 	System(td:TalkData);
 	Outside(td:TalkData);
@@ -18,7 +18,7 @@ typedef PlayerTalkData = {
 typedef TalkData = {
 	var text : String;
 	var author : Null<String>;
-	var bgColor : Null<UInt>;
+	var type : Data.TalkTypeKind;
 }
 
 enum VType {
