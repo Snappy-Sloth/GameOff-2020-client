@@ -190,11 +190,12 @@ class Game extends Process {
 	}
 
 	public function onError() {
-		timer += 10 * Const.FPS;
 		hud.redWarning();
 
 		if (currentTasks == null)
 			Game.ME.hud.showAlertMessage();
+		else 
+			timer += 10 * Const.FPS;
 	}
 
 	function showEndDay() {
