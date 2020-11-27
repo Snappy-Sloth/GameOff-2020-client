@@ -58,11 +58,7 @@ class Communication extends dn.Process {
 		var line = Assets.tiles.h_get("tabLine", wrapperTab);
 		line.y = 16;
 
-		// addTab("Toto");
-		// addTab("Tata");
-		// addTab("Tita");
-
-		// selectTab("Toto");
+		// getTalk("Astro");
 	}
 
 	function addTab(author:String) : Tab {
@@ -121,6 +117,8 @@ class Communication extends dn.Process {
 
 		if (talk == talks[0])
 			selectTab(talk.author);
+
+		talk.initNextTalk();
 	}
 
 	public function clearAll() {
@@ -251,14 +249,21 @@ private class Talk extends dn.Process {
 		cd.reset();
 
 		arMessageFlow = [];
-		pendingMessages = [];
-
-		lastMessage = null;
 
 		isTypingText = new h2d.Text(Assets.fontSinsgold16, mask);
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
 		isTypingText.alpha = 0;
 		isTypingText.textColor = 0x43b643;
+
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
+
+		onResize();
+	}
+
+	public function initNextTalk() {
+		pendingMessages = [];
+
+		lastMessage = null;
 
 		for (det in Game.ME.currentEvent.talks) {
 			if (det.answers.length > 0) {
@@ -278,12 +283,8 @@ private class Talk extends dn.Process {
 
 		lastMessage = pendingMessages[pendingMessages.length - 1];
 
-		// if (currentAuthor != game.currentEvent.author) {
-		// 	currentAuthor = game.currentEvent.author;
+		if (arMessageFlow.length == 0)
 			forceSystemMessage(Lang.t._("::name:: est en ligne", {name:author}));
-		// }
-
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
 
 		switch (nextMessage) {
 			case Player(ptd):
@@ -292,8 +293,6 @@ private class Talk extends dn.Process {
 				tw.createS(isTypingText.alpha, 1, 0.5);
 				cd.setS("newText", 2);
 		}
-
-		onResize();
 	}
 
 	public function showNextMessage() {
