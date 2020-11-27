@@ -57,6 +57,7 @@ class Hud extends dn.Process {
 	
 	public function showTimer() {
 		glowTimer.set("redGlowTimer");
+		timerText.textColor = 0xe72727;
 		tw.createS(wrapperTimer.y, 0, 0.3);
 		tw.createS(globalGlow.scaleX, 1, 0.6);
 		tw.createS(globalGlow.scaleY, 1, 0.6);
