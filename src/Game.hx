@@ -188,8 +188,6 @@ class Game extends Process {
 	}
 
 	public function onError() {
-		return;
-
 		timer += 10 * Const.FPS;
 		hud.redWarning();
 	}
