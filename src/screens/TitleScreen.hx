@@ -39,10 +39,10 @@ class TitleScreen extends dn.Process {
 		flow.addChild(debugGameBtn);
 		#end
 
-		var continueGameBtn = new ui.Button('Continue', Main.ME.continueGame);
+		var continueGameBtn = new ui.Button(Lang.t._("Continuer"), Main.ME.continueGame);
 		flow.addChild(continueGameBtn);
 
-		var newGameBtn = new ui.Button('New', Main.ME.newGame);
+		var newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), Main.ME.newGame);
 		flow.addChild(newGameBtn);
 
 		var frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
