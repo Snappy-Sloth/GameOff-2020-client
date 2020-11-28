@@ -84,7 +84,7 @@ class Values extends Module {
 
 	public function modifyValue(d:Int) {
 		currentVD.v += d;
-		currentVD.v = M.clampSym(currentVD.v, 99);
+		currentVD.v = hxd.Math.iclamp(currentVD.v, 0, 100);
 		valueText.text = Std.string(currentVD.v);
 
 		checkValidate();
