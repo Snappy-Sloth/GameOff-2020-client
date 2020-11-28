@@ -79,6 +79,12 @@ class Game extends Process {
 		}
 	}
 
+	public function initDay(d:Data.DayKind) {
+		currentDay = Data.day.get(d);
+
+		launchDay(d);
+	}
+
 	public function showManual() {
 		currentScreen = manual;
 		tw.createS(wrapperScreens.x, -w() / Const.SCALE, 0.3);
@@ -114,6 +120,8 @@ class Game extends Process {
 
 	public function nextEvent() {
 		currentEventId++;
+
+		Const.SAVE_PROGRESS(currentDay.id, currentEventId);
 
 		if (currentEvent == null) { // End of the day
 			communication.showOffline();
@@ -310,13 +318,8 @@ class Game extends Process {
 					hxd.System.exit();
 			#end
 
-			// Restart
-			if( ca.selectPressed() )
-				Main.ME.startGame();
-
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
-					// launchDay(Day_Test);
 					showDebugMenu();
 				}
 

@@ -79,32 +79,26 @@ class Main extends dn.Process {
 		new screens.TitleScreen();
 	}
 
-	public function startManual() {
-		startGame();
-		Game.ME.showManual();
-	}
-
-	public function startComm() {
-		startGame();
-		Game.ME.showComm();
-	}
-
-	public function startModules() {
-		startGame();
-		Game.ME.showModules();
-	}
-
-	public function startGame() {
+	public function newGame() {
 		clean();
-		if( Game.ME!=null ) {
-			Game.ME.destroy();
-			delayer.addF(function() {
-				new Game();
-			}, 1);
-		}
-		else
-			new Game();
+		var game = new Game();
+
+		game.initDay(Data.DayKind.Day_1);
 	}
+
+	public function continueGame() {
+		clean();
+		var game = new Game();
+
+		game.initDay(Const.PLAYER_DATA.dayId);
+	}
+
+	#if debug
+	public function debugGame() {
+		clean();
+		var game = new Game();
+	}
+	#end
 
 	override public function onResize() {
 		super.onResize();

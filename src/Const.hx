@@ -35,7 +35,7 @@ class Const {
 	public static var OPTIONS_DATA : OptionsData;
 	
 	public static function INIT() {
-		PLAYER_DATA = dn.LocalStorage.readObject("playerData", false, {});
+		PLAYER_DATA = dn.LocalStorage.readObject("playerData", false, {dayId:Data.DayKind.Day_1, currentEvent:0});
 
 		OPTIONS_DATA = dn.LocalStorage.readObject("optionsData", false, {SFX_VOLUME: 1., MUSIC_VOLUME: 1., LOCA : "fr"});
 			// #if debug 
@@ -45,6 +45,10 @@ class Const {
 			// #end);
 
 		// Assets.UPDATE_MUSIC_VOLUME();
+	}
+
+	public static function SAVE_PROGRESS(d:Data.DayKind, currentEvent:Int) {
+		dn.LocalStorage.writeObject("playerData", false, {dayId:d, currentEvent:currentEvent});
 	}
 
 	public static function CHANGE_LOCA(loca:String) {

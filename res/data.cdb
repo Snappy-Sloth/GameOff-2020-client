@@ -226,7 +226,8 @@
 							"alerts": [],
 							"timeBeforeS": 1
 						}
-					]
+					],
+					"group": 0
 				},
 				{
 					"id": "Day_Test_Alert",
@@ -247,7 +248,8 @@
 							],
 							"timeBeforeS": 0
 						}
-					]
+					],
+					"group": 0
 				},
 				{
 					"id": "Day_Test_Alert_2",
@@ -268,7 +270,8 @@
 							],
 							"timeBeforeS": 0
 						}
-					]
+					],
+					"group": 0
 				},
 				{
 					"id": "Day_Test_Multiple_Talkers",
@@ -321,11 +324,237 @@
 							],
 							"alerts": []
 						}
-					]
+					],
+					"group": 0
+				},
+				{
+					"id": "Day_1",
+					"events": [
+						{
+							"talks": [
+								{
+									"text": "Ici le commandant de la mission PROTEC.",
+									"timeBefore": 0,
+									"answers": [],
+									"Type": "Normal"
+								},
+								{
+									"timeBefore": 0,
+									"answers": [
+										{
+											"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"Type": "Normal"
+								},
+								{
+									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même.",
+									"timeBefore": 0,
+									"answers": [],
+									"Type": "Normal"
+								},
+								{
+									"timeBefore": 0,
+									"answers": [
+										{
+											"text": "Je ne fais que mon travail, Monsieur.",
+											"answer": "Un homme qui a le sens des responsabilité ! C'est tellement rare de nos jours...",
+											"customAuthor": "Astro",
+											"Type": "Normal"
+										},
+										{
+											"text": "Tout le plaisir est pour moi !",
+											"answer": "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte pas préjudice.",
+											"customAuthor": "Astro",
+											"Type": "Normal"
+										}
+									],
+									"Type": "Normal"
+								},
+								{
+									"text": "Bref ! Nous avons l'autorisation de décoller. Terminé.",
+									"timeBefore": 0,
+									"answers": [],
+									"Type": "Normal"
+								},
+								{
+									"timeBefore": 0,
+									"answers": [
+										{
+											"text": "Bon vol.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"Type": "Normal"
+								}
+							],
+							"alerts": [],
+							"author": "Astro",
+							"timeBeforeS": 0
+						},
+						{
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"task": "A1",
+											"text": "J'ai une diode rouge qui s'allume !",
+											"author": "Astro"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"task": "C8",
+											"text": "J'ai 2 diodes jaunes qui s'allument et clignotent maintenant !",
+											"author": "Astro"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"task": "B10",
+											"text": "J'ai le mot \"WIN\" qui s'affiche sur une console aussi !",
+											"author": "Astro"
+										}
+									]
+								}
+							],
+							"author": "Astro",
+							"timeBeforeS": 5
+						},
+						{
+							"talks": [
+								{
+									"text": "Merci, tout est redevenu normal, heureusement que vous étiez là.",
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"answers": [],
+									"Type": "Normal"
+								},
+								{
+									"answers": [
+										{
+											"text": "Je pensais que vous étiez autonomes !",
+											"customAuthor": "Astro",
+											"answer": "Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à rédiger au terme de la mission.",
+											"Type": "Normal"
+										},
+										{
+											"text": "Toujours prêt à vous venir en aide !",
+											"customAuthor": "Astro",
+											"answer": "Heureux de savoir que nous pouvons compter sur vous.",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"Type": "Normal"
+								},
+								{
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Restez en stand-by, on ne sait jamais.",
+									"customAuthor": "Astro",
+									"Type": "Normal"
+								}
+							],
+							"alerts": [],
+							"author": "Astro",
+							"timeBeforeS": 1
+						},
+						{
+							"author": "Astro",
+							"talks": [
+								{
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez vous reçu des instructions spécifiques de la part des directeurs ?",
+									"Type": "Normal"
+								},
+								{
+									"answers": [
+										{
+											"text": "Rien de spécifique. J'ai juste à attendre vos communications.",
+											"customAuthor": "Astro",
+											"answer": "Bien. Soyez à la hauteur.",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"Type": "Normal"
+								}
+							],
+							"alerts": [],
+							"timeBeforeS": 7
+						},
+						{
+							"author": "Astro",
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"task": "B3",
+											"text": "J'ai une diode jaune qui clignote !",
+											"author": "Astro"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"task": "C7",
+											"text": "Bien, maintenant j'ai un message d'erreur qui s'affiche. Le numéro d'erreur est le suivant : 6PCK2M",
+											"author": "Astro"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"task": "A4",
+											"text": "Le mot \"PRESS\" vient de s'afficher sur mon terminal !",
+											"author": "Astro"
+										}
+									]
+								}
+							],
+							"timeBeforeS": 5
+						},
+						{
+							"author": "Astro",
+							"talks": [
+								{
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Merci, alerte terminée. Bonne nuit, agent.",
+									"Type": "Normal"
+								}
+							],
+							"alerts": [],
+							"timeBeforeS": 1
+						}
+					],
+					"group": 1
 				}
 			],
-			"separators": [],
-			"props": {}
+			"props": {
+				"hasGroup": true,
+				"separatorTitles": [
+					"Test",
+					"Story"
+				]
+			},
+			"separatorIds": [
+				"Day_Test",
+				"Day_1"
+			]
 		},
 		{
 			"name": "task",

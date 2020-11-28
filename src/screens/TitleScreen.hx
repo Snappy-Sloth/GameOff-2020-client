@@ -34,8 +34,16 @@ class TitleScreen extends dn.Process {
 
 		flow.addSpacing(30);
 
-		var startGameBtn = new ui.Button('Game (Bunker)', Main.ME.startGame);
-		flow.addChild(startGameBtn);
+		#if debug
+		var debugGameBtn = new ui.Button('Debug', Main.ME.debugGame);
+		flow.addChild(debugGameBtn);
+		#end
+
+		var continueGameBtn = new ui.Button('Continue', Main.ME.continueGame);
+		flow.addChild(continueGameBtn);
+
+		var newGameBtn = new ui.Button('New', Main.ME.newGame);
+		flow.addChild(newGameBtn);
 
 		var frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
 			Const.CHANGE_LOCA("fr");

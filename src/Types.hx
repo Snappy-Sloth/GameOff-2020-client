@@ -1,6 +1,6 @@
 typedef PlayerData = {
-	// var scores : Array<Int>;
-	// var maxLevelReached : Int;
+	var dayId : Data.DayKind;
+	var currentEvent : Int;
 }
 
 typedef OptionsData = {
