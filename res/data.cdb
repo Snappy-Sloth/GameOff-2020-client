@@ -503,7 +503,7 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "Astro",
-									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez-vous reçu des instructions supplémentaires de la part des directeurs ?"
+									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez-vous reçu des instructions supplémentaires de la part de l'état-major ?"
 								},
 								{
 									"Type": "Normal",
@@ -1040,7 +1040,7 @@
 											"answer": "Excusez-moi. Je vais essayer de me calmer."
 										},
 										{
-											"text": "C'est compréhensible, mais rassurez vous, je suis là et vous n'êtes pas seule. Nous allons mener à bien la mission ensemble.",
+											"text": "C'est compréhensible, mais rassurez-vous, je suis là et vous n'êtes pas seule. Nous allons mener à bien la mission ensemble.",
 											"customAuthor": "Astro",
 											"Type": "Normal",
 											"answer": "Merci. Ça me fait du bien de savoir que j'ai quelqu'un à qui parler."
@@ -1142,7 +1142,7 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Bonjour Agent.\n\nNous avons reçu le rapport de la mission PROTEC. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit.\n\nNous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie.\n\nNous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire."
+									"text": "Bonjour Agent.\n\nNous avons reçu le rapport de la mission Harmony. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit.\n\nNous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie.\n\nNous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire."
 								}
 							],
 							"alerts": []
