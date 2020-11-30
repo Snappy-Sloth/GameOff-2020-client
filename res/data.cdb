@@ -496,7 +496,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 20,
+							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -571,14 +571,21 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Bonjour Commandant. Comment se passe votre vol ?\"",
+											"text": "Bonjour Commandant. Comment se passe votre vol ?",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
 									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
-								},
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 10,
+							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [
@@ -588,13 +595,13 @@
 											"Type": "Normal"
 										}
 									],
-									"timeBefore": 15,
+									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
-									"timeBefore": 0,
+									"timeBefore": 5,
 									"customAuthor": "Astro",
 									"text": "Ici l'astronaute Hayley. Nous avons eu un problème pendant la nuit."
 								},
@@ -793,7 +800,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 15,
+							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1142,7 +1149,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 10,
+							"timeBeforeS": 25,
 							"talks": [],
 							"alerts": [
 								{
@@ -1158,7 +1165,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 5,
+							"timeBeforeS": 2,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1193,7 +1200,7 @@
 											"text": "Vous pensez que vous aurez assez de kérosène pour terminer le voyage ?",
 											"customAuthor": "Astro",
 											"Type": "Normal",
-											"answer": "Non, ça devrait aller. Nous avons plusieurs réservoirs de secours, au cas où... Reste à savoir combien de temps le voyage va durer."
+											"answer": "Oui, ça devrait aller. Nous avons plusieurs réservoirs de secours, au cas où... Reste à savoir combien de temps le voyage va durer."
 										},
 										{
 											"text": "Vous allez devoir rationner la nourriture...",
@@ -1440,13 +1447,13 @@
 									"answers": [
 										{
 											"text": "Le plus important est que vous gardiez les idées claires pour la réussite de la mission",
-											"customAuthor": "",
+											"customAuthor": "Astro",
 											"Type": "Normal",
 											"answer": "Bien sûr, l'avenir de l'humanité est sur nos épaules... Ce n'est pas très rassurant dit comme ça"
 										},
 										{
 											"text": "Je ferai ce qu'il faut pour que vous gardiez le moral !",
-											"customAuthor": "",
+											"customAuthor": "Astro",
 											"Type": "Normal",
 											"answer": "Merci pour le soutien. Je sens que je peux vraiment compter sur vous.\""
 										}
@@ -1492,12 +1499,927 @@
 				},
 				{
 					"id": "Day_4",
-					"events": [],
+					"events": [
+						{
+							"author": "État-major",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Bonjour Agent,\n\nSuite à notre message d'hier, nous voulions réitérer la confiance que nous plaçons en vous. Pour ce faire, nous allons vous envoyer un message qui devait vous être transmis avant votre entrée dans le bunker.\n\nBonne lecture et bon courage, Agent."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Mon trésor,\n\nTout d'abord rassure-toi, ton père et moi allons bien. Nous pensons à toi tous les jours et espérons que tu te portes pour le mieux. Nous sommes très fiers de ce que tu es devenu et de ce que tu accomplies tous les jours.\n\nSache que tes petites sœurs vont bien. Elles grandissent si vite ! L'autre jour, elles m'ont demandé où tu étais passé. Je crois que tu leur manque beaucoup. Tous les bricolages qu'elles ramènent de l'école sont pour toi. Tu auras plein de cadeaux à ton retour. Ça te fera de la décoration pour ton espace de travail.\n\nNous ne savons rien du tout sur ta mission actuelle, mais nous avons appris que tu rentres bientôt. Nous avons hâte de te retrouver. Le jour de ton retour, tu auras ton plat préféré sur la table, un bain chaud et un bon feu de cheminée.\n\nPrends soin de toi mon petit ange.\nMaman."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 20,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bonjour Agent."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bonjour, comment allez-vous en cette belle journée ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Et bien, un peu mieux. Vous avez l'air de bonne humeur !"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Oui, j'ai reçu un mot de ma mère de la part des dirigeants.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Oh, J'espère qu'elle vous a donné de bonnes nouvelles."
+										},
+										{
+											"text": "Oui, j'ai reçu des nouvelles de l'extérieur.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "J'espère que les nouvelles ont été bonnes."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Oui, très bonnes. Ça fait du bien.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "J'aimerais bien avoir des nouvelles de mes proches également... Surtout de ma petite sœur."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Quel âge a-t-elle ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Elle vient tout juste d'avoir 18 ans. Elle doit être en pleins examens. J'espère qu'elle va bien et qu'elle ne s'inquiète pas trop pour moi."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Elle sait ce que vous faites comme métier ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Oui. Elle sait que je suis astronaute. Une des plus jeunes femmes qui le soit jamais devenue. Il fallait que je lui dise pour qu'elle croit toujours en ses rêves. Evidemment elle ne connaît pas les détails de la mission, mais elle sait que je suis en vol."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "C'est mignon ! Elle a de la chance de vous avoir comme grande sœur",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Oh, merci, ça me touche vraiment. J'espère être un exemple pour elle."
+										},
+										{
+											"text": "J'espère qu'elle n'en parlera pas à n'importe qui.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Elle ne dira rien, elle me l'a promis. Ne vous inquiétez pas."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Elle a compris que mon travail était très important pour moi et pour nous tous. Elle m'a dit qu'elle voulait"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 2,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je dois aller faire un tour pour vérifier que tout est OK après cette alerte. Je reviens."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 10,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bon, je pense que cette fois-ci on devrait être tranquille un moment."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Savez-vous pour quelle raison nous avons eu deux alarmes si rapprochées ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Non, aucune idée. J'étais en train de faire mon tour, quand l'un des modules que je venais de contrôler s'est mis à dysfonctionner."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Étrange... Peut-être aviez-vous mal vérifié le module en question. L'erreur est humaine",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Je vérifie toujours plusieurs fois chaque module depuis l'accident..."
+										},
+										{
+											"text": "Le module devait avoir une faiblesse, ça peut arriver",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Vous avez raison, ça doit être ça"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "En tout cas, heureusement que vous étiez là pour m'aider à réparer ça rapidement."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Heureusement que vous avez réagit assez vite pour me donner les bonnes instructions surtout.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je vais aller me reposer un peu en attendant la prochaine alerte. À bientôt."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 10,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je crois que tout est bon cette fois-ci, on va pouvoir aller se coucher tranquillement."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je vais faire tourner un diagnostic pendant la nuit afin de savoir pourquoi ce module est tombé en panne"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Vous pensez vraiment que ça puisse être autre chose qu'un dysfonctionnement interne ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "En tout cas, selon mon point de vue, ça ne peut pas en être un."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Donc il doit forcément y avoir autre chose..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je me demande bien quoi. J'espère que ce n'est pas chez moi qu'il y a eu un souci",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Impossible. À la fin de chaque alarme, vos modules sont désactivés et n'envoient aucun signal à la fusée"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je ne vois pas d'où est-ce que ça pourrait venir sinon. Mise à part une interférence avec un satellite ou une station",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ça peut être ça en effet. Du moins, j'espère que ça l'est."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Qu'est-ce que ça pourrait être d'autre ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Quelqu'un qui l'a fait volontairement."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Qui pourrait bien vouloir faire ça ? Dans quel intérêt ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Nous nuire."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Mais enfin, nous faisons ça pour la protection de tous !",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Je suis bien d'accord. Mais il y a des fous partout"
+										},
+										{
+											"text": "Mais... Qui ?",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Des opposants sans foi ni loi qui veulent la destruction de la planète"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je n'arrive pas à concevoir quels pourraient être leurs arguments",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "C'est simple, il n'y en a pas. Cette mission est vitale."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bref, j'espère que nous aurons des réponses demain."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Passez une bonne nuit",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Vous savez, ici c'est tout le temps la nuit. Mais je vais aller m'allonger."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bonne nuit"
+								}
+							],
+							"alerts": []
+						}
+					],
 					"group": 1
 				},
 				{
 					"id": "Day_5",
-					"events": [],
+					"events": [
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Le diagnostic a été interrompu..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Comment ça interrompu ? Comment ? Par qui ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ce sont aussi les questions que je me pose..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Il n'y a pas eu de dysfonctionnement pendant la nuit ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Pas que je sache non. Je vais en relancer un. On aura peut-être la réponse à toutes nos questions ce soir."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "J'espère...",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 10,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 5,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Le diagnostic est à 30%. Je le surveille du coin de l'œil."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Vous pensez qu'une seconde interruption est possible ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Oui, si ça l'a été une première fois, je ne vois pas pourquoi il n'y en aurait pas une seconde."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Quelle serait la raison pour laquelle quelqu'un voudrait que notre mission soit un échec ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Aucune idée..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je ne sais vraiment pas quoi faire pour vous aider...",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 5,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 2,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Le diagnostic est à 60%. En attendant je vais aller faire ma petite ronde. Restez en alerte au cas où.",
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "État-major",
+							"timeBeforeS": 5,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Bonjour Agent,\n\nNous avons appris le dysfonctionnement étrange que la fusée a rencontré hier.  \n\nBien que vous n'ayez pas encore découvert la cause qui a mené à cette panne, nous savons que nous avons des opposants. Afin que vous puissiez comprendre l'absolue nécessité de la réussite de votre mission, nous pensons qu'il est important de vous donner plus de détails sur le danger qui nous guette.\nNous avons reçu, il y a très peu de temps, un message étrange. Après avoir réussi à décoder ce message, nous avons compris que notre planète était en danger. Cette missive contenait des menaces contre la Terre, sûrement en provenance d'une race alien."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, mais nous nous préparions à cette éventualité depuis un moment. La fusée contient le résultat de nos préparation, et le seul moyen de se défendre est de déployer son contenu sur la Lune.\n\nD'après nos calculs, nous pensons que les aliens arriveront dans un peu plus de 15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée devra alunir.\n\nMerci de faire en sorte que cela soit possible, afin de sauver de nombreuses vies."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 5,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 10,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "90%. Nous saurons bientôt le fin mot de l'histoire."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "J'ai reçu plus d'information de la part des dirigeants.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": ""
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ah, nous avons donc une date ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "La fusée doit alunir d'ici 15 jours au plus tard.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "15 jours... Je pense que ça risque d'être compliqué... Espérons que nous n'allons pas perdre trop de temps..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "J'ai aussi eu plus d'informations sur le but de la mission...",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ah, vous comprenez donc pourquoi cette mission est primordiale ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Des aliens ? Ils existent vraiment ?",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Bien sûr ! Même si cela reste un secret de polichinelle depuis des années, c'est logique nous ne soyons pas les seuls dans l'univers."
+										},
+										{
+											"text": "Oui, je comprends. même si toute cette vérité est difficile à assimiler totalement",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Il y a beaucoup d'informations effectivement. Mais tout est vrai."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Mais du coup, je ne comprends pas qui voudrait s'opposer à cette mission ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Et pourquoi les aliens décident d'attaquer maintenant ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Vous avez beaucoup trop de questions, je ne peux pas répondre à tout."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Mais les personnes qui s'opposent à nous ne doivent pas être au courant de tous les tenants et aboutissants."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ah ! Diagnostic terminé !"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Alors ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Il indique un défaut électrique... Donc j'avais dû mal vérifier le module lors de ma ronde..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je crois que je me suis montée la tête toute seule..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Il faut vous reprendre, et que vous gardiez les idées claires",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Je sais. Mais je reste sur mes gardes depuis ce qu'il s'est passé la première nuit."
+										},
+										{
+											"text": "C'est normal vu tout ce qui vous est arrivé depuis le début",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Si vous saviez comme c'est compliqué."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Nous n'avons plus le droit à l'erreur."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Après cette journée, vous devriez aller vous reposer. Je pense qu'on peut se retrouver demain.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Vous avez raison, je suis épuisée. Bonne nuit."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Anon",
+							"timeBeforeS": 10,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Anon",
+									"text": "Bonjour Agent,\n\nOn vous ment.\n\nNous vous recontacterons bientôt."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Anon",
+									"text": "Ne croyez pas tout ce qu'on vous dit."
+								}
+							],
+							"alerts": []
+						}
+					],
 					"group": 1
 				}
 			],
