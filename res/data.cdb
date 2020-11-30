@@ -331,14 +331,14 @@
 					"id": "Day_1",
 					"events": [
 						{
-							"author": "Commandement",
+							"author": "Directeurs",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "Bonjour Agent."
 								},
 								{
@@ -346,48 +346,48 @@
 									"answers": [],
 									"timeBefore": 0,
 									"text": "Comme vous le savez, vous avez intégré volontairement ce bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur.",
-									"customAuthor": "Commandement"
+									"customAuthor": "Directeurs"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "Votre mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu de cette fusée est indispensable à la protection de la Terre, qui se trouve aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus vite."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "Pour ce faire, vous pourrez communiquer avec les astronautes à bord de la fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs instruments."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "À votre droite, vous avez à votre disposition des fiches de manuel.\nCes fiches contiennent des instructions pour aider les astronautes à résoudre leurs alertes."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "À votre gauche vous disposez de différents modules contenant des leviers et des boutons entre autres.\nIls vous seront indispensables pour résoudre les défaillances de la fusée."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "Attention, suivez bien les instructions du manuel !!!\n\nRappelez-vous, cette fusée doit par TOUS LES MOYENS alunir sans encombres."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Commandement",
+									"customAuthor": "Directeurs",
 									"text": "Notre avenir à tous est entre vos mains."
 								}
 							],
@@ -401,12 +401,313 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ici le commandant de la mission Harmony. Êtes-vous là ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je ne fais que mon travail, Commandant.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Un homme qui a le sens des responsabilité ! C'est tellement rare de nos jours..."
+										},
+										{
+											"text": "Tout le plaisir est pour moi !",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte pas préjudice."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bref. Nous avons l'autorisation de décoller. Terminé."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bon vol.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": []
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Merci, tout est redevenu normal, heureusement que vous étiez là."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je pensais que vous étiez autonomes !",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à rédiger au terme de la mission."
+										},
+										{
+											"text": "Toujours prêt à vous venir en aide.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Heureux de savoir que nous pouvons compter sur vous."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Restez en stand-by, on ne sait jamais."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez-vous reçu des instructions supplémentaires de la part des directeurs ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Rien de spécifique. J'ai juste à attendre vos communications.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bien. Soyez à la hauteur."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": [
+								{
+									"Tasks": []
+								}
+							]
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Merci, alerte terminée. Bonne nuit, agent."
+								}
+							],
+							"alerts": []
+						}
+					],
+					"group": 1
+				},
+				{
+					"id": "Day_2",
+					"events": [
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
 									"customAuthor": "Astro"
 								}
 							],
 							"alerts": []
 						}
 					],
+					"group": 1
+				},
+				{
+					"id": "Day_3",
+					"events": [],
+					"group": 1
+				},
+				{
+					"id": "Day_4",
+					"events": [],
+					"group": 1
+				},
+				{
+					"id": "Day_5",
+					"events": [],
 					"group": 1
 				}
 			],
