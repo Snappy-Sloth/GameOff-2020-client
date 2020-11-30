@@ -158,14 +158,24 @@ class Game extends Process {
 
 	function nextTasks() {
 		moduleScreen.reset();
-		hud.showTimer();
+		hud.showAlert();
 
 		currentTasks = currentAlerts.shift();
+		var hasTask = false;
 		var message = "";
 		for (i in 0...currentTasks.length) {
+			if (currentTasks[i].taskKind != null)
+				hasTask = true;
 			message += (i > 0 ? "\n" : "") + Lang.t.get(currentTasks[i].text);
 		}
-		communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert, timeBefore: 0});
+		if (hasTask) {
+			hud.showTimer();
+			communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert, timeBefore: 0});
+		}
+		else {
+			communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert, timeBefore: 0});
+			delayer.addS(nextTasks, 0.5 + message.length * 0.04);
+		}
 	}
 
 	public function needNewMessageInfo() {

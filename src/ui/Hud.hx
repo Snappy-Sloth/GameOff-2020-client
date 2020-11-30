@@ -76,6 +76,11 @@ class Hud extends dn.Process {
 			wrapperAlertMessage.y = hei;
 		}
 	}
+
+	public function showAlert() {
+		tw.createS(globalGlow.scaleX, 1, 0.6);
+		tw.createS(globalGlow.scaleY, 1, 0.6);
+	}
 	
 	public function showTimer() {
 		glowTimer.set("redGlowTimer");
