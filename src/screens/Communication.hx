@@ -37,10 +37,8 @@ class Communication extends dn.Process {
 
 		var reflect = Assets.tiles.h_get("commScreenReflect", root);
 
-		// goToManualBtn = new ui.DebugButton("Manual", Game.ME.showManual);
 		goToManualBtn = new ui.ChangeScreenButton(this, false, Lang.t._("Manual"), Game.ME.showManual);
 		
-		// goToModulesBtn = new ui.DebugButton("Modules", Game.ME.showModules);
 		goToModulesBtn = new ui.ChangeScreenButton(this, true, Lang.t._("Modules"), Game.ME.showModules);
 
 		initScreen();
@@ -284,15 +282,15 @@ private class Talk extends dn.Process {
 			if (det.answers.length > 0) {
 				var texts : Array<PlayerTalkData> = [];
 				for (answer in det.answers) {
-					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, type: answer.TypeId} : null});
+					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, type: answer.TypeId, timeBefore: 0} : null});
 				}
 				pendingMessages.push(Player(texts));
 			}
 			else if (det.customAuthor == "System") {
-				pendingMessages.push(System({author:"System", text: det.text, type: det.TypeId}));
+				pendingMessages.push(System({author:"System", text: det.text, type: det.TypeId, timeBefore: 0}));
 			}
 			else {
-				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, type: det.TypeId}));
+				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, type: det.TypeId, timeBefore: det.timeBefore}));
 			}
 		}
 
@@ -436,6 +434,8 @@ private class Talk extends dn.Process {
 		bgName.width = authorText.textWidth + 4;
 		bgName.height = authorText.textHeight;
 		
+		cd.setS("newText", 1);
+
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, text);
 	}
 
@@ -462,6 +462,8 @@ private class Talk extends dn.Process {
 
 		bg.setPos(messageFlow.outerWidth >> 1, messageFlow.outerHeight >> 1);
 
+		cd.setS("newText", 0.5);
+		
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
 	}
 
@@ -498,14 +500,14 @@ private class Talk extends dn.Process {
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
-		// D
-
 		bg.width = messageFlow.outerWidth;
 		bg.height = messageFlow.outerHeight;
 
 		bgName.setPosition(authorText.x - 2, authorText.y);
 		bgName.width = authorText.textWidth + 4;
 		bgName.height = authorText.textHeight;
+
+		cd.setS("newText", 0.5 + td.text.length * 0.04);
 
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
 	}
@@ -518,12 +520,14 @@ private class Talk extends dn.Process {
 
 		switch (nextMessage) {
 			case null :
-			case Player(ptd): cd.setS("newText", 1);
-			case System(td) : cd.setS("newText", 0.5);
+			case Player(ptd):
+			case System(td) :
 			case Outside(td) :
-				cd.setS("newText", 0.5 + td.text.length * 0.04);
+				cd.setS("newText", cd.getS("newText") + td.text.length * 0.04 + td.timeBefore);
 				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
-				delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
+				delayer.addS(function() {
+					delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
+				}, td.timeBefore);
 		}
 		
 		Game.ME.needNewMessageInfo();
@@ -541,7 +545,7 @@ private class Talk extends dn.Process {
 	}
 
 	public function forceSystemMessage(text:String, type:Data.TalkTypeKind = Normal) {
-		pendingMessages.unshift(System({author:"System", text: text, type: type}));
+		pendingMessages.unshift(System({author:"System", text: text, type: type, timeBefore: 0}));
 	}
 
 	override function onResize() {

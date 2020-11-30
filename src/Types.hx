@@ -31,6 +31,7 @@ typedef TalkData = {
 	var text : String;
 	var author : Null<String>;
 	var type : Data.TalkTypeKind;
+	var timeBefore : Float;
 }
 
 enum VType {

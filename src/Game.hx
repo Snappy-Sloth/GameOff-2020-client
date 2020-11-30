@@ -165,7 +165,7 @@ class Game extends Process {
 		for (i in 0...currentTasks.length) {
 			message += (i > 0 ? "\n" : "") + Lang.t.get(currentTasks[i].text);
 		}
-		communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert});
+		communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert, timeBefore: 0});
 	}
 
 	public function needNewMessageInfo() {
