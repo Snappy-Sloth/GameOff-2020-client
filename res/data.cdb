@@ -347,71 +347,29 @@
 					"id": "Day_1",
 					"events": [
 						{
-							"author": "Directeurs",
+							"author": "État-major",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "Bonjour Agent."
+									"customAuthor": "État-major",
+									"text": "Bonjour Agent.\n\nComme vous le savez, vous avez intégré volontairement ce bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur.\n\nVotre mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu de cette fusée est indispensable à la protection de la Terre, qui se trouve aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus vite.\n\nPour ce faire, vous pourrez communiquer avec les astronautes à bord de la fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs instruments."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"text": "Comme vous le savez, vous avez intégré volontairement ce bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur.",
-									"customAuthor": "Directeurs"
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "Votre mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu de cette fusée est indispensable à la protection de la Terre, qui se trouve aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus vite."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "Pour ce faire, vous pourrez communiquer avec les astronautes à bord de la fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs instruments."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "À votre droite, vous avez à votre disposition des fiches de manuel.\nCes fiches contiennent des instructions pour aider les astronautes à résoudre leurs alertes."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "À votre gauche vous disposez de différents modules contenant des leviers et des boutons entre autres.\nIls vous seront indispensables pour résoudre les défaillances de la fusée."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "Attention, suivez bien les instructions du manuel !!!\n\nRappelez-vous, cette fusée doit par TOUS LES MOYENS alunir sans encombres."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directeurs",
-									"text": "Notre avenir à tous est entre vos mains."
+									"text": "À votre droite, vous avez à votre disposition des fiches de manuel.\nCes fiches contiennent des instructions pour aider les astronautes à résoudre leurs alertes.\nÀ votre gauche vous disposez de différents modules contenant des leviers et des boutons entre autres.\nIls vous seront indispensables pour résoudre les défaillances de la fusée.\n\nAttention, suivez bien les instructions du manuel !\n\nRappelez-vous, cette fusée doit par TOUS LES MOYENS alunir sans encombres.\n\nNotre avenir à tous est entre vos mains.",
+									"customAuthor": "État-major"
 								}
 							],
 							"alerts": []
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 30,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -424,7 +382,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
+											"text": "Bonjour Commandant, je serai votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -482,9 +440,19 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
@@ -528,7 +496,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 20,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -561,9 +529,19 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
@@ -610,7 +588,7 @@
 											"Type": "Normal"
 										}
 									],
-									"timeBefore": 10,
+									"timeBefore": 15,
 									"customAuthor": "Astro"
 								},
 								{
@@ -727,7 +705,7 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "Astro",
-									"text": "Plus rien ne fonctionnait, des alarmes sonnaient de partout. A chaque fois que les autres membres de l'équipage réparaient un module, une porte à côté d'eux s'ouvrait et ils étaient aspirés dans l'espace... Heureusement, ils ont réussi à tout réparer et je n'ai pas eu à sortir moi aussi, sinon j'y serais passée..."
+									"text": "Plus rien ne fonctionnait, des alarmes sonnaient de partout. À chaque fois que les autres membres de l'équipage réparaient un module, une porte à côté d'eux s'ouvrait et ils étaient aspirés dans l'espace... Heureusement, ils ont réussi à tout réparer et je n'ai pas eu à sortir moi aussi, sinon j'y serai passée..."
 								},
 								{
 									"Type": "Normal",
@@ -799,13 +777,23 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 15,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1066,9 +1054,19 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
@@ -1129,49 +1127,38 @@
 					"id": "Day_3",
 					"events": [
 						{
-							"author": "Directeurs",
+							"author": "État-major",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Directors",
-									"text": "Bonjour Agent."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directors",
-									"text": "Nous avons reçu le rapport de la mission PROTEC. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directors",
-									"text": "Nous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie."
-								},
-								{
-									"Type": "Normal",
-									"answers": [],
-									"timeBefore": 0,
-									"customAuthor": "Directors",
-									"text": "Nous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire."
+									"customAuthor": "État-major",
+									"text": "Bonjour Agent.\n\nNous avons reçu le rapport de la mission PROTEC. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit.\n\nNous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie.\n\nNous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire."
 								}
 							],
 							"alerts": []
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 5,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1293,7 +1280,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1352,13 +1339,23 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1464,7 +1461,17 @@
 							"author": "Astro",
 							"timeBeforeS": 0,
 							"talks": [],
-							"alerts": []
+							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "",
+											"author": "",
+											"task": "A1"
+										}
+									]
+								}
+							]
 						},
 						{
 							"author": "Astro",
