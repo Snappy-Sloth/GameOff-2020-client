@@ -87,6 +87,8 @@ private class Bar extends h2d.Object {
 					sprTop.y = sprCore.y + sprCore.scaleY;
 
 					bars.checkValidate();
+
+					Assets.CREATE_SOUND(hxd.Res.sfx.m_changeBars, M_ChangeBars);
 				}
 			}
 		}

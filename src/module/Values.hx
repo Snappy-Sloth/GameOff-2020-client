@@ -83,13 +83,13 @@ class Values extends Module {
 	}
 
 	public function modifyValue(d:Int) {
+		var previous = currentVD.v;
 		currentVD.v += d;
 		currentVD.v = hxd.Math.iclamp(currentVD.v, 0, 100);
 		valueText.text = Std.string(currentVD.v);
-
-		trace('trololo');
 		
-		Assets.CREATE_SOUND(hxd.Res.sfx.m_valueChange, M_ValueChange);
+		if (currentVD.v != previous)
+			Assets.CREATE_SOUND(hxd.Res.sfx.m_valueChange, M_ValueChange);
 
 		checkValidate();
 	}
@@ -192,6 +192,7 @@ private class MiniButton extends h2d.Object {
 		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
 		inter.onClick = function (e) {
 			enable();
+			Assets.CREATE_SOUND(hxd.Res.sfx.m_selectValue, M_ValueChange);
 		}
 		inter.onPush = function (e) {
 			spr.setScale(0.9);

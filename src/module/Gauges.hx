@@ -85,12 +85,16 @@ private class Gauge extends h2d.Object {
 		}
 		inter.onMove = function (e) {
 			if (isClicked) {
+				var previous = currentRatio;
 				currentRatio = 1 - snap((e.relY / inter.height));
 
 				arrow.y = (1 - currentRatio) * inter.height;
 
 				sprCore.scaleY = -currentRatio * inter.height;
 				sprTop.y = sprCore.y + sprCore.scaleY;
+
+				if (previous != currentRatio)
+					Assets.CREATE_SOUND(hxd.Res.sfx.m_changeGauges, M_ChangeGauges);
 			}
 		}
 		inter.onRelease = function (e) {

@@ -76,6 +76,8 @@ class NumPad extends Module {
 						for (i in numsClicked) {
 							answerText.text += i;
 						}
+
+						Assets.CREATE_SOUND(hxd.Res.sfx.m_clicNumpad, M_NumPad);
 					}
 				}
 			}
