@@ -591,7 +591,44 @@
 							"talks": [
 								{
 									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bonjour Commandant. Comment se passe votre vol ?\"",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Commandant ? Êtes-vous là ?\"",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 10,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
 									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Ici l'astronaute Hayley. Nous avons eu un problème pendant la nuit."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Un problème ? Que s'est-il passé ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -599,11 +636,25 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Nous avons subi une défaillance de l'ensemble de nos systèmes. Nous ne pouvions plus vous contacter. Nous avons donc dû nous débrouiller par nous-même pour régler les problèmes."
 								},
 								{
 									"Type": "Normal",
-									"answers": [],
+									"answers": [
+										{
+											"text": "Oui, le commandant m'avait bien dit que vous étiez autonomes. Je me demande à quoi je sers !",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "La situation est loin d'être comique..."
+										},
+										{
+											"text": "Bien joué. Pourriez-vous me passer le commandant ? Il est mon seul référent sur cette mission.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Malheureusement, je crains que ce ne soit impossible..."
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -611,11 +662,44 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Le commandant, ainsi que les autres astronautes de l'équipage sont décédés dans le sauvetage de la fusée..."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je vais avoir plus que jamais besoin de votre aide."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Ce n'est pas possible, quelle horreur !",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Mais n'oublions pas que l'avenir de la Terre est entre nos mains.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Bien sûr..."
+										},
+										{
+											"text": "J'espère que vous vous portez bien, la situation doit être déroutante pour vous.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "C'est... effrayant... Je... il faut que je me reprenne..."
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -623,11 +707,18 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Si vous saviez l'horreur que c'était ici cette nuit... Je ne sais pas comment je m'en suis sortie."
 								},
 								{
 									"Type": "Normal",
-									"answers": [],
+									"answers": [
+										{
+											"text": "Je n'ose pas l'imaginer...",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -635,11 +726,18 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Plus rien ne fonctionnait, des alarmes sonnaient de partout. A chaque fois que les autres membres de l'équipage réparaient un module, une porte à côté d'eux s'ouvrait et ils étaient aspirés dans l'espace... Heureusement, ils ont réussi à tout réparer et je n'ai pas eu à sortir moi aussi, sinon j'y serais passée..."
 								},
 								{
 									"Type": "Normal",
-									"answers": [],
+									"answers": [
+										{
+											"text": "Étrange... Mais pourquoi ne pas m'avoir contacté dès que le module de communication était réparé ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -647,11 +745,18 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "C'était le seul module qui était encore dysfonctionnel. Il s'est réparé miraculeusement quelques minutes avant votre message."
 								},
 								{
 									"Type": "Normal",
-									"answers": [],
+									"answers": [
+										{
+											"text": "Et vous êtes sûre de ne pas avoir fait quelque chose qui l'aurait reconnecté ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -659,11 +764,65 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Pour tout vous dire, je n'ai rien fait depuis que le dernier membre de l'équipage m'a quittée. J'en étais incapable, je suis restée prostrée sous le bureau. Le son de votre premier message m'a pétrifiée, je croyais que j'hallucinais..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je suis heureux de vous savoir en vie. Vous pouvez être rassurée, vous n'êtes plus seule.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Je me sens moins seule en effet. En parler m'a déjà fait du bien."
+										},
+										{
+											"text": "Allez vous reposer afin de rester opérationnelle. La mission est loin d'être terminée.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Je vais déjà mieux rien que d'en avoir parlé."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": ""
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
+									"timeBefore": 0,
+									"text": "Merci de m'avoir écoutée. Je vous recontacte dès que nécessaire.",
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Êtes-vous là ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Oui, je suis là, que se passe-t-il ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -671,11 +830,18 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Je ne me sens pas très bien"
 								},
 								{
 									"Type": "Normal",
-									"answers": [],
+									"answers": [
+										{
+											"text": "Il vous est arrivé quelque chose ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
@@ -683,17 +849,273 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Astro",
+									"text": "Non non, rien de spécial depuis notre dernier échange"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Simplement, j'ai repensé à cette nuit, et depuis mon cœur palpite"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Avez-vous du mal à respirer ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Oui"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je viens de vérifier mais le niveau d'oxygène est tout à fait normal à l'intérieur de votre cockpit",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "D'où est-ce que cela peut venir alors ?"
+										},
+										{
+											"text": "Avez-vous également l'estomac noué ?",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Oui... Vous savez ce qu'il m'arrive ?"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je pense que vous êtes en pleine crise de panique...",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Que... qu'est-ce que je dois faire ??"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Essayer d'inspirer et d'expirer profondément.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Vous restez là avec moi, n'est-ce pas ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Autant de temps qu'il vous faudra pour aller mieux, je ne bouge pas.",
+											"customAuthor": "",
+											"Type": "Normal"
+										},
+										{
+											"text": "Je n'ai rien d'autre à faire, je peux rester si vous en ressentez le besoin.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Merci, je vous avoue que j'ai besoin de savoir que je ne suis pas seule dans cette galère."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Est-ce que vous vous sentez mieux ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Un peu oui, merci. Le fait de respirer m'a vraiment calmée, comment vous le saviez ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Ma mère a beaucoup fait de crises de paniques quand j'étais plus jeune. Elle allait tout de suite mieux en contrôlant sa respiration.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Heureusement que vous avez été confronté à ce genre de cas dans votre enfance."
+										},
+										{
+											"text": "J'ai eu quelques leçons sur ce genre de situations lors de mon entrée en poste.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Vous deviez être un élève très assidu pour vous en souvenir"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "En tout cas, continuer de travailler votre respiration, et pensez-y si vous ne vous sentez pas bien.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Merci encore pour ces conseils, j'y penserai pour la prochaine fois."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Avez-vous réussi à vous reposer ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "À vrai dire, non, je n'arrive pas à fermer les yeux. Je repense sans cesse à ce qu'il s'est passé cette nuit. J'ai peur d'être réveillé une nouvelle fois de la même façon."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Il faut vous reprendre. Nous n'avons pas le droit à l'erreur et n'avons pas le temps pour ce genre de considérations.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Excusez-moi. Je vais essayer de me calmer."
+										},
+										{
+											"text": "C'est compréhensible, mais rassurez vous, je suis là et vous n'êtes pas seule. Nous allons mener à bien la mission ensemble.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Merci. Ça me fait du bien de savoir que j'ai quelqu'un à qui parler."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je vais aller faire un tour pour voir si tout est en ordre. Je reviens."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je pense qu'après cette alerte, vous pouvez aller vous reposer un peu. Je dois encore faire mon rapport de fin de journée."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Ne tardez pas trop à aller dormir. Vous avez besoin de reprendre des forces.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Je ne vous promets pas de réussir à dormir, mais je vais essayer."
+										},
+										{
+											"text": "N'omettez aucun détail dans le rapport. Il faut qu'ils sachent que le module de communication était défaillant de votre côté.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "C'est vraiment tout ce qui vous intéresse ? Je n'oublierai pas de le mentionner..."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Bien, je vous souhaite une bonne nuit, restez en alerte."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bonne nuit !",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
 									"timeBefore": 0,
 									"customAuthor": "Astro"
 								}
@@ -705,7 +1127,360 @@
 				},
 				{
 					"id": "Day_3",
-					"events": [],
+					"events": [
+						{
+							"author": "Directeurs",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Directors",
+									"text": "Bonjour Agent."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Directors",
+									"text": "Nous avons reçu le rapport de la mission PROTEC. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Directors",
+									"text": "Nous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Directors",
+									"text": "Nous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire."
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "J'ai reçu un message des dirigeants ce matin en me réveillant. Ils vont nous recontacter pour nous dire avant quand la fusée doit alunir.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "J'espère qu'ils feront des prévisions réalistes suite à ce que je leur ai transmis."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Pour le moment je n'ai aucune idée de la date à laquelle nous allons alunir."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Vous pensez que vous aurez assez de kérosène pour terminer le voyage ?",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Non, ça devrait aller. Nous avons plusieurs réservoirs de secours, au cas où... Reste à savoir combien de temps le voyage va durer."
+										},
+										{
+											"text": "Vous allez devoir rationner la nourriture...",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Oui. Nous n'en avions déjà pas beaucoup, je vais devoir me limiter à un demi-repas par jour pour commencer. J'ajusterai si besoin."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je vous tiendrai au courant dès que les dirigeants m'auront donné une date butoir.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": ""
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Merci."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Vous avez réussi à dormir cette nuit ?",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Très peu. Je me réveillais au moindre bruit en panique. Le temps m'a paru long."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Essayer de vous reposer dès que vous pouvez. Les alarmes vous réveillerons le cas échéant. Je reste en alerte permanente en attendant.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Vous avez raison, je vais essayer. Pour le moment, c'est l'heure de ma ronde de surveillance. Je vous recontacte plus tard."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bon courage.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "J'ai eu une petite frayeur lors de ma ronde. Un instrument nécessitait des réparations. Ça devrait tenir, mais je ne sais pas pour combien de temps."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bien joué astronaute !",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Merci."
+										},
+										{
+											"text": "Nous avons beaucoup de chance de vous avoir sur cette mission.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "J'ai également beaucoup de chance de vous avoir."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je vais tenter de faire une sieste avant ma prochaine ronde."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Reposez-vous bien.",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Merci !"
+										},
+										{
+											"text": "Faites de beaux rêves",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Très drôle..."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Je n'arrive pas à fermer l'œil..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Vous avez une technique pour s'endormir rapidement ?"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Lors de mon entrée en poste, mon supérieur m'a donné une technique de respiration permettant de s'endormir rapidement. Vous avez certainement dû l'apprendre également",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Effectivement, mais elle n'a jamais vraiment fonctionné sur moi..."
+										},
+										{
+											"text": "Quand j'étais petit, ma mère avait l'habitude de me chanter des berceuses pour m'endormir. Peut-être que fredonner l'une des berceuses de votre enfance pourrait vous rassurer et vous calmer ?",
+											"customAuthor": "Astro",
+											"Type": "Normal",
+											"answer": "Bonne idée ! Je crois qu'à ce stade, c'est tout ce qui pourra m'aider."
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "J'ai bien tenté la technique de comptage de moutons, mais cela ne fonctionne pas non plus."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Ahah ! Cette technique n'est qu'une légende urbaine !",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "Oh vous savez, quand il ne nous reste plus grand chose, on se raccroche à ce qu'on peut..."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Je suis désolé, je ne devrais pas prendre votre situation à la légère...",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "Astro",
+									"text": "En vrai, je vous remercie, vous m'avez faite sourire. Dans ma situation, c'est déjà beaucoup."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Le plus important est que vous gardiez les idées claires pour la réussite de la mission",
+											"customAuthor": "",
+											"Type": "Normal",
+											"answer": "Bien sûr, l'avenir de l'humanité est sur nos épaules... Ce n'est pas très rassurant dit comme ça"
+										},
+										{
+											"text": "Je ferai ce qu'il faut pour que vous gardiez le moral !",
+											"customAuthor": "",
+											"Type": "Normal",
+											"answer": "Merci pour le soutien. Je sens que je peux vraiment compter sur vous.\""
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [],
+							"alerts": []
+						},
+						{
+							"author": "Astro",
+							"timeBeforeS": 0,
+							"talks": [
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Bon, après tout ceci, je commence vraiment à être épuisée. Je vais retourner essayer de fermer l'œil. A plus tard, j'espère à demain.",
+									"customAuthor": "Astro"
+								}
+							],
+							"alerts": []
+						}
+					],
 					"group": 1
 				},
 				{
