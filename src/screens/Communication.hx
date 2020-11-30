@@ -13,8 +13,8 @@ class Communication extends dn.Process {
 	
 	var currentAuthor : Null<String> = null;
 
-	var goToManualBtn : ui.Button;
-	var goToModulesBtn : ui.Button;
+	var goToManualBtn : ui.DebugButton;
+	var goToModulesBtn : ui.DebugButton;
 
 	var talks : Array<Talk>;
 
@@ -35,10 +35,10 @@ class Communication extends dn.Process {
 
 		var reflect = Assets.tiles.h_get("commScreenReflect", root);
 
-		goToManualBtn = new ui.Button("Manual", Game.ME.showManual);
+		goToManualBtn = new ui.DebugButton("Manual", Game.ME.showManual);
 		root.add(goToManualBtn, 1);
 
-		goToModulesBtn = new ui.Button("Modules", Game.ME.showModules);
+		goToModulesBtn = new ui.DebugButton("Modules", Game.ME.showModules);
 		root.add(goToModulesBtn, 1);
 
 		initScreen();

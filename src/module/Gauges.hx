@@ -25,7 +25,7 @@ class Gauges extends Module {
 			gauges.push(gauge);
 		}
 
-		var btn = new ui.Button("Mélanger", checkValidate);
+		var btn = new ui.DebugButton("Mélanger", checkValidate);
 		flow.addChild(btn);
 		flow.getProperties(btn).horizontalAlign = Middle;
 	}

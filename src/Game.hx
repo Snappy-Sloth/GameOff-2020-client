@@ -80,9 +80,11 @@ class Game extends Process {
 	}
 
 	public function initDay(d:Data.DayKind) {
-		currentDay = Data.day.get(d);
-
-		launchDay(d);
+		delayer.addS(function () {
+			currentDay = Data.day.get(d);
+	
+			launchDay(d);
+		}, 1);
 	}
 
 	public function showManual() {
@@ -221,7 +223,7 @@ class Game extends Process {
 
 		new h2d.Text(Assets.fontMedium, flow).text = "END OF THE DAY";
 
-		var btn = new ui.Button("NextDay", function() {
+		var btn = new ui.DebugButton("NextDay", function() {
 			for (i in 0...Data.day.all.length) {
 				if (Data.day.all[i] == currentDay && Data.day.all[i + 1] != null) {
 					launchDay(Data.day.all[i + 1].id);
@@ -262,7 +264,7 @@ class Game extends Process {
 		new h2d.Text(Assets.fontMedium, flow).text = "DEBUG MENU";
 
 		for (day in Data.day.all) {
-			var btn = new ui.Button(day.id.toString(), function() {
+			var btn = new ui.DebugButton(day.id.toString(), function() {
 				launchDay(day.id);
 				inter.remove();
 				flow.remove();
@@ -309,14 +311,18 @@ class Game extends Process {
 			timer += tmod;
 
 		if( !ui.Console.ME.isActive() && !ui.Modal.hasAny() ) {
-			#if hl
-			// Exit
-			if( ca.isKeyboardPressed(Key.ESCAPE) )
-				if( !cd.hasSetS("exitWarn",3) )
-					trace(Lang.t._("Press ESCAPE again to exit."));
-				else
-					hxd.System.exit();
-			#end
+			if (ca.isKeyboardPressed(Key.ESCAPE)) {
+				pause();
+				new ui.Pause();
+			}
+			// #if hl
+			// // Exit
+			// if( ca.isKeyboardPressed(Key.ESCAPE) )
+			// 	if( !cd.hasSetS("exitWarn",3) )
+			// 		trace(Lang.t._("Press ESCAPE again to exit."));
+			// 	else
+			// 		hxd.System.exit();
+			// #end
 
 			#if debug
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {

@@ -80,23 +80,30 @@ class Main extends dn.Process {
 	}
 
 	public function newGame() {
-		clean();
-		var game = new Game();
+		new ui.Transition(function () {
+			clean();
+			var game = new Game();
 
-		game.initDay(Data.DayKind.Day_1);
+			game.initDay(Data.DayKind.Day_1);
+		});
 	}
 
 	public function continueGame() {
-		clean();
-		var game = new Game();
+		new ui.Transition(function () {
+			clean();
+			var game = new Game();
 
-		game.initDay(Const.PLAYER_DATA.dayId);
+			game.initDay(Const.PLAYER_DATA.dayId);
+		});
 	}
 
 	#if debug
 	public function debugGame() {
-		clean();
-		var game = new Game();
+		new ui.Transition(function () {
+			clean();
+	
+			new Game();
+		});
 	}
 	#end
 

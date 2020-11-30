@@ -9,6 +9,9 @@ class TitleScreen extends dn.Process {
 
 	var sb : HSpriteBatch;
 
+	var continueGameBtn : ui.Button;
+	var newGameBtn : ui.Button;
+
 	public function new() {
 		super(Main.ME);
 
@@ -35,14 +38,20 @@ class TitleScreen extends dn.Process {
 		flow.addSpacing(30);
 
 		#if debug
-		var debugGameBtn = new ui.Button('Debug', Main.ME.debugGame);
+		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
 		flow.addChild(debugGameBtn);
 		#end
 
-		var continueGameBtn = new ui.Button(Lang.t._("Continuer"), Main.ME.continueGame);
+		continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
+			Main.ME.continueGame();
+			continueGameBtn.clickEnable = false;
+		});
 		flow.addChild(continueGameBtn);
 
-		var newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), Main.ME.newGame);
+		newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), function() {
+			Main.ME.newGame();
+			newGameBtn.clickEnable = false;
+		});
 		flow.addChild(newGameBtn);
 
 		var frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {

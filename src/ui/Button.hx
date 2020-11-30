@@ -1,27 +1,53 @@
 package ui;
 
 class Button extends h2d.Layers {
-    public static var ME : Button;
-
     public var wid(default, null) : Int;
-    public var hei(default, null) : Int;
+	public var hei(default, null) : Int;
 
-    public function new(str:String, onClick:Void->Void, ?wid:Int = Const.BUTTON_WIDTH, ?hei:Int = Const.BUTTON_HEIGHT) {
-        super();
+	public var clickEnable(default, set) : Bool;
+	inline function set_clickEnable(v:Bool) {
+		inter.visible = v;
+		return v;
+	}
 
-        ME = this;
+	var inter : h2d.Interactive;
 
-        this.wid = wid;
-        this.hei = hei;
+	public function new(str:String, onClick:Void->Void) {
+		super();
 
-        var inter = new h2d.Interactive(wid, hei, this);
-        inter.backgroundColor = 0xFF872222;
-        inter.onClick = (e)->onClick();
+		var idSpr = "btn";
 
-        var text = new h2d.Text(Assets.fontPixel, this);
-        text.text = str;
-        text.textAlign = Center;
-        text.maxWidth = wid;
-        text.setPosition(0, Std.int((hei - text.textHeight) / 2));
+		var spr = Assets.tiles.h_get(idSpr + "Idle");
+		this.add(spr, 1);
+		
+		wid = Std.int(spr.tile.width);
+		hei = Std.int(spr.tile.height);
+
+		inter = new h2d.Interactive(wid, hei);
+		// inter.backgroundColor = 0xFF888888;
+		inter.onClick = (e)->onClick();
+		this.add(inter, 0);
+
+		var text = new h2d.Text(Assets.fontRulergold32);
+		text.text = str;
+		text.textColor = 0xfffbc2;
+		text.setPosition(((wid/2)-(text.textWidth/2)), (hei/2)-(text.textHeight/2));
+		text.dropShadow = {dx: 0, dy: 1, alpha: 1, color: 0x845034};
+		this.add(text, 2);
+
+		inter.onRelease = inter.onOver = function (e) {
+			text.y = (hei/2)-(text.textHeight/2);
+			// spr.set(idSpr + "Over");
+			// Assets.CREATE_SOUND(hxd.Res.sfx.overButton, OverButton);
+		}
+		inter.onReleaseOutside = inter.onOut = function (e) {
+			text.y = (hei/2)-(text.textHeight/2);
+			spr.set(idSpr + "Idle");
+		}
+		inter.onPush = function (e) {
+			text.y = (hei/2)-(text.textHeight/2) + 3;
+			spr.set(idSpr + "Press");
+			// Assets.CREATE_SOUND(hxd.Res.sfx.clickButton, ClickButton);
+		}
     }
 }

@@ -15,8 +15,8 @@ class Manual extends dn.Process {
 
 	var arSheet : Array<Sheet> = [];
 
-	var sortSheetsBtn : ui.Button;
-	var goToCommBtn : ui.Button;
+	var sortSheetsBtn : ui.DebugButton;
+	var goToCommBtn : ui.DebugButton;
 
 	var mask : h2d.Mask;
 	var wrapper : h2d.Layers;
@@ -77,10 +77,10 @@ class Manual extends dn.Process {
 			arSheet.push(sheet);
 		}
 
-		sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
+		sortSheetsBtn = new ui.DebugButton("Sort", setSheetsToInitialPosition);
 		wrapper.add(sortSheetsBtn, 1);
 
-		goToCommBtn = new ui.Button("Comm", Game.ME.showComm);
+		goToCommBtn = new ui.DebugButton("Comm", Game.ME.showComm);
 		wrapper.add(goToCommBtn, 1);
 
 		onResize();

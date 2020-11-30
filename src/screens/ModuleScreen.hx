@@ -7,7 +7,7 @@ class ModuleScreen extends dn.Process {
 	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
 	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
 
-	var goToCommBtn : ui.Button;
+	var goToCommBtn : ui.DebugButton;
 
 	var arModules : Array<Module> = [];
 
@@ -20,7 +20,7 @@ class ModuleScreen extends dn.Process {
 
 		createRoot(Game.ME.wrapperScreens);
 
-		goToCommBtn = new ui.Button("Comm", Game.ME.showComm);
+		goToCommBtn = new ui.DebugButton("Comm", Game.ME.showComm);
 		root.add(goToCommBtn, 1);
 
 		// flowModule = new h2d.Flow(root);
