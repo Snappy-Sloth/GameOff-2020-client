@@ -24,7 +24,6 @@ class Button extends h2d.Layers {
 		hei = Std.int(spr.tile.height);
 
 		inter = new h2d.Interactive(wid, hei);
-		// inter.backgroundColor = 0xFF888888;
 		inter.onClick = (e)->onClick();
 		this.add(inter, 0);
 

@@ -35,7 +35,7 @@ class Bars extends Module {
 				var dataText = Data.task.get(t.taskKind).data;
 				var data = dataText.split(" ");
 				for (i in 0...8) {
-					if (Std.int(bars[i].currentRatio / (1/3)) != Std.parseInt(data[i]) - 1)
+					if (Std.int(bars[i].currentRatio / (1/3)) != Std.parseInt(data[i]))
 						isValidated = false;
 				}
 

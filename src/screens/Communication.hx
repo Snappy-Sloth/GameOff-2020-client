@@ -13,8 +13,10 @@ class Communication extends dn.Process {
 	
 	var currentAuthor : Null<String> = null;
 
-	var goToManualBtn : ui.DebugButton;
-	var goToModulesBtn : ui.DebugButton;
+	// var goToManualBtn : ui.DebugButton;
+	var goToManualBtn : ui.ChangeScreenButton;
+	// var goToModulesBtn : ui.DebugButton;
+	var goToModulesBtn : ui.ChangeScreenButton;
 
 	var talks : Array<Talk>;
 
@@ -35,11 +37,11 @@ class Communication extends dn.Process {
 
 		var reflect = Assets.tiles.h_get("commScreenReflect", root);
 
-		goToManualBtn = new ui.DebugButton("Manual", Game.ME.showManual);
-		root.add(goToManualBtn, 1);
-
-		goToModulesBtn = new ui.DebugButton("Modules", Game.ME.showModules);
-		root.add(goToModulesBtn, 1);
+		// goToManualBtn = new ui.DebugButton("Manual", Game.ME.showManual);
+		goToManualBtn = new ui.ChangeScreenButton(this, false, Lang.t._("Manual"), Game.ME.showManual);
+		
+		// goToModulesBtn = new ui.DebugButton("Modules", Game.ME.showModules);
+		goToModulesBtn = new ui.ChangeScreenButton(this, true, Lang.t._("Modules"), Game.ME.showModules);
 
 		initScreen();
 
@@ -155,8 +157,8 @@ class Communication extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		goToManualBtn.setPosition((w() / Const.SCALE) - goToManualBtn.wid - 7, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
-		goToModulesBtn.setPosition(7, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
+		goToManualBtn.root.setPosition((w() / Const.SCALE) - goToManualBtn.wid - 7, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
+		goToModulesBtn.root.setPosition(7, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
 
 		bgWrapper.scaleX = mainWrapper.width;
 		bgWrapper.scaleY = mainWrapper.height;
