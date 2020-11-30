@@ -87,9 +87,25 @@
 								{
 									"Tasks": [
 										{
-											"task": "A1",
+											"text": "Ceci est un test de message avant",
+											"author": ""
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"text": "Ceci est un 2eme message de test avant",
+											"author": ""
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
 											"text": "J'ai une diode rouge qui s'allume !",
-											"author": "Astro"
+											"author": "Astro",
+											"task": "A1"
 										}
 									]
 								},
@@ -1425,7 +1441,8 @@
 			"columns": [
 				{
 					"typeStr": "6:task",
-					"name": "task"
+					"name": "task",
+					"opt": true
 				},
 				{
 					"typeStr": "1",
