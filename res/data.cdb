@@ -25,7 +25,7 @@
 									"Type": "Normal"
 								},
 								{
-									"timeBefore": 0,
+									"timeBefore": 2,
 									"answers": [
 										{
 											"text": "Bonjour Commandant, je serais votre référent technique durant toute la durée de la mission, mais si tout se passe bien, vous ne devriez pas avoir besoin de mon aide.",
@@ -37,12 +37,12 @@
 								},
 								{
 									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même.",
-									"timeBefore": 0,
+									"timeBefore": 3,
 									"answers": [],
 									"Type": "Normal"
 								},
 								{
-									"timeBefore": 0,
+									"timeBefore": 10,
 									"answers": [
 										{
 											"text": "Je ne fais que mon travail, Monsieur.",
