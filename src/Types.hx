@@ -1,6 +1,7 @@
 typedef PlayerData = {
 	var dayId : Data.DayKind;
 	var currentEvent : Int;
+	var currentTime : Float;
 }
 
 typedef OptionsData = {

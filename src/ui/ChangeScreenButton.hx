@@ -29,8 +29,6 @@ class ChangeScreenButton extends dn.Process {
 		spr = Assets.tiles.h_get(idSpr /* + "Idle" */);
 		root.add(spr, 1);
 		
-		// wid = Std.int(spr.tile.width);
-		// hei = Std.int(spr.tile.height);
 		wid = 114;
 		hei = 500;
 

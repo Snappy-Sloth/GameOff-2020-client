@@ -73,6 +73,7 @@ class Main extends dn.Process {
 	public function clean() {
 		if (screens.SplashScreen.ME != null) screens.SplashScreen.ME.destroy();
 		if (screens.TitleScreen.ME != null) screens.TitleScreen.ME.destroy();
+		if (screens.EndDay.ME != null) screens.EndDay.ME.destroy();
 		if (Game.ME != null) Game.ME.destroy();
 		if (screens.Manual.ME != null) screens.Manual.ME.destroy();
 		if (screens.Communication.ME != null) screens.Communication.ME.destroy();
@@ -108,6 +109,16 @@ class Main extends dn.Process {
 			var game = new Game();
 
 			game.initDay(Const.PLAYER_DATA.dayId);
+		});
+	}
+
+	public function showEndDay() {
+		new ui.Transition(function () {
+			clean();
+			// var game = new Game();
+			new screens.EndDay();
+
+			// game.initDay(Const.PLAYER_DATA.dayId);
 		});
 	}
 
