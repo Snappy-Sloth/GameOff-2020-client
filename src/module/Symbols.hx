@@ -95,6 +95,8 @@ class Symbols extends Module {
 			checkValidate();
 			s.hideShadow();
 		}
+		
+		Assets.CREATE_SOUND(hxd.Res.sfx.m_setSymbol, M_SetSymbol);
 
 		currentTile = null;
 	}

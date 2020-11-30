@@ -214,7 +214,9 @@ class Game extends Process {
 	}
 
 	public function onError() {
+		#if !debug
 		hud.redWarning();
+		#end
 
 		if (currentTasks == null)
 			Game.ME.hud.showAlertMessage();

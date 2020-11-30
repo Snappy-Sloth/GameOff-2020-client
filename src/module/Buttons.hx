@@ -132,13 +132,16 @@ private class Button extends h2d.Layers {
 
         var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
         inter.onClick = function(e) {
-			onClick(this);
+			// onClick(this);
 		}
 
 		inter.onPush = function (e) {
 			spr.setScale(0.9);
 			shadow.setScale(0.8);
 			shadow.setPos(4, 4);
+
+			onClick(this);
+			Assets.CREATE_SOUND(hxd.Res.sfx.m_clicButton, M_ClicButton);
 		}
 		inter.onRelease = function (e) {
 			spr.setScale(1);

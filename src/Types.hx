@@ -45,3 +45,12 @@ typedef ValueData = {
 	var vt : VType;
 	var v : Int;
 }
+
+enum VolumeGroup { // M => Module
+	@volume(1) M_ClicButton;
+	@volume(1) M_ClicGrid;
+	@volume(1) M_SetSymbol;
+	@volume(1) M_ClicWires;
+	@volume(1) M_Switch;
+	@volume(1) M_ValueChange;
+}

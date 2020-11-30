@@ -56,7 +56,9 @@ class EndDay extends dn.Process {
 		
 		Assets.tiles.h_get("separationEndDay", flow);
 
-		var btn = new ui.Button("Journée suivante", function() {
+		var btn : ui.Button;
+		btn = new ui.Button("Journée suivante", function() {
+			btn.clickEnable = false;
 			var previous = Const.PLAYER_DATA.dayId;
 			Const.PLAYER_DATA.dayId = null;
 			for (i in 0...Data.day.all.length) {

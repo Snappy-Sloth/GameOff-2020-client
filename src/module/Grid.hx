@@ -168,6 +168,7 @@ class Cell extends h2d.Object {
 		var inter = new h2d.Interactive(SQUARE_SIZE, SQUARE_SIZE, this);
 		inter.onClick = function (e) {
 			onClick(this);
+			Assets.CREATE_SOUND(hxd.Res.sfx.m_clicGrid, M_ClicButton);
 		}
 		inter.onPush = function (e) {
 			spr.setScale(0.9);

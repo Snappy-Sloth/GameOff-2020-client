@@ -48,7 +48,10 @@ class Const {
 	}
 
 	public static function SAVE_PROGRESS(d:Data.DayKind, currentEvent:Int) {
-		dn.LocalStorage.writeObject("playerData", false, {dayId:d, currentEvent:currentEvent});
+		PLAYER_DATA.dayId = d;
+		PLAYER_DATA.currentEvent = currentEvent;
+		
+		dn.LocalStorage.writeObject("playerData", false, PLAYER_DATA);
 	}
 
 	public static function CHANGE_LOCA(loca:String) {

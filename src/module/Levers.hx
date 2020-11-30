@@ -47,6 +47,8 @@ class Levers extends Module {
 			return;
 		}
 
+		Assets.CREATE_SOUND(hxd.Res.sfx.m_switch, M_Switch);
+
 		l.toggle();
 
 		for (i in l.lights) {
@@ -120,6 +122,7 @@ class Lever extends h2d.Object {
 		glow = Assets.tiles.h_get("switchLightGlow", 0.5, 0.5, this);
 		glow.blendMode = h2d.BlendMode.Add;
 		glow.y = baseLight.y + (Std.int(baseLight.tile.height) >> 1);
+		glow.alpha = 0;
 
 		forceLightStatus(false);
 	}
@@ -134,14 +137,14 @@ class Lever extends h2d.Object {
 		isLightOn = !isLightOn;
 
 		lightSpr.set(isLightOn ? "switchLightOn" : "switchLightOff");
-		glow.visible = isLightOn;
+		Game.ME.tw.createS(glow.alpha, isLightOn ? 1 : 0, 0.2);
 	}
 
 	public function forceLightStatus(lightOn:Bool) {
 		isLightOn = lightOn;
 
 		lightSpr.set(isLightOn ? "switchLightOn" : "switchLightOff");
-		glow.visible = isLightOn;
+		Game.ME.tw.createS(glow.alpha, isLightOn ? 1 : 0, 0.2);
 	}
 
 }

@@ -35,4 +35,17 @@ class Assets {
 		fontRulergold48 = hxd.Res.fonts.rulergold_medium_48.toFont();
 		fontRise32 = hxd.Res.fonts.rise_regular_32.toFont();
 	}
+
+	public static function CREATE_SOUND(sndFile:hxd.res.Sound, vg:VolumeGroup, loop:Bool = false, playNow:Bool = true, isMusic:Bool = false) : dn.heaps.Sfx {
+		var snd = new dn.heaps.Sfx(sndFile);
+		snd.groupId = vg.getIndex();
+		dn.heaps.Sfx.setGroupVolume(snd.groupId, GET_VOLUME(vg) * (isMusic ? Const.OPTIONS_DATA.MUSIC_VOLUME : Const.OPTIONS_DATA.SFX_VOLUME));
+		playNow ? snd.play(loop) : snd.stop();
+
+		return snd;
+	}
+
+	public static function GET_VOLUME(vg:VolumeGroup) {
+		return dn.Lib.getEnumMetaFloat(vg, "volume");
+	}
 }

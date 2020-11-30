@@ -87,6 +87,10 @@ class Values extends Module {
 		currentVD.v = hxd.Math.iclamp(currentVD.v, 0, 100);
 		valueText.text = Std.string(currentVD.v);
 
+		trace('trololo');
+		
+		Assets.CREATE_SOUND(hxd.Res.sfx.m_valueChange, M_ValueChange);
+
 		checkValidate();
 	}
 	

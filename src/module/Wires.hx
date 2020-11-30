@@ -81,6 +81,8 @@ class Wires extends Module {
 			currentWire.rotation = Math.atan2(to.centerY - from.centerY, to.centerX - from.centerX) - Math.PI / 2;
 			currentWire.scaleY = M.dist(from.centerX, from.centerY, to.centerX, to.centerY);
 			wires.push({w: currentWire, top:from.isTop ? from.id : to.id, bot:from.isTop ? to.id : from.id});
+			
+			Assets.CREATE_SOUND(hxd.Res.sfx.m_clicWires, M_ClicWires);
 		}
 		else 
 			currentWire.remove();

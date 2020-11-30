@@ -64,7 +64,8 @@ class Main extends dn.Process {
 		// new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
 		// delayer.addF( startGame, 1 );
 		#if debug
-		delayer.addF( startTitleScreen, 1 );
+		delayer.addF( debugGame, 1 );
+		// delayer.addF( startTitleScreen, 1 );
 		#else
 		delayer.addF( showSplashScreen, 1 );
 		#end
