@@ -114,9 +114,12 @@ class Main extends dn.Process {
 
 	public function showEndDay() {
 		new ui.Transition(function () {
+			Const.PLAYER_DATA.currentTime += Game.ME.timer;
+			var numTaskCompleted = Game.ME.numTaskCompleted;
+
 			clean();
 			// var game = new Game();
-			new screens.EndDay();
+			new screens.EndDay(numTaskCompleted);
 
 			// game.initDay(Const.PLAYER_DATA.dayId);
 		});

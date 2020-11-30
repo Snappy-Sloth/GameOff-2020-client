@@ -18,6 +18,7 @@ class Game extends Process {
 	public var currentScreen : Process;
 
 	public var timer(default, null) : Float;
+	public var numTaskCompleted(default, null) : Int;
 
 	// public var currentAlert : Null<Data.AlertsKind> = null;
 
@@ -85,6 +86,9 @@ class Game extends Process {
 	
 			launchDay(d);
 		}, 1);
+
+		timer = 0;
+		numTaskCompleted = 0;
 	}
 
 	public function showManual() {
@@ -184,6 +188,7 @@ class Game extends Process {
 	}
 
 	public function onCompleteTask(td:TaskData) {
+		numTaskCompleted++;
 		currentTasks.remove(td);
 		hud.goodWarning();
 		checkEndTasks();
@@ -301,9 +306,9 @@ class Game extends Process {
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
 					showDebugMenu();
 				}
-				else if (ca.isKeyboardPressed(hxd.Key.F2)) {
+				/* else if (ca.isKeyboardPressed(hxd.Key.F2)) {
 					Main.ME.showEndDay();
-				}
+				} */
 
 				if (ca.isKeyboardPressed(hxd.Key.F5)) {
 					if (currentTasks != null)

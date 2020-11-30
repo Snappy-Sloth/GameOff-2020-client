@@ -10,7 +10,7 @@ class EndDay extends dn.Process {
 	var bg : HSprite;
 	var flow : h2d.Flow;
 
-	public function new() {
+	public function new(numTaskCompleted:Int) {
 		super(Main.ME);
 
 		ME = this;
@@ -31,13 +31,28 @@ class EndDay extends dn.Process {
 		
 		Assets.tiles.h_get("separationEndDay", flow);
 
-		var timeText = new h2d.Text(Assets.fontRulergold32, flow);
-		timeText.text = Lang.t._("Temps passé sur les alertes : X minutes et X secondes");
-		timeText.textColor = 0xe9dfc3;
+		var sec = Const.PLAYER_DATA.currentTime / Const.FPS;
+		var min = sec / 60;
 
-		var numText = new h2d.Text(Assets.fontRulergold32, flow);
-		numText.text = Lang.t._("Nombres d'alertes résolues : X");
-		numText.textColor = 0xe9dfc3;
+		function createMiniFlow(strLeft:String, strRight:String) {
+			var miniFlow = new h2d.Flow(flow);
+			// miniFlow.debug = true;
+			miniFlow.minWidth = miniFlow.maxWidth = Std.int(wid * 0.65);
+
+			var textLeft = new h2d.Text(Assets.fontRulergold32, miniFlow);
+			textLeft.text = strLeft;
+			textLeft.textColor = 0xe9dfc3;
+			miniFlow.getProperties(textLeft).horizontalAlign = Left;
+
+			var textRight = new h2d.Text(Assets.fontRulergold32, miniFlow);
+			textRight.text = strRight;
+			textRight.textColor = 0xe9dfc3;
+			miniFlow.getProperties(textRight).horizontalAlign = Right;
+		}
+
+		createMiniFlow(Lang.t._("Temps passé sur les alertes :"), min >= 1 ? Lang.t._("::min:: minutes et ::sec:: secondes", {min:Std.int(min), sec:Std.int(sec)}) : Lang.t._("::sec:: secondes", {sec:Std.int(sec)}));
+
+		createMiniFlow(Lang.t._("Nombres d'alertes résolues :"), Std.string(numTaskCompleted));
 		
 		Assets.tiles.h_get("separationEndDay", flow);
 
