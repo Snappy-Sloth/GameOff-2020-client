@@ -7,7 +7,7 @@ class ModuleScreen extends dn.Process {
 	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
 	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
 
-	var goToCommBtn : ui.DebugButton;
+	var goToCommBtn : ui.ChangeScreenButton;
 
 	var arModules : Array<Module> = [];
 
@@ -20,14 +20,7 @@ class ModuleScreen extends dn.Process {
 
 		createRoot(Game.ME.wrapperScreens);
 
-		goToCommBtn = new ui.DebugButton("Comm", Game.ME.showComm);
-		root.add(goToCommBtn, 1);
-
-		// flowModule = new h2d.Flow(root);
-		// flowModule.horizontalSpacing = flowModule.verticalSpacing = 10;
-		// // flowModule.debug = true;
-		// flowModule.minWidth = flowModule.maxWidth = Std.int(wid * 0.8);
-		// flowModule.multiline = true;
+		goToCommBtn = new ui.ChangeScreenButton(this, false, Lang.t._("Comm"), Game.ME.showComm);
 
 		var wrapperModule = new h2d.Object(root);
 		wrapperModule.x = 20;
@@ -91,7 +84,7 @@ class ModuleScreen extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		goToCommBtn.setPosition((w() / Const.SCALE) - goToCommBtn.wid - 7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
+		goToCommBtn.root.setPosition((w() / Const.SCALE) - goToCommBtn.wid, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
 
 		// flowModule.setPosition(	Std.int((w() / Const.SCALE) - flowModule.outerWidth) >> 1,
 		// 						Std.int((h() / Const.SCALE) - flowModule.outerHeight) >> 1);

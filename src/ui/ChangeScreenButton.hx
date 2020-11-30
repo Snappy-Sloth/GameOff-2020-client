@@ -17,6 +17,7 @@ class ChangeScreenButton extends dn.Process {
 	var mTime = 0.;
 
 	var spr : HSprite;
+	var text : h2d.Text;
 
 	public function new(p:dn.Process, isLeft:Bool, str:String, onClick:Void->Void) {
 		super(p);
@@ -28,42 +29,46 @@ class ChangeScreenButton extends dn.Process {
 		spr = Assets.tiles.h_get(idSpr /* + "Idle" */);
 		root.add(spr, 1);
 		
-		wid = Std.int(spr.tile.width);
-		hei = Std.int(spr.tile.height);
+		// wid = Std.int(spr.tile.width);
+		// hei = Std.int(spr.tile.height);
+		wid = 114;
+		hei = 500;
 
 		inter = new h2d.Interactive(wid, hei);
-		inter.backgroundColor = 0x55FF00FF;
+		// inter.backgroundColor = 0x55FF00FF;
 		inter.onClick = (e)->onClick();
 		root.add(inter, 0);
 
-		var text = new h2d.Text(Assets.fontRulergold16);
+		text = new h2d.Text(Assets.fontRulergold16);
 		text.text = str;
 		text.textColor = 0xFFFFFF;
-		// text.setPosition(((wid/2)-(text.textWidth/2)), (hei/2)-(text.textHeight/2));
+		text.alpha = 0;
 		text.dropShadow = {dx: 1, dy: 1, alpha: 1, color: 0};
 		root.add(text, 2);
 
 		inter.onOver = function (e) {
 			mouseIsOver = true;
+
+			text.y = ((hei >> 1) - text.textHeight - 75) + 10;
+			tw.createS(text.alpha, 1, 0.2);
+			tw.createS(text.y, text.y - 10, 0.2);
 		}
 		inter.onOut = function (e) {
 			mouseIsOver = false;
+			tw.createS(text.alpha, 0, 0.2);
+			tw.createS(text.y, text.y - 10, 0.2);
 		}
 
-		/* inter.onRelease = inter.onOver = function (e) {
-			// text.y = (hei/2)-(text.textHeight/2);
-			// spr.set(idSpr + "Over");
-			// Assets.CREATE_SOUND(hxd.Res.sfx.overButton, OverButton);
-		}
-		inter.onReleaseOutside = inter.onOut = function (e) {
-			// text.y = (hei/2)-(text.textHeight/2);
-			// spr.set(idSpr + "Idle");
-		}
-		inter.onPush = function (e) {
-			// text.y = (hei/2)-(text.textHeight/2) + 3;
-			// spr.set(idSpr + "Press");
-			// Assets.CREATE_SOUND(hxd.Res.sfx.clickButton, ClickButton);
-		} */
+		onResize();
+	}
+
+	override function onResize() {
+		super.onResize();
+
+		spr.setPos(Std.int(wid - spr.tile.width) >> 1, Std.int(hei - spr.tile.height) >> 1);
+
+		text.x = Std.int(wid - text.textWidth) >> 1;
+		text.y = (hei >> 1) - text.textHeight - 75;
 	}
 
 	override function update() {
@@ -72,7 +77,7 @@ class ChangeScreenButton extends dn.Process {
 		if (mouseIsOver) {
 			mTime += tmod;
 
-			spr.x = Math.sin(mTime / 5) * 5;
+			spr.x = (Std.int(wid - spr.tile.width) >> 1) + Math.sin(mTime / 10) * 5;
 		}
 	}
 }

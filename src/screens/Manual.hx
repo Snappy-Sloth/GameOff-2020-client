@@ -15,8 +15,8 @@ class Manual extends dn.Process {
 
 	var arSheet : Array<Sheet> = [];
 
-	var sortSheetsBtn : ui.DebugButton;
-	var goToCommBtn : ui.DebugButton;
+	var sortSheetsBtn : ui.Button;
+	var goToCommBtn : ui.ChangeScreenButton;
 
 	var mask : h2d.Mask;
 	var wrapper : h2d.Layers;
@@ -77,11 +77,10 @@ class Manual extends dn.Process {
 			arSheet.push(sheet);
 		}
 
-		sortSheetsBtn = new ui.DebugButton("Sort", setSheetsToInitialPosition);
+		sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
 		wrapper.add(sortSheetsBtn, 1);
 
-		goToCommBtn = new ui.DebugButton("Comm", Game.ME.showComm);
-		wrapper.add(goToCommBtn, 1);
+		goToCommBtn = new ui.ChangeScreenButton(this, true, Lang.t._("Comm"), Game.ME.showComm);
 
 		onResize();
 	}
@@ -104,7 +103,7 @@ class Manual extends dn.Process {
 		super.onResize();
 
 		sortSheetsBtn.setPosition(((w() / Const.SCALE) - sortSheetsBtn.wid) / 2, 7);
-		goToCommBtn.setPosition(7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
+		goToCommBtn.root.setPosition(7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
 
 		mask.width = Std.int(w() / Const.SCALE);
 		mask.height = Std.int(h() / Const.SCALE);
