@@ -468,11 +468,7 @@
 							"author": "Astro",
 							"timeBeforeS": 0,
 							"talks": [],
-							"alerts": [
-								{
-									"Tasks": []
-								}
-							]
+							"alerts": []
 						},
 						{
 							"author": "Astro",
@@ -551,11 +547,7 @@
 							"author": "Astro",
 							"timeBeforeS": 0,
 							"talks": [],
-							"alerts": [
-								{
-									"Tasks": []
-								}
-							]
+							"alerts": []
 						},
 						{
 							"author": "Astro",
