@@ -61,12 +61,17 @@ class Main extends dn.Process {
 		controller.bind(START, Key.N);
 
 		// Start
-		new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
+		// new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
 		// delayer.addF( startGame, 1 );
+		#if debug
 		delayer.addF( startTitleScreen, 1 );
+		#else
+		delayer.addF( showSplashScreen, 1 );
+		#end
 	}
 
 	public function clean() {
+		if (screens.SplashScreen.ME != null) screens.SplashScreen.ME.destroy();
 		if (screens.TitleScreen.ME != null) screens.TitleScreen.ME.destroy();
 		if (Game.ME != null) Game.ME.destroy();
 		if (screens.Manual.ME != null) screens.Manual.ME.destroy();
@@ -74,9 +79,18 @@ class Main extends dn.Process {
 		if (screens.ModuleScreen.ME != null) screens.ModuleScreen.ME.destroy();
 	}
 
+	public function showSplashScreen() {
+		new ui.Transition(function () {
+			clean();
+			new screens.SplashScreen();
+		}, 0);
+	}
+
 	public function startTitleScreen() {
-		clean();
-		new screens.TitleScreen();
+		new ui.Transition(function () {
+			clean();
+			new screens.TitleScreen();
+		});
 	}
 
 	public function newGame() {
