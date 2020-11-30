@@ -246,7 +246,10 @@ private class Talk extends dn.Process {
 
 	var isTypingText : h2d.Text;
 
+	var wrapperMessage : h2d.Object;
 	var mask : h2d.Mask;
+
+	var currentHeight = 5;
 
 	public function new(comm:Communication, author:String) {
 		super(comm);
@@ -254,6 +257,21 @@ private class Talk extends dn.Process {
 		createRoot(@:privateAccess comm.mainWrapper);
 
 		mask = new h2d.Mask(916, 393, root);
+
+		var inter = new h2d.Interactive(mask.width, mask.height, mask);
+
+		inter.onWheel = function (e) {
+			if (currentHeight > inter.height) {
+				wrapperMessage.y += e.wheelDelta < 0 ? 20 : -20;
+				
+				if (wrapperMessage.y > 0)
+					wrapperMessage.y = 0;
+				else if (wrapperMessage.y < inter.height - currentHeight)
+					wrapperMessage.y = inter.height - currentHeight;
+			}
+		}
+
+		wrapperMessage = new h2d.Object(mask);
 
 		this.author = author;
 
@@ -355,6 +373,7 @@ private class Talk extends dn.Process {
 			text.textColor = 0x081c0c;
 
 			var inter = new h2d.Interactive(1, 1, flow);
+			inter.propagateEvents = true;
 			flow.getProperties(inter).isAbsolute = true;
 			inter.onOver = function (e) {
 				arrow.y = flow.y + (flow.outerHeight >> 1);
@@ -400,7 +419,7 @@ private class Talk extends dn.Process {
 	}
 
 	function showPlayerMessage(text:String) {
-		var messageFlow = new h2d.Flow(mask);
+		var messageFlow = new h2d.Flow(wrapperMessage);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
@@ -423,7 +442,9 @@ private class Talk extends dn.Process {
 		messageText.textColor = 0x43b643;
 
 		messageFlow.reflow();
-		messageFlow.setPosition(mask.width - messageFlow.outerWidth - mainWrapperPadding, mask.height + 5);
+		messageFlow.setPosition(mask.width - messageFlow.outerWidth - mainWrapperPadding, currentHeight);
+
+		currentHeight += messageFlow.outerHeight + mainWrapperPadding + 20;
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
@@ -440,7 +461,7 @@ private class Talk extends dn.Process {
 	}
 
 	function showSystemMessage(td:TalkData) {
-		var messageFlow = new h2d.Flow(mask);
+		var messageFlow = new h2d.Flow(wrapperMessage);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
@@ -456,7 +477,9 @@ private class Talk extends dn.Process {
 		messageText.textColor = 0x081c0c;
 
 		messageFlow.reflow();
-		messageFlow.setPosition(mainWrapperPadding, mask.height + 5);
+		messageFlow.setPosition(mask.width - messageFlow.outerWidth - mainWrapperPadding, currentHeight);
+
+		currentHeight += messageFlow.outerHeight + mainWrapperPadding + 20;
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
@@ -470,7 +493,7 @@ private class Talk extends dn.Process {
 	function showOutsideMessage(td:TalkData) {
 		tw.createS(isTypingText.alpha, 0, 0.2);
 
-		var messageFlow = new h2d.Flow(mask);
+		var messageFlow = new h2d.Flow(wrapperMessage);
 		messageFlow.padding = 10;
 		messageFlow.verticalSpacing = 5;
 		messageFlow.layout = Vertical;
@@ -496,7 +519,9 @@ private class Talk extends dn.Process {
 		}
 
 		messageFlow.reflow();
-		messageFlow.setPosition(mainWrapperPadding, mask.height + 5);
+		messageFlow.setPosition(mainWrapperPadding, currentHeight);
+
+		currentHeight += messageFlow.outerHeight + mainWrapperPadding + 20;
 
 		tw.createS(messageFlow.alpha, 0 > 1, 0.2);
 
@@ -513,10 +538,7 @@ private class Talk extends dn.Process {
 	}
 
 	function updatePostedMessages(dist:Float, text:String) {
-
-		for (flow in arMessageFlow) {
-			tw.createS(flow.y, flow.y - dist, 0.2);
-		}
+		tw.createS(wrapperMessage.y, mask.height - currentHeight, 0.2);
 
 		switch (nextMessage) {
 			case null :
@@ -550,6 +572,8 @@ private class Talk extends dn.Process {
 
 	override function onResize() {
 		super.onResize();
+
+		wrapperMessage.y = mask.height - currentHeight;
 
 		isTypingText.setPosition(mainWrapperPadding + 5, mask.height - mainWrapperPadding - isTypingText.textHeight);
 	}
