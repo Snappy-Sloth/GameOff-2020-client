@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-12-01 00:43+0100\n"
+"PO-Revision-Date: 2020-12-01 14:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Game.hx:72
+#: src/Game.hx:74
 msgid "Game is ready."
 msgstr "Game is ready."
 
-#: src/Game.hx:211
+#: src/Game.hx:220
 msgid "ALERTE TERMINÉE"
 msgstr "ALERT ENDED"
 
@@ -34,7 +34,7 @@ msgid "::name:: est hors ligne..."
 msgstr "::name:: is offline..."
 
 #: src/screens/Communication.hx:287 src/screens/Communication.hx:291
-#: src/screens/Communication.hx:549
+#: src/screens/Communication.hx:555
 msgid "::name:: est en train d'écrire..."
 msgstr "::name:: is typing..."
 
@@ -99,6 +99,236 @@ msgid ""
 "Vous reprendrez au début de la journée lorsque vous continuerez votre partie."
 msgstr "You will resume at the start of the day when you continue your game."
 
+#: res/data.cdb:day/#0.events/#0.author res/data.cdb:day/#0.events/#1.author
+#: res/data.cdb:day/#0.events/#2.author res/data.cdb:day/#0.events/#3.author
+#: res/data.cdb:day/#0.events/#4.author res/data.cdb:day/#0.events/#5.author
+#: res/data.cdb:day/#0.events/#2.talks/#0.customAuthor
+#: res/data.cdb:day/#0.events/#2.talks/#2.customAuthor
+#: res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.customAuthor
+#: res/data.cdb:day/#0.events/#0.talks/#3.answers/#1.customAuthor
+#: res/data.cdb:day/#0.events/#2.talks/#1.answers/#0.customAuthor
+#: res/data.cdb:day/#0.events/#2.talks/#1.answers/#1.customAuthor
+#: res/data.cdb:day/#0.events/#3.talks/#1.answers/#0.customAuthor
+#: res/data.cdb:day/#1.events/#0.author res/data.cdb:day/#2.events/#0.author
+#: res/data.cdb:day/#3.events/#0.author res/data.cdb:day/#4.events/#1.author
+#: res/data.cdb:day/#4.events/#2.author res/data.cdb:day/#4.events/#3.author
+#: res/data.cdb:day/#4.events/#4.author res/data.cdb:day/#4.events/#5.author
+#: res/data.cdb:day/#4.events/#6.author
+#: res/data.cdb:day/#4.events/#1.talks/#0.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#1.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#2.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#3.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#4.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#5.customAuthor
+#: res/data.cdb:day/#4.events/#3.talks/#0.customAuthor
+#: res/data.cdb:day/#4.events/#3.talks/#1.customAuthor
+#: res/data.cdb:day/#4.events/#3.talks/#2.customAuthor
+#: res/data.cdb:day/#4.events/#4.talks/#0.customAuthor
+#: res/data.cdb:day/#4.events/#4.talks/#1.customAuthor
+#: res/data.cdb:day/#4.events/#4.talks/#2.customAuthor
+#: res/data.cdb:day/#4.events/#6.talks/#0.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#3.answers/#0.customAuthor
+#: res/data.cdb:day/#4.events/#1.talks/#3.answers/#1.customAuthor
+#: res/data.cdb:day/#4.events/#3.talks/#1.answers/#0.customAuthor
+#: res/data.cdb:day/#4.events/#3.talks/#1.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#0.author res/data.cdb:day/#5.events/#1.author
+#: res/data.cdb:day/#5.events/#2.author res/data.cdb:day/#5.events/#3.author
+#: res/data.cdb:day/#5.events/#4.author res/data.cdb:day/#5.events/#5.author
+#: res/data.cdb:day/#5.events/#0.talks/#0.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#0.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#1.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#2.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#3.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#4.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#5.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#6.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#7.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#8.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#9.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#10.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#11.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#12.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#13.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#14.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#15.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#16.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#17.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#0.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#1.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#2.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#3.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#4.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#5.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#6.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#7.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#8.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#9.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#10.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#11.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#12.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#13.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#14.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#15.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#16.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#17.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#18.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#19.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#20.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#21.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#22.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#23.customAuthor
+#: res/data.cdb:day/#5.events/#5.talks/#0.customAuthor
+#: res/data.cdb:day/#5.events/#5.talks/#1.customAuthor
+#: res/data.cdb:day/#5.events/#5.talks/#2.customAuthor
+#: res/data.cdb:day/#5.events/#5.talks/#3.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#4.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#4.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#8.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#8.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#16.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#1.talks/#16.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#8.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#8.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#17.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#17.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#22.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#3.talks/#22.answers/#1.customAuthor
+#: res/data.cdb:day/#5.events/#5.talks/#1.answers/#0.customAuthor
+#: res/data.cdb:day/#5.events/#5.talks/#1.answers/#1.customAuthor
+#: res/data.cdb:day/#6.events/#1.author res/data.cdb:day/#6.events/#2.author
+#: res/data.cdb:day/#6.events/#3.author res/data.cdb:day/#6.events/#4.author
+#: res/data.cdb:day/#6.events/#5.author res/data.cdb:day/#6.events/#6.author
+#: res/data.cdb:day/#6.events/#7.author
+#: res/data.cdb:day/#6.events/#2.talks/#0.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#1.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#2.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#3.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#4.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#5.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#6.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#7.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#8.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#9.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#10.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#0.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#1.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#2.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#3.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#0.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#1.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#2.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#3.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#4.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#5.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#6.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#7.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#8.customAuthor
+#: res/data.cdb:day/#6.events/#7.talks/#0.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#3.answers/#0.customAuthor
+#: res/data.cdb:day/#6.events/#2.talks/#3.answers/#1.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#1.answers/#0.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#1.answers/#1.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#3.answers/#0.customAuthor
+#: res/data.cdb:day/#6.events/#3.talks/#3.answers/#1.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#2.answers/#0.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#2.answers/#1.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#8.answers/#0.customAuthor
+#: res/data.cdb:day/#6.events/#5.talks/#8.answers/#1.customAuthor
+#: res/data.cdb:day/#7.events/#1.author res/data.cdb:day/#7.events/#2.author
+#: res/data.cdb:day/#7.events/#3.author res/data.cdb:day/#7.events/#4.author
+#: res/data.cdb:day/#7.events/#5.author res/data.cdb:day/#7.events/#6.author
+#: res/data.cdb:day/#7.events/#1.talks/#0.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#1.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#2.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#3.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#4.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#5.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#6.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#7.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#8.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#9.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#10.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#11.customAuthor
+#: res/data.cdb:day/#7.events/#3.talks/#0.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#0.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#1.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#2.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#3.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#4.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#5.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#6.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#0.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#1.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#2.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#3.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#4.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#5.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#6.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#7.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#8.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#9.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#10.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#11.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#12.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#13.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#14.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#15.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#16.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#17.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#18.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#19.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#3.answers/#0.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#3.answers/#1.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#10.answers/#0.customAuthor
+#: res/data.cdb:day/#7.events/#1.talks/#10.answers/#1.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#3.answers/#0.customAuthor
+#: res/data.cdb:day/#7.events/#4.talks/#3.answers/#1.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#13.answers/#0.customAuthor
+#: res/data.cdb:day/#7.events/#6.talks/#13.answers/#1.customAuthor
+#: res/data.cdb:day/#8.events/#0.author res/data.cdb:day/#8.events/#1.author
+#: res/data.cdb:day/#8.events/#2.author res/data.cdb:day/#8.events/#3.author
+#: res/data.cdb:day/#8.events/#4.author res/data.cdb:day/#8.events/#6.author
+#: res/data.cdb:day/#8.events/#7.author
+#: res/data.cdb:day/#8.events/#0.talks/#0.customAuthor
+#: res/data.cdb:day/#8.events/#0.talks/#1.customAuthor
+#: res/data.cdb:day/#8.events/#0.talks/#2.customAuthor
+#: res/data.cdb:day/#8.events/#0.talks/#3.customAuthor
+#: res/data.cdb:day/#8.events/#0.talks/#4.customAuthor
+#: res/data.cdb:day/#8.events/#0.talks/#5.customAuthor
+#: res/data.cdb:day/#8.events/#2.talks/#0.customAuthor
+#: res/data.cdb:day/#8.events/#2.talks/#1.customAuthor
+#: res/data.cdb:day/#8.events/#2.talks/#2.customAuthor
+#: res/data.cdb:day/#8.events/#2.talks/#3.customAuthor
+#: res/data.cdb:day/#8.events/#2.talks/#4.customAuthor
+#: res/data.cdb:day/#8.events/#2.talks/#5.customAuthor
+#: res/data.cdb:day/#8.events/#4.talks/#0.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#0.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#1.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#2.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#3.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#4.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#5.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#6.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#7.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#8.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#9.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#10.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#11.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#12.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#13.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#14.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#15.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#16.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#17.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#18.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#19.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#7.answers/#0.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#7.answers/#1.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#16.answers/#0.customAuthor
+#: res/data.cdb:day/#8.events/#7.talks/#16.answers/#1.customAuthor
+msgid "Astro"
+msgstr "Astro"
+
 #: res/data.cdb:day/#0.events/#0.talks/#0.text
 msgid "Ici le commandant de la mission PROTEC."
 msgstr "This is the commander of the PROTEC mission."
@@ -119,7 +349,7 @@ msgstr "Anyway! We have permission to take off. Over."
 #: res/data.cdb:day/#0.events/#2.talks/#0.text
 #: res/data.cdb:day/#4.events/#3.talks/#0.text
 msgid "Merci, tout est redevenu normal, heureusement que vous étiez là."
-msgstr "Thanks, everything went back to normal, glad you were here!"
+msgstr "Thanks, everything went back to normal, glad you were here."
 
 #: res/data.cdb:day/#0.events/#2.talks/#2.text
 #: res/data.cdb:day/#4.events/#3.talks/#2.text
@@ -137,7 +367,7 @@ msgstr ""
 #: res/data.cdb:day/#0.events/#5.talks/#0.text
 #: res/data.cdb:day/#4.events/#6.talks/#0.text
 msgid "Merci, alerte terminée. Bonne nuit, agent."
-msgstr "Thanks, alert over. Good night agent"
+msgstr "Thanks, alert over. Good night agent."
 
 #: res/data.cdb:day/#0.events/#0.talks/#1.answers/#0.text
 msgid ""
@@ -251,6 +481,12 @@ msgstr "The word \"PRESS\" just appeared on my terminal!"
 msgid "Trololo"
 msgstr ""
 
+#: res/data.cdb:day/#3.events/#1.author res/data.cdb:day/#8.events/#8.author
+#: res/data.cdb:day/#8.events/#8.talks/#0.customAuthor
+#: res/data.cdb:day/#8.events/#8.talks/#1.customAuthor
+msgid "Anon"
+msgstr "Anon"
+
 #: res/data.cdb:day/#3.events/#0.talks/#0.text
 msgid "Test"
 msgstr ""
@@ -266,6 +502,20 @@ msgstr ""
 #: res/data.cdb:day/#3.events/#1.talks/#1.answers/#0.text
 msgid "Ok aussi"
 msgstr ""
+
+#: res/data.cdb:day/#4.events/#0.author
+#: res/data.cdb:day/#4.events/#0.talks/#0.customAuthor
+#: res/data.cdb:day/#4.events/#0.talks/#1.customAuthor
+#: res/data.cdb:day/#6.events/#0.author
+#: res/data.cdb:day/#6.events/#0.talks/#0.customAuthor
+#: res/data.cdb:day/#7.events/#0.author
+#: res/data.cdb:day/#7.events/#0.talks/#0.customAuthor
+#: res/data.cdb:day/#7.events/#0.talks/#1.customAuthor
+#: res/data.cdb:day/#8.events/#5.author
+#: res/data.cdb:day/#8.events/#5.talks/#0.customAuthor
+#: res/data.cdb:day/#8.events/#5.talks/#1.customAuthor
+msgid "État-major"
+msgstr "Headquarter"
 
 #: res/data.cdb:day/#4.events/#0.talks/#0.text
 msgid ""
@@ -505,8 +755,8 @@ msgid "Bonjour Commandant. Comment se passe votre vol ?"
 msgstr "Hello Commander. How's your flight going?"
 
 #: res/data.cdb:day/#5.events/#1.talks/#0.answers/#0.text
-msgid "Commandant ? Êtes-vous là ?\""
-msgstr "Commanding? Are you there ?"
+msgid "Commandant ? Êtes-vous là ?"
+msgstr "Commander? Are you there ?"
 
 #: res/data.cdb:day/#5.events/#1.talks/#2.answers/#0.text
 msgid "Un problème ? Que s'est-il passé ?"
@@ -648,12 +898,12 @@ msgid ""
 "Il faut vous reprendre. Nous n'avons pas le droit à l'erreur et n'avons pas "
 "le temps pour ce genre de considérations."
 msgstr ""
-"You have to recover. We do not have the right to make mistakes and do not "
-"have time for these kinds of considerations."
+"You have to pull yourself together. We do not have the right to make "
+"mistakes and do not have time for these kinds of considerations."
 
 #: res/data.cdb:day/#5.events/#3.talks/#22.answers/#1.text
 msgid ""
-"C'est compréhensible, mais rassurez vous, je suis là et vous n'êtes pas "
+"C'est compréhensible, mais rassurez-vous, je suis là et vous n'êtes pas "
 "seule. Nous allons mener à bien la mission ensemble."
 msgstr ""
 "It's understandable, but do not worry, I am here and you are not alone. We "
@@ -744,7 +994,7 @@ msgstr ""
 msgid ""
 "Bonjour Agent.\n"
 "\n"
-"Nous avons reçu le rapport de la mission PROTEC. Nous sommes très "
+"Nous avons reçu le rapport de la mission Harmony. Nous sommes très "
 "désappointés d'apprendre ce qu'il s'est passé lors de la première nuit.\n"
 "\n"
 "Nous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. "
@@ -755,128 +1005,151 @@ msgid ""
 "Nous vous rappelons de l'absolue nécessité de la réussite de la mission. La "
 "Terre serait en grand danger dans le cas contraire."
 msgstr ""
+"Hello Agent.\n"
+"\n"
+"We received the report of mission Harmony. We are very disappointed to learn "
+"what happened on the first night.\n"
+"\n"
+"We had planned for the rocket to land on the moon tomorrow at the latest. "
+"Unfortunately, given the condition of the rocket, this will be impossible. "
+"So, we are going to make investigations in order to tell you before when the "
+"mission must be accomplished.\n"
+"\n"
+"We remind you the absolute necessity of the mission's success. Earth would "
+"be in great danger otherwise."
 
 #: res/data.cdb:day/#6.events/#2.talks/#1.text
 msgid ""
 "J'espère qu'ils feront des prévisions réalistes suite à ce que je leur ai "
 "transmis."
 msgstr ""
+"I hope they will make realistic predictions following what I have given them."
 
 #: res/data.cdb:day/#6.events/#2.talks/#2.text
 msgid ""
 "Pour le moment je n'ai aucune idée de la date à laquelle nous allons alunir."
-msgstr ""
+msgstr "For now I have no idea when we will land on the moon."
 
 #: res/data.cdb:day/#6.events/#2.talks/#5.text
 #: res/data.cdb:day/#6.events/#3.talks/#1.answers/#0.answer
 msgid "Merci."
-msgstr ""
+msgstr "Thanks."
 
 #: res/data.cdb:day/#6.events/#2.talks/#7.text
 msgid ""
 "Très peu. Je me réveillais au moindre bruit en panique. Le temps m'a paru "
 "long."
 msgstr ""
+"Very little. I woke up at the slightest noise in a panic. The time seemed "
+"long."
 
 #: res/data.cdb:day/#6.events/#2.talks/#9.text
 msgid ""
 "Vous avez raison, je vais essayer. Pour le moment, c'est l'heure de ma ronde "
 "de surveillance. Je vous recontacte plus tard."
 msgstr ""
+"You're right, I will try. For now, it's time for my watch patrol. I'll get "
+"back to you later."
 
 #: res/data.cdb:day/#6.events/#3.talks/#0.text
 msgid ""
 "J'ai eu une petite frayeur lors de ma ronde. Un instrument nécessitait des "
 "réparations. Ça devrait tenir, mais je ne sais pas pour combien de temps."
 msgstr ""
+"I had a little fright during my patrol. One instrument needed repairs. It "
+"should last, but I don't know for how long."
 
 #: res/data.cdb:day/#6.events/#3.talks/#2.text
 msgid "Je vais tenter de faire une sieste avant ma prochaine ronde."
-msgstr ""
+msgstr "I'll try to take a nap before my next patrol."
 
 #: res/data.cdb:day/#6.events/#5.talks/#0.text
 msgid "Je n'arrive pas à fermer l'œil..."
-msgstr ""
+msgstr "I can't sleep..."
 
 #: res/data.cdb:day/#6.events/#5.talks/#1.text
 msgid "Vous avez une technique pour s'endormir rapidement ?"
-msgstr ""
+msgstr "Do you have a technique for falling asleep quickly?"
 
 #: res/data.cdb:day/#6.events/#5.talks/#3.text
 msgid ""
-"J'ai bien tenté la technique de comptage de moutons, mais cela ne fonctionne "
-"pas non plus."
-msgstr ""
+"J'ai bien tenté de compter les moutons, mais cela ne fonctionne pas non plus."
+msgstr "I have tried to count sheeps, but it doesn't work either."
 
 #: res/data.cdb:day/#6.events/#5.talks/#5.text
 msgid ""
 "Oh vous savez, quand il ne nous reste plus grand chose, on se raccroche à ce "
 "qu'on peut..."
-msgstr ""
+msgstr "You know, when we don't have much left, we hold on to what we can..."
 
 #: res/data.cdb:day/#6.events/#5.talks/#7.text
 msgid ""
 "En vrai, je vous remercie, vous m'avez faite sourire. Dans ma situation, "
 "c'est déjà beaucoup."
-msgstr ""
+msgstr "For real, thank you, you made me smile. In my situation, that's a lot."
 
 #: res/data.cdb:day/#6.events/#7.talks/#0.text
 msgid ""
 "Bon, après tout ceci, je commence vraiment à être épuisée. Je vais retourner "
-"essayer de fermer l'œil. A plus tard, j'espère à demain."
+"essayer de fermer l'œil. A plus tard, j'espère."
 msgstr ""
+"Okay, after all this I'm really starting to get exhausted. I'll go back and "
+"try to sleep. See you later, I hope."
 
 #: res/data.cdb:day/#6.events/#2.talks/#0.answers/#0.text
 msgid ""
-"J'ai reçu un message des dirigeants ce matin en me réveillant. Ils vont nous "
-"recontacter pour nous dire avant quand la fusée doit alunir."
+"J'ai reçu un message de l'état-major ce matin en me réveillant. Ils vont "
+"nous recontacter pour nous dire avant quand la fusée doit alunir."
 msgstr ""
+"I received a message from the headquarter this morning when I woke up. They "
+"will contact us again to tell us when the rocket should land on the moon at "
+"the latest."
 
 #: res/data.cdb:day/#6.events/#2.talks/#3.answers/#0.text
 msgid "Vous pensez que vous aurez assez de kérosène pour terminer le voyage ?"
-msgstr ""
+msgstr "Do you think you'll have enough kerosene to complete the trip?"
 
 #: res/data.cdb:day/#6.events/#2.talks/#3.answers/#1.text
 msgid "Vous allez devoir rationner la nourriture..."
-msgstr ""
+msgstr "You will have to ration the food..."
 
 #: res/data.cdb:day/#6.events/#2.talks/#4.answers/#0.text
 msgid ""
-"Je vous tiendrai au courant dès que les dirigeants m'auront donné une date "
+"Je vous tiendrai au courant dès que l'état-major m'aura donné une date "
 "butoir."
-msgstr ""
+msgstr "I will keep you posted as soon as the headquarter give me a deadline."
 
 #: res/data.cdb:day/#6.events/#2.talks/#6.answers/#0.text
 msgid "Vous avez réussi à dormir cette nuit ?"
-msgstr ""
+msgstr "Did you manage to sleep last night?"
 
 #: res/data.cdb:day/#6.events/#2.talks/#8.answers/#0.text
 msgid ""
 "Essayer de vous reposer dès que vous pouvez. Les alarmes vous réveillerons "
 "le cas échéant. Je reste en alerte permanente en attendant."
 msgstr ""
+"Try to rest as soon as you can. The alarms will wake you up if necessary. I "
+"remain on permanent alert while waiting."
 
 #: res/data.cdb:day/#6.events/#2.talks/#10.answers/#0.text
-#, fuzzy
-#| msgid "Bon vol."
 msgid "Bon courage."
-msgstr "Good flight."
+msgstr "Good luck."
 
 #: res/data.cdb:day/#6.events/#3.talks/#1.answers/#0.text
 msgid "Bien joué astronaute !"
-msgstr ""
+msgstr "Well done, astronaut!"
 
 #: res/data.cdb:day/#6.events/#3.talks/#1.answers/#1.text
 msgid "Nous avons beaucoup de chance de vous avoir sur cette mission."
-msgstr ""
+msgstr "We are very lucky to have you on this mission."
 
 #: res/data.cdb:day/#6.events/#3.talks/#3.answers/#0.text
 msgid "Reposez-vous bien."
-msgstr ""
+msgstr "Sleep well."
 
 #: res/data.cdb:day/#6.events/#3.talks/#3.answers/#1.text
 msgid "Faites de beaux rêves"
-msgstr ""
+msgstr "Sweet dreams"
 
 #: res/data.cdb:day/#6.events/#5.talks/#2.answers/#0.text
 msgid ""
@@ -884,6 +1157,8 @@ msgid ""
 "respiration permettant de s'endormir rapidement. Vous avez certainement dû "
 "l'apprendre également"
 msgstr ""
+"When I started my job, my supervisor gave me a breathing technique that "
+"allowed me to fall asleep quickly. You must have learned that too"
 
 #: res/data.cdb:day/#6.events/#5.talks/#2.answers/#1.text
 msgid ""
@@ -891,69 +1166,79 @@ msgid ""
 "pour m'endormir. Peut-être que fredonner l'une des berceuses de votre "
 "enfance pourrait vous rassurer et vous calmer ?"
 msgstr ""
+"When I was young, my mother used to sing lullabies to me to make me sleep. "
+"Maybe humming one of the lullabies from your childhood could reassure you "
+"and calm you down?"
 
 #: res/data.cdb:day/#6.events/#5.talks/#4.answers/#0.text
 msgid "Ahah ! Cette technique n'est qu'une légende urbaine !"
-msgstr ""
+msgstr "Haha! This technique is an urban legend!"
 
 #: res/data.cdb:day/#6.events/#5.talks/#6.answers/#0.text
 msgid ""
 "Je suis désolé, je ne devrais pas prendre votre situation à la légère..."
-msgstr ""
+msgstr "I'm sorry, I shouldn't take your situation lightly..."
 
 #: res/data.cdb:day/#6.events/#5.talks/#8.answers/#0.text
 msgid ""
 "Le plus important est que vous gardiez les idées claires pour la réussite de "
 "la mission"
 msgstr ""
+"The most important thing is that you keep your ideas clear for the mission's "
+"success"
 
 #: res/data.cdb:day/#6.events/#5.talks/#8.answers/#1.text
 msgid "Je ferai ce qu'il faut pour que vous gardiez le moral !"
-msgstr ""
+msgstr "I'll do whatever it takes to keep your spirits up!"
 
 #: res/data.cdb:day/#6.events/#2.talks/#3.answers/#0.answer
 msgid ""
 "Oui, ça devrait aller. Nous avons plusieurs réservoirs de secours, au cas "
 "où... Reste à savoir combien de temps le voyage va durer."
 msgstr ""
+"Yes it should be fine. We have several back-up tanks, just in case... But we "
+"still don't know how long the trip will last."
 
 #: res/data.cdb:day/#6.events/#2.talks/#3.answers/#1.answer
 msgid ""
 "Oui. Nous n'en avions déjà pas beaucoup, je vais devoir me limiter à un demi-"
 "repas par jour pour commencer. J'ajusterai si besoin."
 msgstr ""
+"Yes. We didn't have many, so I'll have to limit myself to half a meal a day "
+"to start. I will adjust it if necessary."
 
 #: res/data.cdb:day/#6.events/#3.talks/#1.answers/#1.answer
 msgid "J'ai également beaucoup de chance de vous avoir."
-msgstr ""
+msgstr "I'm very lucky to have you as well."
 
 #: res/data.cdb:day/#6.events/#3.talks/#3.answers/#0.answer
 msgid "Merci !"
-msgstr ""
+msgstr "Thanks!"
 
 #: res/data.cdb:day/#6.events/#3.talks/#3.answers/#1.answer
 msgid "Très drôle..."
-msgstr ""
+msgstr "Very funny..."
 
 #: res/data.cdb:day/#6.events/#5.talks/#2.answers/#0.answer
 msgid "Effectivement, mais elle n'a jamais vraiment fonctionné sur moi..."
-msgstr ""
+msgstr "Yes, but it never really worked on me..."
 
 #: res/data.cdb:day/#6.events/#5.talks/#2.answers/#1.answer
-msgid "Bonne idée ! Je crois qu'à ce stade, c'est tout ce qui pourra m'aider."
-msgstr ""
+msgid ""
+"Bonne idée ! Je crois qu'à ce stade, c'est tout ce qui pourrait m'aider."
+msgstr "Good idea! I think at this point that's all that could help me."
 
 #: res/data.cdb:day/#6.events/#5.talks/#8.answers/#0.answer
 msgid ""
 "Bien sûr, l'avenir de l'humanité est sur nos épaules... Ce n'est pas très "
 "rassurant dit comme ça"
 msgstr ""
+"Of course, the future of humanity is on our shoulders... It's not very "
+"reassuring said like that"
 
 #: res/data.cdb:day/#6.events/#5.talks/#8.answers/#1.answer
-#, fuzzy
-#| msgid "Heureux de savoir que nous pouvons compter sur vous."
-msgid "Merci pour le soutien. Je sens que je peux vraiment compter sur vous.\""
-msgstr "Glad to know we can count on you."
+msgid "Merci pour le soutien. Je sens que je peux vraiment compter sur vous."
+msgstr "Thanks for your support. I feel like I can really count on you."
 
 #: res/data.cdb:day/#7.events/#0.talks/#0.text
 msgid ""
@@ -961,10 +1246,17 @@ msgid ""
 "\n"
 "Suite à notre message d'hier, nous voulions réitérer la confiance que nous "
 "plaçons en vous. Pour ce faire, nous allons vous envoyer un message qui "
-"devait vous être transmis avant votre entrée dans le bunker.\n"
+"aurait dû vous être transmis avant votre entrée dans le bunker.\n"
 "\n"
 "Bonne lecture et bon courage, Agent."
 msgstr ""
+"Hello Agent,\n"
+"\n"
+"Following our message yesterday, we wanted to reiterate the trust we place "
+"in you. To do this, we will send you a message that should have been sent to "
+"you before you entered the bunker.\n"
+"\n"
+"Happy reading and good luck, Agent."
 
 #: res/data.cdb:day/#7.events/#0.talks/#1.text
 msgid ""
@@ -988,26 +1280,47 @@ msgid ""
 "Prends soin de toi mon petit ange.\n"
 "Maman."
 msgstr ""
+"My Darling,\n"
+"\n"
+"First off all, don't worry, your dad and I are fine. We think of you every "
+"day and hope you do your best. We are very proud of who you have become and "
+"what you accomplish every day.\n"
+"\n"
+"Know that your little sisters are doing well. They grow up so fast! The "
+"other day they asked me where you were. I think they miss you a lot. All of "
+"the crafts they bring home are for you. You will have plenty of gifts when "
+"you return. It will decorate your workspace.\n"
+"\n"
+"We don't know anything about your current posting, but we have heard that "
+"you will be returning home soon. We can't wait to find you. On the day of "
+"your return, you will have your favorite dish on the table, a hot tub and a "
+"roaring fire.\n"
+"\n"
+"Take care of yourself my little angel.\n"
+"Mum."
 
 #: res/data.cdb:day/#7.events/#1.talks/#0.text
 msgid "Bonjour Agent."
-msgstr ""
+msgstr "Hello Agent."
 
 #: res/data.cdb:day/#7.events/#1.talks/#2.text
 msgid "Et bien, un peu mieux. Vous avez l'air de bonne humeur !"
-msgstr ""
+msgstr "A little better. You seem in a good mood!"
 
 #: res/data.cdb:day/#7.events/#1.talks/#5.text
 msgid ""
 "J'aimerais bien avoir des nouvelles de mes proches également... Surtout de "
 "ma petite sœur."
 msgstr ""
+"I would like to hear from my family too... Especially my little sister."
 
 #: res/data.cdb:day/#7.events/#1.talks/#7.text
 msgid ""
 "Elle vient tout juste d'avoir 18 ans. Elle doit être en pleins examens. "
 "J'espère qu'elle va bien et qu'elle ne s'inquiète pas trop pour moi."
 msgstr ""
+"She has just turned 18. She must be in the middle of her exams. I hope she "
+"is doing well and not worrying too much about me."
 
 #: res/data.cdb:day/#7.events/#1.talks/#9.text
 msgid ""
@@ -1016,255 +1329,282 @@ msgid ""
 "en ses rêves. Evidemment elle ne connaît pas les détails de la mission, mais "
 "elle sait que je suis en vol."
 msgstr ""
+"Yep. She knows I'm an astronaut. One of the youngest women to ever be. I had "
+"to tell her so that she always believe in her dreams. Obviously she doesn't "
+"know the details of the mission, but she does know I'm in flight."
 
 #: res/data.cdb:day/#7.events/#1.talks/#11.text
 msgid ""
 "Elle a compris que mon travail était très important pour moi et pour nous "
 "tous. Elle m'a dit qu'elle voulait"
 msgstr ""
+"She understood that my job was very important to me and to all of us. She "
+"told me she wanted"
 
 #: res/data.cdb:day/#7.events/#3.talks/#0.text
 msgid ""
 "Je dois aller faire un tour pour vérifier que tout est OK après cette "
 "alerte. Je reviens."
 msgstr ""
+"I have to go for a walk to check that everything is OK after this alert. "
+"I'll be back."
 
 #: res/data.cdb:day/#7.events/#4.talks/#0.text
 msgid "Bon, je pense que cette fois-ci on devrait être tranquille un moment."
-msgstr ""
+msgstr "Well, I think this time we should be fine for a while."
 
 #: res/data.cdb:day/#7.events/#4.talks/#2.text
 msgid ""
 "Non, aucune idée. J'étais en train de faire mon tour, quand l'un des modules "
 "que je venais de contrôler s'est mis à dysfonctionner."
 msgstr ""
+"No idea. I was doing my patrol, when one of the modules I had just "
+"controlled started to malfunction."
 
 #: res/data.cdb:day/#7.events/#4.talks/#4.text
 msgid ""
 "En tout cas, heureusement que vous étiez là pour m'aider à réparer ça "
 "rapidement."
-msgstr ""
+msgstr "Anyway, luckily you were there to help me fix this quickly."
 
 #: res/data.cdb:day/#7.events/#4.talks/#6.text
 msgid ""
 "Je vais aller me reposer un peu en attendant la prochaine alerte. À bientôt."
 msgstr ""
+"I'm going to go and rest a little while waiting for the next alert. See you "
+"soon."
 
 #: res/data.cdb:day/#7.events/#6.talks/#0.text
 msgid ""
 "Je crois que tout est bon cette fois-ci, on va pouvoir aller se coucher "
 "tranquillement."
 msgstr ""
+"I think everything is good this time, we will be able to go to bed quietly."
 
 #: res/data.cdb:day/#7.events/#6.talks/#1.text
 msgid ""
 "Je vais faire tourner un diagnostic pendant la nuit afin de savoir pourquoi "
 "ce module est tombé en panne"
-msgstr ""
+msgstr "I will run a diagnosis overnight to find out why this module failed"
 
 #: res/data.cdb:day/#7.events/#6.talks/#3.text
 msgid "En tout cas, selon mon point de vue, ça ne peut pas en être un."
-msgstr ""
+msgstr "In any case, from my point of view, it can't be."
 
 #: res/data.cdb:day/#7.events/#6.talks/#4.text
 msgid "Donc il doit forcément y avoir autre chose..."
-msgstr ""
+msgstr "So there must necessarily be something else..."
 
 #: res/data.cdb:day/#7.events/#6.talks/#6.text
 msgid ""
 "Impossible. À la fin de chaque alarme, vos modules sont désactivés et "
 "n'envoient aucun signal à la fusée"
 msgstr ""
+"Impossible. At the end of each alarm, your modules are disabled and send no "
+"signal to the rocket"
 
 #: res/data.cdb:day/#7.events/#6.talks/#8.text
 msgid "Ça peut être ça en effet. Du moins, j'espère que ça l'est."
-msgstr ""
+msgstr "It could be that indeed. At least I hope it is."
 
 #: res/data.cdb:day/#7.events/#6.talks/#10.text
 msgid "Quelqu'un qui l'a fait volontairement."
-msgstr ""
+msgstr "Someone who did it on purpose."
 
 #: res/data.cdb:day/#7.events/#6.talks/#12.text
 msgid "Nous nuire."
-msgstr ""
+msgstr "Harm us."
 
 #: res/data.cdb:day/#7.events/#6.talks/#15.text
 msgid "C'est simple, il n'y en a pas. Cette mission est vitale."
-msgstr ""
+msgstr "It's simple, there isn't. This mission is vital."
 
 #: res/data.cdb:day/#7.events/#6.talks/#16.text
 msgid "Bref, j'espère que nous aurons des réponses demain."
-msgstr ""
+msgstr "Anyway, I hope we'll have some answers tomorrow."
 
 #: res/data.cdb:day/#7.events/#6.talks/#18.text
 msgid ""
 "Vous savez, ici c'est tout le temps la nuit. Mais je vais aller m'allonger."
-msgstr ""
+msgstr "You know, here it's night all the time. But I'm going to go lie down."
 
 #: res/data.cdb:day/#7.events/#6.talks/#19.text
 msgid "Bonne nuit"
-msgstr ""
+msgstr "Good night"
 
 #: res/data.cdb:day/#7.events/#1.talks/#1.answers/#0.text
 msgid "Bonjour, comment allez-vous en cette belle journée ?"
-msgstr ""
+msgstr "Hello, how are you on this beautiful day?"
 
 #: res/data.cdb:day/#7.events/#1.talks/#3.answers/#0.text
-msgid "Oui, j'ai reçu un mot de ma mère de la part des dirigeants."
-msgstr ""
+msgid "Oui, j'ai reçu un mot de ma mère de la part de l'état-major."
+msgstr "Yes, the headquarter gave me a note from my mother."
 
 #: res/data.cdb:day/#7.events/#1.talks/#3.answers/#1.text
 msgid "Oui, j'ai reçu des nouvelles de l'extérieur."
-msgstr ""
+msgstr "Yes, I received news from the outside."
 
 #: res/data.cdb:day/#7.events/#1.talks/#4.answers/#0.text
 msgid "Oui, très bonnes. Ça fait du bien."
-msgstr ""
+msgstr "Very great. It feels good."
 
 #: res/data.cdb:day/#7.events/#1.talks/#6.answers/#0.text
 msgid "Quel âge a-t-elle ?"
-msgstr ""
+msgstr "How old is she?"
 
 #: res/data.cdb:day/#7.events/#1.talks/#8.answers/#0.text
 msgid "Elle sait ce que vous faites comme métier ?"
-msgstr ""
+msgstr "Does she know what is your job?"
 
 #: res/data.cdb:day/#7.events/#1.talks/#10.answers/#0.text
 msgid "C'est mignon ! Elle a de la chance de vous avoir comme grande sœur"
-msgstr ""
+msgstr "It's cute ! She's lucky to have you as a big sister"
 
 #: res/data.cdb:day/#7.events/#1.talks/#10.answers/#1.text
 msgid "J'espère qu'elle n'en parlera pas à n'importe qui."
-msgstr ""
+msgstr "I hope she won't tell anybody about it."
 
 #: res/data.cdb:day/#7.events/#4.talks/#1.answers/#0.text
 msgid ""
 "Savez-vous pour quelle raison nous avons eu deux alarmes si rapprochées ?"
-msgstr ""
+msgstr "Do you know why we had two alarms so close together?"
 
 #: res/data.cdb:day/#7.events/#4.talks/#3.answers/#0.text
 msgid ""
 "Étrange... Peut-être aviez-vous mal vérifié le module en question. L'erreur "
 "est humaine"
 msgstr ""
+"Strange ... Perhaps you had incorrectly checked the module. The error is "
+"human"
 
 #: res/data.cdb:day/#7.events/#4.talks/#3.answers/#1.text
 msgid "Le module devait avoir une faiblesse, ça peut arriver"
-msgstr ""
+msgstr "The module must have had a weakness, it can happen"
 
 #: res/data.cdb:day/#7.events/#4.talks/#5.answers/#0.text
 msgid ""
 "Heureusement que vous avez réagit assez vite pour me donner les bonnes "
 "instructions surtout."
 msgstr ""
+"Fortunately, you reacted quickly enough to give me the right instructions."
 
 #: res/data.cdb:day/#7.events/#6.talks/#2.answers/#0.text
 msgid ""
 "Vous pensez vraiment que ça puisse être autre chose qu'un dysfonctionnement "
 "interne ?"
 msgstr ""
+"Do you really think it could be anything other than an internal dysfunction?"
 
 #: res/data.cdb:day/#7.events/#6.talks/#5.answers/#0.text
 msgid ""
 "Je me demande bien quoi. J'espère que ce n'est pas chez moi qu'il y a eu un "
 "souci"
 msgstr ""
+"I wonder what it was. I hope it wasn't because of me that there was a problem"
 
 #: res/data.cdb:day/#7.events/#6.talks/#7.answers/#0.text
 msgid ""
 "Je ne vois pas d'où est-ce que ça pourrait venir sinon. Mise à part une "
 "interférence avec un satellite ou une station"
 msgstr ""
+"I don't see where it could come from. Apart from interference with a "
+"satellite or a station"
 
 #: res/data.cdb:day/#7.events/#6.talks/#9.answers/#0.text
 msgid "Qu'est-ce que ça pourrait être d'autre ?"
-msgstr ""
+msgstr "What else could it be?"
 
 #: res/data.cdb:day/#7.events/#6.talks/#11.answers/#0.text
 msgid "Qui pourrait bien vouloir faire ça ? Dans quel intérêt ?"
-msgstr ""
+msgstr "Who could possibly want to do that? What's the point ?"
 
 #: res/data.cdb:day/#7.events/#6.talks/#13.answers/#0.text
 msgid "Mais enfin, nous faisons ça pour la protection de tous !"
-msgstr ""
+msgstr "Still, we're doing this for everyone's protection!"
 
 #: res/data.cdb:day/#7.events/#6.talks/#13.answers/#1.text
 msgid "Mais... Qui ?"
-msgstr ""
+msgstr "But... Who?"
 
 #: res/data.cdb:day/#7.events/#6.talks/#14.answers/#0.text
 msgid "Je n'arrive pas à concevoir quels pourraient être leurs arguments"
-msgstr ""
+msgstr "I can't imagine what their arguments might be"
 
 #: res/data.cdb:day/#7.events/#6.talks/#17.answers/#0.text
 msgid "Passez une bonne nuit"
-msgstr ""
+msgstr "Have a good night"
 
 #: res/data.cdb:day/#7.events/#1.talks/#3.answers/#0.answer
 msgid "Oh, J'espère qu'elle vous a donné de bonnes nouvelles."
-msgstr ""
+msgstr "Oh, I hope she gave you great news."
 
 #: res/data.cdb:day/#7.events/#1.talks/#3.answers/#1.answer
 msgid "J'espère que les nouvelles ont été bonnes."
-msgstr ""
+msgstr "I hope the news were great."
 
 #: res/data.cdb:day/#7.events/#1.talks/#10.answers/#0.answer
 msgid "Oh, merci, ça me touche vraiment. J'espère être un exemple pour elle."
-msgstr ""
+msgstr "Oh, thank you, it really touches me. I hope to be an example for her."
 
 #: res/data.cdb:day/#7.events/#1.talks/#10.answers/#1.answer
 msgid "Elle ne dira rien, elle me l'a promis. Ne vous inquiétez pas."
-msgstr ""
+msgstr "She won't say anything, she promised me. Don't worry."
 
 #: res/data.cdb:day/#7.events/#4.talks/#3.answers/#0.answer
 msgid "Je vérifie toujours plusieurs fois chaque module depuis l'accident..."
-msgstr ""
+msgstr "I always check each module several times since the accident..."
 
 #: res/data.cdb:day/#7.events/#4.talks/#3.answers/#1.answer
 msgid "Vous avez raison, ça doit être ça"
-msgstr ""
+msgstr "You are right, that must be it"
 
 #: res/data.cdb:day/#7.events/#6.talks/#13.answers/#0.answer
 msgid "Je suis bien d'accord. Mais il y a des fous partout"
-msgstr ""
+msgstr "I agree. But there are crazy people everywhere"
 
 #: res/data.cdb:day/#7.events/#6.talks/#13.answers/#1.answer
 msgid "Des opposants sans foi ni loi qui veulent la destruction de la planète"
-msgstr ""
+msgstr "Lawless opponents who want the destruction of the planet"
 
 #: res/data.cdb:day/#8.events/#0.talks/#0.text
 msgid "Le diagnostic a été interrompu..."
-msgstr ""
+msgstr "The diagnosis was interrupted..."
 
 #: res/data.cdb:day/#8.events/#0.talks/#2.text
 msgid "Ce sont aussi les questions que je me pose..."
-msgstr ""
+msgstr "That are also the questions I ask myself..."
 
 #: res/data.cdb:day/#8.events/#0.talks/#4.text
 msgid ""
 "Pas que je sache non. Je vais en relancer un. On aura peut-être la réponse à "
 "toutes nos questions ce soir."
 msgstr ""
+"Not that I know of. I'll run another one. We may have the answer to all our "
+"questions this evening."
 
 #: res/data.cdb:day/#8.events/#2.talks/#0.text
 msgid "Le diagnostic est à 30%. Je le surveille du coin de l'œil."
-msgstr ""
+msgstr "The diagnosis is 30%. I watch it out of the corner of my eye."
 
 #: res/data.cdb:day/#8.events/#2.talks/#2.text
 msgid ""
 "Oui, si ça l'a été une première fois, je ne vois pas pourquoi il n'y en "
 "aurait pas une seconde."
 msgstr ""
+"Yes, if it was interrupted the first time, I don't see why there wouldn't be "
+"a second."
 
 #: res/data.cdb:day/#8.events/#2.talks/#4.text
 msgid "Aucune idée..."
-msgstr ""
+msgstr "No idea..."
 
 #: res/data.cdb:day/#8.events/#4.talks/#0.text
 msgid ""
 "Le diagnostic est à 60%. En attendant je vais aller faire ma petite ronde. "
 "Restez en alerte au cas où."
 msgstr ""
+"The diagnosis is 60%. In the meantime, I'm going to do my patrol. Stay alert "
+"just in case."
 
 #: res/data.cdb:day/#8.events/#5.talks/#0.text
 msgid ""
@@ -1279,16 +1619,27 @@ msgid ""
 "important de vous donner plus de détails sur le danger qui nous guette.\n"
 "Nous avons reçu, il y a très peu de temps, un message étrange. Après avoir "
 "réussi à décoder ce message, nous avons compris que notre planète était en "
-"danger. Cette missive contenait des menaces contre la Terre, sûrement en "
-"provenance d'une race alien."
+"danger. Cette missive contenait des menaces contre la Terre en provenance "
+"d'une race alien."
 msgstr ""
+"Hello Agent,\n"
+"\n"
+"We learned of the strange malfunction the rocket encountered yesterday.\n"
+"\n"
+"While you haven't yet discovered the cause of this failure, we do know we "
+"have opponents. In order for you to understand the absolute necessity of "
+"your mission's success, we believe it is important to give you more details "
+"about the danger that awaits us.\n"
+"We received a strange message a short time ago. After managing to decode "
+"this message, we understood that our planet was in danger. This missive "
+"contained threats against Earth from an alien race."
 
 #: res/data.cdb:day/#8.events/#5.talks/#1.text
 msgid ""
 "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, "
 "mais nous nous préparions à cette éventualité depuis un moment. La fusée "
-"contient le résultat de nos préparation, et le seul moyen de se défendre est "
-"de déployer son contenu sur la Lune.\n"
+"contient le résultat de notre préparation, et le seul moyen de se défendre "
+"est de déployer son contenu sur la Lune.\n"
 "\n"
 "D'après nos calculs, nous pensons que les aliens arriveront dans un peu plus "
 "de 15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée "
@@ -1297,56 +1648,70 @@ msgid ""
 "Merci de faire en sorte que cela soit possible, afin de sauver de nombreuses "
 "vies."
 msgstr ""
+"We don't know the reason for their sudden urge to attack us, but we had been "
+"preparing for this possibility for a while. The rocket contains the result "
+"of our preparation, and the only way to defend ourselves is to deploy its "
+"contents on the Moon.\n"
+"\n"
+"Based on our predictions, we believe the aliens will arrive in a little more "
+"than 15 days. So the twentieth day of your mission, the rocket will have to "
+"land on the moon.\n"
+"\n"
+"Please make this possible, in order to save many lives."
 
 #: res/data.cdb:day/#8.events/#7.talks/#0.text
 msgid "90%. Nous saurons bientôt le fin mot de l'histoire."
-msgstr ""
+msgstr "90%. We will soon know what happened."
 
 #: res/data.cdb:day/#8.events/#7.talks/#2.text
 msgid "Ah, nous avons donc une date ?"
-msgstr ""
+msgstr "Do we have a date?"
 
 #: res/data.cdb:day/#8.events/#7.talks/#4.text
 msgid ""
 "15 jours... Je pense que ça risque d'être compliqué... Espérons que nous "
 "n'allons pas perdre trop de temps..."
 msgstr ""
+"15 days... I think it might be complicated... Let's hope we won't waste too "
+"much time..."
 
 #: res/data.cdb:day/#8.events/#7.talks/#6.text
 msgid "Ah, vous comprenez donc pourquoi cette mission est primordiale ?"
-msgstr ""
+msgstr "So, do you understand why this mission is essential?"
 
 #: res/data.cdb:day/#8.events/#7.talks/#10.text
 msgid "Vous avez beaucoup trop de questions, je ne peux pas répondre à tout."
-msgstr ""
+msgstr "You have too many questions, I can't answer them all."
 
 #: res/data.cdb:day/#8.events/#7.talks/#11.text
 msgid ""
 "Mais les personnes qui s'opposent à nous ne doivent pas être au courant de "
 "tous les tenants et aboutissants."
-msgstr ""
+msgstr "But the people who oppose us must not know all the ins and outs."
 
 #: res/data.cdb:day/#8.events/#7.talks/#12.text
 msgid "Ah ! Diagnostic terminé !"
-msgstr ""
+msgstr "Okay! Diagnosis completed!"
 
 #: res/data.cdb:day/#8.events/#7.talks/#14.text
 msgid ""
 "Il indique un défaut électrique... Donc j'avais dû mal vérifier le module "
 "lors de ma ronde..."
 msgstr ""
+"It indicates an electrical fault... So I must have badly checked the module "
+"during my patrol..."
 
 #: res/data.cdb:day/#8.events/#7.talks/#15.text
 msgid "Je crois que je me suis montée la tête toute seule..."
-msgstr ""
+msgstr "I think I worked myself into some kind of frenzy..."
 
 #: res/data.cdb:day/#8.events/#7.talks/#17.text
 msgid "Nous n'avons plus le droit à l'erreur."
-msgstr ""
+msgstr "We no longer have the right to make mistakes."
 
 #: res/data.cdb:day/#8.events/#7.talks/#19.text
 msgid "Vous avez raison, je suis épuisée. Bonne nuit."
-msgstr ""
+msgstr "You're right, I'm exhausted. Good night."
 
 #: res/data.cdb:day/#8.events/#8.talks/#0.text
 msgid ""
@@ -1356,105 +1721,115 @@ msgid ""
 "\n"
 "Nous vous recontacterons bientôt."
 msgstr ""
+"Hello Agent,\n"
+"\n"
+"They are lying to you.\n"
+"\n"
+"We'll get back to you soon."
 
 #: res/data.cdb:day/#8.events/#8.talks/#1.text
 msgid "Ne croyez pas tout ce qu'on vous dit."
-msgstr ""
+msgstr "Don't believe everything they told you."
 
 #: res/data.cdb:day/#8.events/#0.talks/#1.answers/#0.text
 msgid "Comment ça interrompu ? Comment ? Par qui ?"
-msgstr ""
+msgstr "Interrupted? How? By who ?"
 
 #: res/data.cdb:day/#8.events/#0.talks/#3.answers/#0.text
 msgid "Il n'y a pas eu de dysfonctionnement pendant la nuit ?"
-msgstr ""
+msgstr "Was there no malfunction overnight?"
 
 #: res/data.cdb:day/#8.events/#0.talks/#5.answers/#0.text
 msgid "J'espère..."
-msgstr ""
+msgstr "I hope so..."
 
 #: res/data.cdb:day/#8.events/#2.talks/#1.answers/#0.text
 msgid "Vous pensez qu'une seconde interruption est possible ?"
-msgstr ""
+msgstr "Do you think another interruption is possible?"
 
 #: res/data.cdb:day/#8.events/#2.talks/#3.answers/#0.text
 msgid ""
 "Quelle serait la raison pour laquelle quelqu'un voudrait que notre mission "
 "soit un échec ?"
-msgstr ""
+msgstr "What would be the reason why someone would want our mission to fail?"
 
 #: res/data.cdb:day/#8.events/#2.talks/#5.answers/#0.text
 msgid "Je ne sais vraiment pas quoi faire pour vous aider..."
-msgstr ""
+msgstr "I really don't know what I can do to help you..."
 
 #: res/data.cdb:day/#8.events/#7.talks/#1.answers/#0.text
-msgid "J'ai reçu plus d'information de la part des dirigeants."
-msgstr ""
+msgid "J'ai reçu plus d'information de la part de l'état-major."
+msgstr "I received more information from the headquarter."
 
 #: res/data.cdb:day/#8.events/#7.talks/#3.answers/#0.text
 msgid "La fusée doit alunir d'ici 15 jours au plus tard."
-msgstr ""
+msgstr "The rocket must land within 15 days at the latest."
 
 #: res/data.cdb:day/#8.events/#7.talks/#5.answers/#0.text
 msgid "J'ai aussi eu plus d'informations sur le but de la mission..."
-msgstr ""
+msgstr "I also had more information on the purpose of the mission..."
 
 #: res/data.cdb:day/#8.events/#7.talks/#7.answers/#0.text
 msgid "Des aliens ? Ils existent vraiment ?"
-msgstr ""
+msgstr "Aliens? Do they really exist?"
 
 #: res/data.cdb:day/#8.events/#7.talks/#7.answers/#1.text
 msgid ""
 "Oui, je comprends. même si toute cette vérité est difficile à assimiler "
 "totalement"
-msgstr ""
+msgstr "Yes I understand. even if all this truth is difficult to assimilate"
 
 #: res/data.cdb:day/#8.events/#7.talks/#8.answers/#0.text
 msgid ""
-"Mais du coup, je ne comprends pas qui voudrait s'opposer à cette mission ?"
-msgstr ""
+"Mais du coup, je ne comprends pas, qui voudrait s'opposer à cette mission ?"
+msgstr "Well, I do not understand, who would want to oppose this mission?"
 
 #: res/data.cdb:day/#8.events/#7.talks/#9.answers/#0.text
 msgid "Et pourquoi les aliens décident d'attaquer maintenant ?"
-msgstr ""
+msgstr "And why do the aliens decide to attack now?"
 
 #: res/data.cdb:day/#8.events/#7.talks/#13.answers/#0.text
 msgid "Alors ?"
-msgstr ""
+msgstr "So ?"
 
 #: res/data.cdb:day/#8.events/#7.talks/#16.answers/#0.text
 msgid "Il faut vous reprendre, et que vous gardiez les idées claires"
 msgstr ""
+"It is necessary to pull yourself together, and that you keep the ideas clear"
 
 #: res/data.cdb:day/#8.events/#7.talks/#16.answers/#1.text
 msgid "C'est normal vu tout ce qui vous est arrivé depuis le début"
 msgstr ""
+"This is normal considering everything that happened to you these last days"
 
 #: res/data.cdb:day/#8.events/#7.talks/#18.answers/#0.text
 msgid ""
 "Après cette journée, vous devriez aller vous reposer. Je pense qu'on peut se "
 "retrouver demain."
 msgstr ""
+"After this day, you should go to rest. I think we can meet again tomorrow."
 
 #: res/data.cdb:day/#8.events/#7.talks/#7.answers/#0.answer
 msgid ""
 "Bien sûr ! Même si cela reste un secret de polichinelle depuis des années, "
 "c'est logique nous ne soyons pas les seuls dans l'univers."
 msgstr ""
+"Of course ! Even though it's been an open secret for years, it makes sense "
+"that we're not the only ones in the universe."
 
 #: res/data.cdb:day/#8.events/#7.talks/#7.answers/#1.answer
 msgid "Il y a beaucoup d'informations effectivement. Mais tout est vrai."
-msgstr ""
+msgstr "There is a lot of information indeed. But everything is true."
 
 #: res/data.cdb:day/#8.events/#7.talks/#16.answers/#0.answer
 msgid ""
 "Je sais. Mais je reste sur mes gardes depuis ce qu'il s'est passé la "
 "première nuit."
-msgstr ""
+msgstr "I know. But I'm vigilent since what happened the first night."
 
 #: res/data.cdb:day/#8.events/#7.talks/#16.answers/#1.answer
 msgid "Si vous saviez comme c'est compliqué."
-msgstr ""
+msgstr "If only you knew how complicated it is."
 
 #~ msgid "Press ESCAPE again to exit."
 #~ msgstr "Press ESCAPE again to exit."

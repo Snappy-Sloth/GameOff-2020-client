@@ -590,7 +590,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Commandant ? Êtes-vous là ?\"",
+											"text": "Commandant ? Êtes-vous là ?",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -1171,7 +1171,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "J'ai reçu un message des dirigeants ce matin en me réveillant. Ils vont nous recontacter pour nous dire avant quand la fusée doit alunir.",
+											"text": "J'ai reçu un message de l'état-major ce matin en me réveillant. Ils vont nous recontacter pour nous dire avant quand la fusée doit alunir.",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -1216,7 +1216,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Je vous tiendrai au courant dès que les dirigeants m'auront donné une date butoir.",
+											"text": "Je vous tiendrai au courant dès que l'état-major m'aura donné une date butoir.",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -1391,7 +1391,7 @@
 											"text": "Quand j'étais petit, ma mère avait l'habitude de me chanter des berceuses pour m'endormir. Peut-être que fredonner l'une des berceuses de votre enfance pourrait vous rassurer et vous calmer ?",
 											"customAuthor": "Astro",
 											"Type": "Normal",
-											"answer": "Bonne idée ! Je crois qu'à ce stade, c'est tout ce qui pourra m'aider."
+											"answer": "Bonne idée ! Je crois qu'à ce stade, c'est tout ce qui pourrait m'aider."
 										}
 									],
 									"timeBefore": 0,
@@ -1402,7 +1402,7 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "Astro",
-									"text": "J'ai bien tenté la technique de comptage de moutons, mais cela ne fonctionne pas non plus."
+									"text": "J'ai bien tenté de compter les moutons, mais cela ne fonctionne pas non plus."
 								},
 								{
 									"Type": "Normal",
@@ -1455,7 +1455,7 @@
 											"text": "Je ferai ce qu'il faut pour que vous gardiez le moral !",
 											"customAuthor": "Astro",
 											"Type": "Normal",
-											"answer": "Merci pour le soutien. Je sens que je peux vraiment compter sur vous.\""
+											"answer": "Merci pour le soutien. Je sens que je peux vraiment compter sur vous."
 										}
 									],
 									"timeBefore": 0,
@@ -1488,7 +1488,7 @@
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"text": "Bon, après tout ceci, je commence vraiment à être épuisée. Je vais retourner essayer de fermer l'œil. A plus tard, j'espère à demain.",
+									"text": "Bon, après tout ceci, je commence vraiment à être épuisée. Je vais retourner essayer de fermer l'œil. A plus tard, j'espère.",
 									"customAuthor": "Astro"
 								}
 							],
@@ -1509,7 +1509,7 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Bonjour Agent,\n\nSuite à notre message d'hier, nous voulions réitérer la confiance que nous plaçons en vous. Pour ce faire, nous allons vous envoyer un message qui devait vous être transmis avant votre entrée dans le bunker.\n\nBonne lecture et bon courage, Agent."
+									"text": "Bonjour Agent,\n\nSuite à notre message d'hier, nous voulions réitérer la confiance que nous plaçons en vous. Pour ce faire, nous allons vous envoyer un message qui aurait dû vous être transmis avant votre entrée dans le bunker.\n\nBonne lecture et bon courage, Agent."
 								},
 								{
 									"Type": "Normal",
@@ -1555,7 +1555,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Oui, j'ai reçu un mot de ma mère de la part des dirigeants.",
+											"text": "Oui, j'ai reçu un mot de ma mère de la part de l'état-major.",
 											"customAuthor": "Astro",
 											"Type": "Normal",
 											"answer": "Oh, J'espère qu'elle vous a donné de bonnes nouvelles."
@@ -2163,14 +2163,14 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Bonjour Agent,\n\nNous avons appris le dysfonctionnement étrange que la fusée a rencontré hier.  \n\nBien que vous n'ayez pas encore découvert la cause qui a mené à cette panne, nous savons que nous avons des opposants. Afin que vous puissiez comprendre l'absolue nécessité de la réussite de votre mission, nous pensons qu'il est important de vous donner plus de détails sur le danger qui nous guette.\nNous avons reçu, il y a très peu de temps, un message étrange. Après avoir réussi à décoder ce message, nous avons compris que notre planète était en danger. Cette missive contenait des menaces contre la Terre, sûrement en provenance d'une race alien."
+									"text": "Bonjour Agent,\n\nNous avons appris le dysfonctionnement étrange que la fusée a rencontré hier.  \n\nBien que vous n'ayez pas encore découvert la cause qui a mené à cette panne, nous savons que nous avons des opposants. Afin que vous puissiez comprendre l'absolue nécessité de la réussite de votre mission, nous pensons qu'il est important de vous donner plus de détails sur le danger qui nous guette.\nNous avons reçu, il y a très peu de temps, un message étrange. Après avoir réussi à décoder ce message, nous avons compris que notre planète était en danger. Cette missive contenait des menaces contre la Terre en provenance d'une race alien."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, mais nous nous préparions à cette éventualité depuis un moment. La fusée contient le résultat de nos préparation, et le seul moyen de se défendre est de déployer son contenu sur la Lune.\n\nD'après nos calculs, nous pensons que les aliens arriveront dans un peu plus de 15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée devra alunir.\n\nMerci de faire en sorte que cela soit possible, afin de sauver de nombreuses vies."
+									"text": "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, mais nous nous préparions à cette éventualité depuis un moment. La fusée contient le résultat de notre préparation, et le seul moyen de se défendre est de déployer son contenu sur la Lune.\n\nD'après nos calculs, nous pensons que les aliens arriveront dans un peu plus de 15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée devra alunir.\n\nMerci de faire en sorte que cela soit possible, afin de sauver de nombreuses vies."
 								}
 							],
 							"alerts": []
@@ -2206,7 +2206,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "J'ai reçu plus d'information de la part des dirigeants.",
+											"text": "J'ai reçu plus d'information de la part de l'état-major.",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -2283,7 +2283,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Mais du coup, je ne comprends pas qui voudrait s'opposer à cette mission ?",
+											"text": "Mais du coup, je ne comprends pas, qui voudrait s'opposer à cette mission ?",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -3043,7 +3043,8 @@
 			"columns": [
 				{
 					"typeStr": "1",
-					"name": "author"
+					"name": "author",
+					"kind": "localizable"
 				},
 				{
 					"typeStr": "4",
@@ -3070,7 +3071,8 @@
 				{
 					"typeStr": "1",
 					"name": "customAuthor",
-					"opt": true
+					"opt": true,
+					"kind": "localizable"
 				},
 				{
 					"typeStr": "1",
@@ -3113,7 +3115,8 @@
 				},
 				{
 					"typeStr": "1",
-					"name": "customAuthor"
+					"name": "customAuthor",
+					"kind": "localizable"
 				},
 				{
 					"typeStr": "6:TalkType",
