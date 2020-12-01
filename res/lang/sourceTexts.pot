@@ -4,67 +4,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "MIME-Version: 1.0\n"
 
-#: src/Game.hx:74
+#: src/Game.hx:76
 msgid "Game is ready."
 msgstr ""
 
-#: src/Game.hx:220
+#: src/Game.hx:235
 msgid "ALERTE TERMINÉE"
 msgstr ""
 
-#: src/screens/Communication.hx:40
+#: src/module/Values.hx:84
+msgid "Pression du Kérosène"
+msgstr ""
+
+#: src/module/Values.hx:85
+msgid "Température de la coque"
+msgstr ""
+
+#: src/module/Values.hx:86
+msgid "Fréquence des radios"
+msgstr ""
+
+#: src/module/Values.hx:87
+msgid "Puissance des instruments"
+msgstr ""
+
+#: src/screens/Communication.hx:38
 msgid "Manual"
 msgstr ""
 
-#: src/screens/Communication.hx:42
+#: src/screens/Communication.hx:40
 msgid "Modules"
 msgstr ""
 
-#: src/screens/Communication.hx:144
-msgid "::name:: est hors ligne..."
-msgstr ""
-
-#: src/screens/Communication.hx:287 src/screens/Communication.hx:291 src/screens/Communication.hx:555
+#: src/screens/Communication.hx:290 src/screens/Communication.hx:294 src/screens/Communication.hx:556
 msgid "::name:: est en train d'écrire..."
 msgstr ""
 
-#: src/screens/Communication.hx:318
+#: src/screens/Communication.hx:321
 msgid "::name:: est en ligne"
 msgstr ""
 
-#: src/screens/Communication.hx:438
+#: src/screens/Communication.hx:442
 msgid "Vous"
 msgstr ""
 
-#: src/screens/EndDay.hx:29
+#: src/screens/Communication.hx:571
+msgid "::name:: est hors ligne..."
+msgstr ""
+
+#: src/screens/EndDay.hx:31
 msgid "FIN DE LA JOURNÉE"
 msgstr ""
 
-#: src/screens/EndDay.hx:53
+#: src/screens/EndDay.hx:55
 msgid "Temps passé sur les alertes :"
 msgstr ""
 
-#: src/screens/EndDay.hx:53
-msgid "::min:: minutes et ::sec:: secondes"
-msgstr ""
-
-#: src/screens/EndDay.hx:53
-msgid "::sec:: secondes"
+#: src/screens/EndDay.hx:55
+msgid "1 minute et ::sec:: secondes"
 msgstr ""
 
 #: src/screens/EndDay.hx:55
+msgid "::min:: minutes et ::sec:: secondes"
+msgstr ""
+
+#: src/screens/EndDay.hx:56
+msgid "::sec:: secondes"
+msgstr ""
+
+#: src/screens/EndDay.hx:58
 msgid "Nombres d'alertes résolues :"
+msgstr ""
+
+#: src/screens/EndDemo.hx:33
+msgid "Merci d'avoir joué au prototype de"
+msgstr ""
+
+#: src/screens/EndDemo.hx:45
+msgid ""
+"Vous avez mis ::min:: minutes et ::sec:: secondes à résoudre toutes les alarmes "
+"!"
+msgstr ""
+
+#: src/screens/EndDemo.hx:55
+msgid "Qui a envoyé ce mystérieux message ?"
+msgstr ""
+
+#: src/screens/EndDemo.hx:57
+msgid "Est-ce que vous et Hayley réussirez à terminer cette mission vitale ?"
+msgstr ""
+
+#: src/screens/EndDemo.hx:59
+msgid "Pourquoi cette interface de communication est aussi austère ?"
+msgstr ""
+
+#: src/screens/EndDemo.hx:63
+msgid ""
+"Autant de questions qui trouveront leurs réponses dans la version finale du jeu* "
+"!"
+msgstr ""
+
+#: src/screens/EndDemo.hx:67
+msgid "*Disponible... quand elle sera finie :D"
+msgstr ""
+
+#: src/screens/EndDemo.hx:71
+msgid ""
+"Si vous avez aimé cette démo, n'hésitez surtout pas à nous le faire savoir sur "
+"Twitter (@SnappySloth), ainsi qu'à le partager un maximum !"
+msgstr ""
+
+#: src/screens/Manual.hx:80
+msgid "Ranger"
 msgstr ""
 
 #: src/screens/Manual.hx:83 src/screens/ModuleScreen.hx:23
 msgid "Comm"
 msgstr ""
 
-#: src/screens/TitleScreen.hx:45
+#: src/screens/TitleScreen.hx:48
 msgid "Continuer"
 msgstr ""
 
-#: src/screens/TitleScreen.hx:51
+#: src/screens/TitleScreen.hx:56
 msgid "Nouvelle partie"
 msgstr ""
 
@@ -88,7 +150,7 @@ msgstr ""
 msgid "Vous reprendrez au début de la journée lorsque vous continuerez votre partie."
 msgstr ""
 
-#: res/data.cdb:day/#0.events/#0.author res/data.cdb:day/#0.events/#1.author res/data.cdb:day/#0.events/#2.author res/data.cdb:day/#0.events/#3.author res/data.cdb:day/#0.events/#4.author res/data.cdb:day/#0.events/#5.author res/data.cdb:day/#0.events/#2.talks/#0.customAuthor res/data.cdb:day/#0.events/#2.talks/#2.customAuthor res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.customAuthor res/data.cdb:day/#0.events/#0.talks/#3.answers/#1.customAuthor res/data.cdb:day/#0.events/#2.talks/#1.answers/#0.customAuthor res/data.cdb:day/#0.events/#2.talks/#1.answers/#1.customAuthor res/data.cdb:day/#0.events/#3.talks/#1.answers/#0.customAuthor res/data.cdb:day/#1.events/#0.author res/data.cdb:day/#2.events/#0.author res/data.cdb:day/#3.events/#0.author res/data.cdb:day/#4.events/#1.author res/data.cdb:day/#4.events/#2.author res/data.cdb:day/#4.events/#3.author res/data.cdb:day/#4.events/#4.author res/data.cdb:day/#4.events/#5.author res/data.cdb:day/#4.events/#6.author res/data.cdb:day/#4.events/#1.talks/#0.customAuthor res/data.cdb:day/#4.events/#1.talks/#1.customAuthor res/data.cdb:day/#4.events/#1.talks/#2.customAuthor res/data.cdb:day/#4.events/#1.talks/#3.customAuthor res/data.cdb:day/#4.events/#1.talks/#4.customAuthor res/data.cdb:day/#4.events/#1.talks/#5.customAuthor res/data.cdb:day/#4.events/#3.talks/#0.customAuthor res/data.cdb:day/#4.events/#3.talks/#1.customAuthor res/data.cdb:day/#4.events/#3.talks/#2.customAuthor res/data.cdb:day/#4.events/#4.talks/#0.customAuthor res/data.cdb:day/#4.events/#4.talks/#1.customAuthor res/data.cdb:day/#4.events/#4.talks/#2.customAuthor res/data.cdb:day/#4.events/#6.talks/#0.customAuthor res/data.cdb:day/#4.events/#1.talks/#3.answers/#0.customAuthor res/data.cdb:day/#4.events/#1.talks/#3.answers/#1.customAuthor res/data.cdb:day/#4.events/#3.talks/#1.answers/#0.customAuthor res/data.cdb:day/#4.events/#3.talks/#1.answers/#1.customAuthor res/data.cdb:day/#5.events/#0.author res/data.cdb:day/#5.events/#1.author res/data.cdb:day/#5.events/#2.author res/data.cdb:day/#5.events/#3.author res/data.cdb:day/#5.events/#4.author res/data.cdb:day/#5.events/#5.author res/data.cdb:day/#5.events/#0.talks/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#1.customAuthor res/data.cdb:day/#5.events/#1.talks/#2.customAuthor res/data.cdb:day/#5.events/#1.talks/#3.customAuthor res/data.cdb:day/#5.events/#1.talks/#4.customAuthor res/data.cdb:day/#5.events/#1.talks/#5.customAuthor res/data.cdb:day/#5.events/#1.talks/#6.customAuthor res/data.cdb:day/#5.events/#1.talks/#7.customAuthor res/data.cdb:day/#5.events/#1.talks/#8.customAuthor res/data.cdb:day/#5.events/#1.talks/#9.customAuthor res/data.cdb:day/#5.events/#1.talks/#10.customAuthor res/data.cdb:day/#5.events/#1.talks/#11.customAuthor res/data.cdb:day/#5.events/#1.talks/#12.customAuthor res/data.cdb:day/#5.events/#1.talks/#13.customAuthor res/data.cdb:day/#5.events/#1.talks/#14.customAuthor res/data.cdb:day/#5.events/#1.talks/#15.customAuthor res/data.cdb:day/#5.events/#1.talks/#16.customAuthor res/data.cdb:day/#5.events/#1.talks/#17.customAuthor res/data.cdb:day/#5.events/#3.talks/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#2.customAuthor res/data.cdb:day/#5.events/#3.talks/#3.customAuthor res/data.cdb:day/#5.events/#3.talks/#4.customAuthor res/data.cdb:day/#5.events/#3.talks/#5.customAuthor res/data.cdb:day/#5.events/#3.talks/#6.customAuthor res/data.cdb:day/#5.events/#3.talks/#7.customAuthor res/data.cdb:day/#5.events/#3.talks/#8.customAuthor res/data.cdb:day/#5.events/#3.talks/#9.customAuthor res/data.cdb:day/#5.events/#3.talks/#10.customAuthor res/data.cdb:day/#5.events/#3.talks/#11.customAuthor res/data.cdb:day/#5.events/#3.talks/#12.customAuthor res/data.cdb:day/#5.events/#3.talks/#13.customAuthor res/data.cdb:day/#5.events/#3.talks/#14.customAuthor res/data.cdb:day/#5.events/#3.talks/#15.customAuthor res/data.cdb:day/#5.events/#3.talks/#16.customAuthor res/data.cdb:day/#5.events/#3.talks/#17.customAuthor res/data.cdb:day/#5.events/#3.talks/#18.customAuthor res/data.cdb:day/#5.events/#3.talks/#19.customAuthor res/data.cdb:day/#5.events/#3.talks/#20.customAuthor res/data.cdb:day/#5.events/#3.talks/#21.customAuthor res/data.cdb:day/#5.events/#3.talks/#22.customAuthor res/data.cdb:day/#5.events/#3.talks/#23.customAuthor res/data.cdb:day/#5.events/#5.talks/#0.customAuthor res/data.cdb:day/#5.events/#5.talks/#1.customAuthor res/data.cdb:day/#5.events/#5.talks/#2.customAuthor res/data.cdb:day/#5.events/#5.talks/#3.customAuthor res/data.cdb:day/#5.events/#1.talks/#4.answers/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#4.answers/#1.customAuthor res/data.cdb:day/#5.events/#1.talks/#8.answers/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#8.answers/#1.customAuthor res/data.cdb:day/#5.events/#1.talks/#16.answers/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#16.answers/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#8.answers/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#8.answers/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#17.answers/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#17.answers/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#22.answers/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#22.answers/#1.customAuthor res/data.cdb:day/#5.events/#5.talks/#1.answers/#0.customAuthor res/data.cdb:day/#5.events/#5.talks/#1.answers/#1.customAuthor res/data.cdb:day/#6.events/#1.author res/data.cdb:day/#6.events/#2.author res/data.cdb:day/#6.events/#3.author res/data.cdb:day/#6.events/#4.author res/data.cdb:day/#6.events/#5.author res/data.cdb:day/#6.events/#6.author res/data.cdb:day/#6.events/#7.author res/data.cdb:day/#6.events/#2.talks/#0.customAuthor res/data.cdb:day/#6.events/#2.talks/#1.customAuthor res/data.cdb:day/#6.events/#2.talks/#2.customAuthor res/data.cdb:day/#6.events/#2.talks/#3.customAuthor res/data.cdb:day/#6.events/#2.talks/#4.customAuthor res/data.cdb:day/#6.events/#2.talks/#5.customAuthor res/data.cdb:day/#6.events/#2.talks/#6.customAuthor res/data.cdb:day/#6.events/#2.talks/#7.customAuthor res/data.cdb:day/#6.events/#2.talks/#8.customAuthor res/data.cdb:day/#6.events/#2.talks/#9.customAuthor res/data.cdb:day/#6.events/#2.talks/#10.customAuthor res/data.cdb:day/#6.events/#3.talks/#0.customAuthor res/data.cdb:day/#6.events/#3.talks/#1.customAuthor res/data.cdb:day/#6.events/#3.talks/#2.customAuthor res/data.cdb:day/#6.events/#3.talks/#3.customAuthor res/data.cdb:day/#6.events/#5.talks/#0.customAuthor res/data.cdb:day/#6.events/#5.talks/#1.customAuthor res/data.cdb:day/#6.events/#5.talks/#2.customAuthor res/data.cdb:day/#6.events/#5.talks/#3.customAuthor res/data.cdb:day/#6.events/#5.talks/#4.customAuthor res/data.cdb:day/#6.events/#5.talks/#5.customAuthor res/data.cdb:day/#6.events/#5.talks/#6.customAuthor res/data.cdb:day/#6.events/#5.talks/#7.customAuthor res/data.cdb:day/#6.events/#5.talks/#8.customAuthor res/data.cdb:day/#6.events/#7.talks/#0.customAuthor res/data.cdb:day/#6.events/#2.talks/#3.answers/#0.customAuthor res/data.cdb:day/#6.events/#2.talks/#3.answers/#1.customAuthor res/data.cdb:day/#6.events/#3.talks/#1.answers/#0.customAuthor res/data.cdb:day/#6.events/#3.talks/#1.answers/#1.customAuthor res/data.cdb:day/#6.events/#3.talks/#3.answers/#0.customAuthor res/data.cdb:day/#6.events/#3.talks/#3.answers/#1.customAuthor res/data.cdb:day/#6.events/#5.talks/#2.answers/#0.customAuthor res/data.cdb:day/#6.events/#5.talks/#2.answers/#1.customAuthor res/data.cdb:day/#6.events/#5.talks/#8.answers/#0.customAuthor res/data.cdb:day/#6.events/#5.talks/#8.answers/#1.customAuthor res/data.cdb:day/#7.events/#1.author res/data.cdb:day/#7.events/#2.author res/data.cdb:day/#7.events/#3.author res/data.cdb:day/#7.events/#4.author res/data.cdb:day/#7.events/#5.author res/data.cdb:day/#7.events/#6.author res/data.cdb:day/#7.events/#1.talks/#0.customAuthor res/data.cdb:day/#7.events/#1.talks/#1.customAuthor res/data.cdb:day/#7.events/#1.talks/#2.customAuthor res/data.cdb:day/#7.events/#1.talks/#3.customAuthor res/data.cdb:day/#7.events/#1.talks/#4.customAuthor res/data.cdb:day/#7.events/#1.talks/#5.customAuthor res/data.cdb:day/#7.events/#1.talks/#6.customAuthor res/data.cdb:day/#7.events/#1.talks/#7.customAuthor res/data.cdb:day/#7.events/#1.talks/#8.customAuthor res/data.cdb:day/#7.events/#1.talks/#9.customAuthor res/data.cdb:day/#7.events/#1.talks/#10.customAuthor res/data.cdb:day/#7.events/#1.talks/#11.customAuthor res/data.cdb:day/#7.events/#3.talks/#0.customAuthor res/data.cdb:day/#7.events/#4.talks/#0.customAuthor res/data.cdb:day/#7.events/#4.talks/#1.customAuthor res/data.cdb:day/#7.events/#4.talks/#2.customAuthor res/data.cdb:day/#7.events/#4.talks/#3.customAuthor res/data.cdb:day/#7.events/#4.talks/#4.customAuthor res/data.cdb:day/#7.events/#4.talks/#5.customAuthor res/data.cdb:day/#7.events/#4.talks/#6.customAuthor res/data.cdb:day/#7.events/#6.talks/#0.customAuthor res/data.cdb:day/#7.events/#6.talks/#1.customAuthor res/data.cdb:day/#7.events/#6.talks/#2.customAuthor res/data.cdb:day/#7.events/#6.talks/#3.customAuthor res/data.cdb:day/#7.events/#6.talks/#4.customAuthor res/data.cdb:day/#7.events/#6.talks/#5.customAuthor res/data.cdb:day/#7.events/#6.talks/#6.customAuthor res/data.cdb:day/#7.events/#6.talks/#7.customAuthor res/data.cdb:day/#7.events/#6.talks/#8.customAuthor res/data.cdb:day/#7.events/#6.talks/#9.customAuthor res/data.cdb:day/#7.events/#6.talks/#10.customAuthor res/data.cdb:day/#7.events/#6.talks/#11.customAuthor res/data.cdb:day/#7.events/#6.talks/#12.customAuthor res/data.cdb:day/#7.events/#6.talks/#13.customAuthor res/data.cdb:day/#7.events/#6.talks/#14.customAuthor res/data.cdb:day/#7.events/#6.talks/#15.customAuthor res/data.cdb:day/#7.events/#6.talks/#16.customAuthor res/data.cdb:day/#7.events/#6.talks/#17.customAuthor res/data.cdb:day/#7.events/#6.talks/#18.customAuthor res/data.cdb:day/#7.events/#6.talks/#19.customAuthor res/data.cdb:day/#7.events/#1.talks/#3.answers/#0.customAuthor res/data.cdb:day/#7.events/#1.talks/#3.answers/#1.customAuthor res/data.cdb:day/#7.events/#1.talks/#10.answers/#0.customAuthor res/data.cdb:day/#7.events/#1.talks/#10.answers/#1.customAuthor res/data.cdb:day/#7.events/#4.talks/#3.answers/#0.customAuthor res/data.cdb:day/#7.events/#4.talks/#3.answers/#1.customAuthor res/data.cdb:day/#7.events/#6.talks/#13.answers/#0.customAuthor res/data.cdb:day/#7.events/#6.talks/#13.answers/#1.customAuthor res/data.cdb:day/#8.events/#0.author res/data.cdb:day/#8.events/#1.author res/data.cdb:day/#8.events/#2.author res/data.cdb:day/#8.events/#3.author res/data.cdb:day/#8.events/#4.author res/data.cdb:day/#8.events/#6.author res/data.cdb:day/#8.events/#7.author res/data.cdb:day/#8.events/#0.talks/#0.customAuthor res/data.cdb:day/#8.events/#0.talks/#1.customAuthor res/data.cdb:day/#8.events/#0.talks/#2.customAuthor res/data.cdb:day/#8.events/#0.talks/#3.customAuthor res/data.cdb:day/#8.events/#0.talks/#4.customAuthor res/data.cdb:day/#8.events/#0.talks/#5.customAuthor res/data.cdb:day/#8.events/#2.talks/#0.customAuthor res/data.cdb:day/#8.events/#2.talks/#1.customAuthor res/data.cdb:day/#8.events/#2.talks/#2.customAuthor res/data.cdb:day/#8.events/#2.talks/#3.customAuthor res/data.cdb:day/#8.events/#2.talks/#4.customAuthor res/data.cdb:day/#8.events/#2.talks/#5.customAuthor res/data.cdb:day/#8.events/#4.talks/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#1.customAuthor res/data.cdb:day/#8.events/#7.talks/#2.customAuthor res/data.cdb:day/#8.events/#7.talks/#3.customAuthor res/data.cdb:day/#8.events/#7.talks/#4.customAuthor res/data.cdb:day/#8.events/#7.talks/#5.customAuthor res/data.cdb:day/#8.events/#7.talks/#6.customAuthor res/data.cdb:day/#8.events/#7.talks/#7.customAuthor res/data.cdb:day/#8.events/#7.talks/#8.customAuthor res/data.cdb:day/#8.events/#7.talks/#9.customAuthor res/data.cdb:day/#8.events/#7.talks/#10.customAuthor res/data.cdb:day/#8.events/#7.talks/#11.customAuthor res/data.cdb:day/#8.events/#7.talks/#12.customAuthor res/data.cdb:day/#8.events/#7.talks/#13.customAuthor res/data.cdb:day/#8.events/#7.talks/#14.customAuthor res/data.cdb:day/#8.events/#7.talks/#15.customAuthor res/data.cdb:day/#8.events/#7.talks/#16.customAuthor res/data.cdb:day/#8.events/#7.talks/#17.customAuthor res/data.cdb:day/#8.events/#7.talks/#18.customAuthor res/data.cdb:day/#8.events/#7.talks/#19.customAuthor res/data.cdb:day/#8.events/#7.talks/#7.answers/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#7.answers/#1.customAuthor res/data.cdb:day/#8.events/#7.talks/#16.answers/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#16.answers/#1.customAuthor
+#: res/data.cdb:day/#0.events/#0.author res/data.cdb:day/#0.events/#1.author res/data.cdb:day/#0.events/#2.author res/data.cdb:day/#0.events/#3.author res/data.cdb:day/#0.events/#4.author res/data.cdb:day/#0.events/#5.author res/data.cdb:day/#0.events/#2.talks/#0.customAuthor res/data.cdb:day/#0.events/#2.talks/#2.customAuthor res/data.cdb:day/#0.events/#0.talks/#3.answers/#0.customAuthor res/data.cdb:day/#0.events/#0.talks/#3.answers/#1.customAuthor res/data.cdb:day/#0.events/#2.talks/#1.answers/#0.customAuthor res/data.cdb:day/#0.events/#2.talks/#1.answers/#1.customAuthor res/data.cdb:day/#0.events/#3.talks/#1.answers/#0.customAuthor res/data.cdb:day/#1.events/#0.author res/data.cdb:day/#2.events/#0.author res/data.cdb:day/#3.events/#0.author res/data.cdb:day/#4.events/#1.author res/data.cdb:day/#4.events/#2.author res/data.cdb:day/#4.events/#3.author res/data.cdb:day/#4.events/#4.author res/data.cdb:day/#4.events/#5.author res/data.cdb:day/#4.events/#6.author res/data.cdb:day/#4.events/#1.talks/#0.customAuthor res/data.cdb:day/#4.events/#1.talks/#1.customAuthor res/data.cdb:day/#4.events/#1.talks/#2.customAuthor res/data.cdb:day/#4.events/#1.talks/#3.customAuthor res/data.cdb:day/#4.events/#1.talks/#4.customAuthor res/data.cdb:day/#4.events/#1.talks/#5.customAuthor res/data.cdb:day/#4.events/#3.talks/#0.customAuthor res/data.cdb:day/#4.events/#3.talks/#1.customAuthor res/data.cdb:day/#4.events/#3.talks/#2.customAuthor res/data.cdb:day/#4.events/#4.talks/#0.customAuthor res/data.cdb:day/#4.events/#4.talks/#1.customAuthor res/data.cdb:day/#4.events/#4.talks/#2.customAuthor res/data.cdb:day/#4.events/#6.talks/#0.customAuthor res/data.cdb:day/#4.events/#1.talks/#3.answers/#0.customAuthor res/data.cdb:day/#4.events/#1.talks/#3.answers/#1.customAuthor res/data.cdb:day/#4.events/#3.talks/#1.answers/#0.customAuthor res/data.cdb:day/#4.events/#3.talks/#1.answers/#1.customAuthor res/data.cdb:day/#5.events/#0.author res/data.cdb:day/#5.events/#1.author res/data.cdb:day/#5.events/#2.author res/data.cdb:day/#5.events/#3.author res/data.cdb:day/#5.events/#4.author res/data.cdb:day/#5.events/#5.author res/data.cdb:day/#5.events/#0.talks/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#1.customAuthor res/data.cdb:day/#5.events/#1.talks/#2.customAuthor res/data.cdb:day/#5.events/#1.talks/#3.customAuthor res/data.cdb:day/#5.events/#1.talks/#4.customAuthor res/data.cdb:day/#5.events/#1.talks/#5.customAuthor res/data.cdb:day/#5.events/#1.talks/#6.customAuthor res/data.cdb:day/#5.events/#1.talks/#7.customAuthor res/data.cdb:day/#5.events/#1.talks/#8.customAuthor res/data.cdb:day/#5.events/#1.talks/#9.customAuthor res/data.cdb:day/#5.events/#1.talks/#10.customAuthor res/data.cdb:day/#5.events/#1.talks/#11.customAuthor res/data.cdb:day/#5.events/#1.talks/#12.customAuthor res/data.cdb:day/#5.events/#1.talks/#13.customAuthor res/data.cdb:day/#5.events/#1.talks/#14.customAuthor res/data.cdb:day/#5.events/#1.talks/#15.customAuthor res/data.cdb:day/#5.events/#1.talks/#16.customAuthor res/data.cdb:day/#5.events/#1.talks/#17.customAuthor res/data.cdb:day/#5.events/#3.talks/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#2.customAuthor res/data.cdb:day/#5.events/#3.talks/#3.customAuthor res/data.cdb:day/#5.events/#3.talks/#4.customAuthor res/data.cdb:day/#5.events/#3.talks/#5.customAuthor res/data.cdb:day/#5.events/#3.talks/#6.customAuthor res/data.cdb:day/#5.events/#3.talks/#7.customAuthor res/data.cdb:day/#5.events/#3.talks/#8.customAuthor res/data.cdb:day/#5.events/#3.talks/#9.customAuthor res/data.cdb:day/#5.events/#3.talks/#10.customAuthor res/data.cdb:day/#5.events/#3.talks/#11.customAuthor res/data.cdb:day/#5.events/#3.talks/#12.customAuthor res/data.cdb:day/#5.events/#3.talks/#13.customAuthor res/data.cdb:day/#5.events/#3.talks/#14.customAuthor res/data.cdb:day/#5.events/#3.talks/#15.customAuthor res/data.cdb:day/#5.events/#3.talks/#16.customAuthor res/data.cdb:day/#5.events/#3.talks/#17.customAuthor res/data.cdb:day/#5.events/#3.talks/#18.customAuthor res/data.cdb:day/#5.events/#3.talks/#19.customAuthor res/data.cdb:day/#5.events/#3.talks/#20.customAuthor res/data.cdb:day/#5.events/#3.talks/#21.customAuthor res/data.cdb:day/#5.events/#3.talks/#22.customAuthor res/data.cdb:day/#5.events/#3.talks/#23.customAuthor res/data.cdb:day/#5.events/#5.talks/#0.customAuthor res/data.cdb:day/#5.events/#5.talks/#1.customAuthor res/data.cdb:day/#5.events/#5.talks/#2.customAuthor res/data.cdb:day/#5.events/#5.talks/#3.customAuthor res/data.cdb:day/#5.events/#1.talks/#4.answers/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#4.answers/#1.customAuthor res/data.cdb:day/#5.events/#1.talks/#8.answers/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#8.answers/#1.customAuthor res/data.cdb:day/#5.events/#1.talks/#16.answers/#0.customAuthor res/data.cdb:day/#5.events/#1.talks/#16.answers/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#8.answers/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#8.answers/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#17.answers/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#17.answers/#1.customAuthor res/data.cdb:day/#5.events/#3.talks/#22.answers/#0.customAuthor res/data.cdb:day/#5.events/#3.talks/#22.answers/#1.customAuthor res/data.cdb:day/#5.events/#5.talks/#1.answers/#0.customAuthor res/data.cdb:day/#5.events/#5.talks/#1.answers/#1.customAuthor res/data.cdb:day/#6.events/#1.author res/data.cdb:day/#6.events/#2.author res/data.cdb:day/#6.events/#3.author res/data.cdb:day/#6.events/#4.author res/data.cdb:day/#6.events/#5.author res/data.cdb:day/#6.events/#6.author res/data.cdb:day/#6.events/#7.author res/data.cdb:day/#6.events/#2.talks/#0.customAuthor res/data.cdb:day/#6.events/#2.talks/#1.customAuthor res/data.cdb:day/#6.events/#2.talks/#2.customAuthor res/data.cdb:day/#6.events/#2.talks/#3.customAuthor res/data.cdb:day/#6.events/#2.talks/#4.customAuthor res/data.cdb:day/#6.events/#2.talks/#5.customAuthor res/data.cdb:day/#6.events/#2.talks/#6.customAuthor res/data.cdb:day/#6.events/#2.talks/#7.customAuthor res/data.cdb:day/#6.events/#2.talks/#8.customAuthor res/data.cdb:day/#6.events/#2.talks/#9.customAuthor res/data.cdb:day/#6.events/#2.talks/#10.customAuthor res/data.cdb:day/#6.events/#3.talks/#0.customAuthor res/data.cdb:day/#6.events/#3.talks/#1.customAuthor res/data.cdb:day/#6.events/#3.talks/#2.customAuthor res/data.cdb:day/#6.events/#3.talks/#3.customAuthor res/data.cdb:day/#6.events/#5.talks/#0.customAuthor res/data.cdb:day/#6.events/#5.talks/#1.customAuthor res/data.cdb:day/#6.events/#5.talks/#2.customAuthor res/data.cdb:day/#6.events/#5.talks/#3.customAuthor res/data.cdb:day/#6.events/#5.talks/#4.customAuthor res/data.cdb:day/#6.events/#5.talks/#5.customAuthor res/data.cdb:day/#6.events/#5.talks/#6.customAuthor res/data.cdb:day/#6.events/#5.talks/#7.customAuthor res/data.cdb:day/#6.events/#5.talks/#8.customAuthor res/data.cdb:day/#6.events/#7.talks/#0.customAuthor res/data.cdb:day/#6.events/#2.talks/#3.answers/#0.customAuthor res/data.cdb:day/#6.events/#2.talks/#3.answers/#1.customAuthor res/data.cdb:day/#6.events/#3.talks/#1.answers/#0.customAuthor res/data.cdb:day/#6.events/#3.talks/#1.answers/#1.customAuthor res/data.cdb:day/#6.events/#3.talks/#3.answers/#0.customAuthor res/data.cdb:day/#6.events/#3.talks/#3.answers/#1.customAuthor res/data.cdb:day/#6.events/#5.talks/#2.answers/#0.customAuthor res/data.cdb:day/#6.events/#5.talks/#2.answers/#1.customAuthor res/data.cdb:day/#6.events/#5.talks/#8.answers/#0.customAuthor res/data.cdb:day/#6.events/#5.talks/#8.answers/#1.customAuthor res/data.cdb:day/#7.events/#1.author res/data.cdb:day/#7.events/#2.author res/data.cdb:day/#7.events/#3.author res/data.cdb:day/#7.events/#4.author res/data.cdb:day/#7.events/#5.author res/data.cdb:day/#7.events/#6.author res/data.cdb:day/#7.events/#7.author res/data.cdb:day/#7.events/#1.talks/#0.customAuthor res/data.cdb:day/#7.events/#1.talks/#1.customAuthor res/data.cdb:day/#7.events/#1.talks/#2.customAuthor res/data.cdb:day/#7.events/#1.talks/#3.customAuthor res/data.cdb:day/#7.events/#1.talks/#4.customAuthor res/data.cdb:day/#7.events/#1.talks/#5.customAuthor res/data.cdb:day/#7.events/#1.talks/#6.customAuthor res/data.cdb:day/#7.events/#1.talks/#7.customAuthor res/data.cdb:day/#7.events/#1.talks/#8.customAuthor res/data.cdb:day/#7.events/#1.talks/#9.customAuthor res/data.cdb:day/#7.events/#1.talks/#10.customAuthor res/data.cdb:day/#7.events/#1.talks/#11.customAuthor res/data.cdb:day/#7.events/#3.talks/#0.customAuthor res/data.cdb:day/#7.events/#5.talks/#0.customAuthor res/data.cdb:day/#7.events/#5.talks/#1.customAuthor res/data.cdb:day/#7.events/#5.talks/#2.customAuthor res/data.cdb:day/#7.events/#5.talks/#3.customAuthor res/data.cdb:day/#7.events/#5.talks/#4.customAuthor res/data.cdb:day/#7.events/#5.talks/#5.customAuthor res/data.cdb:day/#7.events/#5.talks/#6.customAuthor res/data.cdb:day/#7.events/#7.talks/#0.customAuthor res/data.cdb:day/#7.events/#7.talks/#1.customAuthor res/data.cdb:day/#7.events/#7.talks/#2.customAuthor res/data.cdb:day/#7.events/#7.talks/#3.customAuthor res/data.cdb:day/#7.events/#7.talks/#4.customAuthor res/data.cdb:day/#7.events/#7.talks/#5.customAuthor res/data.cdb:day/#7.events/#7.talks/#6.customAuthor res/data.cdb:day/#7.events/#7.talks/#7.customAuthor res/data.cdb:day/#7.events/#7.talks/#8.customAuthor res/data.cdb:day/#7.events/#7.talks/#9.customAuthor res/data.cdb:day/#7.events/#7.talks/#10.customAuthor res/data.cdb:day/#7.events/#7.talks/#11.customAuthor res/data.cdb:day/#7.events/#7.talks/#12.customAuthor res/data.cdb:day/#7.events/#7.talks/#13.customAuthor res/data.cdb:day/#7.events/#7.talks/#14.customAuthor res/data.cdb:day/#7.events/#7.talks/#15.customAuthor res/data.cdb:day/#7.events/#7.talks/#16.customAuthor res/data.cdb:day/#7.events/#7.talks/#17.customAuthor res/data.cdb:day/#7.events/#7.talks/#18.customAuthor res/data.cdb:day/#7.events/#7.talks/#19.customAuthor res/data.cdb:day/#7.events/#1.talks/#3.answers/#0.customAuthor res/data.cdb:day/#7.events/#1.talks/#3.answers/#1.customAuthor res/data.cdb:day/#7.events/#1.talks/#10.answers/#0.customAuthor res/data.cdb:day/#7.events/#1.talks/#10.answers/#1.customAuthor res/data.cdb:day/#7.events/#5.talks/#3.answers/#0.customAuthor res/data.cdb:day/#7.events/#5.talks/#3.answers/#1.customAuthor res/data.cdb:day/#7.events/#7.talks/#13.answers/#0.customAuthor res/data.cdb:day/#7.events/#7.talks/#13.answers/#1.customAuthor res/data.cdb:day/#8.events/#0.author res/data.cdb:day/#8.events/#1.author res/data.cdb:day/#8.events/#2.author res/data.cdb:day/#8.events/#3.author res/data.cdb:day/#8.events/#4.author res/data.cdb:day/#8.events/#6.author res/data.cdb:day/#8.events/#7.author res/data.cdb:day/#8.events/#0.talks/#0.customAuthor res/data.cdb:day/#8.events/#0.talks/#1.customAuthor res/data.cdb:day/#8.events/#0.talks/#2.customAuthor res/data.cdb:day/#8.events/#0.talks/#3.customAuthor res/data.cdb:day/#8.events/#0.talks/#4.customAuthor res/data.cdb:day/#8.events/#0.talks/#5.customAuthor res/data.cdb:day/#8.events/#2.talks/#0.customAuthor res/data.cdb:day/#8.events/#2.talks/#1.customAuthor res/data.cdb:day/#8.events/#2.talks/#2.customAuthor res/data.cdb:day/#8.events/#2.talks/#3.customAuthor res/data.cdb:day/#8.events/#2.talks/#4.customAuthor res/data.cdb:day/#8.events/#2.talks/#5.customAuthor res/data.cdb:day/#8.events/#4.talks/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#1.customAuthor res/data.cdb:day/#8.events/#7.talks/#2.customAuthor res/data.cdb:day/#8.events/#7.talks/#3.customAuthor res/data.cdb:day/#8.events/#7.talks/#4.customAuthor res/data.cdb:day/#8.events/#7.talks/#5.customAuthor res/data.cdb:day/#8.events/#7.talks/#6.customAuthor res/data.cdb:day/#8.events/#7.talks/#7.customAuthor res/data.cdb:day/#8.events/#7.talks/#8.customAuthor res/data.cdb:day/#8.events/#7.talks/#9.customAuthor res/data.cdb:day/#8.events/#7.talks/#10.customAuthor res/data.cdb:day/#8.events/#7.talks/#11.customAuthor res/data.cdb:day/#8.events/#7.talks/#12.customAuthor res/data.cdb:day/#8.events/#7.talks/#13.customAuthor res/data.cdb:day/#8.events/#7.talks/#14.customAuthor res/data.cdb:day/#8.events/#7.talks/#15.customAuthor res/data.cdb:day/#8.events/#7.talks/#16.customAuthor res/data.cdb:day/#8.events/#7.talks/#17.customAuthor res/data.cdb:day/#8.events/#7.talks/#18.customAuthor res/data.cdb:day/#8.events/#7.talks/#19.customAuthor res/data.cdb:day/#8.events/#7.talks/#7.answers/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#7.answers/#1.customAuthor res/data.cdb:day/#8.events/#7.talks/#16.answers/#0.customAuthor res/data.cdb:day/#8.events/#7.talks/#16.answers/#1.customAuthor
 msgid "Astro"
 msgstr ""
 
@@ -213,7 +275,13 @@ msgstr ""
 msgid "Le mot \"PRESS\" vient de s'afficher sur mon terminal !"
 msgstr ""
 
-#: res/data.cdb:day/#1.events/#0.alerts/#0.Tasks/#0.text res/data.cdb:day/#2.events/#0.alerts/#0.Tasks/#0.text
+#: res/data.cdb:day/#1.events/#0.alerts/#0.Tasks/#0.text
+msgid ""
+"J'ai un code en morse qui vient de s'afficher... Je suis un peu rouillée, je "
+"vous laisse le traduire vous-même :\n. _ _    . . . .    . .    _    ."
+msgstr ""
+
+#: res/data.cdb:day/#2.events/#0.alerts/#0.Tasks/#0.text
 msgid "Trololo"
 msgstr ""
 
@@ -237,31 +305,50 @@ msgstr ""
 msgid "Ok aussi"
 msgstr ""
 
-#: res/data.cdb:day/#4.events/#0.author res/data.cdb:day/#4.events/#0.talks/#0.customAuthor res/data.cdb:day/#4.events/#0.talks/#1.customAuthor res/data.cdb:day/#6.events/#0.author res/data.cdb:day/#6.events/#0.talks/#0.customAuthor res/data.cdb:day/#7.events/#0.author res/data.cdb:day/#7.events/#0.talks/#0.customAuthor res/data.cdb:day/#7.events/#0.talks/#1.customAuthor res/data.cdb:day/#8.events/#5.author res/data.cdb:day/#8.events/#5.talks/#0.customAuthor res/data.cdb:day/#8.events/#5.talks/#1.customAuthor
+#: res/data.cdb:day/#4.events/#0.author res/data.cdb:day/#4.events/#0.talks/#0.customAuthor res/data.cdb:day/#4.events/#0.talks/#1.customAuthor res/data.cdb:day/#4.events/#0.talks/#2.customAuthor res/data.cdb:day/#4.events/#0.talks/#3.customAuthor res/data.cdb:day/#4.events/#0.talks/#4.customAuthor res/data.cdb:day/#4.events/#0.talks/#5.customAuthor res/data.cdb:day/#6.events/#0.author res/data.cdb:day/#6.events/#0.talks/#0.customAuthor res/data.cdb:day/#6.events/#0.talks/#1.customAuthor res/data.cdb:day/#6.events/#0.talks/#2.customAuthor res/data.cdb:day/#7.events/#0.author res/data.cdb:day/#7.events/#0.talks/#0.customAuthor res/data.cdb:day/#7.events/#0.talks/#1.customAuthor res/data.cdb:day/#7.events/#0.talks/#2.customAuthor res/data.cdb:day/#7.events/#0.talks/#3.customAuthor res/data.cdb:day/#8.events/#5.author res/data.cdb:day/#8.events/#5.talks/#0.customAuthor res/data.cdb:day/#8.events/#5.talks/#1.customAuthor res/data.cdb:day/#8.events/#5.talks/#2.customAuthor res/data.cdb:day/#8.events/#5.talks/#3.customAuthor res/data.cdb:day/#8.events/#5.talks/#4.customAuthor
 msgid "État-major"
 msgstr ""
 
 #: res/data.cdb:day/#4.events/#0.talks/#0.text
 msgid ""
 "Bonjour Agent.\n\nComme vous le savez, vous avez intégré volontairement ce "
-"bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur.\n\nVotre "
-"mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu de "
-"cette fusée est indispensable à la protection de la Terre, qui se trouve "
-"aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus "
-"vite.\n\nPour ce faire, vous pourrez communiquer avec les astronautes à bord de "
-"la fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs "
-"instruments."
+"bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur."
 msgstr ""
 
 #: res/data.cdb:day/#4.events/#0.talks/#1.text
+msgid ""
+"Votre mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu "
+"de cette fusée est indispensable à la protection de la Terre, qui se trouve "
+"aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus vite."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#0.talks/#2.text
+msgid ""
+"Pour ce faire, vous pourrez communiquer avec les astronautes à bord de la "
+"fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs "
+"instruments."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#0.talks/#3.text
 msgid ""
 "À votre droite, vous avez à votre disposition des fiches de manuel.\nCes fiches "
 "contiennent des instructions pour aider les astronautes à résoudre leurs "
 "alertes.\nÀ votre gauche vous disposez de différents modules contenant des "
 "leviers et des boutons entre autres.\nIls vous seront indispensables pour "
-"résoudre les défaillances de la fusée.\n\nAttention, suivez bien les "
-"instructions du manuel !\n\nRappelez-vous, cette fusée doit par TOUS LES MOYENS "
-"alunir sans encombres.\n\nNotre avenir à tous est entre vos mains."
+"résoudre les défaillances de la fusée."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#0.talks/#4.text
+msgid ""
+"Attention, suivez bien les instructions du manuel !\n\nRappelez-vous, cette "
+"fusée doit par TOUS LES MOYENS alunir sans encombres.\n\nNotre avenir à tous est "
+"entre vos mains."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#0.talks/#5.text
+msgid ""
+"Prenez le temps de vous familiariser avec les modules et le manuel en attendant "
+"le premier contact de la fusée."
 msgstr ""
 
 #: res/data.cdb:day/#4.events/#1.talks/#0.text
@@ -291,6 +378,33 @@ msgstr ""
 
 #: res/data.cdb:day/#4.events/#3.talks/#1.answers/#1.text
 msgid "Toujours prêt à vous venir en aide."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#2.alerts/#0.Tasks/#0.text
+msgid ""
+"Agent, vous devez avoir une alarme qui sonne chez vous aussi. Je vais vous faire "
+"le détail de ce que je vois de notre côté, corrigez le problème du votre le plus "
+"vite possible à l'aide du manuel à votre disposition !"
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#2.alerts/#1.Tasks/#0.text
+msgid "L'un de mes écrans affiche \"Problème de connexion : Bouclier\""
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#2.alerts/#2.Tasks/#0.text
+msgid "Maintenant, j'ai 3 diodes vertes qui clignotent."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#5.alerts/#0.Tasks/#0.text
+msgid "Le mot \"REST\" s'affiche sur l'un de mes écrans."
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#5.alerts/#1.Tasks/#0.text
+msgid "J'ai un problème de connexion d'une Bobine électromagnétique !"
+msgstr ""
+
+#: res/data.cdb:day/#4.events/#5.alerts/#2.Tasks/#0.text
+msgid "2 diodes jaunes viennent de s'allumer."
 msgstr ""
 
 #: res/data.cdb:day/#5.events/#1.talks/#1.text
@@ -440,7 +554,9 @@ msgid "Ce n'est pas possible, quelle horreur !"
 msgstr ""
 
 #: res/data.cdb:day/#5.events/#1.talks/#8.answers/#0.text
-msgid "Mais n'oublions pas que l'avenir de la Terre est entre nos mains."
+msgid ""
+"Il faut que nous restions calmes, n'oublions pas que l'avenir de la Terre est "
+"entre nos mains."
 msgstr ""
 
 #: res/data.cdb:day/#5.events/#1.talks/#8.answers/#1.text
@@ -619,15 +735,58 @@ msgid ""
 "mentionner..."
 msgstr ""
 
+#: res/data.cdb:day/#5.events/#2.alerts/#0.Tasks/#0.text
+msgid ""
+"Bien, ma première alerte, j'ai vu le Commandant faire hier, je vais essayer "
+"d'être le plus précise possible..."
+msgstr ""
+
+#: res/data.cdb:day/#5.events/#2.alerts/#1.Tasks/#0.text
+msgid ""
+"Mon écran m'affiche que l'Accélérateur de particules n'est plus connecté... Vous "
+"pouvez faire quelque chose ?"
+msgstr ""
+
+#: res/data.cdb:day/#5.events/#2.alerts/#2.Tasks/#0.text
+msgid "Erreur RQ6KXF... Qu'est-ce que c'est que ce truc ?"
+msgstr ""
+
+#: res/data.cdb:day/#5.events/#2.alerts/#3.Tasks/#0.text
+msgid "L'erreur a disparue.. bien joué !"
+msgstr ""
+
+#: res/data.cdb:day/#5.events/#2.alerts/#4.Tasks/#0.text
+msgid "Plusieurs diodes clignotent... Elles sont vertes et... il y en a 2 !"
+msgstr ""
+
+#: res/data.cdb:day/#5.events/#4.alerts/#0.Tasks/#0.text
+msgid "L'écran principale affiche une suite de mots... \"TIN, WRIGHT, TEST\""
+msgstr ""
+
+#: res/data.cdb:day/#5.events/#4.alerts/#1.Tasks/#0.text
+msgid ""
+"Oula, ça clignote de partout... J'ai 3 diodes violettes qui clignotent, ainsi "
+"qu'un problème de connexion du Système incendies."
+msgstr ""
+
 #: res/data.cdb:day/#6.events/#0.talks/#0.text
 msgid ""
 "Bonjour Agent.\n\nNous avons reçu le rapport de la mission Harmony. Nous sommes "
-"très désappointés d'apprendre ce qu'il s'est passé lors de la première "
-"nuit.\n\nNous avions prévu que la fusée atterrisse demain au plus tard sur la "
-"Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous "
-"allons donc nous renseigner afin de vous dire avant quand la mission doit être "
-"accomplie.\n\nNous vous rappelons de l'absolue nécessité de la réussite de la "
-"mission. La Terre serait en grand danger dans le cas contraire."
+"très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#0.talks/#1.text
+msgid ""
+"Nous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. "
+"Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons "
+"donc nous renseigner afin de vous dire avant quand la mission doit être "
+"accomplie."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#0.talks/#2.text
+msgid ""
+"Nous vous rappelons de l'absolue nécessité de la réussite de la mission. La "
+"Terre serait en grand danger dans le cas contraire."
 msgstr ""
 
 #: res/data.cdb:day/#6.events/#2.talks/#1.text
@@ -718,7 +877,7 @@ msgstr ""
 
 #: res/data.cdb:day/#6.events/#2.talks/#8.answers/#0.text
 msgid ""
-"Essayer de vous reposer dès que vous pouvez. Les alarmes vous réveillerons le "
+"Essayez de vous reposer dès que vous pouvez. Les alarmes vous réveillerons le "
 "cas échéant. Je reste en alerte permanente en attendant."
 msgstr ""
 
@@ -816,6 +975,46 @@ msgstr ""
 msgid "Merci pour le soutien. Je sens que je peux vraiment compter sur vous."
 msgstr ""
 
+#: res/data.cdb:day/#6.events/#1.alerts/#0.Tasks/#0.text
+msgid "La journée commence bien..."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#1.alerts/#1.Tasks/#0.text
+msgid ""
+"Décidément, il y a beaucoup de problèmes de connexion... Cette fois-ci, il "
+"s'agit du Réservoir."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#1.alerts/#2.Tasks/#0.text
+msgid "3 diodes vertes viennent de s'allumer."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#1.alerts/#3.Tasks/#0.text
+msgid "J'ai 2 diodes rouges allumées désormais."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#4.alerts/#0.Tasks/#0.text
+msgid ""
+"J'ai la suite de mots \"WHITE, BEST\", ainsi que l'erreur PW9IIN qui "
+"s'affichent."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#4.alerts/#1.Tasks/#0.text
+msgid "Un nouveau mot vient de s'afficher, il s'agit du mot \"WHITE\""
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#6.alerts/#0.Tasks/#0.text
+msgid "Erreur C9YLH9"
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#6.alerts/#1.Tasks/#0.text
+msgid "Le Téléviseur est déconnecté et 2 diodes bleues sont allumées."
+msgstr ""
+
+#: res/data.cdb:day/#6.events/#6.alerts/#2.Tasks/#0.text
+msgid "Maintenant, 3 diodes violettes sont allumées."
+msgstr ""
+
 #: res/data.cdb:day/#7.events/#0.talks/#0.text
 msgid ""
 "Bonjour Agent,\n\nSuite à notre message d'hier, nous voulions réitérer la "
@@ -829,14 +1028,23 @@ msgid ""
 "Mon trésor,\n\nTout d'abord rassure-toi, ton père et moi allons bien. Nous "
 "pensons à toi tous les jours et espérons que tu te portes pour le mieux. Nous "
 "sommes très fiers de ce que tu es devenu et de ce que tu accomplies tous les "
-"jours.\n\nSache que tes petites sœurs vont bien. Elles grandissent si vite ! "
-"L'autre jour, elles m'ont demandé où tu étais passé. Je crois que tu leur manque "
-"beaucoup. Tous les bricolages qu'elles ramènent de l'école sont pour toi. Tu "
-"auras plein de cadeaux à ton retour. Ça te fera de la décoration pour ton espace "
-"de travail.\n\nNous ne savons rien du tout sur ta mission actuelle, mais nous "
-"avons appris que tu rentres bientôt. Nous avons hâte de te retrouver. Le jour de "
-"ton retour, tu auras ton plat préféré sur la table, un bain chaud et un bon feu "
-"de cheminée.\n\nPrends soin de toi mon petit ange.\nMaman."
+"jours."
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#0.talks/#2.text
+msgid ""
+"Sache que tes petites sœurs vont bien. Elles grandissent si vite ! L'autre jour, "
+"elles m'ont demandé où tu étais passé. Je crois que tu leur manque beaucoup. "
+"Tous les bricolages qu'elles ramènent de l'école sont pour toi. Tu auras plein "
+"de cadeaux à ton retour. Ça te fera de la décoration pour ton espace de travail."
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#0.talks/#3.text
+msgid ""
+"Nous ne savons rien du tout sur ta mission actuelle, mais nous avons appris que "
+"tu rentres bientôt. Nous avons hâte de te retrouver. Le jour de ton retour, tu "
+"auras ton plat préféré sur la table, un bain chaud et un bon feu de "
+"cheminée.\n\nPrends soin de toi mon petit ange.\nMaman"
 msgstr ""
 
 #: res/data.cdb:day/#7.events/#1.talks/#0.text
@@ -879,77 +1087,77 @@ msgid ""
 "reviens."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#0.text
+#: res/data.cdb:day/#7.events/#5.talks/#0.text
 msgid "Bon, je pense que cette fois-ci on devrait être tranquille un moment."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#2.text
+#: res/data.cdb:day/#7.events/#5.talks/#2.text
 msgid ""
 "Non, aucune idée. J'étais en train de faire mon tour, quand l'un des modules que "
 "je venais de contrôler s'est mis à dysfonctionner."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#4.text
+#: res/data.cdb:day/#7.events/#5.talks/#4.text
 msgid ""
 "En tout cas, heureusement que vous étiez là pour m'aider à réparer ça "
 "rapidement."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#6.text
+#: res/data.cdb:day/#7.events/#5.talks/#6.text
 msgid "Je vais aller me reposer un peu en attendant la prochaine alerte. À bientôt."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#0.text
 msgid ""
 "Je crois que tout est bon cette fois-ci, on va pouvoir aller se coucher "
 "tranquillement."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#1.text
+#: res/data.cdb:day/#7.events/#7.talks/#1.text
 msgid ""
 "Je vais faire tourner un diagnostic pendant la nuit afin de savoir pourquoi ce "
 "module est tombé en panne"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#3.text
+#: res/data.cdb:day/#7.events/#7.talks/#3.text
 msgid "En tout cas, selon mon point de vue, ça ne peut pas en être un."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#4.text
+#: res/data.cdb:day/#7.events/#7.talks/#4.text
 msgid "Donc il doit forcément y avoir autre chose..."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#6.text
+#: res/data.cdb:day/#7.events/#7.talks/#6.text
 msgid ""
 "Impossible. À la fin de chaque alarme, vos modules sont désactivés et n'envoient "
 "aucun signal à la fusée"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#8.text
+#: res/data.cdb:day/#7.events/#7.talks/#8.text
 msgid "Ça peut être ça en effet. Du moins, j'espère que ça l'est."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#10.text
+#: res/data.cdb:day/#7.events/#7.talks/#10.text
 msgid "Quelqu'un qui l'a fait volontairement."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#12.text
+#: res/data.cdb:day/#7.events/#7.talks/#12.text
 msgid "Nous nuire."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#15.text
+#: res/data.cdb:day/#7.events/#7.talks/#15.text
 msgid "C'est simple, il n'y en a pas. Cette mission est vitale."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#16.text
+#: res/data.cdb:day/#7.events/#7.talks/#16.text
 msgid "Bref, j'espère que nous aurons des réponses demain."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#18.text
+#: res/data.cdb:day/#7.events/#7.talks/#18.text
 msgid "Vous savez, ici c'est tout le temps la nuit. Mais je vais aller m'allonger."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#19.text
+#: res/data.cdb:day/#7.events/#7.talks/#19.text
 msgid "Bonne nuit"
 msgstr ""
 
@@ -985,65 +1193,65 @@ msgstr ""
 msgid "J'espère qu'elle n'en parlera pas à n'importe qui."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#1.answers/#0.text
+#: res/data.cdb:day/#7.events/#5.talks/#1.answers/#0.text
 msgid "Savez-vous pour quelle raison nous avons eu deux alarmes si rapprochées ?"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#3.answers/#0.text
+#: res/data.cdb:day/#7.events/#5.talks/#3.answers/#0.text
 msgid ""
 "Étrange... Peut-être aviez-vous mal vérifié le module en question. L'erreur est "
 "humaine"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#3.answers/#1.text
+#: res/data.cdb:day/#7.events/#5.talks/#3.answers/#1.text
 msgid "Le module devait avoir une faiblesse, ça peut arriver"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#5.answers/#0.text
+#: res/data.cdb:day/#7.events/#5.talks/#5.answers/#0.text
 msgid ""
 "Heureusement que vous avez réagit assez vite pour me donner les bonnes "
 "instructions surtout."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#2.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#2.answers/#0.text
 msgid ""
 "Vous pensez vraiment que ça puisse être autre chose qu'un dysfonctionnement "
 "interne ?"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#5.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#5.answers/#0.text
 msgid ""
 "Je me demande bien quoi. J'espère que ce n'est pas chez moi qu'il y a eu un "
 "souci"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#7.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#7.answers/#0.text
 msgid ""
 "Je ne vois pas d'où est-ce que ça pourrait venir sinon. Mise à part une "
 "interférence avec un satellite ou une station"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#9.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#9.answers/#0.text
 msgid "Qu'est-ce que ça pourrait être d'autre ?"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#11.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#11.answers/#0.text
 msgid "Qui pourrait bien vouloir faire ça ? Dans quel intérêt ?"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#13.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#13.answers/#0.text
 msgid "Mais enfin, nous faisons ça pour la protection de tous !"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#13.answers/#1.text
+#: res/data.cdb:day/#7.events/#7.talks/#13.answers/#1.text
 msgid "Mais... Qui ?"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#14.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#14.answers/#0.text
 msgid "Je n'arrive pas à concevoir quels pourraient être leurs arguments"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#17.answers/#0.text
+#: res/data.cdb:day/#7.events/#7.talks/#17.answers/#0.text
 msgid "Passez une bonne nuit"
 msgstr ""
 
@@ -1063,20 +1271,63 @@ msgstr ""
 msgid "Elle ne dira rien, elle me l'a promis. Ne vous inquiétez pas."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#3.answers/#0.answer
+#: res/data.cdb:day/#7.events/#5.talks/#3.answers/#0.answer
 msgid "Je vérifie toujours plusieurs fois chaque module depuis l'accident..."
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#4.talks/#3.answers/#1.answer
+#: res/data.cdb:day/#7.events/#5.talks/#3.answers/#1.answer
 msgid "Vous avez raison, ça doit être ça"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#13.answers/#0.answer
+#: res/data.cdb:day/#7.events/#7.talks/#13.answers/#0.answer
 msgid "Je suis bien d'accord. Mais il y a des fous partout"
 msgstr ""
 
-#: res/data.cdb:day/#7.events/#6.talks/#13.answers/#1.answer
+#: res/data.cdb:day/#7.events/#7.talks/#13.answers/#1.answer
 msgid "Des opposants sans foi ni loi qui veulent la destruction de la planète"
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#2.alerts/#0.Tasks/#0.text
+msgid "Mince, encore une alarme !"
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#2.alerts/#1.Tasks/#0.text
+msgid "Encore une erreur incompréhensible : 8QTT3P"
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#2.alerts/#2.Tasks/#0.text
+msgid "Des diodes jaunes clignotent. Il y en a 3 ! Euh non, 2 !"
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#2.alerts/#3.Tasks/#0.text
+msgid "Suite de mots : \"WIN, BIN\""
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#4.alerts/#0.Tasks/#0.text
+msgid "Déjà une autre alerte !!"
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#4.alerts/#1.Tasks/#0.text
+msgid "1 diode verte est allumée, et le mot \"BEST\" s'affiche sur mon écran principal."
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#4.alerts/#2.Tasks/#0.text
+msgid ""
+"Mon écran affiche alternativement l'erreur 2OD9UA et la suite de mots \"LEFT, "
+"RIGHT\""
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#6.alerts/#0.Tasks/#0.text
+msgid ""
+"Ok, ça va être plus compliqué cette fois-ci je pense, tout s'allume de partout "
+"chez moi, suivez bien mes instructions."
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#6.alerts/#1.Tasks/#0.text
+msgid ""
+"La suite de mot \"PRESS, REST, TIN\" s'affiche sur mon écran droit, l'erreur "
+"05QBTY sur mon écran principal et le mot \"GUEST\" sur mon écran de gauche. Ah "
+"et il y a aussi 3 diodes jaunes d'allumées !"
 msgstr ""
 
 #: res/data.cdb:day/#8.events/#0.talks/#0.text
@@ -1116,25 +1367,39 @@ msgstr ""
 #: res/data.cdb:day/#8.events/#5.talks/#0.text
 msgid ""
 "Bonjour Agent,\n\nNous avons appris le dysfonctionnement étrange que la fusée a "
-"rencontré hier.  \n\nBien que vous n'ayez pas encore découvert la cause qui a "
-"mené à cette panne, nous savons que nous avons des opposants. Afin que vous "
-"puissiez comprendre l'absolue nécessité de la réussite de votre mission, nous "
-"pensons qu'il est important de vous donner plus de détails sur le danger qui "
-"nous guette.\nNous avons reçu, il y a très peu de temps, un message étrange. "
-"Après avoir réussi à décoder ce message, nous avons compris que notre planète "
-"était en danger. Cette missive contenait des menaces contre la Terre en "
-"provenance d'une race alien."
+"rencontré hier."
 msgstr ""
 
 #: res/data.cdb:day/#8.events/#5.talks/#1.text
 msgid ""
+"Bien que vous n'ayez pas encore découvert la cause qui a mené à cette panne, "
+"nous savons que nous avons des opposants. Afin que vous puissiez comprendre "
+"l'absolue nécessité de la réussite de votre mission, nous pensons qu'il est "
+"important de vous donner plus de détails sur le danger qui nous guette."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#5.talks/#2.text
+msgid ""
+"Nous avons reçu, il y a très peu de temps, un message étrange. Après avoir "
+"réussi à décoder ce message, nous avons compris que notre planète était en "
+"danger. Cette missive contenait des menaces contre la Terre en provenance d'une "
+"race alien."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#5.talks/#3.text
+msgid ""
 "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, mais "
 "nous nous préparions à cette éventualité depuis un moment. La fusée contient le "
-"résultat de notre préparation, et le seul moyen de se défendre est de déployer "
-"son contenu sur la Lune.\n\nD'après nos calculs, nous pensons que les aliens "
-"arriveront dans un peu plus de 15 jours. Donc au plus tard au vingtième jour de "
-"votre mission, la fusée devra alunir.\n\nMerci de faire en sorte que cela soit "
-"possible, afin de sauver de nombreuses vies."
+"résultat de notre préparation, et le seul moyen de nous défendre est de déployer "
+"son contenu sur la Lune."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#5.talks/#4.text
+msgid ""
+"D'après nos calculs, nous pensons que les aliens arriveront dans un peu plus de "
+"15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée devra "
+"alunir.\n\nMerci de faire en sorte que cela soit possible, afin de sauver de "
+"nombreuses vies."
 msgstr ""
 
 #: res/data.cdb:day/#8.events/#7.talks/#0.text
@@ -1287,6 +1552,43 @@ msgstr ""
 
 #: res/data.cdb:day/#8.events/#7.talks/#16.answers/#1.answer
 msgid "Si vous saviez comme c'est compliqué."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#1.alerts/#0.Tasks/#0.text
+msgid "Le Module de soin est déconnecté."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#1.alerts/#1.Tasks/#0.text
+msgid "J'ai une seule diode bleue allumée."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#1.alerts/#2.Tasks/#0.text
+msgid "Cette fois-ci c'est l'Amplificateur qui est déconnecté."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#1.alerts/#3.Tasks/#0.text
+msgid ""
+"Encore un problème de connexion, cette dois-ci c'est le Condenseur qui fait des "
+"siennes."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#3.alerts/#0.Tasks/#0.text
+msgid "Problème de connexion du Récepteur et erreur VFFRL8."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#3.alerts/#1.Tasks/#0.text
+msgid "J'ai une suite de mots : \"LEFT, BIN, TEST\", et l'erreur OXEURL."
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#6.alerts/#0.Tasks/#0.text
+msgid "J'ai besoin de votre aide !"
+msgstr ""
+
+#: res/data.cdb:day/#8.events/#6.alerts/#1.Tasks/#0.text
+msgid ""
+"Le module \"Batterie de secours\" est déconnecté. J'ai également 3 diodes bleues "
+"allumées et 2 diodes violettes qui clignotent. J'ai également le mot \"WIN\" qui "
+"s'affiche, ainsi que la suite de mots \"REST, GUEST\"."
 msgstr ""
 
 
