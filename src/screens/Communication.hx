@@ -371,9 +371,10 @@ private class Talk extends dn.Process {
 			flow.horizontalAlign = Right;
 			flow.minWidth = Std.int(flowAnswers.innerWidth);
 			
-			var text = new h2d.Text(Assets.fontSinsgold16, flow);
+			var text = new h2d.Text(Assets.fontSinsgold32, flow);
 			text.text = Lang.t.get(a.text);
 			text.textColor = 0x081c0c;
+			text.textAlign = Right;
 
 			var inter = new h2d.Interactive(1, 1, flow);
 			inter.propagateEvents = true;
@@ -440,9 +441,10 @@ private class Talk extends dn.Process {
 		authorText.textColor = 0x081c0c;
 		authorText.text = Lang.t._("Vous");
 
-		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
+		var messageText = new h2d.Text(Assets.fontSinsgold32, messageFlow);
 		messageText.text = Lang.t.get(text);
 		messageText.textColor = 0x43b643;
+		messageText.textAlign = Right;
 
 		messageFlow.reflow();
 		messageFlow.setPosition(mask.width - messageFlow.outerWidth - mainWrapperPadding, currentHeight);
@@ -513,7 +515,7 @@ private class Talk extends dn.Process {
 		authorText.textColor = 0x081c0c;
 		authorText.text = td.author != null ? td.author : author;
 
-		var messageText = new h2d.Text(Assets.fontSinsgold16, messageFlow);
+		var messageText = new h2d.Text(Assets.fontSinsgold32, messageFlow);
 		messageText.text = Lang.t.get(td.text);
 		messageText.textColor = switch td.type {
 			case Normal: 0x43b643;
