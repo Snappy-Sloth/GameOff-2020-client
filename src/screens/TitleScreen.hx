@@ -56,10 +56,10 @@ class TitleScreen extends dn.Process {
 		});
 		flow.addChild(newGameBtn);
 
-		#if debug
-		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
-		flow.addChild(debugGameBtn);
-		#end
+		// #if debug
+		// var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
+		// flow.addChild(debugGameBtn);
+		// #end
 
 		{	// LOCA
 			var flowLoca = new h2d.Flow(root);
@@ -94,6 +94,16 @@ class TitleScreen extends dn.Process {
 			flowLoca.setPosition(Std.int(wid - flowLoca.outerWidth) - 20, Std.int(hei - flowLoca.outerHeight) - 20);
 		}
 
+		// var logoSS = Assets.tiles.h_get("logoSS", root);
+		var logoSS = new ui.SpriteButton("logoSS", ()->hxd.System.openURL("https://snappysloth.itch.io/"));
+		root.addChild(logoSS);
+		logoSS.setScale(0.1);
+		logoSS.setPosition(10, hei - logoSS.hei * logoSS.scaleY - 10);
+
+		var logoTwitter = new ui.SpriteButton("twitter", ()->hxd.System.openURL("https://twitter.com/Snappy_Sloth"));
+		root.addChild(logoTwitter);
+		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 10, hei - logoTwitter.hei - 10);
+
 		onResize();
 	}
 
@@ -113,7 +123,7 @@ class TitleScreen extends dn.Process {
 
 		flow.reflow();
 		flow.setPosition(Std.int(Const.AUTO_SCALE_TARGET_WID - flow.outerWidth) >> 1,
-						Std.int(Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) >> 1);
+						Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) * 0.4));
 	}
 
 	override function update() {
