@@ -156,6 +156,7 @@ class Game extends Process {
 				}
 			}, currentEvent.timeBeforeS);
 
+			// TODO Only for demo
 			if (currentEvent.author == "Anon")
 				delayer.addS(function() {
 					new ui.Transition(()->null, 2, 0.05);
@@ -362,8 +363,14 @@ class Game extends Process {
 				}
 
 				if (ca.isKeyboardPressed(hxd.Key.F5)) {
-					if (currentTasks != null)
+					var hasTask = false;
+					for (i in 0...currentTasks.length) {
+						if (currentTasks[i].taskKind != null)
+							hasTask = true;
+					}
+					if (currentTasks != null && hasTask) {
 						onCompleteTask(currentTasks[0]);
+					}
 				}
 				if (ca.isKeyboardPressed(hxd.Key.F6)) {
 					hud.showNewMessage();
