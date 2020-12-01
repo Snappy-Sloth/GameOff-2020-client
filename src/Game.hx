@@ -27,6 +27,8 @@ class Game extends Process {
 	public var valueDatas : Array<Types.ValueData> = [];
 
 	var alertSound : dn.heaps.Sfx;
+	
+	var shakePower = 1.0;
 
 	// Progress
 	public var currentDay : Data.Day;
@@ -98,17 +100,20 @@ class Game extends Process {
 	public function showManual() {
 		currentScreen = manual;
 		tw.createS(wrapperScreens.x, -w() / Const.SCALE, 0.3);
+		cd.unset("shaking");
 	}
 
 	public function showComm() {
 		currentScreen = communication;
 		tw.createS(wrapperScreens.x, 0, 0.3);
 		hud.hideNewMessage();
+		cd.unset("shaking");
 	}
 
 	public function showModules() {
 		currentScreen = moduleScreen;
 		tw.createS(wrapperScreens.x, w() / Const.SCALE, 0.3);
+		cd.unset("shaking");
 	}
 
 	public function onCdbReload() {
@@ -234,9 +239,9 @@ class Game extends Process {
 	}
 
 	public function onError() {
-		#if !debug
 		hud.redWarning();
-		#end
+
+		shakeS(0.3);
 
 		if (currentTasks == null)
 			Game.ME.hud.showAlertMessage();
@@ -283,6 +288,22 @@ class Game extends Process {
 
 	function gc() {}
 
+	public function shakeS(t:Float, ?pow=1.0) {
+		if (currentScreen == communication) wrapperScreens.x = 0;
+		else if (currentScreen == moduleScreen) wrapperScreens.x = w() / Const.SCALE;
+		else if (currentScreen == manual) wrapperScreens.x = -w() / Const.SCALE;
+		wrapperScreens.y = 0;
+
+		cd.setS("shaking", t, false, function() {
+			if (currentScreen == communication) wrapperScreens.x = 0;
+			else if (currentScreen == moduleScreen) wrapperScreens.x = w() / Const.SCALE;
+			else if (currentScreen == manual) wrapperScreens.x = -w() / Const.SCALE;
+			wrapperScreens.y = 0;
+		});
+
+		shakePower = pow;
+	}
+
 	override function onDispose() {
 		super.onDispose();
 
@@ -292,12 +313,6 @@ class Game extends Process {
 
 	override function preUpdate() {
 		super.preUpdate();
-	}
-
-	override function postUpdate() {
-		super.postUpdate();
-
-		gc();
 	}
 
 	override function fixedUpdate() {
@@ -328,9 +343,10 @@ class Game extends Process {
 				if (ca.isKeyboardPressed(hxd.Key.F1)) {
 					showDebugMenu();
 				}
-				/* else if (ca.isKeyboardPressed(hxd.Key.F2)) {
-					Main.ME.showEndDay();
-				} */
+				else if (ca.isKeyboardPressed(hxd.Key.F2)) {
+					// Main.ME.showEndDay();
+					shakeS(0.3);
+				}
 
 				if (ca.isKeyboardPressed(hxd.Key.F5)) {
 					if (currentTasks != null)
@@ -341,6 +357,17 @@ class Game extends Process {
 				}
 			#end
 		}
+	}
+
+	override function postUpdate() {
+		super.postUpdate();
+
+		if( cd.has("shaking") ) {
+			wrapperScreens.x += Math.cos(ftime*1.1)*2.5*shakePower * cd.getRatio("shaking");
+			wrapperScreens.y += Math.sin(0.3+ftime*1.7)*2.5*shakePower * cd.getRatio("shaking");
+		}
+
+		gc();
 	}
 }
 
