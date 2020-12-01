@@ -101,6 +101,7 @@ class Hud extends dn.Process {
 	}
 	
 	public function showNewMessage() {
+		Assets.CREATE_SOUND(hxd.Res.sfx.c_newMessage, C_NewMessage);
 		tw.createS(wrapperNewMessage.y, 0, 0.3);
 	}
 	

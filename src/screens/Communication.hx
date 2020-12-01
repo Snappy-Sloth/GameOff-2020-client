@@ -457,6 +457,9 @@ private class Talk extends dn.Process {
 		
 		cd.setS("newText", 1);
 
+		if (Game.ME.currentScreen == Communication.ME)
+			Assets.CREATE_SOUND(hxd.Res.sfx.c_popMessagePlayer, C_PopMessagePlayer);
+
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, text);
 	}
 
@@ -533,6 +536,9 @@ private class Talk extends dn.Process {
 		bgName.height = authorText.textHeight;
 
 		cd.setS("newText", 0.5 + td.text.length * 0.04);
+
+		if (Game.ME.currentScreen == Communication.ME)
+			Assets.CREATE_SOUND(hxd.Res.sfx.c_popMessageOutside, C_PopMessageOutside);
 
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
 	}

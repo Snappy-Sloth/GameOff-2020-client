@@ -47,6 +47,9 @@ typedef ValueData = {
 }
 
 enum VolumeGroup { // M => Module
+	@volume(1) C_PopMessageOutside;
+	@volume(1) C_PopMessagePlayer;
+	@volume(1) C_NewMessage;
 	@volume(1) M_ClicButton;
 	@volume(0.5) M_ClicGrid;
 	@volume(1) M_SetSymbol;
@@ -57,4 +60,7 @@ enum VolumeGroup { // M => Module
 	@volume(1) M_ChangeGauges;
 	@volume(1) M_ChangeBars;
 	@volume(1) M_NumPad;
+	@volume(1) MovePaper;
+	@volume(1) Alarm;
+	@volume(1) EndAlarm;
 }

@@ -26,6 +26,8 @@ class Game extends Process {
 
 	public var valueDatas : Array<Types.ValueData> = [];
 
+	var alertSound : dn.heaps.Sfx;
+
 	// Progress
 	public var currentDay : Data.Day;
 	public var currentEventId : Int;
@@ -70,6 +72,8 @@ class Game extends Process {
 
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
+
+		alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false);
 
 		showComm();
 	}
@@ -157,6 +161,8 @@ class Game extends Process {
 			currentAlerts.push(t);
 		}
 
+		alertSound.play(true);
+
 		nextTasks();
 	}
 
@@ -207,6 +213,9 @@ class Game extends Process {
 	function endAlert() {
 		moduleScreen.reset();
 		hud.endAlert();
+
+		alertSound.stop();
+		Assets.CREATE_SOUND(hxd.Res.sfx.endAlarm, EndAlarm);
 
 		communication.forceSystemMessage(Lang.t._("ALERTE TERMINÉE"), Alert);
 
