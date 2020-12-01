@@ -54,7 +54,7 @@ class EndDemo extends dn.Process {
 
 		createText(Lang.t._("Qui a envoyé ce mystérieux message ?"));
 		flow.addSpacing(-15);
-		createText(Lang.t._("Est ce que vous et Hayley réussirez à terminer cette mission vitale ?"));
+		createText(Lang.t._("Est-ce que vous et Hayley réussirez à terminer cette mission vitale ?"));
 		flow.addSpacing(-15);
 		createText(Lang.t._("Pourquoi cette interface de communication est aussi austère ?"));
 		

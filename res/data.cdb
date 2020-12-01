@@ -1704,14 +1704,28 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Mon trésor,\n\nTout d'abord rassure-toi, ton père et moi allons bien. Nous pensons à toi tous les jours et espérons que tu te portes pour le mieux. Nous sommes très fiers de ce que tu es devenu et de ce que tu accomplies tous les jours.\n\nSache que tes petites sœurs vont bien. Elles grandissent si vite ! L'autre jour, elles m'ont demandé où tu étais passé. Je crois que tu leur manque beaucoup. Tous les bricolages qu'elles ramènent de l'école sont pour toi. Tu auras plein de cadeaux à ton retour. Ça te fera de la décoration pour ton espace de travail.\n\nNous ne savons rien du tout sur ta mission actuelle, mais nous avons appris que tu rentres bientôt. Nous avons hâte de te retrouver. Le jour de ton retour, tu auras ton plat préféré sur la table, un bain chaud et un bon feu de cheminée.\n\nPrends soin de toi mon petit ange.\nMaman."
+									"text": "Mon trésor,\n\nTout d'abord rassure-toi, ton père et moi allons bien. Nous pensons à toi tous les jours et espérons que tu te portes pour le mieux. Nous sommes très fiers de ce que tu es devenu et de ce que tu accomplies tous les jours."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Sache que tes petites sœurs vont bien. Elles grandissent si vite ! L'autre jour, elles m'ont demandé où tu étais passé. Je crois que tu leur manque beaucoup. Tous les bricolages qu'elles ramènent de l'école sont pour toi. Tu auras plein de cadeaux à ton retour. Ça te fera de la décoration pour ton espace de travail."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Nous ne savons rien du tout sur ta mission actuelle, mais nous avons appris que tu rentres bientôt. Nous avons hâte de te retrouver. Le jour de ton retour, tu auras ton plat préféré sur la table, un bain chaud et un bon feu de cheminée.\n\nPrends soin de toi mon petit ange.\nMaman",
+									"customAuthor": "État-major"
 								}
 							],
 							"alerts": []
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 20,
+							"timeBeforeS": 15,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -1901,10 +1915,18 @@
 							"alerts": []
 						},
 						{
-							"author": "",
-							"timeBeforeS": 0,
+							"author": "Astro",
+							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
+								{
+									"Tasks": [
+										{
+											"text": "Déjà une autre alerte !!",
+											"author": "Astro"
+										}
+									]
+								},
 								{
 									"Tasks": [
 										{
@@ -1937,7 +1959,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 10,
+							"timeBeforeS": 8,
 							"talks": [
 								{
 									"Type": "Normal",
@@ -2425,7 +2447,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 5,
+							"timeBeforeS": 1,
 							"talks": [],
 							"alerts": [
 								{
@@ -2481,21 +2503,42 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Bonjour Agent,\n\nNous avons appris le dysfonctionnement étrange que la fusée a rencontré hier.  \n\nBien que vous n'ayez pas encore découvert la cause qui a mené à cette panne, nous savons que nous avons des opposants. Afin que vous puissiez comprendre l'absolue nécessité de la réussite de votre mission, nous pensons qu'il est important de vous donner plus de détails sur le danger qui nous guette.\nNous avons reçu, il y a très peu de temps, un message étrange. Après avoir réussi à décoder ce message, nous avons compris que notre planète était en danger. Cette missive contenait des menaces contre la Terre en provenance d'une race alien."
+									"text": "Bonjour Agent,\n\nNous avons appris le dysfonctionnement étrange que la fusée a rencontré hier."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, mais nous nous préparions à cette éventualité depuis un moment. La fusée contient le résultat de notre préparation, et le seul moyen de se défendre est de déployer son contenu sur la Lune.\n\nD'après nos calculs, nous pensons que les aliens arriveront dans un peu plus de 15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée devra alunir.\n\nMerci de faire en sorte que cela soit possible, afin de sauver de nombreuses vies."
+									"text": "Bien que vous n'ayez pas encore découvert la cause qui a mené à cette panne, nous savons que nous avons des opposants. Afin que vous puissiez comprendre l'absolue nécessité de la réussite de votre mission, nous pensons qu'il est important de vous donner plus de détails sur le danger qui nous guette."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Nous avons reçu, il y a très peu de temps, un message étrange. Après avoir réussi à décoder ce message, nous avons compris que notre planète était en danger. Cette missive contenait des menaces contre la Terre en provenance d'une race alien."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Nous ne connaissons pas la raison de leur soudaine envie de nous attaquer, mais nous nous préparions à cette éventualité depuis un moment. La fusée contient le résultat de notre préparation, et le seul moyen de nous défendre est de déployer son contenu sur la Lune."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "D'après nos calculs, nous pensons que les aliens arriveront dans un peu plus de 15 jours. Donc au plus tard au vingtième jour de votre mission, la fusée devra alunir.\n\nMerci de faire en sorte que cela soit possible, afin de sauver de nombreuses vies.",
+									"customAuthor": "État-major"
 								}
 							],
 							"alerts": []
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 5,
+							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
 								{
@@ -2746,7 +2789,7 @@
 						},
 						{
 							"author": "Anon",
-							"timeBeforeS": 10,
+							"timeBeforeS": 5,
 							"talks": [
 								{
 									"Type": "Normal",
