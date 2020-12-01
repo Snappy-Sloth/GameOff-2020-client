@@ -98,6 +98,7 @@ class Hud extends dn.Process {
 		delayer.addS(function() {
 			tw.createS(wrapperTimer.y, -timerText.textHeight - 50, 0.3);
 		}, 2);
+		longGoodWarning();
 	}
 	
 	public function showNewMessage() {
@@ -123,6 +124,10 @@ class Hud extends dn.Process {
 
 	public function goodWarning() {
 		fx.flashBangS(0x27e72e, 0.5, 0.5);
+	}
+
+	public function longGoodWarning() {
+		fx.flashBangS(0x27e72e, 0.5, 2);
 	}
 
 	override function onResize() {
