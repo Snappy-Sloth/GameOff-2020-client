@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-12-01 21:17+0100\n"
+"PO-Revision-Date: 2020-12-01 23:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -17,23 +17,23 @@ msgstr ""
 msgid "Game is ready."
 msgstr "Game is ready."
 
-#: src/Game.hx:250
+#: src/Game.hx:251
 msgid "ALERTE TERMINÉE"
 msgstr "ALERT ENDED"
 
-#: src/module/Values.hx:84
+#: src/module/Values.hx:82
 msgid "Pression du Kérosène"
 msgstr "Kerosene pressure"
 
-#: src/module/Values.hx:85
+#: src/module/Values.hx:83
 msgid "Température de la coque"
 msgstr "Hull temperature"
 
-#: src/module/Values.hx:86
+#: src/module/Values.hx:84
 msgid "Fréquence des radios"
 msgstr "Radio frequency"
 
-#: src/module/Values.hx:87
+#: src/module/Values.hx:85
 msgid "Puissance des instruments"
 msgstr "Instrument power"
 
@@ -45,20 +45,19 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: src/screens/Communication.hx:313 src/screens/Communication.hx:317
-#: src/screens/Communication.hx:581
+#: src/screens/Communication.hx:313 src/screens/Communication.hx:580
 msgid "::name:: est en train d'écrire..."
 msgstr "::name:: is typing..."
 
-#: src/screens/Communication.hx:344
+#: src/screens/Communication.hx:343
 msgid "::name:: est en ligne"
 msgstr "::name:: is online"
 
-#: src/screens/Communication.hx:467
+#: src/screens/Communication.hx:466
 msgid "Vous"
 msgstr "You"
 
-#: src/screens/Communication.hx:596
+#: src/screens/Communication.hx:595
 msgid "::name:: est hors ligne..."
 msgstr "::name:: is offline..."
 
@@ -85,6 +84,10 @@ msgstr "::sec:: seconds"
 #: src/screens/EndDay.hx:58
 msgid "Nombres d'alertes résolues :"
 msgstr "Number of alerts resolved:"
+
+#: src/screens/EndDay.hx:62
+msgid "Journée suivante"
+msgstr "Next day"
 
 #: src/screens/EndDemo.hx:33
 msgid "Merci d'avoir joué au prototype de"
@@ -128,6 +131,10 @@ msgstr ""
 "If you liked this demo, don't hesitate to let us know on Twitter "
 "(@SnappySloth), as well as to share it as much as possible!"
 
+#: src/screens/EndDemo.hx:75
+msgid "Écran Titre"
+msgstr "Main Menu"
+
 #: src/screens/Manual.hx:80
 msgid "Ranger"
 msgstr "Sort"
@@ -135,6 +142,10 @@ msgstr "Sort"
 #: src/screens/Manual.hx:83 src/screens/ModuleScreen.hx:23
 msgid "Comm"
 msgstr "Comm"
+
+#: src/screens/Manual.hx:86
+msgid "Clic droit pour voir une page en grand."
+msgstr "Right click on a page to see it bigger."
 
 #: src/screens/TitleScreen.hx:48
 msgid "Continuer"
@@ -767,7 +778,7 @@ msgid ""
 "Si vous saviez l'horreur que c'était ici cette nuit... Je ne sais pas "
 "comment je m'en suis sortie."
 msgstr ""
-"If you knew what horror is was here this night... I don't know how I got "
+"If you knew what horror it was here this night... I don't know how I got "
 "through."
 
 #: res/data.cdb:day/#5.events/#1.talks/#11.text
