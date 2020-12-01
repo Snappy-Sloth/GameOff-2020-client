@@ -27,6 +27,7 @@ class Game extends Process {
 	public var valueDatas : Array<Types.ValueData> = [];
 
 	var alertSound : dn.heaps.Sfx;
+	// var musicNormal : dn.heaps.Sfx;
 	
 	var shakePower = 1.0;
 
@@ -76,6 +77,8 @@ class Game extends Process {
 		trace(Lang.t._("Game is ready."));
 
 		alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false);
+
+		// musicNormal = Assets.CREATE_SOUND(hxd.Res.music.music1, Music_Normal, true, true, true);
 
 		showComm();
 	}
@@ -138,6 +141,7 @@ class Game extends Process {
 		Const.SAVE_PROGRESS(currentDay.id, currentEventId);
 
 		if (currentEvent == null) { // End of the day
+			// tw.createS(musicNormal.volume, 0, 0.5).onEnd = ()->musicNormal.stop();
 			delayer.addS(Main.ME.showEndDay, 2);
 		}
 		else {
@@ -177,6 +181,8 @@ class Game extends Process {
 		}
 
 		alertSound.play(true);
+
+		// tw.createS(musicNormal.volume, 0, 0.5);
 
 		nextTasks();
 	}
@@ -231,6 +237,8 @@ class Game extends Process {
 
 		alertSound.stop();
 		Assets.CREATE_SOUND(hxd.Res.sfx.endAlarm, EndAlarm);
+
+		// tw.createS(musicNormal.volume, 1, 0.5);
 
 		communication.forceSystemMessage(Lang.t._("ALERTE TERMINÉE"), Alert);
 
@@ -343,7 +351,6 @@ class Game extends Process {
 					showDebugMenu();
 				}
 				else if (ca.isKeyboardPressed(hxd.Key.F2)) {
-					// Main.ME.showEndDay();
 					shakeS(0.3);
 				}
 
