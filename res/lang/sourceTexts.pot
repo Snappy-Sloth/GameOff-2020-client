@@ -12,19 +12,19 @@ msgstr ""
 msgid "ALERTE TERMINÉE"
 msgstr ""
 
-#: src/module/Values.hx:84
+#: src/module/Values.hx:82
 msgid "Pression du Kérosène"
 msgstr ""
 
-#: src/module/Values.hx:85
+#: src/module/Values.hx:83
 msgid "Température de la coque"
 msgstr ""
 
-#: src/module/Values.hx:86
+#: src/module/Values.hx:84
 msgid "Fréquence des radios"
 msgstr ""
 
-#: src/module/Values.hx:87
+#: src/module/Values.hx:85
 msgid "Puissance des instruments"
 msgstr ""
 
@@ -76,6 +76,10 @@ msgstr ""
 msgid "Nombres d'alertes résolues :"
 msgstr ""
 
+#: src/screens/EndDay.hx:62
+msgid "Journée suivante"
+msgstr ""
+
 #: src/screens/EndDemo.hx:33
 msgid "Merci d'avoir joué au prototype de"
 msgstr ""
@@ -112,6 +116,10 @@ msgstr ""
 msgid ""
 "Si vous avez aimé cette démo, n'hésitez surtout pas à nous le faire savoir sur "
 "Twitter (@SnappySloth), ainsi qu'à le partager un maximum !"
+msgstr ""
+
+#: src/screens/EndDemo.hx:75
+msgid "Écran Titre"
 msgstr ""
 
 #: src/screens/Manual.hx:80

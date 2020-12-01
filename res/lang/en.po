@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-12-01 21:12+0100\n"
+"PO-Revision-Date: 2020-12-01 21:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -21,19 +21,19 @@ msgstr "Game is ready."
 msgid "ALERTE TERMINÉE"
 msgstr "ALERT ENDED"
 
-#: src/module/Values.hx:84
+#: src/module/Values.hx:82
 msgid "Pression du Kérosène"
 msgstr "Kerosene pressure"
 
-#: src/module/Values.hx:85
+#: src/module/Values.hx:83
 msgid "Température de la coque"
 msgstr "Hull temperature"
 
-#: src/module/Values.hx:86
+#: src/module/Values.hx:84
 msgid "Fréquence des radios"
 msgstr "Radio frequency"
 
-#: src/module/Values.hx:87
+#: src/module/Values.hx:85
 msgid "Puissance des instruments"
 msgstr "Instrument power"
 
@@ -86,6 +86,10 @@ msgstr "::sec:: seconds"
 msgid "Nombres d'alertes résolues :"
 msgstr "Number of alerts resolved:"
 
+#: src/screens/EndDay.hx:62
+msgid "Journée suivante"
+msgstr "Next day"
+
 #: src/screens/EndDemo.hx:33
 msgid "Merci d'avoir joué au prototype de"
 msgstr "Thanks for playing the prototype of"
@@ -127,6 +131,10 @@ msgid ""
 msgstr ""
 "If you liked this demo, don't hesitate to let us know on Twitter "
 "(@SnappySloth), as well as to share it as much as possible!"
+
+#: src/screens/EndDemo.hx:75
+msgid "Écran Titre"
+msgstr "Main Menu"
 
 #: src/screens/Manual.hx:80
 msgid "Ranger"
