@@ -55,7 +55,7 @@ class Buttons extends Module {
 			return;
 		}
 
-		var isError = true;
+		var isError = false;
 
 		for (t in Game.ME.currentTasks.copy()) {
 			if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons) {
@@ -64,7 +64,7 @@ class Buttons extends Module {
 				var buttonId = Std.parseInt(dataText.charAt(0)) - 1;
 				var numClick = Std.parseInt(dataText.charAt(1));
 				if (bt != btns[buttonId])
-					isError = false;
+					isError = true;
 				else {
 					bt.numClick++;
 				}
