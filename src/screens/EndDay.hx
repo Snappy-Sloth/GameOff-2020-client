@@ -64,7 +64,7 @@ class EndDay extends dn.Process {
 			var previous = Const.PLAYER_DATA.dayId;
 			Const.PLAYER_DATA.dayId = null;
 			for (i in 0...Data.day.all.length) {
-				if (Data.day.all[i].id == previous) {
+				if (Data.day.all[i].id == previous && i < Data.day.all.length - 1) {
 					Const.PLAYER_DATA.dayId = Data.day.all[i + 1].id;
 					break;
 				}
@@ -72,9 +72,7 @@ class EndDay extends dn.Process {
 			if (Const.PLAYER_DATA.dayId != null)
 				Main.ME.continueGame();
 			else {
-				// TODO FIN DE DEMO
-				trace("No day after " + previous);
-				Main.ME.startTitleScreen();
+				Main.ME.showEndDemo();
 			}
 		});
 		flow.addChild(nextDayBtn);

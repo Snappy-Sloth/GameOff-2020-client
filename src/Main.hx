@@ -137,8 +137,6 @@ class Main extends dn.Process {
 
 	public function showEndDemo() {
 		new ui.Transition(function () {
-			// Const.PLAYER_DATA.currentTime += Game.ME.timer;
-
 			clean();
 
 			new screens.EndDemo();
