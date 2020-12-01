@@ -105,9 +105,9 @@ class Wires extends Module {
 				var dataText = Data.task.get(t.taskKind).data;
 				var data = dataText.split(" ");
 				var n = 0;
-				for (i in 0...6) {
-					var top = Std.parseInt(data[i].charAt(0)) - 1;
-					var bot = Std.parseInt(data[i].charAt(1)) - 1;
+				for (wd in data) {
+					var top = Std.parseInt(wd.charAt(0)) - 1;
+					var bot = Std.parseInt(wd.charAt(1)) - 1;
 					for (w in wires) {
 						if (w.top == top && w.bot == bot) {
 							n++;
@@ -116,7 +116,7 @@ class Wires extends Module {
 					}
 				}
 
-				if (n == 6) {
+				if (n == data.length) {
 					Game.ME.onCompleteTask(t);
 					break;
 				}

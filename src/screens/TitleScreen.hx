@@ -61,7 +61,10 @@ class TitleScreen extends dn.Process {
 		flow.addChild(newGameBtn);
 
 		#if debug
-		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
+		var debugGameBtn = new ui.DebugButton('Debug', function() {
+			tw.createS(music.volume, 0, 0.5);
+			Main.ME.debugGame();
+		});
 		flow.addChild(debugGameBtn);
 		#end
 
@@ -70,8 +73,6 @@ class TitleScreen extends dn.Process {
 			flowLoca.horizontalSpacing = 20;
 	
 			frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
-				// Const.CHANGE_LOCA("fr");
-				// Boot.ME.reboot();
 				new ui.Transition(function () {
 					Const.CHANGE_LOCA("fr");
 					Boot.ME.reboot();
