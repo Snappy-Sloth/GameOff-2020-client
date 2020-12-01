@@ -215,7 +215,7 @@ private class Tab extends dn.Process {
 		}
 
 		text = new h2d.Text(Assets.fontRulergold16, root);
-		text.text = author;
+		text.text = Lang.t.get(author);
 		text.textColor = 0x43b643;
 		text.setPosition(Std.int(bg.tile.width - text.textWidth) >> 1, Std.int(bg.tile.height - text.textHeight) >> 1);
 
@@ -310,11 +310,10 @@ private class Talk extends dn.Process {
 		pendingMessages = [];
 
 		isTypingText = new h2d.Text(Assets.fontSinsgold16, mask);
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: "XXX"});
+		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: Lang.t.get(author)});
 		isTypingText.alpha = 0;
 		isTypingText.textColor = 0x43b643;
 
-		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
 
 		onResize();
 	}
@@ -326,7 +325,7 @@ private class Talk extends dn.Process {
 			if (det.answers.length > 0) {
 				var texts : Array<PlayerTalkData> = [];
 				for (answer in det.answers) {
-					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: Lang.t.get(answer.customAuthor), type: answer.TypeId, timeBefore: 0} : null});
+					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, type: answer.TypeId, timeBefore: 0} : null});
 				}
 				pendingMessages.push(Player(texts));
 			}
@@ -334,14 +333,14 @@ private class Talk extends dn.Process {
 				pendingMessages.push(System({author:"System", text: det.text, type: det.TypeId, timeBefore: 0}));
 			}
 			else {
-				pendingMessages.push(Outside({author:Lang.t.get(det.customAuthor), text: det.text, type: det.TypeId, timeBefore: det.timeBefore}));
+				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, type: det.TypeId, timeBefore: det.timeBefore}));
 			}
 		}
 
 		lastMessage = pendingMessages[pendingMessages.length - 1];
 
 		if (arMessageFlow.length == 0)
-			forceSystemMessage(Lang.t._("::name:: est en ligne", {name:author}));
+			forceSystemMessage(Lang.t._("::name:: est en ligne", {name:Lang.t.get(author)}));
 
 		switch (nextMessage) {
 			case Player(ptd):
@@ -538,7 +537,7 @@ private class Talk extends dn.Process {
 
 		var authorText = new h2d.Text(Assets.fontRulergold16, messageFlow);
 		authorText.textColor = 0x081c0c;
-		authorText.text = td.author != null ? td.author : author;
+		authorText.text = Lang.t.get(td.author != null ? td.author : author);
 
 		var messageText = new h2d.Text(Assets.fontSinsgold32, messageFlow);
 		messageText.text = Lang.t.get(td.text);
@@ -593,7 +592,7 @@ private class Talk extends dn.Process {
 			delayer.addS(Game.ME.nextEvent, 1);
 
 			if (!Game.ME.hasMoreTalkToday(author)) {
-				forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: author}));
+				forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: Lang.t.get(author)}));
 				cd.setS("newText", 1);
 			}
 		}

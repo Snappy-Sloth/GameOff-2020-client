@@ -37,7 +37,7 @@ class Const {
 	public static function INIT() {
 		PLAYER_DATA = dn.LocalStorage.readObject("playerData", false, {dayId:Data.DayKind.Day_1, currentEvent:0, currentTime: 0.});
 
-		OPTIONS_DATA = dn.LocalStorage.readObject("optionsData", false, {SFX_VOLUME: 1., MUSIC_VOLUME: 1., LOCA : "fr"});
+		OPTIONS_DATA = dn.LocalStorage.readObject("optionsData", false, {SFX_VOLUME: 1., MUSIC_VOLUME: 1., LOCA : "en"});
 			// #if debug 
 			// {SFX_VOLUME: 0., MUSIC_VOLUME: 0.}
 			// #else
