@@ -36,8 +36,6 @@ class Values extends Module {
 		screenText = Assets.tiles.h_get("screenTypeValues", flowTop);
 
 		vtText = new h2d.Text(Assets.fontSinsgold16, screenText);
-		// vtText.text = currentVD.vt.getName();
-		// vtText.text = "Température de l'habitacle";
 		vtText.textColor = 0x282f2e;
 		vtText.setPosition(Std.int(screenText.tile.width - vtText.textWidth) >> 1, Std.int(screenText.tile.height - vtText.textHeight) >> 1);
 

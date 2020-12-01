@@ -72,7 +72,7 @@ class EndDemo extends dn.Process {
 		
 		Assets.tiles.h_get("separationEndDay", flow);
 
-		nextDayBtn = new ui.Button("Écran Titre", function() {
+		nextDayBtn = new ui.Button(Lang.t._("Écran Titre"), function() {
 			nextDayBtn.clickEnable = false;
 			Main.ME.startTitleScreen();
 		});

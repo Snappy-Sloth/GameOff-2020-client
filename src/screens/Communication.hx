@@ -326,7 +326,7 @@ private class Talk extends dn.Process {
 			if (det.answers.length > 0) {
 				var texts : Array<PlayerTalkData> = [];
 				for (answer in det.answers) {
-					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: answer.customAuthor, type: answer.TypeId, timeBefore: 0} : null});
+					texts.push({text:answer.text, answer:answer.answer != null ? {text: answer.answer, author: Lang.t.get(answer.customAuthor), type: answer.TypeId, timeBefore: 0} : null});
 				}
 				pendingMessages.push(Player(texts));
 			}
@@ -334,7 +334,7 @@ private class Talk extends dn.Process {
 				pendingMessages.push(System({author:"System", text: det.text, type: det.TypeId, timeBefore: 0}));
 			}
 			else {
-				pendingMessages.push(Outside({author:det.customAuthor, text: det.text, type: det.TypeId, timeBefore: det.timeBefore}));
+				pendingMessages.push(Outside({author:Lang.t.get(det.customAuthor), text: det.text, type: det.TypeId, timeBefore: det.timeBefore}));
 			}
 		}
 
