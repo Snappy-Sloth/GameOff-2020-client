@@ -61,10 +61,10 @@ class Pause extends dn.Process {
 	function backToTitle() {
 		btnContinue.clickEnable = false;
 		btnQuit.clickEnable = false;
-		new Transition(function () {
-			destroy();
+		// new Transition(function () {
+			// destroy();
 			Main.ME.startTitleScreen();
-		});
+		// });
 	}
 
 	function close() {

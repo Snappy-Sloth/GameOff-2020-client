@@ -133,6 +133,12 @@ class TitleScreen extends dn.Process {
 						Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) * 0.4));
 	}
 
+	override function onDispose() {
+		super.onDispose();
+
+		music.stop();
+	}
+
 	override function update() {
 		super.update();
 
