@@ -577,7 +577,7 @@ private class Talk extends dn.Process {
 				cd.setS("newText", 0.5);
 			case Outside(td) :
 				cd.setS("newText", 0.5 + text.length * 0.04 + td.text.length * 0.02 + td.timeBefore);
-				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
+				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: Lang.t.get(author)});
 				delayer.addS(function() {
 					delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
 				}, td.timeBefore);

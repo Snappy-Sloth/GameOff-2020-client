@@ -123,11 +123,11 @@ class Hud extends dn.Process {
 	}
 
 	public function goodWarning() {
-		fx.flashBangS(0x27e72e, 0.5, 0.5);
+		fx.flashBangS(0x27e72e, 0.25, 0.5);
 	}
 
 	public function longGoodWarning() {
-		fx.flashBangS(0x27e72e, 0.5, 2);
+		fx.flashBangS(0x27e72e, 0.25, 2);
 	}
 
 	override function onResize() {

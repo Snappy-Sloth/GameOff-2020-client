@@ -143,7 +143,8 @@ class TitleScreen extends dn.Process {
 		super.update();
 
 		// if (hxd.Key.isPressed(hxd.Key.SPACE))
-		if (!cd.hasSetS("spawnStar", rnd(0.1, 0.2)))
+		// if (!cd.hasSetS("spawnStar", rnd(0.05, 0.1)))
+		if (!cd.hasSetS("spawnStar", rnd(0.02, 0.04)))
 			spawnStar();
 	}
 }
