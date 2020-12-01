@@ -355,14 +355,42 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Bonjour Agent.\n\nComme vous le savez, vous avez intégré volontairement ce bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur.\n\nVotre mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu de cette fusée est indispensable à la protection de la Terre, qui se trouve aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus vite.\n\nPour ce faire, vous pourrez communiquer avec les astronautes à bord de la fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs instruments."
+									"text": "Bonjour Agent.\n\nComme vous le savez, vous avez intégré volontairement ce bunker hier soir, et êtes ainsi privé de tout contact avec l'extérieur.\n"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"text": "À votre droite, vous avez à votre disposition des fiches de manuel.\nCes fiches contiennent des instructions pour aider les astronautes à résoudre leurs alertes.\nÀ votre gauche vous disposez de différents modules contenant des leviers et des boutons entre autres.\nIls vous seront indispensables pour résoudre les défaillances de la fusée.\n\nAttention, suivez bien les instructions du manuel !\n\nRappelez-vous, cette fusée doit par TOUS LES MOYENS alunir sans encombres.\n\nNotre avenir à tous est entre vos mains.",
+									"text": "Votre mission est de mener à bon port la fusée Guardian sur la Lune. Le contenu de cette fusée est indispensable à la protection de la Terre, qui se trouve aujourd'hui en danger.\nC'est pour cela qu'elle doit être déployée au plus vite.",
 									"customAuthor": "État-major"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Pour ce faire, vous pourrez communiquer avec les astronautes à bord de la fusée.\nCeux-ci pourront faire appel à vous en cas de défaillance de leurs instruments.",
+									"customAuthor": "État-major"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "À votre droite, vous avez à votre disposition des fiches de manuel.\nCes fiches contiennent des instructions pour aider les astronautes à résoudre leurs alertes.\nÀ votre gauche vous disposez de différents modules contenant des leviers et des boutons entre autres.\nIls vous seront indispensables pour résoudre les défaillances de la fusée.\n\n",
+									"customAuthor": "État-major"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Attention, suivez bien les instructions du manuel !\n\nRappelez-vous, cette fusée doit par TOUS LES MOYENS alunir sans encombres.\n\nNotre avenir à tous est entre vos mains.",
+									"customAuthor": "État-major"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"customAuthor": "État-major",
+									"text": "Prenez le temps de vous familiariser avec les modules et le manuel en attendant le premier contact de la fusée."
 								}
 							],
 							"alerts": []
@@ -570,7 +598,7 @@
 								{
 									"Tasks": [
 										{
-											"text": "Une diode jaune vient de s'allumer.",
+											"text": "2 diodes jaunes viennent de s'allumer.",
 											"author": "Astro",
 											"task": "A3"
 										}
@@ -708,7 +736,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Mais n'oublions pas que l'avenir de la Terre est entre nos mains.",
+											"text": "Il faut que nous restions calmes, n'oublions pas que l'avenir de la Terre est entre nos mains.",
 											"customAuthor": "Astro",
 											"Type": "Normal",
 											"answer": "Bien sûr..."
@@ -825,7 +853,7 @@
 								{
 									"Tasks": [
 										{
-											"text": "Bien, ma première alerte, j'ai vu le commandant faire hier, je vais essayer d'être le plus précise possible...",
+											"text": "Bien, ma première alerte, j'ai vu le Commandant faire hier, je vais essayer d'être le plus précise possible...",
 											"author": "Astro"
 										}
 									]
