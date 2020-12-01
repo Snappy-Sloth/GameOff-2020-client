@@ -63,4 +63,5 @@ enum VolumeGroup { // M => Module
 	@volume(1) MovePaper;
 	@volume(1) Alarm;
 	@volume(1) EndAlarm;
+	@volume(1) Music_Intro;
 }

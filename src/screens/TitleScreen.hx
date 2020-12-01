@@ -18,6 +18,8 @@ class TitleScreen extends dn.Process {
 	var frenchLocaBtn : ui.SpriteButton;
 	var englishLocaBtn : ui.SpriteButton;
 
+	var music : dn.heaps.Sfx;
+
 	public function new() {
 		super(Main.ME);
 
@@ -44,6 +46,7 @@ class TitleScreen extends dn.Process {
 
 		if (Const.PLAYER_DATA.dayId != Data.DayKind.Day_1) {
 			continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
+				tw.createS(music.volume, 0, 0.5);
 				Main.ME.continueGame();
 				continueGameBtn.clickEnable = false;
 			});
@@ -51,15 +54,16 @@ class TitleScreen extends dn.Process {
 		}
 
 		newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), function() {
+			tw.createS(music.volume, 0, 0.5);
 			Main.ME.newGame();
 			newGameBtn.clickEnable = false;
 		});
 		flow.addChild(newGameBtn);
 
-		// #if debug
-		// var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
-		// flow.addChild(debugGameBtn);
-		// #end
+		#if debug
+		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
+		flow.addChild(debugGameBtn);
+		#end
 
 		{	// LOCA
 			var flowLoca = new h2d.Flow(root);
@@ -103,6 +107,8 @@ class TitleScreen extends dn.Process {
 		var logoTwitter = new ui.SpriteButton("twitter", ()->hxd.System.openURL("https://twitter.com/Snappy_Sloth"));
 		root.addChild(logoTwitter);
 		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 10, hei - logoTwitter.hei - 10);
+
+		music = Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
 
 		onResize();
 	}
