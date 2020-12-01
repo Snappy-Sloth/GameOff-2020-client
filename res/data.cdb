@@ -1253,14 +1253,28 @@
 									"answers": [],
 									"timeBefore": 0,
 									"customAuthor": "État-major",
-									"text": "Bonjour Agent.\n\nNous avons reçu le rapport de la mission Harmony. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit.\n\nNous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie.\n\nNous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire."
+									"text": "Bonjour Agent.\n\nNous avons reçu le rapport de la mission Harmony. Nous sommes très désappointés d'apprendre ce qu'il s'est passé lors de la première nuit."
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Nous avions prévu que la fusée atterrisse demain au plus tard sur la Lune. Malheureusement, au vu de l'état de la fusée, cela sera impossible. Nous allons donc nous renseigner afin de vous dire avant quand la mission doit être accomplie.",
+									"customAuthor": "État-major"
+								},
+								{
+									"Type": "Normal",
+									"answers": [],
+									"timeBefore": 0,
+									"text": "Nous vous rappelons de l'absolue nécessité de la réussite de la mission. La Terre serait en grand danger dans le cas contraire.",
+									"customAuthor": "État-major"
 								}
 							],
 							"alerts": []
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 25,
+							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
 								{
@@ -1392,7 +1406,7 @@
 									"Type": "Normal",
 									"answers": [
 										{
-											"text": "Essayer de vous reposer dès que vous pouvez. Les alarmes vous réveillerons le cas échéant. Je reste en alerte permanente en attendant.",
+											"text": "Essayez de vous reposer dès que vous pouvez. Les alarmes vous réveillerons le cas échéant. Je reste en alerte permanente en attendant.",
 											"customAuthor": "",
 											"Type": "Normal"
 										}
@@ -1617,7 +1631,7 @@
 						},
 						{
 							"author": "Astro",
-							"timeBeforeS": 0,
+							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
 								{
