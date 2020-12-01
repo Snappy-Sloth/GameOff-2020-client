@@ -270,11 +270,7 @@ private class Talk extends dn.Process {
 		inter.onWheel = function (e) {
 			if (currentHeight > inter.height) {
 				wrapperMessage.y += e.wheelDelta < 0 ? 20 : -20;
-				
-				if (wrapperMessage.y > 0)
-					wrapperMessage.y = 0;
-				else if (wrapperMessage.y < inter.height - currentHeight)
-					wrapperMessage.y = inter.height - currentHeight;
+				wrapperMessage.y = hxd.Math.clamp(wrapperMessage.y, inter.height - currentHeight, 0);
 			}
 		}
 

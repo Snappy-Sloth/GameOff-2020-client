@@ -99,6 +99,10 @@ class Manual extends dn.Process {
 		}
 	}
 
+	public function zoomOn(sheet:Sheet) {
+		new ZoomMode(sheet.id);
+	}
+
 	override function onResize() {
 		super.onResize();
 
@@ -107,5 +111,46 @@ class Manual extends dn.Process {
 
 		mask.width = Std.int(Const.AUTO_SCALE_TARGET_WID);
 		mask.height = Std.int(Const.AUTO_SCALE_TARGET_HEI);
+	}
+}
+
+private class ZoomMode extends dn.Process {
+
+	var inter : h2d.Interactive;
+	var sheet : Sheet;
+
+	public function new(idSheet:Int) {
+		super(Manual.ME);
+
+		createRoot();
+
+		inter = new h2d.Interactive(Const.AUTO_SCALE_TARGET_WID, Const.AUTO_SCALE_TARGET_HEI, root);
+		inter.backgroundColor = 0x88000000;
+
+		inter.onClick = function (e) {
+			close();
+		}
+
+		inter.onWheel = function (e) {
+			sheet.y += e.wheelDelta < 0 ? 20 : -20;
+			sheet.y = hxd.Math.clamp(sheet.y, Const.AUTO_SCALE_TARGET_HEI - sheet.hei * sheet.scaleY, 0);
+		}
+
+		sheet = new Sheet(idSheet, false);
+		root.addChild(sheet);
+		sheet.setScale(2);
+
+		sheet.x = Std.int(Const.AUTO_SCALE_TARGET_WID - sheet.wid * sheet.scaleX) >> 1;
+
+		onResize();
+
+		tw.createS(inter.alpha, 0 > 1, 0.2);
+		sheet.y += Const.AUTO_SCALE_TARGET_HEI;
+		tw.createS(sheet.y, sheet.y - Const.AUTO_SCALE_TARGET_HEI, 0.2);
+	}
+
+	function close() {
+		tw.createS(inter.alpha, 0, 0.2);
+		tw.createS(sheet.y, Const.AUTO_SCALE_TARGET_HEI, 0.2).onEnd = destroy;
 	}
 }

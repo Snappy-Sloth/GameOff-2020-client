@@ -6,12 +6,18 @@ class Sheet extends h2d.Layers {
 	public var wid(get,never) : Int; inline function get_wid() return Const.SHEET_WIDTH;
 	public var hei(get,never) : Int; inline function get_hei() return Const.SHEET_HEIGHT;
 
-	public function new(id:Int) {
+	public var id(default, null) : Int;
+
+	public function new(id:Int, enableInter:Bool = true) {
 		super();
+
+		this.id = id;
 
 		ME = this;
 
 		var sheet = new h2d.Interactive(Const.SHEET_WIDTH, Const.SHEET_HEIGHT, this);
+		sheet.enableRightButton = true;
+		sheet.visible = enableInter;
 
 		var glowOver = Assets.tiles.h_get("pageGlowOver", 0.5, 0.5, this);
 		glowOver.setPos(wid >> 1, hei >> 1);
@@ -52,5 +58,10 @@ class Sheet extends h2d.Layers {
 			glowMove.visible = false;
 			glowOver.visible = true;
 		};
+
+		sheet.onClick = function (e) {
+			if (e.button == 1)
+				Manual.ME.zoomOn(this);
+		}
 	}
 }
