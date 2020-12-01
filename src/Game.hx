@@ -99,7 +99,7 @@ class Game extends Process {
 		timer = 0;
 		numTaskCompleted = 0;
 
-		Const.SAVE_PROGRESS(currentDay.id, 0);
+		Const.SAVE_PROGRESS(d, 0);
 	}
 
 	public function showManual() {
