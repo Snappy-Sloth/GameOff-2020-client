@@ -38,7 +38,8 @@ class TitleScreen extends dn.Process {
 		flow.addSpacing(30);
 
 		#if debug
-		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
+		// var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
+		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.showEndDemo);
 		flow.addChild(debugGameBtn);
 		#end
 

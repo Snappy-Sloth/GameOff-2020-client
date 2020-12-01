@@ -75,10 +75,8 @@ class Main extends dn.Process {
 		if (screens.SplashScreen.ME != null) screens.SplashScreen.ME.destroy();
 		if (screens.TitleScreen.ME != null) screens.TitleScreen.ME.destroy();
 		if (screens.EndDay.ME != null) screens.EndDay.ME.destroy();
+		if (screens.EndDemo.ME != null) screens.EndDemo.ME.destroy();
 		if (Game.ME != null) Game.ME.destroy();
-		if (screens.Manual.ME != null) screens.Manual.ME.destroy();
-		if (screens.Communication.ME != null) screens.Communication.ME.destroy();
-		if (screens.ModuleScreen.ME != null) screens.ModuleScreen.ME.destroy();
 	}
 
 	public function showSplashScreen() {
@@ -119,10 +117,18 @@ class Main extends dn.Process {
 			var numTaskCompleted = Game.ME.numTaskCompleted;
 
 			clean();
-			// var game = new Game();
-			new screens.EndDay(numTaskCompleted);
 
-			// game.initDay(Const.PLAYER_DATA.dayId);
+			new screens.EndDay(numTaskCompleted);
+		});
+	}
+
+	public function showEndDemo() {
+		new ui.Transition(function () {
+			// Const.PLAYER_DATA.currentTime += Game.ME.timer;
+
+			clean();
+
+			new screens.EndDemo();
 		});
 	}
 
@@ -140,6 +146,10 @@ class Main extends dn.Process {
 		super.onResize();
 
 		// Auto scaling
+		// if( Const.AUTO_SCALE_TARGET_WID>0 )
+		// 	Const.SCALE = M.floor( w()/Const.AUTO_SCALE_TARGET_WID );
+		// else if( Const.AUTO_SCALE_TARGET_HEI>0 )
+		// 	Const.SCALE = M.floor( h()/Const.AUTO_SCALE_TARGET_HEI );
 		if( Const.AUTO_SCALE_TARGET_WID>0 )
 			Const.SCALE = M.ceil( w()/Const.AUTO_SCALE_TARGET_WID );
 		else if( Const.AUTO_SCALE_TARGET_HEI>0 )
