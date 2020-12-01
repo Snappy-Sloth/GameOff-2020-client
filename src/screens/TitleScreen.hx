@@ -2,6 +2,9 @@ package screens;
 
 class TitleScreen extends dn.Process {
 	public static var ME : TitleScreen;
+	
+	public var wid(get, never):Int;		inline function get_wid() return Const.AUTO_SCALE_TARGET_WID;
+	public var hei(get, never):Int;		inline function get_hei() return Const.AUTO_SCALE_TARGET_HEI;
 
 	var flow : h2d.Flow;
 
@@ -11,6 +14,9 @@ class TitleScreen extends dn.Process {
 
 	var continueGameBtn : ui.Button;
 	var newGameBtn : ui.Button;
+
+	var frenchLocaBtn : ui.SpriteButton;
+	var englishLocaBtn : ui.SpriteButton;
 
 	public function new() {
 		super(Main.ME);
@@ -32,21 +38,17 @@ class TitleScreen extends dn.Process {
 		flow.horizontalAlign = Middle;
 		flow.verticalSpacing = 20;
 
-		var title = new h2d.Text(Assets.fontLarge, flow);
-		title.text = "MOONSHOT";
+		Assets.tiles.h_get("logoGame", flow);
 
 		flow.addSpacing(30);
 
-		#if debug
-		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
-		flow.addChild(debugGameBtn);
-		#end
-
-		continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
-			Main.ME.continueGame();
-			continueGameBtn.clickEnable = false;
-		});
-		flow.addChild(continueGameBtn);
+		if (Const.PLAYER_DATA.dayId != Data.DayKind.Day_1) {
+			continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
+				Main.ME.continueGame();
+				continueGameBtn.clickEnable = false;
+			});
+			flow.addChild(continueGameBtn);
+		}
 
 		newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), function() {
 			Main.ME.newGame();
@@ -54,17 +56,43 @@ class TitleScreen extends dn.Process {
 		});
 		flow.addChild(newGameBtn);
 
-		var frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
-			Const.CHANGE_LOCA("fr");
-			Boot.ME.reboot();
-		});
-		flow.addChild(frenchLocaBtn);
+		#if debug
+		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
+		flow.addChild(debugGameBtn);
+		#end
 
-		var englishLocaBtn = new ui.SpriteButton("btnLocaEN", function () {
-			Const.CHANGE_LOCA("en");
-			Boot.ME.reboot();
-		});
-		flow.addChild(englishLocaBtn);
+		{	// LOCA
+			var flowLoca = new h2d.Flow(root);
+			flowLoca.horizontalSpacing = 20;
+	
+			frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
+				// Const.CHANGE_LOCA("fr");
+				// Boot.ME.reboot();
+				new ui.Transition(function () {
+					Const.CHANGE_LOCA("fr");
+					Boot.ME.reboot();
+				});
+				frenchLocaBtn.alpha = 1;
+				englishLocaBtn.alpha = 0.5;
+			});
+			flowLoca.addChild(frenchLocaBtn);
+	
+			englishLocaBtn = new ui.SpriteButton("btnLocaEN", function () {
+				new ui.Transition(function () {
+					Const.CHANGE_LOCA("en");
+					Boot.ME.reboot();
+				});
+				frenchLocaBtn.alpha = 0.5;
+				englishLocaBtn.alpha = 1;
+			});
+			flowLoca.addChild(englishLocaBtn);
+	
+			frenchLocaBtn.alpha = Lang.CUR == "fr" ? 1 : 0.5;
+			englishLocaBtn.alpha = Lang.CUR == "en" ? 1 : 0.5;
+	
+			flowLoca.reflow();
+			flowLoca.setPosition(Std.int(wid - flowLoca.outerWidth) - 20, Std.int(hei - flowLoca.outerHeight) - 20);
+		}
 
 		onResize();
 	}

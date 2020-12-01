@@ -70,28 +70,6 @@ class EndDemo extends dn.Process {
 
 		createText(Lang.t._("Si vous avez aimé cette démo, n'hésitez surtout pas à nous le faire savoir sur Twitter (@SnappySloth), ainsi qu'à le partager un maximum !"));
 		
-
-		// function createMiniFlow(strLeft:String, strRight:String) {
-		// 	var miniFlow = new h2d.Flow(flow);
-		// 	// miniFlow.debug = true;
-		// 	miniFlow.minWidth = miniFlow.maxWidth = Std.int(wid * 0.75);
-
-		// 	var textLeft = new h2d.Text(Assets.fontRulergold32, miniFlow);
-		// 	textLeft.text = strLeft;
-		// 	textLeft.textColor = 0xe9dfc3;
-		// 	miniFlow.getProperties(textLeft).horizontalAlign = Left;
-
-		// 	var textRight = new h2d.Text(Assets.fontRulergold32, miniFlow);
-		// 	textRight.text = strRight;
-		// 	textRight.textColor = 0xe9dfc3;
-		// 	miniFlow.getProperties(textRight).horizontalAlign = Right;
-		// }
-
-		// createMiniFlow(	Lang.t._("Temps passé sur les alertes :"), min >= 1 ?	(min == 1 ? Lang.t._("1 minute et ::sec:: secondes", {sec:Std.int(sec) % 60}) : Lang.t._("::min:: minutes et ::sec:: secondes", {min:Std.int(min), sec:Std.int(sec) % 60})) :
-		// 																		Lang.t._("::sec:: secondes", {sec:Std.int(sec) % 60}));
-
-		// createMiniFlow(Lang.t._("Nombres d'alertes résolues :"), Std.string(numTaskCompleted));
-		
 		Assets.tiles.h_get("separationEndDay", flow);
 
 		nextDayBtn = new ui.Button("Écran Titre", function() {

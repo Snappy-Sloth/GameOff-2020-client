@@ -21,7 +21,8 @@ class Main extends dn.Process {
 
 		// Engine settings
 		hxd.Timer.wantedFPS = Const.FPS;
-		engine.backgroundColor = 0xff<<24|0x111133;
+		// engine.backgroundColor = 0xff<<24|0x111133;
+		engine.backgroundColor = 0xff<<24|0;
 		#if( hl && !debug )
 		engine.fullScreen = true;
 		#end
@@ -78,10 +79,11 @@ class Main extends dn.Process {
 		// delayer.addF( startGame, 1 );
 		#if debug
 		// delayer.addF( debugGame, 1 );
-		delayer.addF( startTitleScreen, 1 );
+		// delayer.addF( startTitleScreen, 1 );
 		#else
-		delayer.addF( showSplashScreen, 1 );
+		// delayer.addF( showSplashScreen, 1 );
 		#end
+		delayer.addF( showSplashScreen, 1 );
 	}
 
 	public function clean() {
@@ -108,6 +110,8 @@ class Main extends dn.Process {
 
 	public function newGame() {
 		new ui.Transition(function () {
+			Const.PLAYER_DATA.currentTime = 0;
+
 			clean();
 			var game = new Game();
 
@@ -127,6 +131,7 @@ class Main extends dn.Process {
 	public function showEndDay() {
 		new ui.Transition(function () {
 			Const.PLAYER_DATA.currentTime += Game.ME.timer;
+			Const.SAVE_PROGRESS(Game.ME.currentDay.id, Game.ME.currentEventId);
 			var numTaskCompleted = Game.ME.numTaskCompleted;
 
 			clean();
