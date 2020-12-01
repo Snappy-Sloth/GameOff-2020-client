@@ -82,6 +82,11 @@ class Manual extends dn.Process {
 
 		goToCommBtn = new ui.ChangeScreenButton(this, true, Lang.t._("Comm"), Game.ME.showComm);
 
+		var rightClick = new h2d.Text(Assets.fontRulergold16, wrapper);
+		rightClick.text = Lang.t._("Clic droit pour voir une page en grand.");
+		rightClick.textColor = 0x1f1d19;
+		rightClick.setPosition(10, hei - rightClick.textHeight - 10);
+
 		onResize();
 	}
 

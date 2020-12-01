@@ -30,7 +30,7 @@ class Sheet extends h2d.Layers {
 		var glowNormal = Assets.tiles.h_get("pageGlowNormal", 0.5, 0.5, this);
 		glowNormal.setPos(wid >> 1, hei >> 1);
 		
-		var spr = new h2d.Bitmap(hxd.Res.load("manual/fr/manualPage" + id + ".png").toTile(), this);
+		var spr = new h2d.Bitmap(hxd.Res.load("manual/" + Const.OPTIONS_DATA.LOCA + "/manualPage" + id + ".png").toTile(), this);
 		spr.setScale(0.5);
 
 		sheet.onOver = function(e) {

@@ -8,7 +8,7 @@ msgstr ""
 msgid "Game is ready."
 msgstr ""
 
-#: src/Game.hx:250
+#: src/Game.hx:251
 msgid "ALERTE TERMINÉE"
 msgstr ""
 
@@ -36,19 +36,19 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: src/screens/Communication.hx:313 src/screens/Communication.hx:317 src/screens/Communication.hx:581
+#: src/screens/Communication.hx:313 src/screens/Communication.hx:580
 msgid "::name:: est en train d'écrire..."
 msgstr ""
 
-#: src/screens/Communication.hx:344
+#: src/screens/Communication.hx:343
 msgid "::name:: est en ligne"
 msgstr ""
 
-#: src/screens/Communication.hx:467
+#: src/screens/Communication.hx:466
 msgid "Vous"
 msgstr ""
 
-#: src/screens/Communication.hx:596
+#: src/screens/Communication.hx:595
 msgid "::name:: est hors ligne..."
 msgstr ""
 
@@ -128,6 +128,10 @@ msgstr ""
 
 #: src/screens/Manual.hx:83 src/screens/ModuleScreen.hx:23
 msgid "Comm"
+msgstr ""
+
+#: src/screens/Manual.hx:86
+msgid "Clic droit pour voir une page en grand."
 msgstr ""
 
 #: src/screens/TitleScreen.hx:48
