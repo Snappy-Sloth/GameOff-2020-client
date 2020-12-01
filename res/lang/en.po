@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-12-01 21:02+0100\n"
+"PO-Revision-Date: 2020-12-01 21:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Game.hx:76
+#: src/Game.hx:77
 msgid "Game is ready."
 msgstr "Game is ready."
 
-#: src/Game.hx:235
+#: src/Game.hx:250
 msgid "ALERTE TERMINÉE"
 msgstr "ALERT ENDED"
 
@@ -45,20 +45,20 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: src/screens/Communication.hx:290 src/screens/Communication.hx:294
-#: src/screens/Communication.hx:556
+#: src/screens/Communication.hx:313 src/screens/Communication.hx:317
+#: src/screens/Communication.hx:581
 msgid "::name:: est en train d'écrire..."
 msgstr "::name:: is typing..."
 
-#: src/screens/Communication.hx:321
+#: src/screens/Communication.hx:344
 msgid "::name:: est en ligne"
 msgstr "::name:: is online"
 
-#: src/screens/Communication.hx:442
+#: src/screens/Communication.hx:467
 msgid "Vous"
 msgstr "You"
 
-#: src/screens/Communication.hx:571
+#: src/screens/Communication.hx:596
 msgid "::name:: est hors ligne..."
 msgstr "::name:: is offline..."
 
@@ -1143,7 +1143,7 @@ msgid "Erreur RQ6KXF... Qu'est-ce que c'est que ce truc ?"
 msgstr "RQ6KXF error... What the hell is this?"
 
 #: res/data.cdb:day/#5.events/#2.alerts/#3.Tasks/#0.text
-msgid "L'erreur a disparue.. bien joué !"
+msgid "L'erreur a disparue... bien joué !"
 msgstr "The error disappeared... well done!"
 
 #: res/data.cdb:day/#5.events/#2.alerts/#4.Tasks/#0.text
