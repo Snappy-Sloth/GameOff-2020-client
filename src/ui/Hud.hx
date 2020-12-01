@@ -4,8 +4,8 @@ class Hud extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public var fx(get,never) : Fx; inline function get_fx() return Game.ME.fx;
 	
-	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	var flow : h2d.Flow;
 	var invalidated = true;
@@ -138,8 +138,8 @@ class Hud extends dn.Process {
 
 		timerText.text = prettyTimer((Game.ME.timer / Const.FPS) * 100);
 		timerText.x = -Std.int(timerText.textWidth) >> 1;
-		// wrapperTimer.x = Std.int((w() / Const.SCALE) - timerText.textWidth) >> 1;
-		wrapperTimer.x = Std.int(w() / Const.SCALE) >> 1;
+		// wrapperTimer.x = Std.int((Const.AUTO_SCALE_TARGET_WID) - timerText.textWidth) >> 1;
+		wrapperTimer.x = Std.int(Const.AUTO_SCALE_TARGET_WID) >> 1;
 		glowTimer.setPosition(0, timerText.textHeight * 0.5);
 
 		globalGlow.setPos(wid >> 1, hei >> 1);

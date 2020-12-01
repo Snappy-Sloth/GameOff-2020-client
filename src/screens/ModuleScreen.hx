@@ -4,8 +4,8 @@ class ModuleScreen extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public static var ME : ModuleScreen;
 	
-	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	var goToCommBtn : ui.ChangeScreenButton;
 
@@ -84,9 +84,9 @@ class ModuleScreen extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		goToCommBtn.root.setPosition((w() / Const.SCALE) - goToCommBtn.wid, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
+		goToCommBtn.root.setPosition((Const.AUTO_SCALE_TARGET_WID) - goToCommBtn.wid, ((Const.AUTO_SCALE_TARGET_HEI) - goToCommBtn.hei) / 2);
 
-		// flowModule.setPosition(	Std.int((w() / Const.SCALE) - flowModule.outerWidth) >> 1,
-		// 						Std.int((h() / Const.SCALE) - flowModule.outerHeight) >> 1);
+		// flowModule.setPosition(	Std.int((Const.AUTO_SCALE_TARGET_WID) - flowModule.outerWidth) >> 1,
+		// 						Std.int((Const.AUTO_SCALE_TARGET_HEI) - flowModule.outerHeight) >> 1);
 	}
 }

@@ -6,11 +6,18 @@ class Main extends dn.Process {
 	public var controller : dn.heaps.Controller;
 	public var ca : dn.heaps.Controller.ControllerAccess;
 
+	var mask			: h2d.Mask;
+
+	var blackBands : Array<HSprite> = [];
+
 	public function new(s:h2d.Scene) {
 		super();
 		ME = this;
 
-		createRoot(s);
+		mask = new h2d.Mask(Const.AUTO_SCALE_TARGET_WID, Const.AUTO_SCALE_TARGET_HEI);
+		s.addChild(mask);
+
+		createRoot(mask);
 
 		// Engine settings
 		hxd.Timer.wantedFPS = Const.FPS;
@@ -59,6 +66,12 @@ class Main extends dn.Process {
 		controller.bind(B, Key.ENTER, Key.NUMPAD_ENTER);
 		controller.bind(SELECT, Key.R);
 		controller.bind(START, Key.N);
+
+		for (i in 0...4) {
+			var bb = Assets.tiles.h_get("whitePixel", s);
+			bb.colorize(0);
+			blackBands.push(bb);
+		}
 
 		// Start
 		// new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
@@ -145,15 +158,36 @@ class Main extends dn.Process {
 	override public function onResize() {
 		super.onResize();
 
+		Const.SCALE = Math.min(Std.int(Main.ME.engine.width / Const.AUTO_SCALE_TARGET_WID), Std.int(Main.ME.engine.height / Const.AUTO_SCALE_TARGET_HEI));
+		// Const.SCALE = Math.min(Main.ME.engine.width / Const.AUTO_SCALE_TARGET_WID, Main.ME.engine.height / Const.AUTO_SCALE_TARGET_HEI);
+
+		mask.setScale(Const.SCALE);
+		mask.x = Std.int(Main.ME.engine.width - Const.AUTO_SCALE_TARGET_WID * Const.SCALE) >> 1;
+		mask.y = Std.int(Main.ME.engine.height - Const.AUTO_SCALE_TARGET_HEI * Const.SCALE) >> 1;
+
+		blackBands[0].scaleX = mask.x;
+		blackBands[0].scaleY = Main.ME.engine.height;
+
+		blackBands[1].x = mask.x + Const.AUTO_SCALE_TARGET_WID * Const.SCALE;
+		blackBands[1].scaleX = Main.ME.engine.width - blackBands[1].x;
+		blackBands[1].scaleY = Main.ME.engine.height;
+
+		blackBands[2].scaleX = Main.ME.engine.width;
+		blackBands[2].scaleY = mask.y;
+
+		blackBands[3].scaleX = Main.ME.engine.width;
+		blackBands[3].y = mask.y + Const.AUTO_SCALE_TARGET_HEI * Const.SCALE;
+		blackBands[3].scaleY = Main.ME.engine.height - blackBands[3].y;
+
 		// Auto scaling
 		// if( Const.AUTO_SCALE_TARGET_WID>0 )
 		// 	Const.SCALE = M.floor( w()/Const.AUTO_SCALE_TARGET_WID );
 		// else if( Const.AUTO_SCALE_TARGET_HEI>0 )
 		// 	Const.SCALE = M.floor( h()/Const.AUTO_SCALE_TARGET_HEI );
-		if( Const.AUTO_SCALE_TARGET_WID>0 )
-			Const.SCALE = M.ceil( w()/Const.AUTO_SCALE_TARGET_WID );
-		else if( Const.AUTO_SCALE_TARGET_HEI>0 )
-			Const.SCALE = M.ceil( h()/Const.AUTO_SCALE_TARGET_HEI );
+		// if( Const.AUTO_SCALE_TARGET_WID>0 )
+		// 	Const.SCALE = M.ceil( w()/Const.AUTO_SCALE_TARGET_WID );
+		// else if( Const.AUTO_SCALE_TARGET_HEI>0 )
+		// 	Const.SCALE = M.ceil( h()/Const.AUTO_SCALE_TARGET_HEI );
 	}
 
 	override function update() {

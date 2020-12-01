@@ -38,8 +38,7 @@ class TitleScreen extends dn.Process {
 		flow.addSpacing(30);
 
 		#if debug
-		// var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
-		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.showEndDemo);
+		var debugGameBtn = new ui.DebugButton('Debug', Main.ME.debugGame);
 		flow.addChild(debugGameBtn);
 		#end
 
@@ -74,21 +73,19 @@ class TitleScreen extends dn.Process {
 		var star = Assets.tiles.hbe_getAndPlay(sb, "star", 1, true);
 		star.setCenterRatio();
 		star.anim.setSpeed(rnd(0.1, 0.5));
-		star.setPos(rnd(0, (w() / Const.SCALE)), rnd(0, (h() / Const.SCALE)));
+		star.setPos(rnd(0, (Const.AUTO_SCALE_TARGET_WID)), rnd(0, (Const.AUTO_SCALE_TARGET_HEI)));
 		star.setScale(rnd(1, 5));
 	}
 
 	override function onResize() {
 		super.onResize();
 
-		root.setScale(Const.SCALE);
-
-		bg.scaleX = (w() / Const.SCALE);
-		bg.scaleY = (h() / Const.SCALE);
+		bg.scaleX = Const.AUTO_SCALE_TARGET_WID;
+		bg.scaleY = Const.AUTO_SCALE_TARGET_HEI;
 
 		flow.reflow();
-		flow.setPosition(Std.int((w() / Const.SCALE) - flow.outerWidth) >> 1,
-						Std.int((h() / Const.SCALE) - flow.outerHeight) >> 1);
+		flow.setPosition(Std.int(Const.AUTO_SCALE_TARGET_WID - flow.outerWidth) >> 1,
+						Std.int(Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) >> 1);
 	}
 
 	override function update() {

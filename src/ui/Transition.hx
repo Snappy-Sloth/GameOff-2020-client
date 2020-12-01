@@ -23,10 +23,8 @@ class Transition extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		root.setScale(Const.SCALE);
-
-		wp.scaleX = w() / Const.SCALE;
-		wp.scaleY = h() / Const.SCALE;
+		wp.scaleX = Const.AUTO_SCALE_TARGET_WID;
+		wp.scaleY = Const.AUTO_SCALE_TARGET_HEI;
 	}
 
 }

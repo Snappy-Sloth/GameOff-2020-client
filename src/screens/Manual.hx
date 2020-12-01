@@ -3,8 +3,8 @@ package screens;
 class Manual extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	
-	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	public static var ME : Manual;
 
@@ -32,7 +32,7 @@ class Manual extends dn.Process {
 
 		wrapper = new h2d.Layers(mask);
 
-		var screen = new h2d.Interactive((w() / Const.SCALE), (h() / Const.SCALE));
+		var screen = new h2d.Interactive((Const.AUTO_SCALE_TARGET_WID), (Const.AUTO_SCALE_TARGET_HEI));
 		wrapper.add(screen, 10);
 		// screen.backgroundColor = 0xFFFF00FF;
 		screen.propagateEvents = true;
@@ -47,8 +47,8 @@ class Manual extends dn.Process {
 					currentSheet.x = -(Const.SHEET_WIDTH / 2);
 				}
 				else {
-					if (currentSheet.x > ((w() / Const.SCALE) - (Const.SHEET_WIDTH / 2))) {
-						currentSheet.x = (w() / Const.SCALE) - (Const.SHEET_WIDTH / 2);
+					if (currentSheet.x > ((Const.AUTO_SCALE_TARGET_WID) - (Const.SHEET_WIDTH / 2))) {
+						currentSheet.x = (Const.AUTO_SCALE_TARGET_WID) - (Const.SHEET_WIDTH / 2);
 					}
 					else {
 						currentSheet.rotate(deltaX * Const.SHEET_ANGLE);
@@ -59,8 +59,8 @@ class Manual extends dn.Process {
 				if (currentSheet.y < -(Const.SHEET_HEIGHT / 2)) {
 					currentSheet.y = -(Const.SHEET_HEIGHT / 2);
 				}
-				if (currentSheet.y > ((h() / Const.SCALE) - (Const.SHEET_HEIGHT / 2))) {
-					currentSheet.y = (h() / Const.SCALE) - (Const.SHEET_HEIGHT / 2);
+				if (currentSheet.y > ((Const.AUTO_SCALE_TARGET_HEI) - (Const.SHEET_HEIGHT / 2))) {
+					currentSheet.y = (Const.AUTO_SCALE_TARGET_HEI) - (Const.SHEET_HEIGHT / 2);
 				}
 			}
 
@@ -70,7 +70,7 @@ class Manual extends dn.Process {
 
 		for (i in 0...12) {
 			var sheet = new Sheet(11 - i);
-			sheet.setPosition((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5, (((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5);
+			sheet.setPosition((((Const.AUTO_SCALE_TARGET_WID) - Const.SHEET_WIDTH) / 2) + i * 5, (((Const.AUTO_SCALE_TARGET_HEI) - Const.SHEET_HEIGHT) / 2) + i * 5);
 
 			wrapper.add(sheet, 0);
 
@@ -93,8 +93,8 @@ class Manual extends dn.Process {
 	public function setSheetsToInitialPosition() {
 		for (i in 0...arSheet.length) {
 			tw.createS(arSheet[i].rotation, 0, 0.3);
-			tw.createS(arSheet[i].x, ((((w() / Const.SCALE) - Const.SHEET_WIDTH) / 2) + i * 5), 0.3);
-			tw.createS(arSheet[i].y, ((((h() / Const.SCALE) - Const.SHEET_HEIGHT) / 2) + i * 5), 0.3);
+			tw.createS(arSheet[i].x, ((((Const.AUTO_SCALE_TARGET_WID) - Const.SHEET_WIDTH) / 2) + i * 5), 0.3);
+			tw.createS(arSheet[i].y, ((((Const.AUTO_SCALE_TARGET_HEI) - Const.SHEET_HEIGHT) / 2) + i * 5), 0.3);
 			wrapper.add(arSheet[i], 0);
 		}
 	}
@@ -102,10 +102,10 @@ class Manual extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		sortSheetsBtn.setPosition(((w() / Const.SCALE) - sortSheetsBtn.wid) / 2, 7);
-		goToCommBtn.root.setPosition(7, ((h() / Const.SCALE) - goToCommBtn.hei) / 2);
+		sortSheetsBtn.setPosition(((Const.AUTO_SCALE_TARGET_WID) - sortSheetsBtn.wid) / 2, 7);
+		goToCommBtn.root.setPosition(7, ((Const.AUTO_SCALE_TARGET_HEI) - goToCommBtn.hei) / 2);
 
-		mask.width = Std.int(w() / Const.SCALE);
-		mask.height = Std.int(h() / Const.SCALE);
+		mask.width = Std.int(Const.AUTO_SCALE_TARGET_WID);
+		mask.height = Std.int(Const.AUTO_SCALE_TARGET_HEI);
 	}
 }

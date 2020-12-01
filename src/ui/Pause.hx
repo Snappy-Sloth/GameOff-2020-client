@@ -4,8 +4,8 @@ import dn.Tweenie.Tweenie;
 
 class Pause extends dn.Process {
 	
-	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	var blackInter : h2d.Interactive;
 
@@ -82,8 +82,6 @@ class Pause extends dn.Process {
 
 	override function onResize() {
 		super.onResize();
-
-		root.setScale(Const.SCALE);
 
 		blackInter.width = wid;
 		blackInter.height = hei;

@@ -4,8 +4,8 @@ import hxd.Key;
 class Game extends Process {
 	public static var ME : Game;
 	
-	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	public var ca : dn.heaps.Controller.ControllerAccess;
 	public var fx : Fx;
@@ -67,10 +67,10 @@ class Game extends Process {
 		initData();
 
 		manual = new screens.Manual();
-		manual.root.x = w() / Const.SCALE;
+		manual.root.x = Const.AUTO_SCALE_TARGET_WID;
 		communication = new screens.Communication();
 		moduleScreen = new screens.ModuleScreen();
-		moduleScreen.root.x = -w() / Const.SCALE;
+		moduleScreen.root.x = -Const.AUTO_SCALE_TARGET_WID;
 
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
@@ -99,7 +99,7 @@ class Game extends Process {
 
 	public function showManual() {
 		currentScreen = manual;
-		tw.createS(wrapperScreens.x, -w() / Const.SCALE, 0.3);
+		tw.createS(wrapperScreens.x, -Const.AUTO_SCALE_TARGET_WID, 0.3);
 		cd.unset("shaking");
 	}
 
@@ -112,7 +112,7 @@ class Game extends Process {
 
 	public function showModules() {
 		currentScreen = moduleScreen;
-		tw.createS(wrapperScreens.x, w() / Const.SCALE, 0.3);
+		tw.createS(wrapperScreens.x, Const.AUTO_SCALE_TARGET_WID, 0.3);
 		cd.unset("shaking");
 	}
 
@@ -121,7 +121,6 @@ class Game extends Process {
 
 	override function onResize() {
 		super.onResize();
-		root.setScale(Const.SCALE);
 	}
 
 	function launchDay(day:Data.DayKind) {
@@ -290,14 +289,14 @@ class Game extends Process {
 
 	public function shakeS(t:Float, ?pow=1.0) {
 		if (currentScreen == communication) wrapperScreens.x = 0;
-		else if (currentScreen == moduleScreen) wrapperScreens.x = w() / Const.SCALE;
-		else if (currentScreen == manual) wrapperScreens.x = -w() / Const.SCALE;
+		else if (currentScreen == moduleScreen) wrapperScreens.x = Const.AUTO_SCALE_TARGET_WID;
+		else if (currentScreen == manual) wrapperScreens.x = -Const.AUTO_SCALE_TARGET_WID;
 		wrapperScreens.y = 0;
 
 		cd.setS("shaking", t, false, function() {
 			if (currentScreen == communication) wrapperScreens.x = 0;
-			else if (currentScreen == moduleScreen) wrapperScreens.x = w() / Const.SCALE;
-			else if (currentScreen == manual) wrapperScreens.x = -w() / Const.SCALE;
+			else if (currentScreen == moduleScreen) wrapperScreens.x = Const.AUTO_SCALE_TARGET_WID;
+			else if (currentScreen == manual) wrapperScreens.x = -Const.AUTO_SCALE_TARGET_WID;
 			wrapperScreens.y = 0;
 		});
 

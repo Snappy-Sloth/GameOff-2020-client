@@ -4,8 +4,8 @@ class EndDemo extends dn.Process {
 
 	public static var ME : EndDemo;
 	
-	public var wid(get, never):Int;		inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get, never):Int;		inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get, never):Int;		inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get, never):Int;		inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	var bg : HSprite;
 	var flow : h2d.Flow;
@@ -111,8 +111,6 @@ class EndDemo extends dn.Process {
 
 	override function onResize() {
 		super.onResize();
-
-		root.setScale(Const.SCALE);
 
 		bg.scaleX = wid;
 		bg.scaleY = hei;

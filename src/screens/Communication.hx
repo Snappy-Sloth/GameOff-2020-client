@@ -4,8 +4,8 @@ class Communication extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public static var ME : Communication;
 	
-	public var wid(get, never):Int;		inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get, never):Int;		inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get, never):Int;		inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get, never):Int;		inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	var mainWrapper : h2d.Mask;
 
@@ -156,8 +156,8 @@ class Communication extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		goToManualBtn.root.setPosition((w() / Const.SCALE) - goToManualBtn.wid, ((h() / Const.SCALE) - goToManualBtn.hei) / 2);
-		goToModulesBtn.root.setPosition(0, ((h() / Const.SCALE) - goToModulesBtn.hei) / 2);
+		goToManualBtn.root.setPosition((Const.AUTO_SCALE_TARGET_WID) - goToManualBtn.wid, ((Const.AUTO_SCALE_TARGET_HEI) - goToManualBtn.hei) / 2);
+		goToModulesBtn.root.setPosition(0, ((Const.AUTO_SCALE_TARGET_HEI) - goToModulesBtn.hei) / 2);
 
 		bgWrapper.scaleX = mainWrapper.width;
 		bgWrapper.scaleY = mainWrapper.height;

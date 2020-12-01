@@ -2,8 +2,8 @@ package screens;
 
 class SplashScreen extends dn.Process {
 	
-	public var wid(get,never) : Int; inline function get_wid() return Std.int(w() / Const.SCALE);
-	public var hei(get,never) : Int; inline function get_hei() return Std.int(h() / Const.SCALE);
+	public var wid(get,never) : Int; inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
+	public var hei(get,never) : Int; inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
 	public static var ME : SplashScreen;
 
@@ -30,8 +30,6 @@ class SplashScreen extends dn.Process {
 
 	override function onResize() {
 		super.onResize();
-
-		root.setScale(Const.SCALE);
 
 		bg.scaleX = wid;
 		bg.scaleY = hei;
