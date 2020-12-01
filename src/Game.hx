@@ -98,6 +98,8 @@ class Game extends Process {
 
 		timer = 0;
 		numTaskCompleted = 0;
+
+		Const.SAVE_PROGRESS(currentDay.id, 0);
 	}
 
 	public function showManual() {
@@ -153,6 +155,11 @@ class Game extends Process {
 					nextAlert();
 				}
 			}, currentEvent.timeBeforeS);
+
+			if (currentEvent.author == "Anon")
+				delayer.addS(function() {
+					new ui.Transition(()->null, 2, 0.05);
+				}, currentEvent.timeBeforeS - 1.8);
 		}
 	}
 

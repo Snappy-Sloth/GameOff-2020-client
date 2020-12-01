@@ -137,7 +137,7 @@ class Main extends dn.Process {
 			clean();
 
 			new screens.EndDay(numTaskCompleted);
-		});
+		}, 2);
 	}
 
 	public function showEndDemo() {

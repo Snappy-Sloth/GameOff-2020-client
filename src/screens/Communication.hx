@@ -99,6 +99,8 @@ class Communication extends dn.Process {
 
 		for (talk in talks) {
 			talk.root.visible = talk.author == author;
+			if (talk.author == author)
+				talk.resume();
 		}
 	}
 
@@ -129,6 +131,24 @@ class Communication extends dn.Process {
 		}
 
 		return null;
+	}
+
+	public function isCurrentTab(author:String) : Bool {
+		for (tab in tabs) {
+			if (tab.author == author && tab.isSelected)
+				return true;
+		}
+
+		return false;
+	}
+
+	public function hasNewMessageUnread(author:String) : Bool {
+		for (tab in tabs) {
+			if (tab.author == author && tab.hasNewMessage)
+				return true;
+		}
+
+		return false;
 	}
 
 	public function initTalk() {
@@ -210,8 +230,11 @@ private class Tab extends dn.Process {
 	}
 
 	public function newMessage() {
-		if (!isSelected)
+		if (!isSelected) {
+			if (!hasNewMessage)
+				Assets.CREATE_SOUND(hxd.Res.sfx.c_newMessage, C_NewMessage);
 			hasNewMessage = true;
+		}
 	}
 	
 	public function unselect() {
@@ -339,6 +362,8 @@ private class Talk extends dn.Process {
 				showSystemMessage(td);
 			case Outside(td):
 				showOutsideMessage(td);
+				if (!comm.isCurrentTab(author))
+					pause();
 		}
 	}
 
