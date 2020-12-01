@@ -9,6 +9,8 @@ class Values extends Module {
 
 	var miniBtns : Array<MiniButton> = [];
 
+	var screenText : HSprite;
+
 	public function new() {
 		super(200, 130, 0xa4afb2);
 
@@ -31,10 +33,10 @@ class Values extends Module {
 		flowTop.verticalSpacing = 8;
 		flowTop.layout = Vertical;
 
-		var screenText = Assets.tiles.h_get("screenTypeValues", flowTop);
+		screenText = Assets.tiles.h_get("screenTypeValues", flowTop);
 
 		vtText = new h2d.Text(Assets.fontSinsgold16, screenText);
-		vtText.text = currentVD.vt.getName();
+		// vtText.text = currentVD.vt.getName();
 		// vtText.text = "Température de l'habitacle";
 		vtText.textColor = 0x282f2e;
 		vtText.setPosition(Std.int(screenText.tile.width - vtText.textWidth) >> 1, Std.int(screenText.tile.height - vtText.textHeight) >> 1);
@@ -78,7 +80,13 @@ class Values extends Module {
 		for (button in miniBtns) button.disable();
 
 		currentVD = vd;
-		vtText.text = currentVD.vt.getName();
+		vtText.text = switch (currentVD.vt) {
+			case Value1: Lang.t._("Pression du Kérosène");
+			case Value2: Lang.t._("Température de la coque");
+			case Value3: Lang.t._("Fréquence des radios");
+			case Value4: Lang.t._("Puissance des instruments");
+		}
+		vtText.setPosition(Std.int(screenText.tile.width - vtText.textWidth) >> 1, Std.int(screenText.tile.height - vtText.textHeight) >> 1);
 		valueText.text = Std.string(currentVD.v);
 	}
 
