@@ -77,7 +77,7 @@ class Manual extends dn.Process {
 			arSheet.push(sheet);
 		}
 
-		sortSheetsBtn = new ui.Button("Sort", setSheetsToInitialPosition);
+		sortSheetsBtn = new ui.Button(Lang.t._("Ranger"), setSheetsToInitialPosition);
 		wrapper.add(sortSheetsBtn, 1);
 
 		goToCommBtn = new ui.ChangeScreenButton(this, true, Lang.t._("Comm"), Game.ME.showComm);

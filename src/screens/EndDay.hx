@@ -10,6 +10,8 @@ class EndDay extends dn.Process {
 	var bg : HSprite;
 	var flow : h2d.Flow;
 
+	var nextDayBtn : ui.Button;
+
 	public function new(numTaskCompleted:Int) {
 		super(Main.ME);
 
@@ -57,9 +59,8 @@ class EndDay extends dn.Process {
 		
 		Assets.tiles.h_get("separationEndDay", flow);
 
-		var btn : ui.Button;
-		btn = new ui.Button("Journée suivante", function() {
-			btn.clickEnable = false;
+		nextDayBtn = new ui.Button("Journée suivante", function() {
+			nextDayBtn.clickEnable = false;
 			var previous = Const.PLAYER_DATA.dayId;
 			Const.PLAYER_DATA.dayId = null;
 			for (i in 0...Data.day.all.length) {
@@ -76,7 +77,7 @@ class EndDay extends dn.Process {
 				Main.ME.startTitleScreen();
 			}
 		});
-		flow.addChild(btn);
+		flow.addChild(nextDayBtn);
 
 		onResize();
 	}

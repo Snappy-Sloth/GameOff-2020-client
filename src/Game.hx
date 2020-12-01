@@ -134,7 +134,6 @@ class Game extends Process {
 		Const.SAVE_PROGRESS(currentDay.id, currentEventId);
 
 		if (currentEvent == null) { // End of the day
-			communication.showOffline();
 			delayer.addS(Main.ME.showEndDay, 2);
 		}
 		else {
@@ -147,6 +146,18 @@ class Game extends Process {
 				}
 			}, currentEvent.timeBeforeS);
 		}
+	}
+
+	public function hasMoreTalkToday(author:String) : Bool {
+		if (currentDay.events[currentEventId + 1] == null)
+			return false;
+
+		for (i in (currentEventId + 1)...currentDay.events.length) {
+			if (currentDay.events[i].author == author)
+				return true;
+		}
+
+		return false;
 	}
 
 	function nextAlert() {

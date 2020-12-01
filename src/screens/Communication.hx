@@ -11,8 +11,6 @@ class Communication extends dn.Process {
 
 	var bgWrapper : h2d.Bitmap;
 	
-	var currentAuthor : Null<String> = null;
-
 	// var goToManualBtn : ui.DebugButton;
 	var goToManualBtn : ui.ChangeScreenButton;
 	// var goToModulesBtn : ui.DebugButton;
@@ -104,6 +102,13 @@ class Communication extends dn.Process {
 		}
 	}
 
+	public function newMessageBy(author:String) {
+		for (tab in tabs) {
+			if (tab.author == author)
+				tab.newMessage();
+		}
+	}
+
 	function getTalk(author:String):Talk {
 		for (talk in talks) {
 			if (talk.author == author)
@@ -140,10 +145,6 @@ class Communication extends dn.Process {
 		onResize();
 	}
 
-	public function showOffline() {
-		getMainTalk().forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: currentAuthor}));
-	}
-	
 	public function forceOutsideMessage(td:TalkData) {
 		getMainTalk().forceOutsideMessage(td);
 	}
@@ -205,14 +206,16 @@ private class Tab extends dn.Process {
 		bg.set("tabCurrent");
 		hasNewMessage = false;
 		text.textColor = 0x43b643;
+		isSelected = true;
 	}
 
 	public function newMessage() {
-		hasNewMessage = true;
-		unselect();
+		if (!isSelected)
+			hasNewMessage = true;
 	}
 	
 	public function unselect() {
+		isSelected = false;
 		text.textColor = hasNewMessage ? 0x081c0c : 0x43b643;
 		bg.set(hasNewMessage ? "tabFGNew" : "tabFGNormal");
 	}
@@ -251,8 +254,12 @@ private class Talk extends dn.Process {
 
 	var currentHeight = 5;
 
+	var comm : Communication;
+
 	public function new(comm:Communication, author:String) {
 		super(comm);
+		
+		this.comm = comm;
 
 		createRoot(@:privateAccess comm.mainWrapper);
 
@@ -454,8 +461,6 @@ private class Talk extends dn.Process {
 		bgName.setPosition(authorText.x - 2, authorText.y);
 		bgName.width = authorText.textWidth + 4;
 		bgName.height = authorText.textHeight;
-		
-		cd.setS("newText", 1);
 
 		if (Game.ME.currentScreen == Communication.ME)
 			Assets.CREATE_SOUND(hxd.Res.sfx.c_popMessagePlayer, C_PopMessagePlayer);
@@ -488,8 +493,6 @@ private class Talk extends dn.Process {
 
 		bg.setPos(messageFlow.outerWidth >> 1, messageFlow.outerHeight >> 1);
 
-		cd.setS("newText", 0.5);
-		
 		updatePostedMessages(messageFlow.outerHeight + mainWrapperPadding + 30, td.text);
 	}
 
@@ -535,8 +538,6 @@ private class Talk extends dn.Process {
 		bgName.width = authorText.textWidth + 4;
 		bgName.height = authorText.textHeight;
 
-		cd.setS("newText", 0.5 + td.text.length * 0.04);
-
 		if (Game.ME.currentScreen == Communication.ME)
 			Assets.CREATE_SOUND(hxd.Res.sfx.c_popMessageOutside, C_PopMessageOutside);
 
@@ -549,9 +550,11 @@ private class Talk extends dn.Process {
 		switch (nextMessage) {
 			case null :
 			case Player(ptd):
+				cd.setS("newText", 1);
 			case System(td) :
+				cd.setS("newText", 0.5);
 			case Outside(td) :
-				cd.setS("newText", cd.getS("newText") + td.text.length * 0.02 + td.timeBefore);
+				cd.setS("newText", 0.5 + text.length * 0.04 + td.text.length * 0.02 + td.timeBefore);
 				isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: author});
 				delayer.addS(function() {
 					delayer.addS(()->tw.createS(isTypingText.alpha, 1, 0.2), 0.5);
@@ -560,9 +563,16 @@ private class Talk extends dn.Process {
 		
 		Game.ME.needNewMessageInfo();
 
+		comm.newMessageBy(author);
+
 		if (currentMessage == lastMessage) {
 			lastMessage = null;
 			delayer.addS(Game.ME.nextEvent, 1);
+
+			if (!Game.ME.hasMoreTalkToday(author)) {
+				forceSystemMessage(Lang.t._("::name:: est hors ligne...", {name: author}));
+				cd.setS("newText", 1);
+			}
 		}
 	}
 
