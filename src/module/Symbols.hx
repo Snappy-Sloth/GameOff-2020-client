@@ -5,7 +5,7 @@ class Symbols extends Module {
 	static var SLOT_SIZE(get, never) : Int; inline static function get_SLOT_SIZE() return Std.int(Assets.tiles.getTile("symbolSlot").width);
 	static var TILE_SIZE(get, never) : Int; inline static function get_TILE_SIZE() return Std.int(Assets.tiles.getTile("symbol", 0).width);
 
-	static var SLOT_OFFSET = 15;
+	static var SLOT_OFFSET = 7;
 
 	public var currentTile(default, null) : SymbolTile = null;
 
@@ -22,7 +22,7 @@ class Symbols extends Module {
 	// var flow : h2d.Flow;
 
 	public function new() {
-		super(200, 150, 0xa0a1b6);
+		super(115, 92, 0xa0a1b6);
 
 		var bg = Assets.tiles.h_get("bgSymbol");
 		root.addChild(bg);
@@ -141,7 +141,7 @@ class Symbols extends Module {
 
 		wrapperSlot.setPosition((Std.int(wid - (SLOT_SIZE * 3 + SLOT_OFFSET * 2)) >> 1) + (SLOT_SIZE >> 1), 4 + (SLOT_SIZE >> 1));
 
-		wrapperSymbol.setPosition((Std.int(wid - (TILE_SIZE * 4 + SLOT_OFFSET * 3)) >> 1) + (TILE_SIZE >> 1), wrapperSlot.y + (SLOT_SIZE >> 1) + 13 + (TILE_SIZE >> 1));
+		wrapperSymbol.setPosition((Std.int(wid - (TILE_SIZE * 4 + SLOT_OFFSET * 3)) >> 1) + (TILE_SIZE >> 1), wrapperSlot.y + (SLOT_SIZE >> 1) + 6 + (TILE_SIZE >> 1));
 
 		for (tile in tiles) {
 			tile.setSlot(tile.currentSlot, true);

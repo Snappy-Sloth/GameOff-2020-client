@@ -23,53 +23,53 @@ class ModuleScreen extends dn.Process {
 		goToCommBtn = new ui.ChangeScreenButton(this, false, Lang.t._("Comm"), Game.ME.showComm);
 
 		var wrapperModule = new h2d.Object(root);
-		wrapperModule.x = 20;
+		wrapperModule.x = 16;
 
 		var bg = Assets.tiles.h_get("bgModules", wrapperModule);
 
 		var btnModule = new module.Buttons();
 		wrapperModule.addChild(btnModule.root);
-		btnModule.root.setPosition(28, 71);
+		btnModule.root.setPosition(29, 32);
 		arModules.push(btnModule);
 
 		var levelModule = new module.Levers();
 		wrapperModule.addChild(levelModule.root);
-		levelModule.root.setPosition(780, 481);
+		levelModule.root.setPosition(411, 218);
 		arModules.push(levelModule);
 
 		var gridModule = new module.Grid();
 		wrapperModule.addChild(gridModule.root);
-		gridModule.root.setPosition(560, 73);
+		gridModule.root.setPosition(303, 10);
 		arModules.push(gridModule);
 
 		var values = new module.Values();
 		wrapperModule.addChild(values.root);
-		values.root.setPosition(22, 399);
+		values.root.setPosition(23, 225);
 		arModules.push(values);
 
 		var symbols = new module.Symbols();
 		wrapperModule.addChild(symbols.root);
-		symbols.root.setPosition(21, 232);
+		symbols.root.setPosition(18, 126);
 		arModules.push(symbols);
 
 		var numPad = new module.NumPad();
 		wrapperModule.addChild(numPad.root);
-		numPad.root.setPosition(829, 77);
+		numPad.root.setPosition(435, 14);
 		arModules.push(numPad);
 
 		var wires = new module.Wires();
 		wrapperModule.addChild(wires.root);
-		wires.root.setPosition(564, 343);
+		wires.root.setPosition(302, 165);
 		arModules.push(wires);
 
 		var gauges = new module.Gauges();
 		wrapperModule.addChild(gauges.root);
-		gauges.root.setPosition(241, 231);
+		gauges.root.setPosition(143, 130);
 		arModules.push(gauges);
 
 		var bars = new module.Bars();
 		wrapperModule.addChild(bars.root);
-		bars.root.setPosition(780, 344);
+		bars.root.setPosition(411, 147);
 		arModules.push(bars);
 
 		onResize();

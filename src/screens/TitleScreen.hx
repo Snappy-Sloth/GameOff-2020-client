@@ -96,18 +96,18 @@ class TitleScreen extends dn.Process {
 			englishLocaBtn.alpha = Lang.CUR == "en" ? 1 : 0.5;
 	
 			flowLoca.reflow();
-			flowLoca.setPosition(Std.int(wid - flowLoca.outerWidth) - 20, Std.int(hei - flowLoca.outerHeight) - 20);
+			flowLoca.setPosition(Std.int(wid - flowLoca.outerWidth) - 5, Std.int(hei - flowLoca.outerHeight) - 5);
 		}
 
-		// var logoSS = Assets.tiles.h_get("logoSS", root);
 		var logoSS = new ui.SpriteButton("logoSS", ()->hxd.System.openURL("https://snappysloth.itch.io/"));
 		root.addChild(logoSS);
-		logoSS.setScale(0.1);
-		logoSS.setPosition(10, hei - logoSS.hei * logoSS.scaleY - 10);
+		logoSS.setScale(0.05);
+		logoSS.setPosition(5, hei - logoSS.hei * logoSS.scaleY - 5);
 
 		var logoTwitter = new ui.SpriteButton("twitter", ()->hxd.System.openURL("https://twitter.com/Snappy_Sloth"));
+		logoTwitter.setScale(0.5);
 		root.addChild(logoTwitter);
-		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 10, hei - logoTwitter.hei - 10);
+		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 5, hei - logoTwitter.hei * logoTwitter.scaleY - 5);
 
 		music = Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
 

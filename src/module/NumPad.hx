@@ -13,7 +13,7 @@ class NumPad extends Module {
 	var screen : HSprite;
 	
 	public function new() {
-		super(250, 250, 0x306082);
+		super(125, 125, 0x306082);
 
 		var bg = Assets.tiles.h_get("bgNumpad");
 		root.addChild(bg);
@@ -23,8 +23,8 @@ class NumPad extends Module {
 		flow.minHeight = flow.maxHeight = hei;
 		flow.multiline = true;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.horizontalSpacing = flow.verticalSpacing = 10;
-		flow.paddingTop = 11;
+		flow.horizontalSpacing = flow.verticalSpacing = 6;
+		flow.paddingTop = 4;
 
 		btns = [];
 
@@ -36,9 +36,15 @@ class NumPad extends Module {
 		answerText.setPosition(	Std.int(screen.tile.width - answerText.textWidth) >> 1,
 								Std.int(screen.tile.height - answerText.textHeight) >> 1);
 
+		var subFlow = new h2d.Flow(flow);
+		subFlow.multiline = true;
+		subFlow.horizontalAlign = subFlow.verticalAlign = Middle;
+		subFlow.horizontalSpacing = subFlow.verticalSpacing = 6;
+		subFlow.maxWidth = 105;
+
 		for (i in 0...9) {
 			var btn = new Button(i + 1, onClick);
-			flow.addChild(btn);
+			subFlow.addChild(btn);
 		}
 	}
 

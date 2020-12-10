@@ -21,7 +21,7 @@ class SplashScreen extends dn.Process {
 		bg.colorize(0x393939);
 
 		logo = Assets.tiles.h_get("logoSS", root);
-		logo.setScale(0.5);
+		logo.setScale(0.25);
 
 		onResize();
 

@@ -29,8 +29,8 @@ class ChangeScreenButton extends dn.Process {
 		spr = Assets.tiles.h_get(idSpr /* + "Idle" */);
 		root.add(spr, 1);
 		
-		wid = 114;
-		hei = 500;
+		wid = 27;
+		hei = 360;
 
 		inter = new h2d.Interactive(wid, hei);
 		// inter.backgroundColor = 0x55FF00FF;
@@ -42,12 +42,13 @@ class ChangeScreenButton extends dn.Process {
 		text.textColor = 0xFFFFFF;
 		text.alpha = 0;
 		text.dropShadow = {dx: 1, dy: 1, alpha: 1, color: 0};
+		text.x = isLeft ? 3 : wid - text.textWidth - 3;
 		root.add(text, 2);
 
 		inter.onOver = function (e) {
 			mouseIsOver = true;
 
-			text.y = ((hei >> 1) - text.textHeight - 75) + 10;
+			text.y = ((hei >> 1) - text.textHeight - 30) + 10;
 			tw.createS(text.alpha, 1, 0.2);
 			tw.createS(text.y, text.y - 10, 0.2);
 		}
@@ -64,9 +65,6 @@ class ChangeScreenButton extends dn.Process {
 		super.onResize();
 
 		spr.setPos(Std.int(wid - spr.tile.width) >> 1, Std.int(hei - spr.tile.height) >> 1);
-
-		text.x = Std.int(wid - text.textWidth) >> 1;
-		text.y = (hei >> 1) - text.textHeight - 75;
 	}
 
 	override function update() {

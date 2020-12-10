@@ -76,14 +76,13 @@ class Main extends dn.Process {
 
 		// Start
 		// new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
-		// delayer.addF( startGame, 1 );
 		#if debug
-		// delayer.addF( debugGame, 1 );
+		delayer.addF( debugGame, 1 );
 		// delayer.addF( startTitleScreen, 1 );
 		#else
-		// delayer.addF( showSplashScreen, 1 );
-		#end
 		delayer.addF( showSplashScreen, 1 );
+		#end
+		// delayer.addF( showSplashScreen, 1 );
 	}
 
 	public function clean() {

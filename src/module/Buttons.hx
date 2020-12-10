@@ -12,7 +12,7 @@ class Buttons extends Module {
 	var btns : Array<Button>;
 
 	public function new() {
-		super(500, 150);
+		super(266, 75);
 
 		var bg = Assets.tiles.h_get("bgButtons");
 		root.addChild(bg);
@@ -24,8 +24,8 @@ class Buttons extends Module {
 		for (type in ButtonType.createAll()) {
 			var btn = new Button(type, onClick);
 			wrapperBtns.addChild(btn);
-			btn.x = 30 + btns.length * 115;
-			btn.y = 30;
+			btn.x = 11 + btns.length * 63 + (type == Pentagon ? -3 : 0);
+			btn.y = 10;
 			btns.push(btn);
 		}
 
@@ -124,21 +124,17 @@ private class Button extends h2d.Layers {
 		var wrapperSpr = new h2d.Object(this);
 
 		var shadow = Assets.tiles.h_get(bt.getName().toLowerCase() + "BtnShadow", 0.5, 0.5, wrapperSpr);
-		shadow.setPos(8, 8);
+		shadow.setPos(4, 4);
 
 		var spr = Assets.tiles.h_get(bt.getName().toLowerCase() + "Btn", 0.5, 0.5, wrapperSpr);
 		
 		wrapperSpr.setPosition(Std.int(spr.tile.width) >> 1, Std.int(spr.tile.height) >> 1);
 
         var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
-        inter.onClick = function(e) {
-			// onClick(this);
-		}
-
 		inter.onPush = function (e) {
 			spr.setScale(0.9);
 			shadow.setScale(0.8);
-			shadow.setPos(4, 4);
+			// shadow.setPos(2, 2);
 
 			onClick(this);
 			Assets.CREATE_SOUND(hxd.Res.sfx.m_clicButton, M_ClicButton);
@@ -146,7 +142,7 @@ private class Button extends h2d.Layers {
 		inter.onRelease = function (e) {
 			spr.setScale(1);
 			shadow.setScale(1);
-			shadow.setPos(8, 8);
+			shadow.setPos(4, 4);
 		}
 	}
 	

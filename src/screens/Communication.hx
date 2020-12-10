@@ -31,9 +31,9 @@ class Communication extends dn.Process {
 
 		var screen = Assets.tiles.h_get("commScreen", root);
 		
-		mainWrapper = new h2d.Mask(916, 410, root);
+		mainWrapper = new h2d.Mask(518, 240, root);
 
-		var reflect = Assets.tiles.h_get("commScreenReflect", root);
+		// var reflect = Assets.tiles.h_get("commScreenReflect", root);
 
 		goToManualBtn = new ui.ChangeScreenButton(this, false, Lang.t._("Manual"), Game.ME.showManual);
 		
@@ -176,14 +176,14 @@ class Communication extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		goToManualBtn.root.setPosition((Const.AUTO_SCALE_TARGET_WID) - goToManualBtn.wid, ((Const.AUTO_SCALE_TARGET_HEI) - goToManualBtn.hei) / 2);
-		goToModulesBtn.root.setPosition(0, ((Const.AUTO_SCALE_TARGET_HEI) - goToModulesBtn.hei) / 2);
+		goToManualBtn.root.setPosition(wid - goToManualBtn.wid, (hei - goToManualBtn.hei) / 2);
+		goToModulesBtn.root.setPosition(0, (hei - goToModulesBtn.hei) / 2);
 
 		bgWrapper.scaleX = mainWrapper.width;
 		bgWrapper.scaleY = mainWrapper.height;
 
 		// mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
-		mainWrapper.setPosition(182, 135);
+		mainWrapper.setPosition(61, 60);
 	}
 }
 
@@ -286,9 +286,10 @@ private class Talk extends dn.Process {
 
 		createRoot(@:privateAccess comm.mainWrapper);
 
-		mask = new h2d.Mask(916, 393, root);
+		mask = new h2d.Mask(518, 223, root);
 
 		var inter = new h2d.Interactive(mask.width, mask.height, mask);
+		// inter.backgroundColor = 0x55FF00FF;
 
 		inter.onWheel = function (e) {
 			if (currentHeight > inter.height) {
@@ -309,11 +310,10 @@ private class Talk extends dn.Process {
 
 		pendingMessages = [];
 
-		isTypingText = new h2d.Text(Assets.fontSinsgold16, mask);
+		isTypingText = new h2d.Text(Assets.fontHopegold16, mask);
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: Lang.t.get(author)});
 		isTypingText.alpha = 0;
 		isTypingText.textColor = 0x43b643;
-
 
 		onResize();
 	}
@@ -395,7 +395,7 @@ private class Talk extends dn.Process {
 			flow.horizontalAlign = Right;
 			flow.minWidth = Std.int(flowAnswers.innerWidth);
 			
-			var text = new h2d.Text(Assets.fontSinsgold32, flow);
+			var text = new h2d.Text(Assets.fontHopegold16, flow);
 			text.text = Lang.t.get(a.text);
 			text.textColor = 0x081c0c;
 			text.textAlign = Right;
@@ -465,7 +465,7 @@ private class Talk extends dn.Process {
 		authorText.textColor = 0x081c0c;
 		authorText.text = Lang.t._("Vous");
 
-		var messageText = new h2d.Text(Assets.fontSinsgold32, messageFlow);
+		var messageText = new h2d.Text(Assets.fontHopegold16, messageFlow);
 		messageText.text = Lang.t.get(text);
 		messageText.textColor = 0x43b643;
 		messageText.textAlign = Right;
@@ -539,7 +539,7 @@ private class Talk extends dn.Process {
 		authorText.textColor = 0x081c0c;
 		authorText.text = Lang.t.get(td.author != null ? td.author : author);
 
-		var messageText = new h2d.Text(Assets.fontSinsgold32, messageFlow);
+		var messageText = new h2d.Text(Assets.fontHopegold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
 		messageText.textColor = switch td.type {
 			case Normal: 0x43b643;
@@ -613,7 +613,7 @@ private class Talk extends dn.Process {
 
 		wrapperMessage.y = mask.height - currentHeight;
 
-		isTypingText.setPosition(mainWrapperPadding + 5, mask.height - mainWrapperPadding - isTypingText.textHeight);
+		isTypingText.setPosition(mainWrapperPadding + 5, mask.height - isTypingText.textHeight);
 	}
 
 	override function update() {

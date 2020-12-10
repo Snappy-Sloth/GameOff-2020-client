@@ -27,7 +27,7 @@ class Button extends h2d.Layers {
 		inter.onClick = (e)->onClick();
 		this.add(inter, 0);
 
-		var text = new h2d.Text(Assets.fontRulergold32);
+		var text = new h2d.Text(Assets.fontRulergold16);
 		text.text = str;
 		text.textColor = 0xfffbc2;
 		text.setPosition(((wid/2)-(text.textWidth/2)), (hei/2)-(text.textHeight/2));
