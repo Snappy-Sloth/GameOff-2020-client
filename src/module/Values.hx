@@ -10,9 +10,10 @@ class Values extends Module {
 	var miniBtns : Array<MiniButton> = [];
 
 	var screenText : HSprite;
+	var maskText : h2d.Mask;
 
 	public function new() {
-		super(200, 130, 0xa4afb2);
+		super(100, 65, 0xa4afb2);
 
 		var bg = Assets.tiles.h_get("bgValues");
 		root.addChild(bg);
@@ -21,7 +22,7 @@ class Values extends Module {
 		flow.minWidth = flow.maxWidth = wid;
 		flow.minHeight = flow.maxHeight = hei;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.verticalSpacing = 7;
+		flow.verticalSpacing = 4;
 		flow.layout = Vertical;
 		flow.padding = 4;
 
@@ -30,17 +31,20 @@ class Values extends Module {
 		// Top
 		var flowTop = new h2d.Flow(flow);
 		flowTop.horizontalAlign = Middle;
-		flowTop.verticalSpacing = 8;
+		flowTop.verticalSpacing = 2;
 		flowTop.layout = Vertical;
 
 		screenText = Assets.tiles.h_get("screenTypeValues", flowTop);
 
-		vtText = new h2d.Text(Assets.fontSinsgold16, screenText);
+		maskText = new h2d.Mask(Std.int(screenText.tile.width) - 2, Std.int(screenText.tile.height), screenText);
+		maskText.x = 1;
+
+		vtText = new h2d.Text(Assets.fontSinsgold16, maskText);
 		vtText.textColor = 0x282f2e;
-		vtText.setPosition(Std.int(screenText.tile.width - vtText.textWidth) >> 1, Std.int(screenText.tile.height - vtText.textHeight) >> 1);
+		vtText.y =  Std.int(screenText.tile.height - vtText.textHeight) >> 1;
 
 		var flowBtns = new h2d.Flow(flowTop);
-		flowBtns.horizontalSpacing = 10;
+		flowBtns.horizontalSpacing = 7;
 
 		for (i in 0...VType.createAll().length) {
 			var btn = new MiniButton(this, game.valueDatas[i]);
@@ -53,14 +57,14 @@ class Values extends Module {
 		// Bottom
 		var flowBottom = new h2d.Flow(flow);
 		// flowBottom.debug = true;
-		flowBottom.horizontalSpacing = 9;
+		flowBottom.horizontalSpacing = 3;
 		flowBottom.horizontalAlign = flowBottom.verticalAlign = Middle;
 
 		var leftBtn = new Button(this, flowBottom, -1);
 
 		var screenValue = Assets.tiles.h_get("screenValues", flowBottom);
 
-		valueText = new h2d.Text(Assets.fontRise32, screenValue);
+		valueText = new h2d.Text(Assets.fontRulergold32, screenValue);
 		valueText.text = Std.string(currentVD.v);
 		valueText.textAlign = Center;
 		valueText.maxWidth = screenValue.tile.width;
@@ -84,7 +88,8 @@ class Values extends Module {
 			case Value3: Lang.t._("Fréquence des radios");
 			case Value4: Lang.t._("Puissance des instruments");
 		}
-		vtText.setPosition(Std.int(screenText.tile.width - vtText.textWidth) >> 1, Std.int(screenText.tile.height - vtText.textHeight) >> 1);
+		cd.setS("pauseScrolling", 2);
+		vtText.x = 0;
 		valueText.text = Std.string(currentVD.v);
 	}
 
@@ -123,6 +128,21 @@ class Values extends Module {
 					break;
 				}
 			}
+		}
+	}
+
+	override function update() {
+		super.update();
+
+		if (vtText.textWidth > maskText.width && !cd.has("pauseScrolling")) {
+			if (!cd.hasSetS("scrollingText", 0.05))
+				vtText.x -= 1;
+
+			if (vtText.x + vtText.textWidth <= maskText.width)
+				cd.setS("pauseScrolling", 2, function() {
+					vtText.x = 0;
+					cd.setS("pauseScrolling", 2);
+				});
 		}
 	}
 }

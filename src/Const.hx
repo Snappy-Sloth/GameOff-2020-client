@@ -19,8 +19,8 @@ class Const {
 	public static var DP_TOP = _inc++;
 	public static var DP_UI = _inc++;
 
-	public static inline var BUTTON_WIDTH = 100;
-	public static inline var BUTTON_HEIGHT = 50;
+	public static inline var BUTTON_WIDTH = 50;
+	public static inline var BUTTON_HEIGHT = 25;
 
 	// public static inline var SHEET_WIDTH = 840;
 	// public static inline var SHEET_HEIGHT = 1188;

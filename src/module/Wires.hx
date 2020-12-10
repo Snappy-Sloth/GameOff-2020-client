@@ -14,7 +14,7 @@ class Wires extends Module {
 	var wires : Array<{w:HSprite, top:Int, bot:Int}> = [];
 
 	public function new() {
-		super(200, 220, 0x258d41);
+		super(100, 110, 0x258d41);
 
 		var bg = Assets.tiles.h_get("bgWires");
 		root.addChild(bg);
@@ -23,13 +23,13 @@ class Wires extends Module {
 
 		for (i in 0...6) {
 			var slot = new Slot(this, i, true);
-			slot.x = 29 * (i) + 15;
-			slot.y = 35;
+			slot.x = 16 * (i) + 5;
+			slot.y = 25;
 			topSlots.push(slot);
 
 			var slot = new Slot(this, i, false);
-			slot.x = 29 * (i) + 15;
-			slot.y = hei - 58;
+			slot.x = 16 * (i) + 5;
+			slot.y = hei - 37;
 			botSlots.push(slot);
 		}
 
@@ -132,7 +132,7 @@ class Wires extends Module {
 
 			currentWire.setPos(from.centerX, from.centerY);
 			currentWire.rotation = Math.atan2(pos.y - from.centerY, pos.x - from.centerX) - Math.PI / 2;
-			currentWire.scaleY = M.dist(from.centerX, from.centerY, pos.x, pos.y) - 10;
+			currentWire.scaleY = M.dist(from.centerX, from.centerY, pos.x, pos.y) - 5;
 
 			wireJack.setPos(pos.x, pos.y);
 			wireJack.rotation = currentWire.rotation;
@@ -145,8 +145,8 @@ private class Slot extends h2d.Object {
 	public var id(default, null) : Int;
 	public var isTop(default, null) : Bool;
 
-	public var centerX(get, never) : Int; inline function get_centerX() return Std.int(this.x + 10);
-	public var centerY(get, never) : Int; inline function get_centerY() return Std.int(this.y + 10);
+	public var centerX(get, never) : Int; inline function get_centerX() return Std.int(this.x + 6);
+	public var centerY(get, never) : Int; inline function get_centerY() return Std.int(this.y + 6);
 
 	public function new(wires:Wires, id:Int, isTop:Bool) {
 		super();

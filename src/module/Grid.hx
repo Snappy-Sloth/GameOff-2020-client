@@ -13,11 +13,11 @@ class Grid extends Module {
 	var cells : Array<Cell> = [];
 	
 	public function new() {
-		super(250, 250);
+		super(125, 125);
 
 		var bg = Assets.tiles.h_get("bgGrid", root);
 
-		var shadow = Assets.tiles.h_get("gridShadow", root);
+		// var shadow = Assets.tiles.h_get("gridShadow", root);
 
 		wrapperCell = new h2d.Object(root);
 
@@ -86,7 +86,7 @@ class Grid extends Module {
 
 class Cell extends h2d.Object {
 
-	public static var SQUARE_SIZE = 50;
+	public static var SQUARE_SIZE = 24;
 
 	public var cx(default, null) : Int;
 	public var cy(default, null) : Int;
@@ -104,30 +104,6 @@ class Cell extends h2d.Object {
 		var wrapperSpr = new h2d.Object(this);
 
 		var id = "btnGridBg";
-		if (y == 0) {
-			if (x == 0)
-				id = "btnGridBgTL";
-			else if (x == 3)
-				id = "btnGridBgTR";
-			else
-				id = "btnGridBgT";
-		}
-		else if (y == 3) {
-			if (x == 0)
-				id = "btnGridBgBL";
-			else if (x == 3)
-				id = "btnGridBgBR";
-			else
-				id = "btnGridBgB";
-		}
-		else {
-			if (x == 0)
-				id = "btnGridBgL";
-			else if (x == 3)
-				id = "btnGridBgR";
-			else
-				id = "btnGridBg";
-		}
 
 		var spr = Assets.tiles.h_get(id, 0.5, 0.5, wrapperSpr);
 
@@ -138,30 +114,6 @@ class Cell extends h2d.Object {
 		sprSymbol.visible = false;
 
 		var id = "btnGridReflect";
-		if (y == 0) {
-			if (x == 0)
-				id = "btnGridReflectTL";
-			else if (x == 3)
-				id = "btnGridReflectTR";
-			else
-				id = "btnGridReflectT";
-		}
-		else if (y == 3) {
-			if (x == 0)
-				id = "btnGridReflectBL";
-			else if (x == 3)
-				id = "btnGridReflectBR";
-			else
-				id = "btnGridReflectB";
-		}
-		else {
-			if (x == 0)
-				id = "btnGridReflectL";
-			else if (x == 3)
-				id = "btnGridReflectR";
-			else
-				id = "btnGridReflect";
-		}
 
 		var sprReflect = Assets.tiles.h_get(id, 0.5, 0.5, spr);
 

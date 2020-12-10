@@ -5,7 +5,7 @@ class Gauges extends Module {
 	var gauges : Array<Gauge> = [];
 
 	public function new() {
-		super(300, 300);
+		super(150, 150);
 
 		var bg = Assets.tiles.h_get("bgGauges", root);
 
@@ -14,10 +14,10 @@ class Gauges extends Module {
 		flow.minHeight = flow.maxHeight = hei;
 		flow.multiline = true;
 		// flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.horizontalSpacing = 38;
-		flow.verticalSpacing = 10;
-		flow.paddingLeft = 10;
-		flow.paddingTop = 35;
+		flow.horizontalSpacing = 16;
+		flow.verticalSpacing = 5;
+		flow.paddingLeft = 5;
+		flow.paddingTop = 20;
 
 		for (i in 0...4) {
 			var gauge = new Gauge(this, i);
@@ -67,8 +67,8 @@ private class Gauge extends h2d.Object {
 		super();
 
 		var sprCore = Assets.tiles.h_get("gaugeCore", id, this);
-		sprCore.x = 18;
-		sprCore.y = 188;
+		sprCore.x = 12;
+		sprCore.y = 100;
 		sprCore.alpha = 0.8;
 		
 		var sprTop = Assets.tiles.h_get("gaugeTop", id, 0, 1, this);
@@ -77,7 +77,7 @@ private class Gauge extends h2d.Object {
 
 		var arrow = Assets.tiles.h_get("arrowGauge", 0, 0, 0.5, this);
 
-		var inter = new h2d.Interactive(40, 188, this);
+		var inter = new h2d.Interactive(22, 100, this);
 		// inter.backgroundColor = 0x55FF00FF;
 		inter.onPush = function (e) {
 			isClicked = true;
@@ -86,9 +86,9 @@ private class Gauge extends h2d.Object {
 		inter.onMove = function (e) {
 			if (isClicked) {
 				var previous = currentRatio;
-				currentRatio = 1 - snap((e.relY / inter.height));
+				currentRatio = hxd.Math.clamp(1 - snap(e.relY / inter.height), 0, 1);
 
-				arrow.y = (1 - currentRatio) * inter.height;
+				arrow.y = (1 - currentRatio) * inter.height - (currentRatio == 0 ? 0 : 3);
 
 				sprCore.scaleY = -currentRatio * inter.height;
 				sprTop.y = sprCore.y + sprCore.scaleY;
@@ -101,7 +101,7 @@ private class Gauge extends h2d.Object {
 			isClicked = false;
 		}
 
-		arrow.y = (1 - currentRatio) * inter.height;
+		arrow.y = (1 - currentRatio) * inter.height - (currentRatio == 0 ? 0 : 3);
 
 		sprCore.scaleY = -currentRatio * inter.height;
 		sprTop.y = sprCore.y + sprCore.scaleY;
