@@ -5,7 +5,7 @@ class Levers extends Module {
 	var levers : Array<Lever>;
 
 	public function new() {
-		super(300, 150);
+		super(150, 75);
 
 		var bg = Assets.tiles.h_get("bgSwitch");
 		root.addChild(bg);
@@ -26,8 +26,8 @@ class Levers extends Module {
 			}
 
 			var lever = new Lever(onClick, lights);
-			lever.x = 25 + 50 * levers.length;
-			lever.y = 55;
+			lever.x = 15 + 24 * levers.length;
+			lever.y = 28;
 			levers.push(lever);
 			root.addChild(lever);
 		}
@@ -106,7 +106,7 @@ class Lever extends h2d.Object {
 
 		lever = Assets.tiles.h_get("switchUp", 0.5, 0.5, this);
 
-		var inter = new h2d.Interactive(40, 100, this);
+		var inter = new h2d.Interactive(20, 50, this);
 		inter.x = -inter.width * 0.5;
 		inter.y = -inter.height * 0.5;
 		// inter.backgroundColor = 0x55FF00FF;
@@ -115,7 +115,7 @@ class Lever extends h2d.Object {
 		}
 
 		var baseLight = Assets.tiles.h_get("baseLight", 0.5, 0, this);
-		baseLight.y = (Std.int(inter.height) >> 1) + 5;
+		baseLight.y = (Std.int(inter.height) >> 1);
 		lightSpr = Assets.tiles.h_get("switchLightOff", 0.5, 0, this);
 		lightSpr.y = baseLight.y;
 

@@ -5,7 +5,7 @@ class Bars extends Module {
 	var bars : Array<Bar> = [];
 	
 	public function new() {
-		super(300, 125);
+		super(150, 62);
 
 		var bg = Assets.tiles.h_get("bgBars");
 		root.addChild(bg);
@@ -14,7 +14,7 @@ class Bars extends Module {
 		flow.minWidth = flow.maxWidth = wid;
 		flow.minHeight = flow.maxHeight = hei;
 		flow.horizontalAlign = flow.verticalAlign = Middle;
-		flow.horizontalSpacing = flow.verticalSpacing = 10;
+		flow.horizontalSpacing = flow.verticalSpacing = 5;
 
 		for (i in 0...8) {
 			var bar = new Bar(this, i);
@@ -68,11 +68,11 @@ private class Bar extends h2d.Object {
 		oldRatio = currentRatio;
 
 		var sprCore = Assets.tiles.h_get("barsCore", this);
-		sprCore.y = 100;
+		sprCore.y = 53;
 
 		var sprTop = Assets.tiles.h_get("barsTop", 0, 0, 1, this);
 
-		var inter = new h2d.Interactive(20, 100, this);
+		var inter = new h2d.Interactive(10, 48, this);
 		inter.onPush = function (e) {
 			isClicked = true;
 			inter.onMove(e);
@@ -83,7 +83,7 @@ private class Bar extends h2d.Object {
 
 				if (oldRatio != currentRatio) {
 					oldRatio = currentRatio;
-					sprCore.scaleY = -currentRatio * 100;
+					sprCore.scaleY = -currentRatio * inter.height;
 					sprTop.y = sprCore.y + sprCore.scaleY;
 
 					bars.checkValidate();
@@ -96,7 +96,7 @@ private class Bar extends h2d.Object {
 			isClicked = false;
 		}
 
-		sprCore.scaleY = -currentRatio * 100;
+		sprCore.scaleY = -currentRatio * inter.height;
 		sprTop.y = sprCore.y + sprCore.scaleY;
 	}
 
