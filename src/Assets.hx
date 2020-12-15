@@ -15,8 +15,8 @@ class Assets {
 	public static var fontRulergold48 : h2d.Font;
 	public static var fontHopegold16 : h2d.Font;
 	public static var fontHopegold32 : h2d.Font;
-	public static var fonM5x7gold16 : h2d.Font;
-	public static var fonM5x7gold32 : h2d.Font;
+	public static var fontM5x7gold16 : h2d.Font;
+	public static var fontM5x7gold32 : h2d.Font;
 	public static var fontRise32 : h2d.Font;
 
 	static var initDone = false;
@@ -39,8 +39,8 @@ class Assets {
 		fontRulergold48 = hxd.Res.fonts.rulergold_medium_48.toFont();
 		fontHopegold16 = hxd.Res.fonts.hopegold_medium_16.toFont();
 		fontHopegold32 = hxd.Res.fonts.hopegold_medium_32.toFont();
-		fonM5x7gold16 = hxd.Res.fonts.m5x7_medium_16.toFont();
-		fonM5x7gold32 = hxd.Res.fonts.m5x7_medium_32.toFont();
+		fontM5x7gold16 = hxd.Res.fonts.m5x7_medium_16.toFont();
+		fontM5x7gold32 = hxd.Res.fonts.m5x7_medium_32.toFont();
 		fontRise32 = hxd.Res.fonts.rise_regular_32.toFont();
 	}
 

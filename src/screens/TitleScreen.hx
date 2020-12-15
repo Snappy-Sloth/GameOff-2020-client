@@ -68,6 +68,13 @@ class TitleScreen extends dn.Process {
 		flow.addChild(debugGameBtn);
 		#end
 
+		#if hl
+		var quitGame = new ui.Button(Lang.t._("Quitter"), function(){
+			new ui.Transition(hxd.System.exit);
+		});
+		flow.addChild(quitGame);
+		#end
+
 		{	// LOCA
 			var flowLoca = new h2d.Flow(root);
 			flowLoca.horizontalSpacing = 20;

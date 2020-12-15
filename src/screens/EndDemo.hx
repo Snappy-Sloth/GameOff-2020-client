@@ -26,10 +26,10 @@ class EndDemo extends dn.Process {
 
 		flow = new h2d.Flow(root);
 		flow.layout = Vertical;
-		flow.verticalSpacing = 25;
+		flow.verticalSpacing = 12;
 		flow.horizontalAlign = Middle;
 
-		var endDayText = new h2d.Text(Assets.fontRulergold48, flow);
+		var endDayText = new h2d.Text(Assets.fontRulergold16, flow);
 		endDayText.text = Lang.t._("Merci d'avoir joué au prototype de");
 		endDayText.textColor = 0xc7ba29;
 		
@@ -40,33 +40,34 @@ class EndDemo extends dn.Process {
 		var sec = Const.PLAYER_DATA.currentTime / Const.FPS;
 		var min = Std.int(sec / 60);
 
-		var timeText = new h2d.Text(Assets.fontRulergold32, flow);
+		var timeText = new h2d.Text(Assets.fontRulergold16, flow);
 		timeText.textColor = 0xe9dfc3;
 		timeText.text = Lang.t._("Vous avez mis ::min:: minutes et ::sec:: secondes à résoudre toutes les alarmes !", {min: min, sec:Std.int(sec) % 60});
 
 		Assets.tiles.h_get("separationEndDay", flow);
 
 		function createText(str:String) {
-			var text = new h2d.Text(Assets.fontRulergold16, flow);
+			var text = new h2d.Text(Assets.fontM5x7gold16, flow);
+			text.maxWidth = wid;
 			text.textColor = 0xe9dfc3;
 			text.text = str;
 		}
 
 		createText(Lang.t._("Qui a envoyé ce mystérieux message ?"));
-		flow.addSpacing(-15);
+		flow.addSpacing(-5);
 		createText(Lang.t._("Est-ce que vous et Hayley réussirez à terminer cette mission vitale ?"));
-		flow.addSpacing(-15);
+		flow.addSpacing(-5);
 		createText(Lang.t._("Pourquoi cette interface de communication est aussi austère ?"));
 		
-		flow.addSpacing(15);
+		// flow.addSpacing(15);
 
 		createText(Lang.t._("Autant de questions qui trouveront leurs réponses dans la version finale du jeu* !"));
 
-		asteriskText = new h2d.Text(Assets.fontRulergold16, root);
+		asteriskText = new h2d.Text(Assets.fontM5x7gold16, root);
 		asteriskText.textColor = 0xe9dfc3;
 		asteriskText.text = Lang.t._("*Disponible... quand elle sera finie :D");
 		
-		flow.addSpacing(15);
+		// flow.addSpacing(15);
 
 		createText(Lang.t._("Si vous avez aimé cette démo, n'hésitez surtout pas à nous le faire savoir sur Twitter (@SnappySloth), ainsi qu'à le partager un maximum !"));
 		
@@ -96,7 +97,7 @@ class EndDemo extends dn.Process {
 		flow.reflow();
 		flow.setPosition(Std.int(wid - flow.outerWidth) >> 1, Std.int(hei - flow.outerHeight) >> 1);
 
-		asteriskText.setPosition(Std.int(wid - asteriskText.textWidth - 20), Std.int(hei - asteriskText.textHeight - 20));
+		asteriskText.setPosition(Std.int(wid - asteriskText.textWidth - 10), Std.int(hei - asteriskText.textHeight - 10));
 	}
 
 }

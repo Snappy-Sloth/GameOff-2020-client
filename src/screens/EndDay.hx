@@ -24,10 +24,10 @@ class EndDay extends dn.Process {
 
 		flow = new h2d.Flow(root);
 		flow.layout = Vertical;
-		flow.verticalSpacing = 50;
+		flow.verticalSpacing = 25;
 		flow.horizontalAlign = Middle;
 
-		var endDayText = new h2d.Text(Assets.fontRulergold48, flow);
+		var endDayText = new h2d.Text(Assets.fontRulergold32, flow);
 		endDayText.text = Lang.t._("FIN DE LA JOURNÉE");
 		endDayText.textColor = 0xc7ba29;
 		
@@ -41,12 +41,12 @@ class EndDay extends dn.Process {
 			// miniFlow.debug = true;
 			miniFlow.minWidth = miniFlow.maxWidth = Std.int(wid * 0.75);
 
-			var textLeft = new h2d.Text(Assets.fontRulergold32, miniFlow);
+			var textLeft = new h2d.Text(Assets.fontRulergold16, miniFlow);
 			textLeft.text = strLeft;
 			textLeft.textColor = 0xe9dfc3;
 			miniFlow.getProperties(textLeft).horizontalAlign = Left;
 
-			var textRight = new h2d.Text(Assets.fontRulergold32, miniFlow);
+			var textRight = new h2d.Text(Assets.fontRulergold16, miniFlow);
 			textRight.text = strRight;
 			textRight.textColor = 0xe9dfc3;
 			miniFlow.getProperties(textRight).horizontalAlign = Right;
