@@ -396,14 +396,14 @@
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 30,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ici le commandant de la mission Harmony. Êtes-vous là ?"
 								},
 								{
@@ -416,13 +416,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bien. Normalement, nous devrions être autonome oui, mais merci d'assurer nos arrières quand même."
 								},
 								{
@@ -430,25 +430,25 @@
 									"answers": [
 										{
 											"text": "Je ne fais que mon travail, Commandant.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Un homme qui a le sens des responsabilité ! C'est tellement rare de nos jours..."
 										},
 										{
 											"text": "Tout le plaisir est pour moi !",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Euh... Oui, c'est bien. Mais attention à ce que votre engouement ne nous porte pas préjudice."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bref. Nous avons l'autorisation de décoller. Terminé."
 								},
 								{
@@ -461,13 +461,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -475,7 +475,7 @@
 									"Tasks": [
 										{
 											"text": "Agent, vous devez avoir une alarme qui sonne chez vous aussi. Je vais vous faire le détail de ce que je vois de notre côté, corrigez le problème du votre le plus vite possible à l'aide du manuel à votre disposition !",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -483,7 +483,7 @@
 									"Tasks": [
 										{
 											"text": "L'un de mes écrans affiche \"Problème de connexion : Bouclier\"",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "A1"
 										}
 									]
@@ -492,7 +492,7 @@
 									"Tasks": [
 										{
 											"text": "Maintenant, j'ai 3 diodes vertes qui clignotent.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "C1"
 										}
 									]
@@ -500,14 +500,14 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Merci, tout est redevenu normal, heureusement que vous étiez là."
 								},
 								{
@@ -515,39 +515,39 @@
 									"answers": [
 										{
 											"text": "Je pensais que vous étiez autonomes !",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Attention à ce que vous dites agent, je vous rappelle que j'ai un rapport à rédiger au terme de la mission."
 										},
 										{
 											"text": "Toujours prêt à vous venir en aide.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Heureux de savoir que nous pouvons compter sur vous."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Restez en stand-by, on ne sait jamais."
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Nous avons fait le tour des instruments, tout est normal, nous avançons bien. Avez-vous reçu des instructions supplémentaires de la part de l'état-major ?"
 								},
 								{
@@ -560,20 +560,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bien. Soyez à la hauteur."
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -581,7 +581,7 @@
 									"Tasks": [
 										{
 											"text": "Le mot \"REST\" s'affiche sur l'un de mes écrans.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "C4"
 										}
 									]
@@ -590,7 +590,7 @@
 									"Tasks": [
 										{
 											"text": "J'ai un problème de connexion d'une Bobine électromagnétique !",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "B5"
 										}
 									]
@@ -599,7 +599,7 @@
 									"Tasks": [
 										{
 											"text": "2 diodes jaunes viennent de s'allumer.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "A3"
 										}
 									]
@@ -607,15 +607,27 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Merci, alerte terminée. Bonne nuit, agent."
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Bonne nuit commandant.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
@@ -627,7 +639,7 @@
 					"id": "Day_2",
 					"events": [
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
@@ -640,13 +652,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [
 								{
@@ -659,13 +671,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 5,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ici l'astronaute Hayley. Nous avons eu un problème pendant la nuit."
 								},
 								{
@@ -678,13 +690,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Nous avons subi une défaillance de l'ensemble de nos systèmes. Nous ne pouvions plus vous contacter. Nous avons donc dû nous débrouiller par nous-même pour régler les problèmes."
 								},
 								{
@@ -692,32 +704,32 @@
 									"answers": [
 										{
 											"text": "Oui, le commandant m'avait bien dit que vous étiez autonomes. Je me demande à quoi je sers !",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "La situation est loin d'être comique..."
 										},
 										{
 											"text": "Bien joué. Pourriez-vous me passer le commandant ? Il est mon seul référent sur cette mission.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Malheureusement, je crains que ce ne soit impossible..."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Le commandant, ainsi que les autres astronautes de l'équipage sont décédés dans le sauvetage de la fusée..."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je vais avoir plus que jamais besoin de votre aide."
 								},
 								{
@@ -730,32 +742,32 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [
 										{
 											"text": "Il faut que nous restions calmes, n'oublions pas que l'avenir de la Terre est entre nos mains.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Bien sûr..."
 										},
 										{
 											"text": "J'espère que vous vous portez bien, la situation doit être déroutante pour vous.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "C'est... effrayant... Je... il faut que je me reprenne..."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Si vous saviez l'horreur que c'était ici cette nuit... Je ne sais pas comment je m'en suis sortie."
 								},
 								{
@@ -768,13 +780,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Plus rien ne fonctionnait, des alarmes sonnaient de partout. À chaque fois que les autres membres de l'équipage réparaient un module, une porte à côté d'eux s'ouvrait et ils étaient aspirés dans l'espace... Heureusement, ils ont réussi à tout réparer et je n'ai pas eu à sortir moi aussi, sinon j'y serai passée..."
 								},
 								{
@@ -787,13 +799,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "C'était le seul module qui était encore dysfonctionnel. Il s'est réparé miraculeusement quelques minutes avant votre message."
 								},
 								{
@@ -806,13 +818,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Pour tout vous dire, je n'ai rien fait depuis que le dernier membre de l'équipage m'a quittée. J'en étais incapable, je suis restée prostrée sous le bureau. Le son de votre premier message m'a pétrifiée, je croyais que j'hallucinais..."
 								},
 								{
@@ -820,19 +832,19 @@
 									"answers": [
 										{
 											"text": "Je suis heureux de vous savoir en vie. Vous pouvez être rassurée, vous n'êtes plus seule.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Je me sens moins seule en effet. En parler m'a déjà fait du bien."
 										},
 										{
 											"text": "Allez vous reposer afin de rester opérationnelle. La mission est loin d'être terminée.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Je vais déjà mieux rien que d'en avoir parlé."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": ""
 								},
 								{
@@ -840,13 +852,13 @@
 									"answers": [],
 									"timeBefore": 0,
 									"text": "Merci de m'avoir écoutée. Je vous recontacte dès que nécessaire.",
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -854,7 +866,7 @@
 									"Tasks": [
 										{
 											"text": "Bien, ma première alerte, j'ai vu le Commandant faire hier, je vais essayer d'être le plus précise possible...",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -862,7 +874,7 @@
 									"Tasks": [
 										{
 											"text": "Mon écran m'affiche que l'Accélérateur de particules n'est plus connecté... Vous pouvez faire quelque chose ?",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "B7"
 										}
 									]
@@ -871,7 +883,7 @@
 									"Tasks": [
 										{
 											"text": "Erreur RQ6KXF... Qu'est-ce que c'est que ce truc ?",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "G1"
 										}
 									]
@@ -880,7 +892,7 @@
 									"Tasks": [
 										{
 											"text": "L'erreur a disparue... bien joué !",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -888,7 +900,7 @@
 									"Tasks": [
 										{
 											"text": "Plusieurs diodes clignotent... Elles sont vertes et... il y en a 2 !",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "D4"
 										}
 									]
@@ -896,14 +908,14 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Êtes-vous là ?"
 								},
 								{
@@ -916,13 +928,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je ne me sens pas très bien"
 								},
 								{
@@ -935,20 +947,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Non non, rien de spécial depuis notre dernier échange"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Simplement, j'ai repensé à cette nuit, et depuis mon cœur palpite"
 								},
 								{
@@ -961,13 +973,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Oui"
 								},
 								{
@@ -975,19 +987,19 @@
 									"answers": [
 										{
 											"text": "Je viens de vérifier mais le niveau d'oxygène est tout à fait normal à l'intérieur de votre cockpit",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "D'où est-ce que cela peut venir alors ?"
 										},
 										{
 											"text": "Avez-vous également l'estomac noué ?",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Oui... Vous savez ce qu'il m'arrive ?"
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -999,13 +1011,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Que... qu'est-ce que je dois faire ??"
 								},
 								{
@@ -1018,13 +1030,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Vous restez là avec moi, n'est-ce pas ?"
 								},
 								{
@@ -1042,13 +1054,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Merci, je vous avoue que j'ai besoin de savoir que je ne suis pas seule dans cette galère."
 								},
 								{
@@ -1061,13 +1073,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Un peu oui, merci. Le fait de respirer m'a vraiment calmée, comment vous le saviez ?"
 								},
 								{
@@ -1075,19 +1087,19 @@
 									"answers": [
 										{
 											"text": "Ma mère a beaucoup fait de crises de paniques quand j'étais plus jeune. Elle allait tout de suite mieux en contrôlant sa respiration.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Heureusement que vous avez été confronté à ce genre de cas dans votre enfance."
 										},
 										{
 											"text": "J'ai eu quelques leçons sur ce genre de situations lors de mon entrée en poste.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Vous deviez être un élève très assidu pour vous en souvenir"
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -1099,13 +1111,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Merci encore pour ces conseils, j'y penserai pour la prochaine fois."
 								},
 								{
@@ -1118,13 +1130,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "À vrai dire, non, je n'arrive pas à fermer les yeux. Je repense sans cesse à ce qu'il s'est passé cette nuit. J'ai peur d'être réveillé une nouvelle fois de la même façon."
 								},
 								{
@@ -1132,32 +1144,32 @@
 									"answers": [
 										{
 											"text": "Il faut vous reprendre. Nous n'avons pas le droit à l'erreur et n'avons pas le temps pour ce genre de considérations.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Excusez-moi. Je vais essayer de me calmer."
 										},
 										{
 											"text": "C'est compréhensible, mais rassurez-vous, je suis là et vous n'êtes pas seule. Nous allons mener à bien la mission ensemble.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Merci. Ça me fait du bien de savoir que j'ai quelqu'un à qui parler."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je vais aller faire un tour pour voir si tout est en ordre. Je reviens."
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -1165,7 +1177,7 @@
 									"Tasks": [
 										{
 											"text": "L'écran principale affiche une suite de mots... \"TIN, WRIGHT, TEST\"",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "G4"
 										}
 									]
@@ -1174,7 +1186,7 @@
 									"Tasks": [
 										{
 											"text": "Oula, ça clignote de partout... J'ai 3 diodes violettes qui clignotent, ainsi qu'un problème de connexion du Système incendies.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "D1"
 										},
 										{
@@ -1187,14 +1199,14 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je pense qu'après cette alerte, vous pouvez aller vous reposer un peu. Je dois encore faire mon rapport de fin de journée."
 								},
 								{
@@ -1202,25 +1214,25 @@
 									"answers": [
 										{
 											"text": "Ne tardez pas trop à aller dormir. Vous avez besoin de reprendre des forces.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Je ne vous promets pas de réussir à dormir, mais je vais essayer."
 										},
 										{
 											"text": "N'omettez aucun détail dans le rapport. Il faut qu'ils sachent que le module de communication était défaillant de votre côté.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "C'est vraiment tout ce qui vous intéresse ? Je n'oublierai pas de le mentionner..."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bien, je vous souhaite une bonne nuit, restez en alerte."
 								},
 								{
@@ -1233,7 +1245,7 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
@@ -1273,7 +1285,7 @@
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -1281,7 +1293,7 @@
 									"Tasks": [
 										{
 											"text": "La journée commence bien...",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -1289,7 +1301,7 @@
 									"Tasks": [
 										{
 											"text": "Décidément, il y a beaucoup de problèmes de connexion... Cette fois-ci, il s'agit du Réservoir.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "E3"
 										}
 									]
@@ -1298,7 +1310,7 @@
 									"Tasks": [
 										{
 											"text": "3 diodes vertes viennent de s'allumer.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "I7"
 										}
 									]
@@ -1307,7 +1319,7 @@
 									"Tasks": [
 										{
 											"text": "J'ai 2 diodes rouges allumées désormais.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "C5"
 										}
 									]
@@ -1315,7 +1327,7 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 2,
 							"talks": [
 								{
@@ -1328,20 +1340,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "J'espère qu'ils feront des prévisions réalistes suite à ce que je leur ai transmis."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Pour le moment je n'ai aucune idée de la date à laquelle nous allons alunir."
 								},
 								{
@@ -1349,19 +1361,19 @@
 									"answers": [
 										{
 											"text": "Vous pensez que vous aurez assez de kérosène pour terminer le voyage ?",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Oui, ça devrait aller. Nous avons plusieurs réservoirs de secours, au cas où... Reste à savoir combien de temps le voyage va durer."
 										},
 										{
 											"text": "Vous allez devoir rationner la nourriture...",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Oui. Nous n'en avions déjà pas beaucoup, je vais devoir me limiter à un demi-repas par jour pour commencer. J'ajusterai si besoin."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -1373,14 +1385,14 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": ""
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Merci."
 								},
 								{
@@ -1393,13 +1405,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Très peu. Je me réveillais au moindre bruit en panique. Le temps m'a paru long."
 								},
 								{
@@ -1412,13 +1424,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Vous avez raison, je vais essayer. Pour le moment, c'est l'heure de ma ronde de surveillance. Je vous recontacte plus tard."
 								},
 								{
@@ -1431,20 +1443,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "J'ai eu une petite frayeur lors de ma ronde. Un instrument nécessitait des réparations. Ça devrait tenir, mais je ne sais pas pour combien de temps."
 								},
 								{
@@ -1452,25 +1464,25 @@
 									"answers": [
 										{
 											"text": "Bien joué astronaute !",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Merci."
 										},
 										{
 											"text": "Nous avons beaucoup de chance de vous avoir sur cette mission.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "J'ai également beaucoup de chance de vous avoir."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je vais tenter de faire une sieste avant ma prochaine ronde."
 								},
 								{
@@ -1478,25 +1490,25 @@
 									"answers": [
 										{
 											"text": "Reposez-vous bien.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Merci !"
 										},
 										{
 											"text": "Faites de beaux rêves",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Très drôle..."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -1504,7 +1516,7 @@
 									"Tasks": [
 										{
 											"text": "J'ai la suite de mots \"WHITE, BEST\", ainsi que l'erreur PW9IIN qui s'affichent.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "A6"
 										},
 										{
@@ -1518,7 +1530,7 @@
 									"Tasks": [
 										{
 											"text": "Un nouveau mot vient de s'afficher, il s'agit du mot \"WHITE\"",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "I2"
 										}
 									]
@@ -1526,21 +1538,21 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je n'arrive pas à fermer l'œil..."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Vous avez une technique pour s'endormir rapidement ?"
 								},
 								{
@@ -1548,25 +1560,25 @@
 									"answers": [
 										{
 											"text": "Lors de mon entrée en poste, mon supérieur m'a donné une technique de respiration permettant de s'endormir rapidement. Vous avez certainement dû l'apprendre également",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Effectivement, mais elle n'a jamais vraiment fonctionné sur moi..."
 										},
 										{
 											"text": "Quand j'étais petit, ma mère avait l'habitude de me chanter des berceuses pour m'endormir. Peut-être que fredonner l'une des berceuses de votre enfance pourrait vous rassurer et vous calmer ?",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Bonne idée ! Je crois qu'à ce stade, c'est tout ce qui pourrait m'aider."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "J'ai bien tenté de compter les moutons, mais cela ne fonctionne pas non plus."
 								},
 								{
@@ -1579,13 +1591,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Oh vous savez, quand il ne nous reste plus grand chose, on se raccroche à ce qu'on peut..."
 								},
 								{
@@ -1598,13 +1610,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "En vrai, je vous remercie, vous m'avez faite sourire. Dans ma situation, c'est déjà beaucoup."
 								},
 								{
@@ -1612,25 +1624,25 @@
 									"answers": [
 										{
 											"text": "Le plus important est que vous gardiez les idées claires pour la réussite de la mission",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Bien sûr, l'avenir de l'humanité est sur nos épaules... Ce n'est pas très rassurant dit comme ça"
 										},
 										{
 											"text": "Je ferai ce qu'il faut pour que vous gardiez le moral !",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Merci pour le soutien. Je sens que je peux vraiment compter sur vous."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -1638,7 +1650,7 @@
 									"Tasks": [
 										{
 											"text": "Erreur C9YLH9",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "I4"
 										}
 									]
@@ -1647,7 +1659,7 @@
 									"Tasks": [
 										{
 											"text": "Le Téléviseur est déconnecté et 2 diodes bleues sont allumées.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "D5"
 										},
 										{
@@ -1661,7 +1673,7 @@
 									"Tasks": [
 										{
 											"text": "Maintenant, 3 diodes violettes sont allumées.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "E9"
 										}
 									]
@@ -1669,7 +1681,7 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
@@ -1677,7 +1689,19 @@
 									"answers": [],
 									"timeBefore": 0,
 									"text": "Bon, après tout ceci, je commence vraiment à être épuisée. Je vais retourner essayer de fermer l'œil. A plus tard, j'espère.",
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
+								},
+								{
+									"Type": "Normal",
+									"answers": [
+										{
+											"text": "Reposez-vous bien.",
+											"customAuthor": "",
+											"Type": "Normal"
+										}
+									],
+									"timeBefore": 0,
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
@@ -1724,14 +1748,14 @@
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 15,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bonjour Agent."
 								},
 								{
@@ -1744,13 +1768,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Et bien, un peu mieux. Vous avez l'air de bonne humeur !"
 								},
 								{
@@ -1758,19 +1782,19 @@
 									"answers": [
 										{
 											"text": "Oui, j'ai reçu un mot de ma mère de la part de l'état-major.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Oh, J'espère qu'elle vous a donné de bonnes nouvelles."
 										},
 										{
 											"text": "Oui, j'ai reçu des nouvelles de l'extérieur.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "J'espère que les nouvelles ont été bonnes."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -1782,13 +1806,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "J'aimerais bien avoir des nouvelles de mes proches également... Surtout de ma petite sœur."
 								},
 								{
@@ -1801,13 +1825,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Elle vient tout juste d'avoir 18 ans. Elle doit être en pleins examens. J'espère qu'elle va bien et qu'elle ne s'inquiète pas trop pour moi."
 								},
 								{
@@ -1820,13 +1844,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Oui. Elle sait que je suis astronaute. Une des plus jeunes femmes qui le soit jamais devenue. Il fallait que je lui dise pour qu'elle croit toujours en ses rêves. Evidemment elle ne connaît pas les détails de la mission, mais elle sait que je suis en vol."
 								},
 								{
@@ -1834,32 +1858,32 @@
 									"answers": [
 										{
 											"text": "C'est mignon ! Elle a de la chance de vous avoir comme grande sœur",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Oh, merci, ça me touche vraiment. J'espère être un exemple pour elle."
 										},
 										{
 											"text": "J'espère qu'elle n'en parlera pas à n'importe qui.",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Elle ne dira rien, elle me l'a promis. Ne vous inquiétez pas."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Elle a compris que mon travail était très important pour moi et pour nous tous. Elle m'a dit qu'elle voulait"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [],
 							"alerts": [
@@ -1867,7 +1891,7 @@
 									"Tasks": [
 										{
 											"text": "Mince, encore une alarme !",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -1875,7 +1899,7 @@
 									"Tasks": [
 										{
 											"text": "Encore une erreur incompréhensible : 8QTT3P",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "G6"
 										}
 									]
@@ -1884,7 +1908,7 @@
 									"Tasks": [
 										{
 											"text": "Des diodes jaunes clignotent. Il y en a 3 ! Euh non, 2 !",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "C8"
 										}
 									]
@@ -1893,7 +1917,7 @@
 									"Tasks": [
 										{
 											"text": "Suite de mots : \"WIN, BIN\"",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "F2"
 										}
 									]
@@ -1901,21 +1925,21 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 2,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je dois aller faire un tour pour vérifier que tout est OK après cette alerte. Je reviens."
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -1923,7 +1947,7 @@
 									"Tasks": [
 										{
 											"text": "Déjà une autre alerte !!",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -1931,7 +1955,7 @@
 									"Tasks": [
 										{
 											"text": "1 diode verte est allumée, et le mot \"BEST\" s'affiche sur mon écran principal.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "F5"
 										},
 										{
@@ -1945,7 +1969,7 @@
 									"Tasks": [
 										{
 											"text": "Mon écran affiche alternativement l'erreur 2OD9UA et la suite de mots \"LEFT, RIGHT\"",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "H8"
 										},
 										{
@@ -1958,14 +1982,14 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 8,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bon, je pense que cette fois-ci on devrait être tranquille un moment."
 								},
 								{
@@ -1978,13 +2002,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Non, aucune idée. J'étais en train de faire mon tour, quand l'un des modules que je venais de contrôler s'est mis à dysfonctionner."
 								},
 								{
@@ -1992,25 +2016,25 @@
 									"answers": [
 										{
 											"text": "Étrange... Peut-être aviez-vous mal vérifié le module en question. L'erreur est humaine",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Je vérifie toujours plusieurs fois chaque module depuis l'accident..."
 										},
 										{
 											"text": "Le module devait avoir une faiblesse, ça peut arriver",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Vous avez raison, ça doit être ça"
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "En tout cas, heureusement que vous étiez là pour m'aider à réparer ça rapidement."
 								},
 								{
@@ -2023,20 +2047,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je vais aller me reposer un peu en attendant la prochaine alerte. À bientôt."
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -2044,7 +2068,7 @@
 									"Tasks": [
 										{
 											"text": "Ok, ça va être plus compliqué cette fois-ci je pense, tout s'allume de partout chez moi, suivez bien mes instructions.",
-											"author": "Astro"
+											"author": "Harmony"
 										}
 									]
 								},
@@ -2052,7 +2076,7 @@
 									"Tasks": [
 										{
 											"text": "La suite de mot \"PRESS, REST, TIN\" s'affiche sur mon écran droit, l'erreur 05QBTY sur mon écran principal et le mot \"GUEST\" sur mon écran de gauche. Ah et il y a aussi 3 diodes jaunes d'allumées !",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "D8"
 										},
 										{
@@ -2075,21 +2099,21 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je crois que tout est bon cette fois-ci, on va pouvoir aller se coucher tranquillement."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je vais faire tourner un diagnostic pendant la nuit afin de savoir pourquoi ce module est tombé en panne"
 								},
 								{
@@ -2102,20 +2126,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "En tout cas, selon mon point de vue, ça ne peut pas en être un."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Donc il doit forcément y avoir autre chose..."
 								},
 								{
@@ -2128,13 +2152,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Impossible. À la fin de chaque alarme, vos modules sont désactivés et n'envoient aucun signal à la fusée"
 								},
 								{
@@ -2147,13 +2171,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ça peut être ça en effet. Du moins, j'espère que ça l'est."
 								},
 								{
@@ -2166,13 +2190,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Quelqu'un qui l'a fait volontairement."
 								},
 								{
@@ -2185,13 +2209,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Nous nuire."
 								},
 								{
@@ -2199,19 +2223,19 @@
 									"answers": [
 										{
 											"text": "Mais enfin, nous faisons ça pour la protection de tous !",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Je suis bien d'accord. Mais il y a des fous partout"
 										},
 										{
 											"text": "Mais... Qui ?",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Des opposants sans foi ni loi qui veulent la destruction de la planète"
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -2223,20 +2247,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "C'est simple, il n'y en a pas. Cette mission est vitale."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bref, j'espère que nous aurons des réponses demain."
 								},
 								{
@@ -2249,20 +2273,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Vous savez, ici c'est tout le temps la nuit. Mais je vais aller m'allonger."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Bonne nuit"
 								}
 							],
@@ -2275,14 +2299,14 @@
 					"id": "Day_5",
 					"events": [
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 0,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Le diagnostic a été interrompu..."
 								},
 								{
@@ -2295,13 +2319,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ce sont aussi les questions que je me pose..."
 								},
 								{
@@ -2314,13 +2338,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Pas que je sache non. Je vais en relancer un. On aura peut-être la réponse à toutes nos questions ce soir."
 								},
 								{
@@ -2333,13 +2357,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -2347,7 +2371,7 @@
 									"Tasks": [
 										{
 											"text": "Le Module de soin est déconnecté.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "H9"
 										}
 									]
@@ -2356,7 +2380,7 @@
 									"Tasks": [
 										{
 											"text": "J'ai une seule diode bleue allumée.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "G10"
 										}
 									]
@@ -2365,7 +2389,7 @@
 									"Tasks": [
 										{
 											"text": "Cette fois-ci c'est l'Amplificateur qui est déconnecté.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "H1"
 										}
 									]
@@ -2374,7 +2398,7 @@
 									"Tasks": [
 										{
 											"text": "Encore un problème de connexion, cette dois-ci c'est le Condenseur qui fait des siennes.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "F9"
 										}
 									]
@@ -2382,14 +2406,14 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 5,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Le diagnostic est à 30%. Je le surveille du coin de l'œil."
 								},
 								{
@@ -2402,13 +2426,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Oui, si ça l'a été une première fois, je ne vois pas pourquoi il n'y en aurait pas une seconde."
 								},
 								{
@@ -2421,13 +2445,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Aucune idée..."
 								},
 								{
@@ -2440,13 +2464,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 1,
 							"talks": [],
 							"alerts": [
@@ -2454,7 +2478,7 @@
 									"Tasks": [
 										{
 											"text": "Problème de connexion du Récepteur et erreur VFFRL8.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "C9"
 										},
 										{
@@ -2468,7 +2492,7 @@
 									"Tasks": [
 										{
 											"text": "J'ai une suite de mots : \"LEFT, BIN, TEST\", et l'erreur OXEURL.",
-											"author": "Astro",
+											"author": "Harmony",
 											"task": "I3"
 										},
 										{
@@ -2481,7 +2505,7 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 2,
 							"talks": [
 								{
@@ -2489,7 +2513,7 @@
 									"answers": [],
 									"timeBefore": 0,
 									"text": "Le diagnostic est à 60%. En attendant je vais aller faire ma petite ronde. Restez en alerte au cas où.",
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								}
 							],
 							"alerts": []
@@ -2537,7 +2561,7 @@
 							"alerts": []
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [],
 							"alerts": [
@@ -2545,15 +2569,15 @@
 									"Tasks": [
 										{
 											"text": "J'ai besoin de votre aide !",
-											"author": ""
+											"author": "Harmony"
 										}
 									]
 								},
 								{
 									"Tasks": [
 										{
-											"text": "Le module \"Batterie de secours\" est déconnecté. J'ai également 3 diodes bleues allumées et 2 diodes violettes qui clignotent. J'ai également le mot \"WIN\" qui s'affiche, ainsi que la suite de mots \"REST, GUEST\".",
-											"author": "Astro",
+											"text": "Le module \"Batterie de secours\" est déconnecté. J'ai également 3 diodes bleues allumées et 2 diodes violettes qui clignotent. Sur mon écran principal, le mot \"WIN\" s'affiche, ainsi que la suite de mots \"REST, GUEST\".",
+											"author": "Harmony",
 											"task": "I8"
 										},
 										{
@@ -2581,14 +2605,14 @@
 							]
 						},
 						{
-							"author": "Astro",
+							"author": "Harmony",
 							"timeBeforeS": 10,
 							"talks": [
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "90%. Nous saurons bientôt le fin mot de l'histoire."
 								},
 								{
@@ -2601,14 +2625,14 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": ""
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ah, nous avons donc une date ?"
 								},
 								{
@@ -2621,13 +2645,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "15 jours... Je pense que ça risque d'être compliqué... Espérons que nous n'allons pas perdre trop de temps..."
 								},
 								{
@@ -2640,13 +2664,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ah, vous comprenez donc pourquoi cette mission est primordiale ?"
 								},
 								{
@@ -2654,19 +2678,19 @@
 									"answers": [
 										{
 											"text": "Des aliens ? Ils existent vraiment ?",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Bien sûr ! Même si cela reste un secret de polichinelle depuis des années, c'est logique nous ne soyons pas les seuls dans l'univers."
 										},
 										{
 											"text": "Oui, je comprends. même si toute cette vérité est difficile à assimiler totalement",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Il y a beaucoup d'informations effectivement. Mais tout est vrai."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -2678,7 +2702,7 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
@@ -2690,27 +2714,27 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Vous avez beaucoup trop de questions, je ne peux pas répondre à tout."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Mais les personnes qui s'opposent à nous ne doivent pas être au courant de tous les tenants et aboutissants."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Ah ! Diagnostic terminé !"
 								},
 								{
@@ -2723,20 +2747,20 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Il indique un défaut électrique... Donc j'avais dû mal vérifier le module lors de ma ronde..."
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Je crois que je me suis montée la tête toute seule..."
 								},
 								{
@@ -2744,25 +2768,25 @@
 									"answers": [
 										{
 											"text": "Il faut vous reprendre, et que vous gardiez les idées claires",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Je sais. Mais je reste sur mes gardes depuis ce qu'il s'est passé la première nuit."
 										},
 										{
 											"text": "C'est normal vu tout ce qui vous est arrivé depuis le début",
-											"customAuthor": "Astro",
+											"customAuthor": "Harmony",
 											"Type": "Normal",
 											"answer": "Si vous saviez comme c'est compliqué."
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Nous n'avons plus le droit à l'erreur."
 								},
 								{
@@ -2775,13 +2799,13 @@
 										}
 									],
 									"timeBefore": 0,
-									"customAuthor": "Astro"
+									"customAuthor": "Harmony"
 								},
 								{
 									"Type": "Normal",
 									"answers": [],
 									"timeBefore": 0,
-									"customAuthor": "Astro",
+									"customAuthor": "Harmony",
 									"text": "Vous avez raison, je suis épuisée. Bonne nuit."
 								}
 							],
