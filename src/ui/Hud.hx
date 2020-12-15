@@ -54,7 +54,7 @@ class Hud extends dn.Process {
 	
 			bgNewMessage = Assets.tiles.h_get("bgNewMessage", wrapperNewMessage);
 			
-			newMessageText = new h2d.Text(Assets.fontRulergold32, wrapperNewMessage);
+			newMessageText = new h2d.Text(Assets.fontRulergold16, wrapperNewMessage);
 			newMessageText.textColor = 0xFFFFFF;
 			newMessageText.text = Lang.t._("Nouveau message !");
 			newMessageText.maxWidth = bgNewMessage.tile.width;
@@ -104,9 +104,11 @@ class Hud extends dn.Process {
 		longGoodWarning();
 	}
 	
-	public function showNewMessage() {
+	public function showNewMessage(isOnRight:Bool) {
 		Assets.CREATE_SOUND(hxd.Res.sfx.c_newMessage, C_NewMessage);
 		tw.createS(wrapperNewMessage.y, 0, 0.3);
+
+		wrapperNewMessage.x = isOnRight ? wid - bgNewMessage.tile.width - 10 : 10;
 	}
 	
 	public function hideNewMessage() {

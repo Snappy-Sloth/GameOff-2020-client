@@ -219,7 +219,7 @@ class Game extends Process {
 
 	public function needNewMessageInfo() {
 		if (currentScreen != communication)
-			hud.showNewMessage();
+			hud.showNewMessage(currentScreen == moduleScreen);
 	}
 
 	public function onCompleteTask(td:TaskData) {
@@ -373,7 +373,6 @@ class Game extends Process {
 					}
 				}
 				if (ca.isKeyboardPressed(hxd.Key.F6)) {
-					hud.showNewMessage();
 				}
 			#end
 		}
