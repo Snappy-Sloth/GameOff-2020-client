@@ -71,7 +71,7 @@ class Manual extends dn.Process {
 		for (i in 0...12) {
 			var sheet = new Sheet(11 - i);
 			sheet.setScale(0.5);
-			sheet.setPosition(((Const.AUTO_SCALE_TARGET_WID - Const.SHEET_WIDTH * sheet.scaleX) / 2) + i * 5, ((Const.AUTO_SCALE_TARGET_HEI - Const.SHEET_HEIGHT * sheet.scaleY) / 2) + i * 5);
+			sheet.setPosition(((wid - Const.SHEET_WIDTH * sheet.scaleX) / 2) + i * 5, ((hei - Const.SHEET_HEIGHT * sheet.scaleY) / 2) + i * 5 - 20);
 
 			wrapper.add(sheet, 0);
 
@@ -79,14 +79,17 @@ class Manual extends dn.Process {
 		}
 
 		sortSheetsBtn = new ui.Button(Lang.t._("Ranger"), setSheetsToInitialPosition);
+		sortSheetsBtn.setPosition(wid - sortSheetsBtn.wid - 5, hei - sortSheetsBtn.hei - 5);
 		wrapper.add(sortSheetsBtn, 1);
 
 		goToCommBtn = new ui.ChangeScreenButton(this, true, Lang.t._("Comm"), Game.ME.showComm);
 
-		var rightClick = new h2d.Text(Assets.fontRulergold16, wrapper);
+		var rightClick = new h2d.Text(Assets.fontM5x7gold16, wrapper);
 		rightClick.text = Lang.t._("Clic droit pour voir une page en grand.");
+		rightClick.maxWidth = wid * 0.2;
 		rightClick.textColor = 0x1f1d19;
-		rightClick.setPosition(10, hei - rightClick.textHeight - 10);
+		rightClick.textAlign = Right;
+		rightClick.setPosition(wid - rightClick.maxWidth - 5, sortSheetsBtn.y - rightClick.textHeight - 5);
 
 		onResize();
 	}
@@ -99,8 +102,8 @@ class Manual extends dn.Process {
 	public function setSheetsToInitialPosition() {
 		for (i in 0...arSheet.length) {
 			tw.createS(arSheet[i].rotation, 0, 0.3);
-			tw.createS(arSheet[i].x, ((((Const.AUTO_SCALE_TARGET_WID) - Const.SHEET_WIDTH) / 2) + i * 5), 0.3);
-			tw.createS(arSheet[i].y, ((((Const.AUTO_SCALE_TARGET_HEI) - Const.SHEET_HEIGHT) / 2) + i * 5), 0.3);
+			tw.createS(arSheet[i].x, (((wid - Const.SHEET_WIDTH * arSheet[i].scaleX) / 2) + i * 5), 0.3);
+			tw.createS(arSheet[i].y, (((hei - Const.SHEET_HEIGHT * arSheet[i].scaleY) / 2) + i * 5 - 20), 0.3);
 			wrapper.add(arSheet[i], 0);
 		}
 	}
@@ -112,8 +115,9 @@ class Manual extends dn.Process {
 	override function onResize() {
 		super.onResize();
 
-		sortSheetsBtn.setPosition(((Const.AUTO_SCALE_TARGET_WID) - sortSheetsBtn.wid) / 2, 7);
-		goToCommBtn.root.setPosition(7, ((Const.AUTO_SCALE_TARGET_HEI) - goToCommBtn.hei) / 2);
+		// sortSheetsBtn.setPosition(((Const.AUTO_SCALE_TARGET_WID) - sortSheetsBtn.wid) / 2, 7);
+
+		goToCommBtn.root.setPosition(7, (hei - goToCommBtn.hei) / 2);
 
 		mask.width = Std.int(Const.AUTO_SCALE_TARGET_WID);
 		mask.height = Std.int(Const.AUTO_SCALE_TARGET_HEI);
