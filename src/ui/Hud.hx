@@ -42,7 +42,8 @@ class Hud extends dn.Process {
 	
 			glowTimer = Assets.tiles.h_get("redGlowTimer", 0.5, 0.5, wrapperTimer);
 	
-			timerText = new h2d.Text(Assets.fontLarge, wrapperTimer);
+			timerText = new h2d.Text(Assets.fontHopegold32, wrapperTimer);
+			timerText.filter = new h2d.filter.Outline(1);
 			timerText.textColor = 0xe72727; //0x27e761
 			
 			wrapperTimer.y = -timerText.textHeight - 50;
@@ -83,11 +84,13 @@ class Hud extends dn.Process {
 	}
 	
 	public function showTimer() {
-		glowTimer.set("redGlowTimer");
-		timerText.textColor = 0xe72727;
-		tw.createS(wrapperTimer.y, 0, 0.3);
-		tw.createS(globalGlow.scaleX, 1, 0.6);
-		tw.createS(globalGlow.scaleY, 1, 0.6);
+		// tw.createS(globalGlow.scaleX, 1, 0.6);
+		// tw.createS(globalGlow.scaleY, 1, 0.6);
+		// return;
+
+		// glowTimer.set("redGlowTimer");
+		// timerText.textColor = 0xe72727;
+		// tw.createS(wrapperTimer.y, 0, 0.3);
 	}
 	
 	public function endAlert() {
@@ -95,9 +98,9 @@ class Hud extends dn.Process {
 		timerText.textColor = 0x27e761;
 		tw.createS(globalGlow.scaleX, 1.2, 0.6);
 		tw.createS(globalGlow.scaleY, 1.2, 0.6);
-		delayer.addS(function() {
-			tw.createS(wrapperTimer.y, -timerText.textHeight - 50, 0.3);
-		}, 2);
+		// delayer.addS(function() {
+		// 	tw.createS(wrapperTimer.y, -timerText.textHeight - 50, 0.3);
+		// }, 2);
 		longGoodWarning();
 	}
 	

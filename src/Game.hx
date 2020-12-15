@@ -80,8 +80,7 @@ class Game extends Process {
 
 		// musicNormal = Assets.CREATE_SOUND(hxd.Res.music.music1, Music_Normal, true, true, true);
 
-		// showComm();
-		showModules();
+		showComm();
 	}
 
 	function initData() {
@@ -114,8 +113,6 @@ class Game extends Process {
 		tw.createS(wrapperScreens.x, 0, 0.3);
 		hud.hideNewMessage();
 		cd.unset("shaking");
-
-		manual.root.visible = false;
 	}
 
 	public function showModules() {

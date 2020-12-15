@@ -73,7 +73,7 @@ class ChangeScreenButton extends dn.Process {
 		if (mouseIsOver) {
 			mTime += tmod;
 
-			spr.x = (Std.int(wid - spr.tile.width) >> 1) + Math.sin(mTime / 10) * 5;
+			spr.x = (Std.int(wid - spr.tile.width) >> 1) + Math.sin(mTime / 10) * 2;
 		}
 	}
 }

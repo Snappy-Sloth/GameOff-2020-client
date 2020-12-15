@@ -70,7 +70,8 @@ class Manual extends dn.Process {
 
 		for (i in 0...12) {
 			var sheet = new Sheet(11 - i);
-			sheet.setPosition((((Const.AUTO_SCALE_TARGET_WID) - Const.SHEET_WIDTH) / 2) + i * 5, (((Const.AUTO_SCALE_TARGET_HEI) - Const.SHEET_HEIGHT) / 2) + i * 5);
+			sheet.setScale(0.5);
+			sheet.setPosition(((Const.AUTO_SCALE_TARGET_WID - Const.SHEET_WIDTH * sheet.scaleX) / 2) + i * 5, ((Const.AUTO_SCALE_TARGET_HEI - Const.SHEET_HEIGHT * sheet.scaleY) / 2) + i * 5);
 
 			wrapper.add(sheet, 0);
 
@@ -143,7 +144,6 @@ private class ZoomMode extends dn.Process {
 
 		sheet = new Sheet(idSheet, false);
 		root.addChild(sheet);
-		sheet.setScale(2);
 
 		sheet.x = Std.int(Const.AUTO_SCALE_TARGET_WID - sheet.wid * sheet.scaleX) >> 1;
 

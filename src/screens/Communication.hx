@@ -310,7 +310,7 @@ private class Talk extends dn.Process {
 
 		pendingMessages = [];
 
-		isTypingText = new h2d.Text(Assets.fontHopegold16, mask);
+		isTypingText = new h2d.Text(Assets.fonM5x7gold16, mask);
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: Lang.t.get(author)});
 		isTypingText.alpha = 0;
 		isTypingText.textColor = 0x43b643;
@@ -395,7 +395,7 @@ private class Talk extends dn.Process {
 			flow.horizontalAlign = Right;
 			flow.minWidth = Std.int(flowAnswers.innerWidth);
 			
-			var text = new h2d.Text(Assets.fontHopegold16, flow);
+			var text = new h2d.Text(Assets.fonM5x7gold16, flow);
 			text.text = Lang.t.get(a.text);
 			text.textColor = 0x081c0c;
 			text.textAlign = Right;
@@ -465,7 +465,7 @@ private class Talk extends dn.Process {
 		authorText.textColor = 0x081c0c;
 		authorText.text = Lang.t._("Vous");
 
-		var messageText = new h2d.Text(Assets.fontHopegold16, messageFlow);
+		var messageText = new h2d.Text(Assets.fonM5x7gold16, messageFlow);
 		messageText.text = Lang.t.get(text);
 		messageText.textColor = 0x43b643;
 		messageText.textAlign = Right;
@@ -539,7 +539,7 @@ private class Talk extends dn.Process {
 		authorText.textColor = 0x081c0c;
 		authorText.text = Lang.t.get(td.author != null ? td.author : author);
 
-		var messageText = new h2d.Text(Assets.fontHopegold16, messageFlow);
+		var messageText = new h2d.Text(Assets.fonM5x7gold16, messageFlow);
 		messageText.text = Lang.t.get(td.text);
 		messageText.textColor = switch td.type {
 			case Normal: 0x43b643;

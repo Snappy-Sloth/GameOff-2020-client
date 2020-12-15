@@ -86,7 +86,7 @@ class Grid extends Module {
 
 class Cell extends h2d.Object {
 
-	public static var SQUARE_SIZE = 24;
+	public static var SQUARE_SIZE = 23;
 
 	public var cx(default, null) : Int;
 	public var cy(default, null) : Int;
