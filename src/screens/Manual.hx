@@ -129,6 +129,9 @@ private class ZoomMode extends dn.Process {
 	var inter : h2d.Interactive;
 	var sheet : Sheet;
 
+	var isDragnDropping = false;
+	var oldPosY = 0.;
+
 	public function new(idSheet:Int) {
 		super(Manual.ME);
 
@@ -150,6 +153,26 @@ private class ZoomMode extends dn.Process {
 		root.addChild(sheet);
 
 		sheet.x = Std.int(Const.AUTO_SCALE_TARGET_WID - sheet.wid * sheet.scaleX) >> 1;
+
+		var dragndropInter = new h2d.Interactive(sheet.wid, Std.int(Const.AUTO_SCALE_TARGET_HEI), root);
+		dragndropInter.x = sheet.x;
+		dragndropInter.backgroundColor = 0x55FF00FF;
+
+		dragndropInter.onPush = function (e) {
+			isDragnDropping = true;
+			oldPosY = e.relY;
+		}
+		dragndropInter.onRelease = function (e) {
+			isDragnDropping = false;
+		}
+		dragndropInter.onMove = function (e) {
+			if (isDragnDropping) {
+				sheet.y += (e.relY - oldPosY);
+				oldPosY = e.relY;
+	
+				sheet.y = hxd.Math.clamp(sheet.y, Const.AUTO_SCALE_TARGET_HEI - sheet.hei * sheet.scaleY, 0);
+			}
+		}
 
 		onResize();
 
