@@ -1316,10 +1316,14 @@ msgid "Encore une erreur incompréhensible : 8QTT3P"
 msgstr ""
 
 #: res/data.cdb:day/#7.events/#2.alerts/#2.Tasks/#0.text
-msgid "Des diodes jaunes clignotent. Il y en a 3 ! Euh non, 2 !"
+msgid "Des diodes jaunes clignotent. Il y en a 3 !"
 msgstr ""
 
 #: res/data.cdb:day/#7.events/#2.alerts/#3.Tasks/#0.text
+msgid "Euh non, j'ai mal compté, il y en a 2 ! 2 diodes jaunes qui clignotent !"
+msgstr ""
+
+#: res/data.cdb:day/#7.events/#2.alerts/#4.Tasks/#0.text
 msgid "Suite de mots : \"WIN, BIN\""
 msgstr ""
 

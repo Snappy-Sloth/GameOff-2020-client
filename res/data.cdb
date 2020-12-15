@@ -1907,7 +1907,15 @@
 								{
 									"Tasks": [
 										{
-											"text": "Des diodes jaunes clignotent. Il y en a 3 ! Euh non, 2 !",
+											"text": "Des diodes jaunes clignotent. Il y en a 3 !",
+											"author": "Harmony"
+										}
+									]
+								},
+								{
+									"Tasks": [
+										{
+											"text": "Euh non, j'ai mal compté, il y en a 2 ! 2 diodes jaunes qui clignotent !",
 											"author": "Harmony",
 											"task": "C8"
 										}
