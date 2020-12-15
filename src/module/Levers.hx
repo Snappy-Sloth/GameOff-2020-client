@@ -37,7 +37,7 @@ class Levers extends Module {
 		super.reset();
 
 		for (l in levers) {
-			l.forceLightStatus(false);
+			l.reset();
 		}
 	}
 
@@ -124,7 +124,7 @@ class Lever extends h2d.Object {
 		glow.y = baseLight.y + (Std.int(baseLight.tile.height) >> 1);
 		glow.alpha = 0;
 
-		forceLightStatus(false);
+		reset();
 	}
 
 	public function toggle() {
@@ -140,11 +140,16 @@ class Lever extends h2d.Object {
 		Game.ME.tw.createS(glow.alpha, isLightOn ? 1 : 0, 0.2);
 	}
 
-	public function forceLightStatus(lightOn:Bool) {
-		isLightOn = lightOn;
+	public function reset() {
+		isLightOn = false;
+
+		isUp = true;
 
 		lightSpr.set(isLightOn ? "switchLightOn" : "switchLightOff");
 		Game.ME.tw.createS(glow.alpha, isLightOn ? 1 : 0, 0.2);
+
+		shadow.set(isUp ? "switchShadowUp" : "switchShadowDown");
+		lever.set(isUp ? "switchUp" : "switchDown");
 	}
 
 }
