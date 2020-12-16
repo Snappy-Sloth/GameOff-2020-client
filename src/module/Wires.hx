@@ -47,11 +47,15 @@ class Wires extends Module {
 		wireJack.visible = true;
 
 		for (w in wires.copy()) {
-			if ((s.isTop && w.top == s.id) || (!s.isTop && w.bot == s.id)) {
+			if ((s.isTop && w.top == from.id) || (!s.isTop && w.bot == from.id)) {
 				w.w.remove();
+				topSlots[w.top].hideWireTip();
+				botSlots[w.bot].hideWireTip();
 				wires.remove(w);
 			}
 		}
+
+		from.showWireTip();
 	}
 
 	public function onRelease(to:Slot) {
@@ -61,6 +65,7 @@ class Wires extends Module {
 		if (to == from) {
 			delayer.addF(function () {
 				if (from != null) {
+					from.hideWireTip();
 					from = null;
 					currentWire.remove();
 					currentWire = null;
@@ -81,6 +86,9 @@ class Wires extends Module {
 			currentWire.rotation = Math.atan2(to.centerY - from.centerY, to.centerX - from.centerX) - Math.PI / 2;
 			currentWire.scaleY = M.dist(from.centerX, from.centerY, to.centerX, to.centerY);
 			wires.push({w: currentWire, top:from.isTop ? from.id : to.id, bot:from.isTop ? to.id : from.id});
+
+			to.showWireTip();
+			to.wireTip.rotation = currentWire.rotation;
 			
 			Assets.CREATE_SOUND(hxd.Res.sfx.m_clicWires, M_ClicWires);
 		}
@@ -134,6 +142,8 @@ class Wires extends Module {
 			currentWire.rotation = Math.atan2(pos.y - from.centerY, pos.x - from.centerX) - Math.PI / 2;
 			currentWire.scaleY = M.dist(from.centerX, from.centerY, pos.x, pos.y) - 5;
 
+			from.wireTip.rotation = currentWire.rotation;
+
 			wireJack.setPos(pos.x, pos.y);
 			wireJack.rotation = currentWire.rotation;
 		}
@@ -145,8 +155,11 @@ private class Slot extends h2d.Object {
 	public var id(default, null) : Int;
 	public var isTop(default, null) : Bool;
 
-	public var centerX(get, never) : Int; inline function get_centerX() return Std.int(this.x + 6);
-	public var centerY(get, never) : Int; inline function get_centerY() return Std.int(this.y + 6);
+	public var centerX(get, never) : Float; inline function get_centerX() return (this.x + spr.tile.width * 0.5);
+	public var centerY(get, never) : Float; inline function get_centerY() return (this.y + spr.tile.height * 0.5);
+
+	var spr : HSprite;
+	public var wireTip : HSprite;
 
 	public function new(wires:Wires, id:Int, isTop:Bool) {
 		super();
@@ -156,7 +169,7 @@ private class Slot extends h2d.Object {
 
 		wires.root.addChild(this);
 
-		var spr = Assets.tiles.h_get("wireHoleEmpty", this);
+		spr = Assets.tiles.h_get("wireHoleEmpty", this);
 
 		var inter = new h2d.Interactive(spr.tile.width, spr.tile.height, this);
 		// inter.backgroundColor = 0x55FF00FF;
@@ -166,5 +179,17 @@ private class Slot extends h2d.Object {
 		inter.onRelease = function (e) {
 			wires.onRelease(this);
 		}
+
+		wireTip = Assets.tiles.h_get("wireTip", 0.5, 0.5, this);
+		wireTip.visible = false;
+		wireTip.setPos(spr.tile.width * 0.5, spr.tile.height * 0.5);
+	}
+
+	public function showWireTip() {
+		wireTip.visible = true;
+	}
+
+	public function hideWireTip() {
+		wireTip.visible = false;
 	}
 }
