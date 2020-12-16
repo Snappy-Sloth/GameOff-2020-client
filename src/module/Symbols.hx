@@ -15,6 +15,7 @@ class Symbols extends Module {
 	var tiles : Array<SymbolTile> = [];
 	var slots : Array<SymbolSlot> = [];
 	var answerSlots : Array<SymbolSlot> = [];
+	var normalSlots : Array<SymbolSlot> = [];
 
 	var wrapperSlot : h2d.Object;
 	var wrapperSymbol : h2d.Object;
@@ -52,6 +53,7 @@ class Symbols extends Module {
 			slot.x = i * (TILE_SIZE + SLOT_OFFSET);
 			slot.y = j * (TILE_SIZE + 10);
 			slots.push(slot);
+			normalSlots.push(slot);
 
 			var tileSymbol = new SymbolTile(this, i + (j * 4));
 			root.addChild(tileSymbol);
@@ -60,6 +62,26 @@ class Symbols extends Module {
 		}
 
 		onResize();
+	}
+
+	override function reset() {
+		super.reset();
+
+		for (aSlot in answerSlots) {
+			var tile = getTileOnSlot(aSlot);
+
+			if (tile != null) {
+				for (slot in normalSlots) {
+					if (getTileOnSlot(slot) == null) {
+						tile.setSlot(slot);
+						tw.createS(tile.x, tile.parent.globalToLocal(tile.currentSlot.localToGlobal()).x, 0.2);
+						tw.createS(tile.y, tile.parent.globalToLocal(tile.currentSlot.localToGlobal()).y, 0.2);
+
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	public function selectSymbol(st:SymbolTile) {
