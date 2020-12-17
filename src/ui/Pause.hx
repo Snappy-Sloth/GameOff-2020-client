@@ -46,8 +46,9 @@ class Pause extends dn.Process {
 		btnQuit = new Button(Lang.t._("Quitter"), backToTitle);
 		flow.addChild(btnQuit);
 
-		var text = new h2d.Text(Assets.fontRulergold16, flow);
+		var text = new h2d.Text(Assets.fontM5x7gold16, flow);
 		text.maxWidth = flow.maxWidth * 0.75;
+		text.textAlign = Center;
 		text.textColor = 0x874727;
 		text.text = Lang.t._("Vous reprendrez au début de la journée lorsque vous continuerez votre partie.");
 

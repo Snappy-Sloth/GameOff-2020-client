@@ -21,8 +21,8 @@ bgNewMessage
 bgPause
   rotate: false
   xy: 1393, 1192
-  size: 429, 599
-  orig: 429, 599
+  size: 214, 299
+  orig: 214, 299
   offset: 0, 0
   index: -1
 bgTimer
@@ -384,7 +384,7 @@ module/grid/btnGridReflect
   index: -1
 module/grid/gridShadow
   rotate: false
-  xy: 1824, 1228
+  xy: 1609, 1192
   size: 209, 208
   orig: 250, 250
   offset: 25, 16
