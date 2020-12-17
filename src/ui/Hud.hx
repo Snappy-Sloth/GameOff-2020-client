@@ -68,7 +68,7 @@ class Hud extends dn.Process {
 	
 			bgAlertMessage = Assets.tiles.h_get("bgAlertMessage", wrapperAlertMessage);
 			
-			alertMessageText = new h2d.Text(Assets.fontRulergold32, wrapperAlertMessage);
+			alertMessageText = new h2d.Text(Assets.fontRulergold16, wrapperAlertMessage);
 			alertMessageText.textColor = 0xFFFFFF;
 			alertMessageText.text = Lang.t._("Ne touchez pas aux modules !");
 			alertMessageText.maxWidth = bgAlertMessage.tile.width;

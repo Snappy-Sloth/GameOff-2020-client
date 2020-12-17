@@ -6,9 +6,9 @@ filter: Linear,Linear
 repeat: none
 bgAlertMessage
   rotate: false
-  xy: 679, 1909
-  size: 494, 65
-  orig: 494, 65
+  xy: 1, 2013
+  size: 247, 32
+  orig: 247, 32
   offset: 0, 0
   index: -1
 bgNewMessage
@@ -167,7 +167,7 @@ comm/tabLine
   index: -1
 endDay/separationEndDay
   rotate: false
-  xy: 1, 2013
+  xy: 250, 2013
   size: 542, 5
   orig: 612, 5
   offset: 35, 0
