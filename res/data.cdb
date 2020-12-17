@@ -88,7 +88,8 @@
 									"Tasks": [
 										{
 											"text": "Ceci est un test de message avant",
-											"author": ""
+											"author": "",
+											"tasks": []
 										}
 									]
 								},
@@ -96,7 +97,8 @@
 									"Tasks": [
 										{
 											"text": "Ceci est un 2eme message de test avant",
-											"author": ""
+											"author": "",
+											"tasks": []
 										}
 									]
 								},
@@ -105,25 +107,37 @@
 										{
 											"text": "J'ai une diode rouge qui s'allume !",
 											"author": "Astro",
-											"task": "A1"
+											"tasks": [
+												{
+													"task": "A1"
+												}
+											]
 										}
 									]
 								},
 								{
 									"Tasks": [
 										{
-											"task": "C8",
 											"text": "J'ai 2 diodes jaunes qui s'allument et clignotent maintenant !",
-											"author": "Astro"
+											"author": "Astro",
+											"tasks": [
+												{
+													"task": "C8"
+												}
+											]
 										}
 									]
 								},
 								{
 									"Tasks": [
 										{
-											"task": "B10",
 											"text": "J'ai le mot \"WIN\" qui s'affiche sur une console aussi !",
-											"author": "Astro"
+											"author": "Astro",
+											"tasks": [
+												{
+													"task": "B10"
+												}
+											]
 										}
 									]
 								}
@@ -202,27 +216,39 @@
 								{
 									"Tasks": [
 										{
-											"task": "B3",
 											"text": "J'ai une diode jaune qui clignote !",
-											"author": "Astro"
+											"author": "Astro",
+											"tasks": [
+												{
+													"task": "B3"
+												}
+											]
 										}
 									]
 								},
 								{
 									"Tasks": [
 										{
-											"task": "C7",
 											"text": "Bien, maintenant j'ai un message d'erreur qui s'affiche. Le numéro d'erreur est le suivant : 6PCK2M",
-											"author": "Astro"
+											"author": "Astro",
+											"tasks": [
+												{
+													"task": "C7"
+												}
+											]
 										}
 									]
 								},
 								{
 									"Tasks": [
 										{
-											"task": "A4",
 											"text": "Le mot \"PRESS\" vient de s'afficher sur mon terminal !",
-											"author": "Astro"
+											"author": "Astro",
+											"tasks": [
+												{
+													"task": "A4"
+												}
+											]
 										}
 									]
 								}
@@ -255,9 +281,13 @@
 								{
 									"Tasks": [
 										{
-											"task": "E2",
 											"text": "J'ai un code en morse qui vient de s'afficher... Je suis un peu rouillée, je vous laisse le traduire vous-même :\n. _ _    . . . .    . .    _    .",
-											"author": ""
+											"author": "",
+											"tasks": [
+												{
+													"task": "E2"
+												}
+											]
 										}
 									]
 								}
@@ -277,9 +307,13 @@
 								{
 									"Tasks": [
 										{
-											"task": "H1",
 											"text": "Trololo",
-											"author": ""
+											"author": "",
+											"tasks": [
+												{
+													"task": "H1"
+												}
+											]
 										}
 									]
 								}
@@ -475,7 +509,8 @@
 									"Tasks": [
 										{
 											"text": "Agent, vous devez avoir une alarme qui sonne chez vous aussi. Je vais vous faire le détail de ce que je vois de notre côté, corrigez le problème du votre le plus vite possible à l'aide du manuel à votre disposition !",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -484,7 +519,11 @@
 										{
 											"text": "L'un de mes écrans affiche \"Problème de connexion : Bouclier\"",
 											"author": "Harmony",
-											"task": "A1"
+											"tasks": [
+												{
+													"task": "A1"
+												}
+											]
 										}
 									]
 								},
@@ -493,7 +532,11 @@
 										{
 											"text": "Maintenant, j'ai 3 diodes vertes qui clignotent.",
 											"author": "Harmony",
-											"task": "C1"
+											"tasks": [
+												{
+													"task": "C1"
+												}
+											]
 										}
 									]
 								}
@@ -582,7 +625,11 @@
 										{
 											"text": "Le mot \"REST\" s'affiche sur l'un de mes écrans.",
 											"author": "Harmony",
-											"task": "C4"
+											"tasks": [
+												{
+													"task": "C4"
+												}
+											]
 										}
 									]
 								},
@@ -591,7 +638,11 @@
 										{
 											"text": "J'ai un problème de connexion d'une Bobine électromagnétique !",
 											"author": "Harmony",
-											"task": "B5"
+											"tasks": [
+												{
+													"task": "B5"
+												}
+											]
 										}
 									]
 								},
@@ -600,7 +651,11 @@
 										{
 											"text": "2 diodes jaunes viennent de s'allumer.",
 											"author": "Harmony",
-											"task": "A3"
+											"tasks": [
+												{
+													"task": "A3"
+												}
+											]
 										}
 									]
 								}
@@ -866,7 +921,8 @@
 									"Tasks": [
 										{
 											"text": "Bien, ma première alerte, j'ai vu le Commandant faire hier, je vais essayer d'être le plus précise possible...",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -875,7 +931,11 @@
 										{
 											"text": "Mon écran m'affiche que l'Accélérateur de particules n'est plus connecté... Vous pouvez faire quelque chose ?",
 											"author": "Harmony",
-											"task": "B7"
+											"tasks": [
+												{
+													"task": "B7"
+												}
+											]
 										}
 									]
 								},
@@ -884,7 +944,11 @@
 										{
 											"text": "Erreur RQ6KXF... Qu'est-ce que c'est que ce truc ?",
 											"author": "Harmony",
-											"task": "G1"
+											"tasks": [
+												{
+													"task": "G1"
+												}
+											]
 										}
 									]
 								},
@@ -892,7 +956,8 @@
 									"Tasks": [
 										{
 											"text": "L'erreur a disparue... bien joué !",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -901,7 +966,11 @@
 										{
 											"text": "Plusieurs diodes clignotent... Elles sont vertes et... il y en a 2 !",
 											"author": "Harmony",
-											"task": "D4"
+											"tasks": [
+												{
+													"task": "D4"
+												}
+											]
 										}
 									]
 								}
@@ -1178,7 +1247,11 @@
 										{
 											"text": "L'écran principale affiche une suite de mots... \"TIN, WRIGHT, TEST\"",
 											"author": "Harmony",
-											"task": "G4"
+											"tasks": [
+												{
+													"task": "G4"
+												}
+											]
 										}
 									]
 								},
@@ -1187,12 +1260,14 @@
 										{
 											"text": "Oula, ça clignote de partout... J'ai 3 diodes violettes qui clignotent, ainsi qu'un problème de connexion du Système incendies.",
 											"author": "Harmony",
-											"task": "D1"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "A8"
+											"tasks": [
+												{
+													"task": "D1"
+												},
+												{
+													"task": "A8"
+												}
+											]
 										}
 									]
 								}
@@ -1293,7 +1368,8 @@
 									"Tasks": [
 										{
 											"text": "La journée commence bien...",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -1302,7 +1378,11 @@
 										{
 											"text": "Décidément, il y a beaucoup de problèmes de connexion... Cette fois-ci, il s'agit du Réservoir.",
 											"author": "Harmony",
-											"task": "E3"
+											"tasks": [
+												{
+													"task": "E3"
+												}
+											]
 										}
 									]
 								},
@@ -1311,7 +1391,11 @@
 										{
 											"text": "3 diodes vertes viennent de s'allumer.",
 											"author": "Harmony",
-											"task": "I7"
+											"tasks": [
+												{
+													"task": "I7"
+												}
+											]
 										}
 									]
 								},
@@ -1320,7 +1404,11 @@
 										{
 											"text": "J'ai 2 diodes rouges allumées désormais.",
 											"author": "Harmony",
-											"task": "C5"
+											"tasks": [
+												{
+													"task": "C5"
+												}
+											]
 										}
 									]
 								}
@@ -1517,12 +1605,14 @@
 										{
 											"text": "J'ai la suite de mots \"WHITE, BEST\", ainsi que l'erreur PW9IIN qui s'affichent.",
 											"author": "Harmony",
-											"task": "A6"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "E6"
+											"tasks": [
+												{
+													"task": "A6"
+												},
+												{
+													"task": "E6"
+												}
+											]
 										}
 									]
 								},
@@ -1531,7 +1621,11 @@
 										{
 											"text": "Un nouveau mot vient de s'afficher, il s'agit du mot \"WHITE\"",
 											"author": "Harmony",
-											"task": "I2"
+											"tasks": [
+												{
+													"task": "I2"
+												}
+											]
 										}
 									]
 								}
@@ -1651,7 +1745,11 @@
 										{
 											"text": "Erreur C9YLH9",
 											"author": "Harmony",
-											"task": "I4"
+											"tasks": [
+												{
+													"task": "I4"
+												}
+											]
 										}
 									]
 								},
@@ -1660,12 +1758,14 @@
 										{
 											"text": "Le Téléviseur est déconnecté et 2 diodes bleues sont allumées.",
 											"author": "Harmony",
-											"task": "D5"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "B2"
+											"tasks": [
+												{
+													"task": "D5"
+												},
+												{
+													"task": "B2"
+												}
+											]
 										}
 									]
 								},
@@ -1674,7 +1774,11 @@
 										{
 											"text": "Maintenant, 3 diodes violettes sont allumées.",
 											"author": "Harmony",
-											"task": "E9"
+											"tasks": [
+												{
+													"task": "E9"
+												}
+											]
 										}
 									]
 								}
@@ -1891,7 +1995,8 @@
 									"Tasks": [
 										{
 											"text": "Mince, encore une alarme !",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -1900,7 +2005,11 @@
 										{
 											"text": "Encore une erreur incompréhensible : 8QTT3P",
 											"author": "Harmony",
-											"task": "G6"
+											"tasks": [
+												{
+													"task": "G6"
+												}
+											]
 										}
 									]
 								},
@@ -1908,7 +2017,8 @@
 									"Tasks": [
 										{
 											"text": "Des diodes jaunes clignotent. Il y en a 3 !",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -1917,7 +2027,11 @@
 										{
 											"text": "Euh non, j'ai mal compté, il y en a 2 ! 2 diodes jaunes qui clignotent !",
 											"author": "Harmony",
-											"task": "C8"
+											"tasks": [
+												{
+													"task": "C8"
+												}
+											]
 										}
 									]
 								},
@@ -1926,7 +2040,11 @@
 										{
 											"text": "Suite de mots : \"WIN, BIN\"",
 											"author": "Harmony",
-											"task": "F2"
+											"tasks": [
+												{
+													"task": "F2"
+												}
+											]
 										}
 									]
 								}
@@ -1955,7 +2073,8 @@
 									"Tasks": [
 										{
 											"text": "Déjà une autre alerte !!",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -1964,12 +2083,14 @@
 										{
 											"text": "1 diode verte est allumée, et le mot \"BEST\" s'affiche sur mon écran principal.",
 											"author": "Harmony",
-											"task": "F5"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "E4"
+											"tasks": [
+												{
+													"task": "F5"
+												},
+												{
+													"task": "E4"
+												}
+											]
 										}
 									]
 								},
@@ -1978,12 +2099,14 @@
 										{
 											"text": "Mon écran affiche alternativement l'erreur 2OD9UA et la suite de mots \"LEFT, RIGHT\"",
 											"author": "Harmony",
-											"task": "H8"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "G7"
+											"tasks": [
+												{
+													"task": "H8"
+												},
+												{
+													"task": "G7"
+												}
+											]
 										}
 									]
 								}
@@ -2076,7 +2199,8 @@
 									"Tasks": [
 										{
 											"text": "Ok, ça va être plus compliqué cette fois-ci je pense, tout s'allume de partout chez moi, suivez bien mes instructions.",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -2085,22 +2209,20 @@
 										{
 											"text": "La suite de mot \"PRESS, REST, TIN\" s'affiche sur mon écran droit, l'erreur 05QBTY sur mon écran principal et le mot \"GUEST\" sur mon écran de gauche. Ah et il y a aussi 3 diodes jaunes d'allumées !",
 											"author": "Harmony",
-											"task": "D8"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "F6"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "H2"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "B6"
+											"tasks": [
+												{
+													"task": "D8"
+												},
+												{
+													"task": "F6"
+												},
+												{
+													"task": "H2"
+												},
+												{
+													"task": "B6"
+												}
+											]
 										}
 									]
 								}
@@ -2380,7 +2502,11 @@
 										{
 											"text": "Le Module de soin est déconnecté.",
 											"author": "Harmony",
-											"task": "H9"
+											"tasks": [
+												{
+													"task": "H9"
+												}
+											]
 										}
 									]
 								},
@@ -2389,7 +2515,11 @@
 										{
 											"text": "J'ai une seule diode bleue allumée.",
 											"author": "Harmony",
-											"task": "G10"
+											"tasks": [
+												{
+													"task": "G10"
+												}
+											]
 										}
 									]
 								},
@@ -2398,7 +2528,11 @@
 										{
 											"text": "Cette fois-ci c'est l'Amplificateur qui est déconnecté.",
 											"author": "Harmony",
-											"task": "H1"
+											"tasks": [
+												{
+													"task": "H1"
+												}
+											]
 										}
 									]
 								},
@@ -2407,7 +2541,11 @@
 										{
 											"text": "Encore un problème de connexion, cette dois-ci c'est le Condenseur qui fait des siennes.",
 											"author": "Harmony",
-											"task": "F9"
+											"tasks": [
+												{
+													"task": "F9"
+												}
+											]
 										}
 									]
 								}
@@ -2487,12 +2625,14 @@
 										{
 											"text": "Problème de connexion du Récepteur et erreur VFFRL8.",
 											"author": "Harmony",
-											"task": "C9"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "H7"
+											"tasks": [
+												{
+													"task": "C9"
+												},
+												{
+													"task": "H7"
+												}
+											]
 										}
 									]
 								},
@@ -2501,12 +2641,14 @@
 										{
 											"text": "J'ai une suite de mots : \"LEFT, BIN, TEST\", et l'erreur OXEURL.",
 											"author": "Harmony",
-											"task": "I3"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "D9"
+											"tasks": [
+												{
+													"task": "I3"
+												},
+												{
+													"task": "D9"
+												}
+											]
 										}
 									]
 								}
@@ -2577,7 +2719,8 @@
 									"Tasks": [
 										{
 											"text": "J'ai besoin de votre aide !",
-											"author": "Harmony"
+											"author": "Harmony",
+											"tasks": []
 										}
 									]
 								},
@@ -2586,27 +2729,23 @@
 										{
 											"text": "Le module \"Batterie de secours\" est déconnecté. J'ai également 3 diodes bleues allumées et 2 diodes violettes qui clignotent. Sur mon écran principal, le mot \"WIN\" s'affiche, ainsi que la suite de mots \"REST, GUEST\".",
 											"author": "Harmony",
-											"task": "I8"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "A2"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "F3"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "E1"
-										},
-										{
-											"text": "",
-											"author": "",
-											"task": "B10"
+											"tasks": [
+												{
+													"task": "I8"
+												},
+												{
+													"task": "A2"
+												},
+												{
+													"task": "F3"
+												},
+												{
+													"task": "E1"
+												},
+												{
+													"task": "B10"
+												}
+											]
 										}
 									]
 								}
@@ -3421,7 +3560,7 @@
 			"props": {}
 		},
 		{
-			"name": "TalkType",
+			"name": "talkType",
 			"columns": [
 				{
 					"typeStr": "0",
@@ -3502,7 +3641,7 @@
 					"opt": true
 				},
 				{
-					"typeStr": "6:TalkType",
+					"typeStr": "6:talkType",
 					"name": "Type"
 				},
 				{
@@ -3540,7 +3679,7 @@
 					"kind": "localizable"
 				},
 				{
-					"typeStr": "6:TalkType",
+					"typeStr": "6:talkType",
 					"name": "Type"
 				}
 			]
@@ -3568,9 +3707,8 @@
 			"lines": [],
 			"columns": [
 				{
-					"typeStr": "6:task",
-					"name": "task",
-					"opt": true
+					"typeStr": "8",
+					"name": "tasks"
 				},
 				{
 					"typeStr": "1",
@@ -3580,6 +3718,20 @@
 				{
 					"typeStr": "1",
 					"name": "author"
+				}
+			]
+		},
+		{
+			"name": "day@events@alerts@Tasks@tasks",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:task",
+					"name": "task"
 				}
 			]
 		}

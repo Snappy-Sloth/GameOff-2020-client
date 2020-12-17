@@ -103,14 +103,14 @@ class Wires extends Module {
 	}
 
 	override function checkValidate() {
-		if (Game.ME.currentTasks == null) {
+		if (Game.ME.currentTask == null) {
 			Game.ME.onError();
 			return;
 		}
 
-		for (t in Game.ME.currentTasks.copy()) {
-			if (Data.task.get(t.taskKind).group == Data.Task_group.Wires) {
-				var dataText = Data.task.get(t.taskKind).data;
+		for (t in Game.ME.currentTask.taskKinds.copy()) {
+			if (Data.task.get(t).group == Data.Task_group.Wires) {
+				var dataText = Data.task.get(t).data;
 				var data = dataText.split(" ");
 				var n = 0;
 				for (wd in data) {

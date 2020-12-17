@@ -50,16 +50,16 @@ class Buttons extends Module {
 	}
 
 	function onClick(bt:Button) {
-		if (Game.ME.currentTasks == null) {
+		if (Game.ME.currentTask == null) {
 			Game.ME.onError();
 			return;
 		}
 
 		var isError = false;
 
-		for (t in Game.ME.currentTasks.copy()) {
-			if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons) {
-				var dataText = Data.task.get(t.taskKind).data;
+		for (t in Game.ME.currentTask.taskKinds.copy()) {
+			if (Data.task.get(t).group == Data.Task_group.Buttons) {
+				var dataText = Data.task.get(t).data;
 				var n = 0;
 				var buttonId = Std.parseInt(dataText.charAt(0)) - 1;
 				var numClick = Std.parseInt(dataText.charAt(1));
@@ -80,10 +80,10 @@ class Buttons extends Module {
 	override function checkValidate() {
 		super.checkValidate();
 
-		for (t in Game.ME.currentTasks.copy()) {
-			if (Data.task.get(t.taskKind).group == Data.Task_group.Buttons) {
+		for (t in Game.ME.currentTask.taskKinds.copy()) {
+			if (Data.task.get(t).group == Data.Task_group.Buttons) {
 				var isValidated = false;
-				var dataText = Data.task.get(t.taskKind).data;
+				var dataText = Data.task.get(t).data;
 				var n = 0;
 				var buttonId = Std.parseInt(dataText.charAt(0)) - 1;
 				var numClick = Std.parseInt(dataText.charAt(1));

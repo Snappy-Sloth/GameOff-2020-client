@@ -24,15 +24,15 @@ class Bars extends Module {
 	}
 
 	override function checkValidate() {
-		if (Game.ME.currentTasks == null) {
+		if (Game.ME.currentTask == null) {
 			Game.ME.onError();
 			return;
 		}
 		
-		for (t in Game.ME.currentTasks.copy()) {
-			if (Data.task.get(t.taskKind).group == Data.Task_group.Bars) {
+		for (t in Game.ME.currentTask.taskKinds.copy()) {
+			if (Data.task.get(t).group == Data.Task_group.Bars) {
 				var isValidated = true;
-				var dataText = Data.task.get(t.taskKind).data;
+				var dataText = Data.task.get(t).data;
 				var data = dataText.split(" ");
 				for (i in 0...8) {
 					if (Std.int(bars[i].currentRatio / (1/3)) != Std.parseInt(data[i]))

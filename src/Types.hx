@@ -11,7 +11,7 @@ typedef OptionsData = {
 }
 
 typedef TaskData = {
-	var taskKind : Data.TaskKind;
+	var taskKinds : Array<Data.TaskKind>;
 	var text : String;
 	var author : String;
 }

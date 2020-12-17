@@ -39,7 +39,7 @@ class Grid extends Module {
 	}
 	
 	function onClick(c:Cell) {
-		if (Game.ME.currentTasks == null) {
+		if (Game.ME.currentTask == null) {
 			Game.ME.onError();
 			return;
 		}
@@ -52,10 +52,10 @@ class Grid extends Module {
 	override function checkValidate() {
 		super.checkValidate();
 
-		for (t in Game.ME.currentTasks.copy()) {
-			if (Data.task.get(t.taskKind).group == Data.Task_group.Grid) {
+		for (t in Game.ME.currentTask.taskKinds.copy()) {
+			if (Data.task.get(t).group == Data.Task_group.Grid) {
 				var isValidated = true; 
-				var dataText = Data.task.get(t.taskKind).data;
+				var dataText = Data.task.get(t).data;
 				var lines = dataText.split("\n");
 				for (i in 0...lines.length) {
 					var data = lines[i].split(" ");

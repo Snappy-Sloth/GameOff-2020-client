@@ -68,8 +68,8 @@ class Communication extends dn.Process {
 		var line = Assets.tiles.h_get("tabLine", wrapperTab);
 		line.y = 16;
 
-		getTalk("Astro");
-		addTab("Astro");
+		getTalk(Lang.t._("Harmony"));
+		addTab(Lang.t._("Harmony"));
 	}
 
 	function addTab(author:String) : Tab {
@@ -126,7 +126,7 @@ class Communication extends dn.Process {
 
 	function getMainTalk():Talk {
 		for (talk in talks) {
-			if (talk.author== "Astro")
+			if (talk.author== "Harmony")
 				return talk;
 		}
 

@@ -36,10 +36,10 @@ class Game extends Process {
 	public var currentEventId : Int;
 	public var currentEvent(get, never) : Data.Day_events;		inline function get_currentEvent() return currentDay.events[currentEventId];
 
-	public var currentAlerts : Array<Array<TaskData>> = [];
-	public var currentTasks : Array<TaskData> = null;
+	public var currentAlerts : Array<TaskData> = [];
+	public var currentTask : TaskData = null;
 
-	public var alertIsActive(get, never) : Bool;				inline function get_alertIsActive() return currentTasks != null;
+	public var alertIsActive(get, never) : Bool;				inline function get_alertIsActive() return currentTask != null;
 	public var thereAreStillTalks(get, never) : Bool;			inline function get_thereAreStillTalks() {
 		var out = false;
 		for (i in currentEventId...currentDay.events.length) {
@@ -178,14 +178,12 @@ class Game extends Process {
 
 	function nextAlert() {
 		currentAlerts = [];
-		currentTasks = null;
+		currentTask = null;
 
 		for (dea in currentEvent.alerts) {
-			var t = [];
 			for (tasks in dea.Tasks) {
-				t.push({taskKind:tasks.taskId, text:tasks.text, author:tasks.author});
+				currentAlerts.push({taskKinds:tasks.tasks.map((t)->t.taskId), text:tasks.text, author:tasks.author});
 			}
-			currentAlerts.push(t);
 		}
 
 		alertSound.play(true);
@@ -199,15 +197,9 @@ class Game extends Process {
 		moduleScreen.reset();
 		hud.showAlert();
 
-		currentTasks = currentAlerts.shift();
-		var hasTask = false;
-		var message = "";
-		for (i in 0...currentTasks.length) {
-			if (currentTasks[i].taskKind != null)
-				hasTask = true;
-			message += (i > 0 ? "\n" : "") + Lang.t.get(currentTasks[i].text);
-		}
-		if (hasTask) {
+		currentTask = currentAlerts.shift();
+		var message = currentTask.text;
+		if (currentTask.taskKinds.length > 0) {
 			hud.showTimer();
 			communication.forceOutsideMessage({text: message, author: currentEvent.author, type: Alert, timeBefore: 0});
 		}
@@ -222,16 +214,16 @@ class Game extends Process {
 			hud.showNewMessage(currentScreen == moduleScreen);
 	}
 
-	public function onCompleteTask(td:TaskData) {
+	public function onCompleteTask(tk:Data.TaskKind) {
 		numTaskCompleted++;
-		currentTasks.remove(td);
+		currentTask.taskKinds.remove(tk);
 		hud.goodWarning();
 		checkEndTasks();
 	}
 
 	function checkEndTasks() {
-		if (currentTasks.length == 0) {
-			currentTasks = null;
+		if (currentTask.taskKinds.length == 0) {
+			currentTask = null;
 			if (currentAlerts.length > 0)
 				nextTasks();
 			else
@@ -258,7 +250,7 @@ class Game extends Process {
 
 		shakeS(0.3);
 
-		if (currentTasks == null)
+		if (currentTask == null)
 			Game.ME.hud.showAlertMessage();
 		else 
 			timer += 10 * Const.FPS;
@@ -363,14 +355,8 @@ class Game extends Process {
 				}
 
 				if (ca.isKeyboardPressed(hxd.Key.F5)) {
-					var hasTask = false;
-					for (i in 0...currentTasks.length) {
-						if (currentTasks[i].taskKind != null)
-							hasTask = true;
-					}
-					if (currentTasks != null && hasTask) {
-						onCompleteTask(currentTasks[0]);
-					}
+					if (currentTask.taskKinds.length > 0)
+						onCompleteTask(currentTask.taskKinds[0]);
 				}
 				if (ca.isKeyboardPressed(hxd.Key.F6)) {
 				}

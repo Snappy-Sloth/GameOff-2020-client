@@ -42,7 +42,7 @@ class Levers extends Module {
 	}
 
 	function onClick(l:Lever) {
-		if (Game.ME.currentTasks == null) {
+		if (Game.ME.currentTask == null) {
 			Game.ME.onError();
 			return;
 		}
@@ -61,10 +61,10 @@ class Levers extends Module {
 	override function checkValidate() {
 		super.checkValidate();
 
-		for (t in Game.ME.currentTasks.copy()) {
-			if (Data.task.get(t.taskKind).group == Data.Task_group.Levers) {
+		for (t in Game.ME.currentTask.taskKinds.copy()) {
+			if (Data.task.get(t).group == Data.Task_group.Levers) {
 				var isValidated = true; 
-				var dataText = Data.task.get(t.taskKind).data;
+				var dataText = Data.task.get(t).data;
 				var data = dataText.split(" ");
 				for (i in 0...data.length) {
 					if ((data[i] == "-" && levers[i].isLightOn) || (data[i] == "X" && !levers[i].isLightOn)) {
