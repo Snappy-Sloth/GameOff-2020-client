@@ -6,6 +6,10 @@ class Boot extends hxd.App {
 		new Boot();
 	}
 
+	override function loadAssets(onLoaded:() -> Void) {
+		new hxd.fmt.pak.Loader(s2d, onLoaded);
+	}
+
 	public function reboot() {
 		if (Main.ME != null)
 			Main.ME.destroy();
@@ -42,4 +46,3 @@ class Boot extends hxd.App {
 		dn.Process.updateAll(tmod);
 	}
 }
-

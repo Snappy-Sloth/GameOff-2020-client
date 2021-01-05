@@ -1,2 +1,2 @@
 base.hxml
--js bin/client.js
+-js bin/js/client.js
