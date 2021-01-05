@@ -156,7 +156,7 @@ private class ZoomMode extends dn.Process {
 
 		var dragndropInter = new h2d.Interactive(sheet.wid, Std.int(Const.AUTO_SCALE_TARGET_HEI), root);
 		dragndropInter.x = sheet.x;
-		dragndropInter.backgroundColor = 0x55FF00FF;
+		// dragndropInter.backgroundColor = 0x55FF00FF;
 
 		dragndropInter.onPush = function (e) {
 			isDragnDropping = true;
