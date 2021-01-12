@@ -17,6 +17,7 @@ class SpriteButton extends h2d.Object{
 
 		inter.onClick = function (e) {
 			onClick();
+			Assets.CREATE_SOUND(hxd.Res.sfx.ui_click, UI_Click);
 		}
 	}
 

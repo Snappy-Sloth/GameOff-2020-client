@@ -24,7 +24,10 @@ class Button extends h2d.Layers {
 		hei = Std.int(spr.tile.height);
 
 		inter = new h2d.Interactive(wid, hei);
-		inter.onClick = (e)->onClick();
+		inter.onClick = function (e) {
+			onClick();
+			Assets.CREATE_SOUND(hxd.Res.sfx.ui_click, UI_Click);	
+		};
 		this.add(inter, 0);
 
 		var text = new h2d.Text(Assets.fontRulergold16);
