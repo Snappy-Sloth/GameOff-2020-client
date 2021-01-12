@@ -106,6 +106,8 @@ class Game extends Process {
 		currentScreen = manual;
 		tw.createS(wrapperScreens.x, -Const.AUTO_SCALE_TARGET_WID, 0.3);
 		cd.unset("shaking");
+
+		Assets.CREATE_SOUND(hxd.Res.sfx.whoosh, Whoosh);
 	}
 
 	public function showComm() {
@@ -113,12 +115,16 @@ class Game extends Process {
 		tw.createS(wrapperScreens.x, 0, 0.3);
 		hud.hideNewMessage();
 		cd.unset("shaking");
+
+		Assets.CREATE_SOUND(hxd.Res.sfx.whoosh, Whoosh);
 	}
 
 	public function showModules() {
 		currentScreen = moduleScreen;
 		tw.createS(wrapperScreens.x, Const.AUTO_SCALE_TARGET_WID, 0.3);
 		cd.unset("shaking");
+
+		Assets.CREATE_SOUND(hxd.Res.sfx.whoosh, Whoosh);
 	}
 
 	public function onCdbReload() {
