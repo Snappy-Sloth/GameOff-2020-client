@@ -53,10 +53,11 @@ class Pause extends dn.Process {
 		text.text = Lang.t._("Vous reprendrez au début de la journée lorsque vous continuerez votre partie.");
 
 		onResize();
-
+		
 		tw.createS(blackInter.alpha, 0 > 1, 0.5);
 		flow.y += hei;
 		tw.createS(flow.y, flow.y - hei, TElasticEnd, 0.3);
+		Assets.CREATE_SOUND(hxd.Res.sfx.ui_whooshPause, UI_WhooshPause);
 	}
 
 	function backToTitle() {
@@ -73,6 +74,7 @@ class Pause extends dn.Process {
 		btnQuit.clickEnable = false;
 		tw.createS(blackInter.alpha, 0, 0.2);
 		tw.createS(flow.y, flow.y + hei, 0.2).onEnd = destroy;
+		Assets.CREATE_SOUND(hxd.Res.sfx.ui_whooshPause, UI_WhooshPause);
 	}
 
 	override function onDispose() {
