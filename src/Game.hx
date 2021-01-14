@@ -329,6 +329,8 @@ class Game extends Process {
 	override function onDispose() {
 		super.onDispose();
 
+		alertSound.stop();
+
 		fx.destroy();
 		gc();
 	}

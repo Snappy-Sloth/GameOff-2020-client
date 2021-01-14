@@ -1,6 +1,5 @@
 res/.tmp
 redist.*
 bin/*.*
-userSettings/playerData.cfg
-userSettings/playerData.cfg
+userSettings/*.*
 redist
