@@ -33,7 +33,7 @@ class Hud extends dn.Process {
 		flow = new h2d.Flow(root);
 
 		globalGlow = Assets.tiles.h_get("globalRedGlow", 0.5, 0.5, root);
-		globalGlow.setScale(1.2);
+		globalGlow.setScale(1.3);
 
 		{ // TIMER
 			wrapperTimer = new h2d.Object(root);
@@ -96,8 +96,8 @@ class Hud extends dn.Process {
 	public function endAlert() {
 		glowTimer.set("greenGlowTimer");
 		timerText.textColor = 0x27e761;
-		tw.createS(globalGlow.scaleX, 1.2, 0.6);
-		tw.createS(globalGlow.scaleY, 1.2, 0.6);
+		tw.createS(globalGlow.scaleX, 1.3, 0.6);
+		tw.createS(globalGlow.scaleY, 1.3, 0.6);
 		// delayer.addS(function() {
 		// 	tw.createS(wrapperTimer.y, -timerText.textHeight - 50, 0.3);
 		// }, 2);

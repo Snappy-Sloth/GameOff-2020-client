@@ -75,12 +75,14 @@ class Main extends dn.Process {
 			blackBands.push(bb);
 		}
 
+		hxd.snd.Manager.get();
+
 		// Start
 		// new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
 		#if debug
-		delayer.addF( debugGame, 1 );
+		// delayer.addF( debugGame, 1 );
 		// delayer.addF( showEndDemo, 1 );
-		// delayer.addF( startTitleScreen, 1 );
+		delayer.addF( startTitleScreen, 1 );
 		#else
 		delayer.addF( showSplashScreen, 1 );
 		#end

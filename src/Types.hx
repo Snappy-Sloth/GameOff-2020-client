@@ -63,7 +63,11 @@ enum VolumeGroup { // M => Module
 	@volume(1) MovePaper;
 	@volume(1) Alarm;
 	@volume(1) EndAlarm;
+	@volume(0.5) Whoosh;
 	@volume(1) Music_Intro;
 	@volume(1) Music_Normal;
 	@volume(1) Music_Alarm;
+	@volume(1) UI_Click;
+	@volume(1) UI_WhooshPause;
+	@volume(1) EndDayJingle;
 }

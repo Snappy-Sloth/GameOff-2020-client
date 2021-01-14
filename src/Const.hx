@@ -57,6 +57,10 @@ class Const {
 	public static function CHANGE_LOCA(loca:String) {
 		OPTIONS_DATA.LOCA = loca;
 
+		updateUserSettings();
+	}
+
+	public static function updateUserSettings() {
 		dn.LocalStorage.writeObject("optionsData", false, OPTIONS_DATA);
 	}
 }

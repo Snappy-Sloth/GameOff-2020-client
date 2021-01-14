@@ -14,11 +14,12 @@ class TitleScreen extends dn.Process {
 
 	var continueGameBtn : ui.Button;
 	var newGameBtn : ui.Button;
+	var optionsBtn : ui.Button;
 
 	var frenchLocaBtn : ui.SpriteButton;
 	var englishLocaBtn : ui.SpriteButton;
 
-	var music : dn.heaps.Sfx;
+	// var music : dn.heaps.Sfx;
 
 	public function new() {
 		super(Main.ME);
@@ -38,7 +39,7 @@ class TitleScreen extends dn.Process {
 		root.add(flow, 2);
 		flow.layout = Vertical;
 		flow.horizontalAlign = Middle;
-		flow.verticalSpacing = 20;
+		flow.verticalSpacing = 10;
 
 		Assets.tiles.h_get("logoGame", flow);
 
@@ -46,7 +47,7 @@ class TitleScreen extends dn.Process {
 
 		if (Const.PLAYER_DATA.dayId != Data.DayKind.Day_1) {
 			continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
-				tw.createS(music.volume, 0, 0.5);
+				Assets.FADE_MUSIC_VOLUME(0, 0.5);
 				Main.ME.continueGame();
 				continueGameBtn.clickEnable = false;
 			});
@@ -54,15 +55,21 @@ class TitleScreen extends dn.Process {
 		}
 
 		newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), function() {
-			tw.createS(music.volume, 0, 0.5);
+			Assets.FADE_MUSIC_VOLUME(0, 0.5);
 			Main.ME.newGame();
 			newGameBtn.clickEnable = false;
 		});
 		flow.addChild(newGameBtn);
 
+		optionsBtn = new ui.Button(Lang.t._("Options"), function() {
+			new ui.Options();
+			optionsBtn.clickEnable = false;
+		});
+		flow.addChild(optionsBtn);
+
 		#if debug
 		var debugGameBtn = new ui.DebugButton('Debug', function() {
-			tw.createS(music.volume, 0, 0.5);
+			Assets.FADE_MUSIC_VOLUME(0, 0.5);
 			Main.ME.debugGame();
 		});
 		flow.addChild(debugGameBtn);
@@ -116,9 +123,13 @@ class TitleScreen extends dn.Process {
 		root.addChild(logoTwitter);
 		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 5, hei - logoTwitter.hei * logoTwitter.scaleY - 5);
 
-		music = Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
+		Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
 
 		onResize();
+	}
+
+	public function enableClick() {
+		optionsBtn.clickEnable = true;
 	}
 
 	function spawnStar() {
@@ -143,7 +154,7 @@ class TitleScreen extends dn.Process {
 	override function onDispose() {
 		super.onDispose();
 
-		music.stop();
+		Assets.MUSIC.stop();
 	}
 
 	override function update() {

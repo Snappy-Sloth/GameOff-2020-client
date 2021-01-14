@@ -144,11 +144,6 @@ private class ZoomMode extends dn.Process {
 			close();
 		}
 
-		inter.onWheel = function (e) {
-			sheet.y += e.wheelDelta < 0 ? 20 : -20;
-			sheet.y = hxd.Math.clamp(sheet.y, Const.AUTO_SCALE_TARGET_HEI - sheet.hei * sheet.scaleY, 0);
-		}
-
 		sheet = new Sheet(idSheet, false);
 		root.addChild(sheet);
 
@@ -156,7 +151,6 @@ private class ZoomMode extends dn.Process {
 
 		var dragndropInter = new h2d.Interactive(sheet.wid, Std.int(Const.AUTO_SCALE_TARGET_HEI), root);
 		dragndropInter.x = sheet.x;
-		// dragndropInter.backgroundColor = 0x55FF00FF;
 
 		dragndropInter.onPush = function (e) {
 			isDragnDropping = true;
@@ -172,6 +166,11 @@ private class ZoomMode extends dn.Process {
 	
 				sheet.y = hxd.Math.clamp(sheet.y, Const.AUTO_SCALE_TARGET_HEI - sheet.hei * sheet.scaleY, 0);
 			}
+		}
+
+		dragndropInter.onWheel = function (e) {
+			sheet.y += e.wheelDelta < 0 ? 20 : -20;
+			sheet.y = hxd.Math.clamp(sheet.y, Const.AUTO_SCALE_TARGET_HEI - sheet.hei * sheet.scaleY, 0);
 		}
 
 		onResize();

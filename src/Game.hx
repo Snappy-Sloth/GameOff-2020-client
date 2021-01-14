@@ -76,11 +76,11 @@ class Game extends Process {
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
 
-		alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false);
+		alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false, true);
 
 		// musicNormal = Assets.CREATE_SOUND(hxd.Res.music.music1, Music_Normal, true, true, true);
 
-		showComm();
+		currentScreen = communication;
 	}
 
 	function initData() {
@@ -103,14 +103,20 @@ class Game extends Process {
 	}
 
 	public function showManual() {
+		if (currentScreen == manual)
+			return;
+
 		currentScreen = manual;
 		tw.createS(wrapperScreens.x, -Const.AUTO_SCALE_TARGET_WID, 0.3);
 		cd.unset("shaking");
-
+		
 		Assets.CREATE_SOUND(hxd.Res.sfx.whoosh, Whoosh);
 	}
 
 	public function showComm() {
+		if (currentScreen == communication)
+			return;
+
 		currentScreen = communication;
 		tw.createS(wrapperScreens.x, 0, 0.3);
 		hud.hideNewMessage();
@@ -120,6 +126,9 @@ class Game extends Process {
 	}
 
 	public function showModules() {
+		if (currentScreen == moduleScreen)
+			return;
+
 		currentScreen = moduleScreen;
 		tw.createS(wrapperScreens.x, Const.AUTO_SCALE_TARGET_WID, 0.3);
 		cd.unset("shaking");
@@ -192,9 +201,9 @@ class Game extends Process {
 			}
 		}
 
+		if (alertSound.volume == 0)
+			alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false, true);
 		alertSound.play(true);
-
-		// tw.createS(musicNormal.volume, 0, 0.5);
 
 		nextTasks();
 	}

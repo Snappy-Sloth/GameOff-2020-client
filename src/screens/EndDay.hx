@@ -77,6 +77,9 @@ class EndDay extends dn.Process {
 		});
 		flow.addChild(nextDayBtn);
 
+		
+		Assets.CREATE_SOUND(hxd.Res.music.endDayJingle2, EndDayJingle);
+
 		onResize();
 	}
 

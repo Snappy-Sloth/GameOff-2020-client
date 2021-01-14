@@ -12,6 +12,7 @@ class Pause extends dn.Process {
 	var flow : h2d.Flow;
 
 	var btnContinue : Button;
+	var btnOption : Button;
 	var btnQuit : Button;
 
 	public function new() {
@@ -41,7 +42,10 @@ class Pause extends dn.Process {
 		btnContinue = new Button(Lang.t._("Reprendre"), close);
 		flow.addChild(btnContinue);
 
-		flow.addSpacing(20);
+		btnOption = new Button(Lang.t._("Options"), function() {
+			new Options();
+		});
+		flow.addChild(btnOption);
 
 		btnQuit = new Button(Lang.t._("Quitter"), backToTitle);
 		flow.addChild(btnQuit);

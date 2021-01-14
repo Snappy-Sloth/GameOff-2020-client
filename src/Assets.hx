@@ -19,6 +19,10 @@ class Assets {
 	public static var fontM5x7gold32 : h2d.Font;
 	public static var fontRise32 : h2d.Font;
 
+	public static var MUSIC : dn.heaps.Sfx;
+
+	static var fadeTw : Tween;
+
 	static var initDone = false;
 	public static function init() {
 		if( initDone )
@@ -50,7 +54,31 @@ class Assets {
 		dn.heaps.Sfx.setGroupVolume(snd.groupId, GET_VOLUME(vg) * (isMusic ? Const.OPTIONS_DATA.MUSIC_VOLUME : Const.OPTIONS_DATA.SFX_VOLUME));
 		playNow ? snd.play(loop) : snd.stop();
 
+		if (isMusic)
+			MUSIC = snd;
+
 		return snd;
+	}
+	
+	public static function FADE_MUSIC_VOLUME(volumeRatio:Float, duration:Float = 1) {
+		var t : Float = MUSIC.group.volume;
+
+		if (fadeTw != null && !fadeTw.done)
+			fadeTw.endWithoutCallbacks();
+
+		fadeTw = Main.ME.tw.createS(t, Const.OPTIONS_DATA.MUSIC_VOLUME * GET_VOLUME(Music_Normal) * volumeRatio, duration);
+		fadeTw.onUpdate = ()->MUSIC.group.volume = t;
+	}
+
+	public static function UPDATE_SFX_VOLUME() {
+		Const.updateUserSettings();
+	}
+
+	public static function UPDATE_MUSIC_VOLUME() {
+		if (MUSIC != null) {
+			MUSIC.group.volume = Const.OPTIONS_DATA.MUSIC_VOLUME * GET_VOLUME(Music_Normal);
+		}
+		Const.updateUserSettings();
 	}
 
 	public static function GET_VOLUME(vg:VolumeGroup) {
