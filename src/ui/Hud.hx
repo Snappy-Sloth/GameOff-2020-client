@@ -51,8 +51,13 @@ class Hud extends dn.Process {
 
 		{ // NEW MESSAGE
 			wrapperNewMessage = new h2d.Object(root);
-	
+
 			bgNewMessage = Assets.tiles.h_get("bgNewMessage", wrapperNewMessage);
+			
+			var inter = new h2d.Interactive(bgNewMessage.tile.width, bgNewMessage.tile.height, wrapperNewMessage);
+			inter.onClick = function (e) {
+				Game.ME.showComm();
+			}
 			
 			newMessageText = new h2d.Text(Assets.fontRulergold16, wrapperNewMessage);
 			newMessageText.textColor = 0xFFFFFF;
