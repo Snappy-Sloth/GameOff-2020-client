@@ -37,13 +37,18 @@ class TitleScreen extends dn.Process {
 
 		flow = new h2d.Flow();
 		root.add(flow, 2);
-		flow.layout = Vertical;
-		flow.horizontalAlign = Middle;
-		flow.verticalSpacing = 10;
+		flow.layout = Horizontal;
+		flow.horizontalAlign = flow.verticalAlign = Middle;
+		flow.horizontalSpacing = 100;
 
 		Assets.tiles.h_get("logoGame", flow);
 
 		flow.addSpacing(30);
+
+		var flowBtns = new h2d.Flow(flow);
+		flowBtns.horizontalAlign = Middle;
+		flowBtns.layout = Vertical;
+		flowBtns.verticalSpacing = 10;
 
 		if (Const.PLAYER_DATA.dayId != Data.DayKind.Day_1) {
 			continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
@@ -51,7 +56,7 @@ class TitleScreen extends dn.Process {
 				Main.ME.continueGame();
 				continueGameBtn.clickEnable = false;
 			});
-			flow.addChild(continueGameBtn);
+			flowBtns.addChild(continueGameBtn);
 		}
 
 		newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), function() {
@@ -59,31 +64,32 @@ class TitleScreen extends dn.Process {
 			Main.ME.newGame();
 			newGameBtn.clickEnable = false;
 		});
-		flow.addChild(newGameBtn);
+		flowBtns.addChild(newGameBtn);
 
 		optionsBtn = new ui.Button(Lang.t._("Options"), function() {
 			new ui.Options();
 			optionsBtn.clickEnable = false;
 		});
-		flow.addChild(optionsBtn);
+		flowBtns.addChild(optionsBtn);
 
 		#if debug
 		var debugGameBtn = new ui.DebugButton('Debug', function() {
 			Assets.FADE_MUSIC_VOLUME(0, 0.5);
 			Main.ME.debugGame();
 		});
-		flow.addChild(debugGameBtn);
+		flowBtns.addChild(debugGameBtn);
 		#end
 
 		#if hl
 		var quitGame = new ui.Button(Lang.t._("Quitter"), function(){
 			new ui.Transition(hxd.System.exit);
 		});
-		flow.addChild(quitGame);
+		flowBtns.addChild(quitGame);
 		#end
 
 		{	// LOCA
-			var flowLoca = new h2d.Flow(root);
+			var flowLoca = new h2d.Flow();
+			root.add(flowLoca, 3);
 			flowLoca.horizontalSpacing = 20;
 	
 			frenchLocaBtn = new ui.SpriteButton("btnLocaFR", function () {
@@ -114,13 +120,13 @@ class TitleScreen extends dn.Process {
 		}
 
 		var logoSS = new ui.SpriteButton("logoSS", ()->hxd.System.openURL("https://snappysloth.itch.io/"));
-		root.addChild(logoSS);
+		root.add(logoSS, 3);
 		logoSS.setScale(0.05);
 		logoSS.setPosition(5, hei - logoSS.hei * logoSS.scaleY - 5);
 
 		var logoTwitter = new ui.SpriteButton("twitter", ()->hxd.System.openURL("https://twitter.com/Snappy_Sloth"));
 		logoTwitter.setScale(0.5);
-		root.addChild(logoTwitter);
+		root.add(logoTwitter, 3);
 		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 5, hei - logoTwitter.hei * logoTwitter.scaleY - 5);
 
 		Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
@@ -148,7 +154,8 @@ class TitleScreen extends dn.Process {
 
 		flow.reflow();
 		flow.setPosition(Std.int(Const.AUTO_SCALE_TARGET_WID - flow.outerWidth) >> 1,
-						Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) * 0.4));
+						Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight - 50) >> 1));
+						// Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) * 0.4));
 	}
 
 	override function onDispose() {
