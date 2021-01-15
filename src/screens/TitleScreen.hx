@@ -19,7 +19,7 @@ class TitleScreen extends dn.Process {
 	var frenchLocaBtn : ui.SpriteButton;
 	var englishLocaBtn : ui.SpriteButton;
 
-	// var music : dn.heaps.Sfx;
+	public static var MUSIC : dn.heaps.Sfx;
 
 	public function new() {
 		super(Main.ME);
@@ -52,7 +52,7 @@ class TitleScreen extends dn.Process {
 
 		if (Const.PLAYER_DATA.dayId != Data.DayKind.Day_1) {
 			continueGameBtn = new ui.Button(Lang.t._("Continuer"), function () {
-				Assets.FADE_MUSIC_VOLUME(0, 0.5);
+				Assets.FADE_MUSIC_VOLUME(MUSIC, 0, 0.5);
 				Main.ME.continueGame();
 				continueGameBtn.clickEnable = false;
 			});
@@ -60,7 +60,7 @@ class TitleScreen extends dn.Process {
 		}
 
 		newGameBtn = new ui.Button(Lang.t._("Nouvelle partie"), function() {
-			Assets.FADE_MUSIC_VOLUME(0, 0.5);
+			Assets.FADE_MUSIC_VOLUME(MUSIC, 0, 0.5);
 			Main.ME.newGame();
 			newGameBtn.clickEnable = false;
 		});
@@ -74,7 +74,7 @@ class TitleScreen extends dn.Process {
 
 		#if debug
 		var debugGameBtn = new ui.DebugButton('Debug', function() {
-			Assets.FADE_MUSIC_VOLUME(0, 0.5);
+			Assets.FADE_MUSIC_VOLUME(MUSIC, 0, 0.5);
 			Main.ME.debugGame();
 		});
 		flowBtns.addChild(debugGameBtn);
@@ -129,7 +129,7 @@ class TitleScreen extends dn.Process {
 		root.add(logoTwitter, 3);
 		logoTwitter.setPosition(logoSS.x + logoSS.wid * logoSS.scaleX + 5, hei - logoTwitter.hei * logoTwitter.scaleY - 5);
 
-		Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
+		MUSIC = Assets.CREATE_SOUND(hxd.Res.music.intro, Music_Intro, true, true, true);
 
 		onResize();
 	}
@@ -161,14 +161,14 @@ class TitleScreen extends dn.Process {
 	override function onDispose() {
 		super.onDispose();
 
-		Assets.MUSIC.stop();
+		MUSIC.stop();
+		MUSIC = null;
 	}
 
 	override function update() {
 		super.update();
 
 		// if (hxd.Key.isPressed(hxd.Key.SPACE))
-		// if (!cd.hasSetS("spawnStar", rnd(0.05, 0.1)))
 		if (!cd.hasSetS("spawnStar", rnd(0.02, 0.04)))
 			spawnStar();
 	}

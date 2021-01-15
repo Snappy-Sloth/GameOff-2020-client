@@ -1,5 +1,5 @@
 res/.tmp
 redist.*
 bin/*.*
-userSettings/*.*
+userSettings
 redist

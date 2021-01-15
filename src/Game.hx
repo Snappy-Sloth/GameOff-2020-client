@@ -26,7 +26,7 @@ class Game extends Process {
 
 	public var valueDatas : Array<Types.ValueData> = [];
 
-	var alertSound : dn.heaps.Sfx;
+	public static var alertSound : Null<dn.heaps.Sfx>;
 	// var musicNormal : dn.heaps.Sfx;
 	
 	var shakePower = 1.0;
@@ -75,10 +75,6 @@ class Game extends Process {
 
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
-
-		alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false, true);
-
-		// musicNormal = Assets.CREATE_SOUND(hxd.Res.music.music1, Music_Normal, true, true, true);
 
 		currentScreen = communication;
 	}
@@ -201,9 +197,9 @@ class Game extends Process {
 			}
 		}
 
-		if (alertSound.volume == 0)
-			alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false, true);
-		alertSound.play(true);
+		alertSound = Assets.CREATE_SOUND(hxd.Res.sfx.alarm, Alarm, true, false, true);
+		alertSound.channel.volume = 0;
+		Assets.FADE_MUSIC_VOLUME(alertSound, 1);
 
 		nextTasks();
 	}
@@ -250,10 +246,12 @@ class Game extends Process {
 		moduleScreen.reset();
 		hud.endAlert();
 
-		alertSound.stop();
-		Assets.CREATE_SOUND(hxd.Res.sfx.endAlarm, EndAlarm);
+		Assets.FADE_MUSIC_VOLUME(alertSound, 0, function () {
+			alertSound.stop();
+			alertSound = null;
+		});
 
-		// tw.createS(musicNormal.volume, 1, 0.5);
+		Assets.CREATE_SOUND(hxd.Res.sfx.endAlarm, EndAlarm);
 
 		communication.forceSystemMessage(Lang.t._("ALERTE TERMINÉE"), Alert);
 
@@ -329,7 +327,10 @@ class Game extends Process {
 	override function onDispose() {
 		super.onDispose();
 
-		alertSound.stop();
+		if (alertSound != null) {
+			alertSound.stop();
+			alertSound = null;
+		}
 
 		fx.destroy();
 		gc();

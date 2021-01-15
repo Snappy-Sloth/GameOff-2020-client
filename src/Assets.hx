@@ -19,8 +19,6 @@ class Assets {
 	public static var fontM5x7gold32 : h2d.Font;
 	public static var fontRise32 : h2d.Font;
 
-	public static var MUSIC : dn.heaps.Sfx;
-
 	static var fadeTw : Tween;
 
 	static var initDone = false;
@@ -51,23 +49,22 @@ class Assets {
 	public static function CREATE_SOUND(sndFile:hxd.res.Sound, vg:VolumeGroup, loop:Bool = false, playNow:Bool = true, isMusic:Bool = false) : dn.heaps.Sfx {
 		var snd = new dn.heaps.Sfx(sndFile);
 		snd.groupId = vg.getIndex();
-		dn.heaps.Sfx.setGroupVolume(snd.groupId, GET_VOLUME(vg) * (isMusic ? Const.OPTIONS_DATA.MUSIC_VOLUME : Const.OPTIONS_DATA.SFX_VOLUME));
-		playNow ? snd.play(loop) : snd.stop();
-
-		if (isMusic)
-			MUSIC = snd;
+		snd.play(loop);
+		snd.channel.volume = GET_VOLUME(vg) * (isMusic ? Const.OPTIONS_DATA.MUSIC_VOLUME : Const.OPTIONS_DATA.SFX_VOLUME);
 
 		return snd;
 	}
 	
-	public static function FADE_MUSIC_VOLUME(volumeRatio:Float, duration:Float = 1) {
-		var t : Float = MUSIC.group.volume;
+	public static function FADE_MUSIC_VOLUME(music:dn.heaps.Sfx, volumeRatio:Float, duration:Float = 1, ?onEnd:Null<Void->Void>) {
+		var t : Float = music.channel.volume;
 
 		if (fadeTw != null && !fadeTw.done)
 			fadeTw.endWithoutCallbacks();
 
 		fadeTw = Main.ME.tw.createS(t, Const.OPTIONS_DATA.MUSIC_VOLUME * GET_VOLUME(Music_Normal) * volumeRatio, duration);
-		fadeTw.onUpdate = ()->MUSIC.group.volume = t;
+		fadeTw.onUpdate = ()->music.channel.volume = t;
+		if (onEnd != null)
+			fadeTw.onEnd = onEnd;
 	}
 
 	public static function UPDATE_SFX_VOLUME() {
@@ -75,9 +72,10 @@ class Assets {
 	}
 
 	public static function UPDATE_MUSIC_VOLUME() {
-		if (MUSIC != null) {
-			MUSIC.group.volume = Const.OPTIONS_DATA.MUSIC_VOLUME * GET_VOLUME(Music_Normal);
-		}
+		if (screens.TitleScreen.MUSIC != null)
+			screens.TitleScreen.MUSIC.channel.volume = Const.OPTIONS_DATA.MUSIC_VOLUME * GET_VOLUME(Music_Intro);
+		if (Game.alertSound != null)
+			Game.alertSound.channel.volume = Const.OPTIONS_DATA.MUSIC_VOLUME * GET_VOLUME(Music_Alarm);
 		Const.updateUserSettings();
 	}
 
