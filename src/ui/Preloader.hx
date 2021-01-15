@@ -5,6 +5,8 @@ class Preloader extends hxd.fmt.pak.Loader {
 	var loadingText : h2d.Bitmap;
 	var loadingBG : h2d.Bitmap;
 	var loadingGauge : h2d.Bitmap;
+
+	var maxProgress = 0.;
 	
 	public function new(s2d:h2d.Scene, onDone) {
 		super(s2d, onDone);
@@ -31,7 +33,10 @@ class Preloader extends hxd.fmt.pak.Loader {
 	override function updateBG(progress:Float) {
 		// super.updateBG(progress);
 
-		loadingGauge.scaleX = progress;
+		if (progress > maxProgress)
+			maxProgress = progress;
+
+		loadingGauge.scaleX = maxProgress;
 	}
 
 	override function render() {

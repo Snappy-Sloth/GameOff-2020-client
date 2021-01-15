@@ -54662,7 +54662,7 @@ var screens_Communication = function() {
 		s.smooth = smooth;
 	}
 	var screen = s;
-	this.mainWrapper = new h2d_Mask(518,240,this.root);
+	this.mainWrapper = new h2d_Object(this.root);
 	this.goToManualBtn = new ui_ChangeScreenButton(this,false,Lang.t.get("Manual",null),($_=Game.ME,$bind($_,$_.showManual)));
 	this.goToModulesBtn = new ui_ChangeScreenButton(this,true,Lang.t.get("Modules",null),($_=Game.ME,$bind($_,$_.showModules)));
 	this.initScreen();
@@ -54730,7 +54730,7 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var tab = _g1[_g];
 			++_g;
-			if(tab.author == author) {
+			if(tab.author.toString() == author.toString()) {
 				return tab;
 			}
 		}
@@ -54751,7 +54751,7 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var tab = _g1[_g];
 			++_g;
-			if(tab.author == author) {
+			if(tab.author.toString() == author.toString()) {
 				tab.select();
 			} else {
 				tab.unselect();
@@ -54762,8 +54762,8 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var talk = _g1[_g];
 			++_g;
-			talk.root.set_visible(talk.author == author);
-			if(talk.author == author) {
+			talk.root.set_visible(talk.author.toString() == author.toString());
+			if(talk.root.visible) {
 				talk.resume();
 			}
 		}
@@ -54774,7 +54774,7 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var tab = _g1[_g];
 			++_g;
-			if(tab.author == author) {
+			if(tab.author.toString() == author.toString()) {
 				tab.newMessage();
 			}
 		}
@@ -54785,7 +54785,7 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var talk = _g1[_g];
 			++_g;
-			if(talk.author == author) {
+			if(talk.author.toString() == author.toString()) {
 				return talk;
 			}
 		}
@@ -54803,7 +54803,7 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var talk = _g1[_g];
 			++_g;
-			if(talk.author == "Harmony") {
+			if(talk.author.toString() == "Harmony") {
 				return talk;
 			}
 		}
@@ -54815,7 +54815,7 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		while(_g < _g1.length) {
 			var tab = _g1[_g];
 			++_g;
-			if(tab.author == author && tab.isSelected) {
+			if(tab.author.toString() == author.toString() && tab.isSelected) {
 				return true;
 			}
 		}
@@ -54855,10 +54855,10 @@ screens_Communication.prototype = $extend(dn_Process.prototype,{
 		_this.y = ((Const.AUTO_SCALE_TARGET_HEI | 0) - this.goToModulesBtn.hei) / 2;
 		var _this = this.bgWrapper;
 		_this.posChanged = true;
-		_this.scaleX = this.mainWrapper.width;
+		_this.scaleX = 518;
 		var _this = this.bgWrapper;
 		_this.posChanged = true;
-		_this.scaleY = this.mainWrapper.height;
+		_this.scaleY = 240;
 		var _this = this.mainWrapper;
 		_this.posChanged = true;
 		_this.x = 61;
@@ -55318,23 +55318,30 @@ var screens__$Communication_Talk = function(comm,author) {
 			_this.posChanged = true;
 			_this.y = f < min ? min : f > max ? max : f;
 		}
+		inter.onClick(e);
 	};
 	inter.onClick = function(e) {
-		if(_gthis.flowAnswers != null) {
+		if(_gthis.flowAnswers != null && _gthis.flowAnswers.alpha == 1) {
+			_gthis.openAnswers.set_visible(true);
+			var _tween = _gthis.tw.create_(function() {
+				return _gthis.flowAnswers.alpha;
+			},function(_setV) {
+				_gthis.flowAnswers.alpha = _setV;
+			},null,0.5,dn_TType.TBurnOut,300.);
 			var _tween = _gthis.tw.create_(function() {
 				return _gthis.flowAnswers.scaleX;
 			},function(_setV) {
 				var _this = _gthis.flowAnswers;
 				_this.posChanged = true;
 				_this.scaleX = _setV;
-			},null,0,dn_TType.TBurnOut,300.);
+			},null,0.1,dn_TType.TBurnOut,300.);
 			var _tween = _gthis.tw.create_(function() {
 				return _gthis.flowAnswers.scaleY;
 			},function(_setV) {
 				var _this = _gthis.flowAnswers;
 				_this.posChanged = true;
 				_this.scaleY = _setV;
-			},null,0,dn_TType.TBurnOut,300.);
+			},null,0.1,dn_TType.TBurnOut,300.);
 			var _tween = _gthis.tw.create_(function() {
 				return _gthis.flowAnswers.x;
 			},function(_setV) {
@@ -55363,6 +55370,49 @@ var screens__$Communication_Talk = function(comm,author) {
 	this.isTypingText.set_text(Lang.t.get("::name:: est en train d'écrire...",{ _name : Lang.t.get(author)}));
 	this.isTypingText.alpha = 0;
 	this.isTypingText.set_textColor(4437571);
+	this.openAnswers = new ui_SpriteButton("openAnswers",function() {
+		_gthis.openAnswers.set_visible(false);
+		var _tween = _gthis.tw.create_(function() {
+			return _gthis.flowAnswers.alpha;
+		},function(_setV) {
+			_gthis.flowAnswers.alpha = _setV;
+		},null,1,dn_TType.TBurnIn,300.);
+		var _tween = _gthis.tw.create_(function() {
+			return _gthis.flowAnswers.scaleX;
+		},function(_setV) {
+			var _this = _gthis.flowAnswers;
+			_this.posChanged = true;
+			_this.scaleX = _setV;
+		},null,1,dn_TType.TBurnIn,300.);
+		var _tween = _gthis.tw.create_(function() {
+			return _gthis.flowAnswers.scaleY;
+		},function(_setV) {
+			var _this = _gthis.flowAnswers;
+			_this.posChanged = true;
+			_this.scaleY = _setV;
+		},null,1,dn_TType.TBurnIn,300.);
+		var _tween = _gthis.tw.create_(function() {
+			return _gthis.flowAnswers.x;
+		},function(_setV) {
+			var _this = _gthis.flowAnswers;
+			_this.posChanged = true;
+			_this.x = _setV;
+		},null,_gthis.mask.width - _gthis.flowAnswers.get_outerWidth(),dn_TType.TBurnIn,300.);
+		var _tween = _gthis.tw.create_(function() {
+			return _gthis.flowAnswers.y;
+		},function(_setV) {
+			var _this = _gthis.flowAnswers;
+			_this.posChanged = true;
+			_this.y = _setV;
+		},null,_gthis.mask.height - _gthis.flowAnswers.get_outerHeight(),dn_TType.TBurnIn,300.);
+	});
+	this.mask.addChild(this.openAnswers);
+	var _this = this.openAnswers;
+	_this.posChanged = true;
+	_this.x = this.mask.width - this.openAnswers.wid - 5;
+	_this.posChanged = true;
+	_this.y = this.mask.height - this.openAnswers.hei - 5;
+	this.openAnswers.set_visible(false);
 	this.onResize();
 };
 $hxClasses["screens._Communication.Talk"] = screens__$Communication_Talk;
@@ -55386,7 +55436,7 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 					texts.push({ text : answer.text, answer : answer.answer != null ? { text : answer.answer, author : answer.customAuthor, type : answer.Type, timeBefore : 0} : null});
 				}
 				this.pendingMessages.push(TalkFrom.Player(texts));
-			} else if(det.customAuthor == "System") {
+			} else if(det.customAuthor.toString() == "System") {
 				this.pendingMessages.push(TalkFrom.System({ author : "System", text : det.text, type : det.Type, timeBefore : 0}));
 			} else {
 				this.pendingMessages.push(TalkFrom.Outside({ author : det.customAuthor, text : det.text, type : det.Type, timeBefore : det.timeBefore}));
@@ -56034,6 +56084,7 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 	}
 	,update: function() {
 		dn_Process.prototype.update.call(this);
+		this.openAnswers.alpha = Math.cos(this.ftime / 5) * 0.25 + 0.5;
 		if(this.pendingMessages[0] != null) {
 			if(!this.waitForPlayer && !this.cd.fastCheck.h.hasOwnProperty(8388608)) {
 				this.showNextMessage();
@@ -59374,6 +59425,7 @@ ui_Pause.prototype = $extend(dn_Process.prototype,{
 	,__class__: ui_Pause
 });
 var ui_Preloader = function(s2d,onDone) {
+	this.maxProgress = 0.;
 	hxd_fmt_pak_Loader.call(this,s2d,onDone);
 	var bg = new h2d_Interactive(Const.AUTO_SCALE_TARGET_WID,Const.AUTO_SCALE_TARGET_HEI,this);
 	bg.backgroundColor = -15132634;
@@ -59398,9 +59450,12 @@ ui_Preloader.__name__ = "ui.Preloader";
 ui_Preloader.__super__ = hxd_fmt_pak_Loader;
 ui_Preloader.prototype = $extend(hxd_fmt_pak_Loader.prototype,{
 	updateBG: function(progress) {
+		if(progress > this.maxProgress) {
+			this.maxProgress = progress;
+		}
 		var _this = this.loadingGauge;
 		_this.posChanged = true;
-		_this.scaleX = progress;
+		_this.scaleX = this.maxProgress;
 	}
 	,render: function() {
 		hxd_fmt_pak_Loader.prototype.render.call(this);

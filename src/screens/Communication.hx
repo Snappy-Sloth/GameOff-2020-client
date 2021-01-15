@@ -7,7 +7,8 @@ class Communication extends dn.Process {
 	public var wid(get, never):Int;		inline function get_wid() return Std.int(Const.AUTO_SCALE_TARGET_WID);
 	public var hei(get, never):Int;		inline function get_hei() return Std.int(Const.AUTO_SCALE_TARGET_HEI);
 
-	var mainWrapper : h2d.Mask;
+	// var mainWrapper : h2d.Mask;
+	var mainWrapper : h2d.Object;
 
 	var bgWrapper : h2d.Bitmap;
 	
@@ -31,7 +32,8 @@ class Communication extends dn.Process {
 
 		var screen = Assets.tiles.h_get("commScreen", root);
 		
-		mainWrapper = new h2d.Mask(518, 240, root);
+		// mainWrapper = new h2d.Mask(518, 240, root);
+		mainWrapper = new h2d.Object(root);
 
 		// var reflect = Assets.tiles.h_get("commScreenReflect", root);
 
@@ -74,7 +76,7 @@ class Communication extends dn.Process {
 
 	function addTab(author:String) : Tab {
 		for (tab in tabs) {
-			if (tab.author == author)
+			if (tab.author.toString() == author.toString())
 				return tab;
 		}
 
@@ -91,29 +93,29 @@ class Communication extends dn.Process {
 
 	public function selectTab(author:String) {
 		for (tab in tabs) {
-			if (tab.author == author)
+			if (tab.author.toString() == author.toString())
 				tab.select();
 			else
 				tab.unselect();
 		}
 
 		for (talk in talks) {
-			talk.root.visible = talk.author == author;
-			if (talk.author == author)
+			talk.root.visible = talk.author.toString() == author.toString();
+			if (talk.root.visible)
 				talk.resume();
 		}
 	}
 
 	public function newMessageBy(author:String) {
 		for (tab in tabs) {
-			if (tab.author == author)
+			if (tab.author.toString() == author.toString())
 				tab.newMessage();
 		}
 	}
 
 	function getTalk(author:String):Talk {
 		for (talk in talks) {
-			if (talk.author == author)
+			if (talk.author.toString() == author.toString())
 				return talk;
 		}
 
@@ -126,7 +128,7 @@ class Communication extends dn.Process {
 
 	function getMainTalk():Talk {
 		for (talk in talks) {
-			if (talk.author== "Harmony")
+			if (talk.author.toString() == "Harmony")
 				return talk;
 		}
 
@@ -135,7 +137,7 @@ class Communication extends dn.Process {
 
 	public function isCurrentTab(author:String) : Bool {
 		for (tab in tabs) {
-			if (tab.author == author && tab.isSelected)
+			if (tab.author.toString() == author.toString() && tab.isSelected)
 				return true;
 		}
 
@@ -144,7 +146,7 @@ class Communication extends dn.Process {
 
 	public function hasNewMessageUnread(author:String) : Bool {
 		for (tab in tabs) {
-			if (tab.author == author && tab.hasNewMessage)
+			if (tab.author.toString() == author.toString() && tab.hasNewMessage)
 				return true;
 		}
 
@@ -179,8 +181,8 @@ class Communication extends dn.Process {
 		goToManualBtn.root.setPosition(wid - goToManualBtn.wid, (hei - goToManualBtn.hei) / 2);
 		goToModulesBtn.root.setPosition(0, (hei - goToModulesBtn.hei) / 2);
 
-		bgWrapper.scaleX = mainWrapper.width;
-		bgWrapper.scaleY = mainWrapper.height;
+		bgWrapper.scaleX = 518;
+		bgWrapper.scaleY = 240;
 
 		// mainWrapper.setPosition((wid - mainWrapper.width) >> 1, (hei - mainWrapper.height) >> 1);
 		mainWrapper.setPosition(61, 60);
@@ -294,6 +296,7 @@ private class Talk extends dn.Process {
 
 		var inter = new h2d.Interactive(mask.width, mask.height, mask);
 		// inter.backgroundColor = 0x55FF00FF;
+		// inter.backgroundColor = Color.addAlphaI(Color.randomColor());
 
 		inter.onWheel = function (e) {
 			if (currentHeight > inter.height) {
@@ -360,7 +363,7 @@ private class Talk extends dn.Process {
 				}
 				pendingMessages.push(Player(texts));
 			}
-			else if (det.customAuthor == "System") {
+			else if (det.customAuthor.toString() == "System") {
 				pendingMessages.push(System({author:"System", text: det.text, type: det.TypeId, timeBefore: 0}));
 			}
 			else {

@@ -15,7 +15,7 @@ class Gauges extends Module {
 		flow.multiline = true;
 		// flow.horizontalAlign = flow.verticalAlign = Middle;
 		flow.horizontalSpacing = 16;
-		flow.verticalSpacing = 5;
+		flow.verticalSpacing = 3;
 		flow.paddingLeft = 5;
 		flow.paddingTop = 20;
 
@@ -25,9 +25,14 @@ class Gauges extends Module {
 			gauges.push(gauge);
 		}
 
-		var btn = new ui.DebugButton("Mélanger", checkValidate);
-		flow.addChild(btn);
-		flow.getProperties(btn).horizontalAlign = Middle;
+		// var btn = new ui.DebugButton("Mélanger", checkValidate);
+		// flow.addChild(btn);
+		// flow.getProperties(btn).horizontalAlign = Middle;
+
+		var mixBtn = new ui.MixButton(Lang.t._("Mélanger"), checkValidate);
+		flow.addChild(mixBtn);
+		flow.getProperties(mixBtn).horizontalAlign = Middle;
+		flow.getProperties(mixBtn).paddingLeft = -5;
 	}
 
 	override function checkValidate() {
