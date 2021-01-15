@@ -21,6 +21,8 @@ class Manual extends dn.Process {
 	var mask : h2d.Mask;
 	var wrapper : h2d.Layers;
 
+	var movePaperSfx : dn.heaps.Sfx;
+
 	public function new() {
 		super(Game.ME);
 
@@ -41,6 +43,13 @@ class Manual extends dn.Process {
 			if (currentSheet != null) {
 				var deltaX = e.relX - mouseX;
 				var deltaY = e.relY - mouseY;
+
+				if ((Math.abs(deltaX) > 20 || Math.abs(deltaY) > 20) && (movePaperSfx == null || !movePaperSfx.isPlaying())) {
+					if (movePaperSfx == null)
+						movePaperSfx = Assets.CREATE_SOUND(hxd.Res.sfx.movePaper, MovePaper);
+					else
+						movePaperSfx.play();
+				}
 				
 				currentSheet.x += deltaX;
 				if (currentSheet.x < -(Const.SHEET_WIDTH / 2)) {

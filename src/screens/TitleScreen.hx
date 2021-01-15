@@ -154,7 +154,7 @@ class TitleScreen extends dn.Process {
 
 		flow.reflow();
 		flow.setPosition(Std.int(Const.AUTO_SCALE_TARGET_WID - flow.outerWidth) >> 1,
-						Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight - 50) >> 1));
+						Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight - 30) >> 1));
 						// Std.int((Const.AUTO_SCALE_TARGET_HEI - flow.outerHeight) * 0.4));
 	}
 
