@@ -30,9 +30,9 @@ class Main extends dn.Process {
 		// Resources
 		#if(hl && debug)
 		hxd.Res.initLocal();
-		#else
+		#elseif hl
 		// hxd.Res.initEmbed();
-		// hxd.Res.initPak();
+		hxd.Res.initPak();
 		#end
 
 		Const.INIT();

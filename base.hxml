@@ -2,5 +2,8 @@
 -lib castle
 -lib heaps
 -lib deepnightLibs
+--resource res/loading/loading.png@loadingText
+--resource res/loading/loadingBG.png@loadingBG
+--resource res/loading/loadingGauge.png@loadingGauge
 -main Boot
 -dce full
