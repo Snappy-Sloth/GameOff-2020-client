@@ -55319,6 +55319,38 @@ var screens__$Communication_Talk = function(comm,author) {
 			_this.y = f < min ? min : f > max ? max : f;
 		}
 	};
+	inter.onClick = function(e) {
+		if(_gthis.flowAnswers != null) {
+			var _tween = _gthis.tw.create_(function() {
+				return _gthis.flowAnswers.scaleX;
+			},function(_setV) {
+				var _this = _gthis.flowAnswers;
+				_this.posChanged = true;
+				_this.scaleX = _setV;
+			},null,0,dn_TType.TBurnOut,300.);
+			var _tween = _gthis.tw.create_(function() {
+				return _gthis.flowAnswers.scaleY;
+			},function(_setV) {
+				var _this = _gthis.flowAnswers;
+				_this.posChanged = true;
+				_this.scaleY = _setV;
+			},null,0,dn_TType.TBurnOut,300.);
+			var _tween = _gthis.tw.create_(function() {
+				return _gthis.flowAnswers.x;
+			},function(_setV) {
+				var _this = _gthis.flowAnswers;
+				_this.posChanged = true;
+				_this.x = _setV;
+			},null,_gthis.mask.width,dn_TType.TBurnOut,300.);
+			var _tween = _gthis.tw.create_(function() {
+				return _gthis.flowAnswers.y;
+			},function(_setV) {
+				var _this = _gthis.flowAnswers;
+				_this.posChanged = true;
+				_this.y = _setV;
+			},null,_gthis.mask.height,dn_TType.TBurnOut,300.);
+		}
+	};
 	this.wrapperMessage = new h2d_Object(this.mask);
 	this.author = author;
 	this.waitForPlayer = false;
@@ -55443,18 +55475,19 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 	,showPlayerAnswers: function(ptds) {
 		var _gthis = this;
 		this.waitForPlayer = true;
-		var flowAnswers = new h2d_Flow(this.mask);
-		flowAnswers.set_layout(h2d_FlowLayout.Vertical);
-		flowAnswers.set_horizontalAlign(h2d_FlowAlign.Right);
-		flowAnswers.set_minWidth(flowAnswers.set_maxWidth(this.mask.width * 0.5 | 0));
-		flowAnswers.set_verticalSpacing(2);
-		flowAnswers.set_padding(5);
-		var bg = new h2d_ScaleGrid(Assets.tiles.getTile("sliceboxAnswer"),6,6,flowAnswers);
-		flowAnswers.getProperties(bg).set_isAbsolute(true);
+		this.flowAnswers = new h2d_Flow(this.mask);
+		this.flowAnswers.set_layout(h2d_FlowLayout.Vertical);
+		this.flowAnswers.set_horizontalAlign(h2d_FlowAlign.Right);
+		this.flowAnswers.set_minWidth(this.flowAnswers.set_maxWidth(this.mask.width * 0.5 | 0));
+		this.flowAnswers.set_verticalSpacing(2);
+		this.flowAnswers.set_padding(5);
+		var bg = new h2d_ScaleGrid(Assets.tiles.getTile("sliceboxAnswer"),6,6,this.flowAnswers);
+		this.flowAnswers.getProperties(bg).set_isAbsolute(true);
 		var frame = 0;
 		var xr = 1;
 		var yr = 0.5;
 		var smooth = null;
+		var p = this.flowAnswers;
 		if(yr == null) {
 			yr = 0.;
 		}
@@ -55465,8 +55498,8 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 			frame = 0;
 		}
 		var s = new dn_heaps_slib_HSprite(Assets.tiles,"answerArrow",frame);
-		if(flowAnswers != null) {
-			flowAnswers.addChild(s);
+		if(p != null) {
+			p.addChild(s);
 		}
 		var xRatio = xr;
 		var yRatio = yr;
@@ -55487,16 +55520,17 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 		var arrow = s;
 		arrow.posChanged = true;
 		arrow.x = -5;
-		flowAnswers.getProperties(arrow).set_isAbsolute(true);
+		this.flowAnswers.getProperties(arrow).set_isAbsolute(true);
 		var _g = 0;
 		while(_g < ptds.length) {
 			var a = [ptds[_g]];
 			++_g;
 			if(a[0] != ptds[0]) {
 				var smooth = null;
+				var p = this.flowAnswers;
 				var s = new dn_heaps_slib_HSprite(Assets.tiles,"separationAnswer",0);
-				if(flowAnswers != null) {
-					flowAnswers.addChild(s);
+				if(p != null) {
+					p.addChild(s);
 				}
 				var xRatio = 0.;
 				var yRatio = 0.;
@@ -55515,15 +55549,15 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 					s.smooth = smooth;
 				}
 				var separation = s;
-				flowAnswers.getProperties(separation).horizontalAlign = h2d_FlowAlign.Middle;
+				this.flowAnswers.getProperties(separation).horizontalAlign = h2d_FlowAlign.Middle;
 			}
-			var flow = [new h2d_Flow(flowAnswers)];
+			var flow = [new h2d_Flow(this.flowAnswers)];
 			flow[0].set_paddingLeft(5);
 			flow[0].set_paddingRight(5);
 			flow[0].set_paddingTop(15);
 			flow[0].set_paddingBottom(15);
 			flow[0].set_horizontalAlign(h2d_FlowAlign.Right);
-			flow[0].set_minWidth(flowAnswers.get_innerWidth() | 0);
+			flow[0].set_minWidth(this.flowAnswers.get_innerWidth() | 0);
 			var text = new h2d_Text(Assets.fontM5x7gold16,flow[0]);
 			text.set_text(Lang.t.get(a[0].text));
 			text.set_textColor(531468);
@@ -55543,30 +55577,32 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 					if(!_gthis.waitForPlayer) {
 						return;
 					}
+					var f = _gthis.flowAnswers;
+					_gthis.flowAnswers = null;
 					var _tween = _gthis.tw.create_((function() {
 						return function() {
-							return flowAnswers.alpha;
+							return f.alpha;
 						};
 					})(),(function() {
 						return function(_setV) {
-							flowAnswers.alpha = _setV;
+							f.alpha = _setV;
 						};
 					})(),null,0,null,200.);
 					var _tween = _gthis.tw.create_((function() {
 						return function() {
-							return flowAnswers.y;
+							return f.y;
 						};
 					})(),(function() {
 						return function(_setV) {
-							flowAnswers.posChanged = true;
-							flowAnswers.y = _setV;
+							f.posChanged = true;
+							f.y = _setV;
 						};
-					})(),null,flowAnswers.y + flowAnswers.get_outerHeight(),null,200.);
+					})(),null,f.y + f.get_outerHeight(),null,200.);
 					_gthis.delayer.addS(null,(function(a) {
 						return function() {
-							flowAnswers.removeChildren();
-							if(flowAnswers != null && flowAnswers.parent != null) {
-								flowAnswers.parent.removeChild(flowAnswers);
+							f.removeChildren();
+							if(f != null && f.parent != null) {
+								f.parent.removeChild(f);
 							}
 							if(a[0].answer != null) {
 								var m = _gthis.forceOutsideMessage(a[0].answer);
@@ -55589,30 +55625,32 @@ screens__$Communication_Talk.prototype = $extend(dn_Process.prototype,{
 				arrow.y = v;
 			}
 		}
-		flowAnswers.reflow();
-		var x = this.mask.width - flowAnswers.get_outerWidth();
-		var y = this.mask.height - flowAnswers.get_outerHeight();
-		flowAnswers.posChanged = true;
-		flowAnswers.x = x;
-		flowAnswers.posChanged = true;
-		flowAnswers.y = y;
-		bg.set_width(flowAnswers.get_outerWidth());
-		bg.set_height(flowAnswers.get_outerHeight());
-		var _g = flowAnswers;
-		var v = _g.x + flowAnswers.get_outerWidth();
+		this.flowAnswers.reflow();
+		var _this = this.flowAnswers;
+		var x = this.mask.width - this.flowAnswers.get_outerWidth();
+		var y = this.mask.height - this.flowAnswers.get_outerHeight();
+		_this.posChanged = true;
+		_this.x = x;
+		_this.posChanged = true;
+		_this.y = y;
+		bg.set_width(this.flowAnswers.get_outerWidth());
+		bg.set_height(this.flowAnswers.get_outerHeight());
+		var _g = this.flowAnswers;
+		var v = _g.x + this.flowAnswers.get_outerWidth();
 		_g.posChanged = true;
 		_g.x = v;
 		var _tween = this.tw.create_(function() {
-			return flowAnswers.alpha;
+			return _gthis.flowAnswers.alpha;
 		},function(_setV) {
-			flowAnswers.alpha = _setV;
+			_gthis.flowAnswers.alpha = _setV;
 		},0,1,null,200.);
 		var _tween = this.tw.create_(function() {
-			return flowAnswers.x;
+			return _gthis.flowAnswers.x;
 		},function(_setV) {
-			flowAnswers.posChanged = true;
-			flowAnswers.x = _setV;
-		},null,flowAnswers.x - flowAnswers.get_outerWidth(),null,200.);
+			var _this = _gthis.flowAnswers;
+			_this.posChanged = true;
+			_this.x = _setV;
+		},null,this.flowAnswers.x - this.flowAnswers.get_outerWidth(),null,200.);
 	}
 	,showPlayerMessage: function(text) {
 		var messageFlow = new h2d_Flow(this.wrapperMessage);

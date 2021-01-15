@@ -279,6 +279,10 @@ private class Talk extends dn.Process {
 
 	var comm : Communication;
 
+	var flowAnswers : Null<h2d.Flow>;
+
+	var openAnswers : ui.SpriteButton;
+
 	public function new(comm:Communication, author:String) {
 		super(comm);
 		
@@ -295,6 +299,20 @@ private class Talk extends dn.Process {
 			if (currentHeight > inter.height) {
 				wrapperMessage.y += e.wheelDelta < 0 ? 20 : -20;
 				wrapperMessage.y = hxd.Math.clamp(wrapperMessage.y, inter.height - currentHeight, 0);
+			}
+
+			inter.onClick(e);
+		}
+		inter.onClick = function (e) {
+			if (flowAnswers != null && flowAnswers.alpha == 1) {
+				// tw.createS(openAnswers.alpha, 1, TBurnOut, 0.3);
+				openAnswers.visible = true;
+
+				tw.createS(flowAnswers.alpha, 0.5, TBurnOut, 0.3);
+				tw.createS(flowAnswers.scaleX, 0.1, TBurnOut, 0.3);
+				tw.createS(flowAnswers.scaleY, 0.1, TBurnOut, 0.3);
+				tw.createS(flowAnswers.x, mask.width, TBurnOut, 0.3);
+				tw.createS(flowAnswers.y, mask.height, TBurnOut, 0.3);
 			}
 		}
 
@@ -314,6 +332,19 @@ private class Talk extends dn.Process {
 		isTypingText.text = Lang.t._("::name:: est en train d'écrire...", {name: Lang.t.get(author)});
 		isTypingText.alpha = 0;
 		isTypingText.textColor = 0x43b643;
+
+		openAnswers = new ui.SpriteButton("openAnswers", function () {
+			openAnswers.visible = false;
+			
+			tw.createS(flowAnswers.alpha, 1, TBurnIn, 0.3);
+			tw.createS(flowAnswers.scaleX, 1, TBurnIn, 0.3);
+			tw.createS(flowAnswers.scaleY, 1, TBurnIn, 0.3);
+			tw.createS(flowAnswers.x, mask.width - flowAnswers.outerWidth, TBurnIn, 0.3);
+			tw.createS(flowAnswers.y, mask.height - flowAnswers.outerHeight, TBurnIn, 0.3);
+		});
+		mask.addChild(openAnswers);
+		openAnswers.setPosition(mask.width - openAnswers.wid - 5, mask.height - openAnswers.hei - 5);
+		openAnswers.visible = false;
 
 		onResize();
 	}
@@ -369,7 +400,7 @@ private class Talk extends dn.Process {
 	function showPlayerAnswers(ptds:Array<PlayerTalkData>) {
 		waitForPlayer = true;
 
-		var flowAnswers = new h2d.Flow(mask);
+		flowAnswers = new h2d.Flow(mask);
 		flowAnswers.layout = Vertical;
 		flowAnswers.horizontalAlign = Right;
 		flowAnswers.minWidth = flowAnswers.maxWidth = Std.int(mask.width * 0.5);
@@ -401,6 +432,7 @@ private class Talk extends dn.Process {
 			text.textAlign = Right;
 
 			var inter = new h2d.Interactive(1, 1, flow);
+			// inter.backgroundColor = 0x55FF00FF;
 			inter.propagateEvents = true;
 			flow.getProperties(inter).isAbsolute = true;
 			inter.onOver = function (e) {
@@ -409,12 +441,15 @@ private class Talk extends dn.Process {
 			inter.onClick = function (e) {
 				if (!waitForPlayer)
 					return;
-				
-				tw.createS(flowAnswers.alpha, 0, 0.2);
-				tw.createS(flowAnswers.y, flowAnswers.y + flowAnswers.outerHeight, 0.2);
+
+				var f = flowAnswers;
+				flowAnswers = null;
+
+				tw.createS(f.alpha, 0, 0.2);
+				tw.createS(f.y, f.y + f.outerHeight, 0.2);
 				delayer.addS(function () {
-					flowAnswers.removeChildren();
-					flowAnswers.remove();
+					f.removeChildren();
+					f.remove();
 
 					if (a.answer != null) {
 						var m = forceOutsideMessage(a.answer);
@@ -618,6 +653,8 @@ private class Talk extends dn.Process {
 
 	override function update() {
 		super.update();
+
+		openAnswers.alpha = Math.cos(ftime / 5) * 0.25 + 0.5;
 
 		if (nextMessage != null) {
 			if (!waitForPlayer && !cd.has("newText")) {

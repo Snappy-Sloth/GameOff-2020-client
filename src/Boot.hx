@@ -7,8 +7,11 @@ class Boot extends hxd.App {
 	}
 
 	override function loadAssets(onLoaded:() -> Void) {
-		// new hxd.fmt.pak.Loader(s2d, onLoaded);
+		#if(hl && debug)
+		super.loadAssets(onLoaded);
+		#else
 		new ui.Preloader(s2d, onLoaded);
+		#end
 	}
 
 	public function reboot() {
