@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-15 18:12+0100\n"
+"PO-Revision-Date: 2021-01-18 15:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -309,7 +309,7 @@ msgstr "::sec:: seconds"
 
 #: src/screens/EndDay.hx:67
 msgid "Nombres d'alertes résolues :"
-msgstr "Number of alerts resolved:"
+msgstr "Number of alerts solved:"
 
 #: src/screens/EndDay.hx:72
 msgid "Journée suivante"
@@ -382,7 +382,7 @@ msgstr "New game"
 
 #: src/screens/TitleScreen.hx:69 src/ui/Pause.hx:45
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #: src/screens/TitleScreen.hx:84 src/ui/Pause.hx:50
 msgid "Quitter"
@@ -1480,7 +1480,7 @@ msgstr "A new word has just appeared, it is the word \"WHITE\""
 
 #: res/data.cdb:day/#6.events/#6.alerts/#0.Tasks/#0.text
 msgid "Et pour couronner le tout, encore une alarme... Erreur C9YLH9"
-msgstr ""
+msgstr "And on top of it all, another alarm... Error C9YLH9"
 
 #: res/data.cdb:day/#6.events/#6.alerts/#1.Tasks/#0.text
 msgid "Le Téléviseur est déconnecté et 2 diodes bleues sont allumées."
@@ -1842,7 +1842,7 @@ msgstr "Series of words: \"WIN, BIN\""
 
 #: res/data.cdb:day/#7.events/#4.alerts/#0.Tasks/#0.text
 msgid "Déjà une autre alerte !!"
-msgstr "Already another alert !!"
+msgstr "Already another alert!!!"
 
 #: res/data.cdb:day/#7.events/#4.alerts/#1.Tasks/#0.text
 msgid ""

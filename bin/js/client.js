@@ -1241,8 +1241,15 @@ Game.prototype = $extend(dn_Process.prototype,{
 			this.timer += this.utmod * this.getComputedTimeMultiplier();
 		}
 		if(!ui_Console.ME.isActive() && !ui_Modal.hasAny()) {
+			var tmp;
 			var _this = this.ca;
-			if(!(_this.manualLock || _this.parent.isLocked() || _this.parent.exclusiveId != null && _this.parent.exclusiveId != _this.id || HxOverrides.now() / 1000 < _this.parent.suspendTimer) && hxd_Key.isPressed(27)) {
+			if(!(!(_this.manualLock || _this.parent.isLocked() || _this.parent.exclusiveId != null && _this.parent.exclusiveId != _this.id || HxOverrides.now() / 1000 < _this.parent.suspendTimer) && hxd_Key.isPressed(80))) {
+				var _this = this.ca;
+				tmp = !(_this.manualLock || _this.parent.isLocked() || _this.parent.exclusiveId != null && _this.parent.exclusiveId != _this.id || HxOverrides.now() / 1000 < _this.parent.suspendTimer) && hxd_Key.isPressed(27);
+			} else {
+				tmp = true;
+			}
+			if(tmp) {
 				this.pause();
 				new ui_Pause();
 			}
@@ -50029,7 +50036,7 @@ var module_Gauges = function() {
 	flow.set_minHeight(flow.set_maxHeight(this.hei));
 	flow.set_multiline(true);
 	flow.set_horizontalSpacing(16);
-	flow.set_verticalSpacing(5);
+	flow.set_verticalSpacing(3);
 	flow.set_paddingLeft(5);
 	flow.set_paddingTop(20);
 	var gauge = new module__$Gauges_Gauge(this,0);
@@ -50044,9 +50051,10 @@ var module_Gauges = function() {
 	var gauge = new module__$Gauges_Gauge(this,3);
 	flow.addChild(gauge);
 	this.gauges.push(gauge);
-	var btn = new ui_DebugButton("Mélanger",$bind(this,this.checkValidate));
-	flow.addChild(btn);
-	flow.getProperties(btn).horizontalAlign = h2d_FlowAlign.Middle;
+	var mixBtn = new ui_MixButton(Lang.t.get("Mélanger",null),$bind(this,this.checkValidate));
+	flow.addChild(mixBtn);
+	flow.getProperties(mixBtn).horizontalAlign = h2d_FlowAlign.Middle;
+	flow.getProperties(mixBtn).paddingLeft = -5;
 };
 $hxClasses["module.Gauges"] = module_Gauges;
 module_Gauges.__name__ = "module.Gauges";
@@ -57998,37 +58006,6 @@ ui_Console.prototype = $extend(h2d_Console.prototype,{
 	}
 	,__class__: ui_Console
 });
-var ui_DebugButton = function(str,onClick,wid,hei) {
-	if(hei == null) {
-		hei = 25;
-	}
-	if(wid == null) {
-		wid = 50;
-	}
-	h2d_Layers.call(this);
-	this.wid = wid;
-	this.hei = hei;
-	var inter = new h2d_Interactive(wid,hei,this);
-	inter.backgroundColor = -7921118;
-	inter.onClick = function(e) {
-		onClick();
-	};
-	var text = new h2d_Text(Assets.fontPixel,this);
-	text.set_text(str);
-	text.set_textAlign(h2d_Align.Center);
-	text.set_maxWidth(wid);
-	var y = (hei - text.get_textHeight()) / 2 | 0;
-	text.posChanged = true;
-	text.x = 0;
-	text.posChanged = true;
-	text.y = y;
-};
-$hxClasses["ui.DebugButton"] = ui_DebugButton;
-ui_DebugButton.__name__ = "ui.DebugButton";
-ui_DebugButton.__super__ = h2d_Layers;
-ui_DebugButton.prototype = $extend(h2d_Layers.prototype,{
-	__class__: ui_DebugButton
-});
 var ui_Hud = function() {
 	this.invalidated = true;
 	dn_Process.call(this,Game.ME);
@@ -58908,6 +58885,261 @@ ui_Hud.prototype = $extend(dn_Process.prototype,{
 		}
 	}
 	,__class__: ui_Hud
+});
+var ui_MixButton = function(str,onClick) {
+	var _gthis = this;
+	h2d_Layers.call(this);
+	var idSpr = "mixBtn";
+	var smooth = null;
+	var p = null;
+	var s = new dn_heaps_slib_HSprite(Assets.tiles,idSpr + "Idle",0);
+	if(p != null) {
+		p.addChild(s);
+	}
+	var xRatio = 0.;
+	var yRatio = 0.;
+	if(yRatio == null) {
+		yRatio = 0.5;
+	}
+	if(xRatio == null) {
+		xRatio = 0.5;
+	}
+	var _this = s.pivot;
+	_this.centerFactorX = xRatio;
+	_this.centerFactorY = yRatio;
+	_this.usingFactor = true;
+	_this.isUndefined = false;
+	if(smooth != null) {
+		s.smooth = smooth;
+	}
+	var spr = s;
+	this.addChildAt(spr,1);
+	if(!spr.destroyed && spr.lib != null && spr.groupName != null) {
+		var fd = spr.frameData;
+		spr.rawTile.setPosition(fd.x,fd.y);
+		spr.rawTile.setSize(fd.wid,fd.hei);
+		var _this = spr.pivot;
+		if(!_this.isUndefined && !_this.usingFactor) {
+			spr.rawTile.dx = -(spr.pivot.coordX + fd.realX | 0);
+			spr.rawTile.dy = -(spr.pivot.coordY + fd.realY | 0);
+		} else {
+			var _this = spr.pivot;
+			if(!_this.isUndefined && _this.usingFactor) {
+				spr.rawTile.dx = -(fd.realWid * spr.pivot.centerFactorX + fd.realX | 0);
+				spr.rawTile.dy = -(fd.realHei * spr.pivot.centerFactorY + fd.realY | 0);
+			}
+		}
+	} else {
+		var _this = spr.pivot;
+		if(!_this.isUndefined && !_this.usingFactor) {
+			spr.rawTile.dx = -(spr.pivot.coordX | 0);
+			spr.rawTile.dy = -(spr.pivot.coordY | 0);
+		} else {
+			var _this = spr.pivot;
+			if(!_this.isUndefined && _this.usingFactor) {
+				spr.rawTile.dx = -(spr.rawTile.width * spr.pivot.centerFactorX | 0);
+				spr.rawTile.dy = -(spr.rawTile.height * spr.pivot.centerFactorY | 0);
+			}
+		}
+	}
+	this.wid = spr.rawTile.width | 0;
+	if(!spr.destroyed && spr.lib != null && spr.groupName != null) {
+		var fd = spr.frameData;
+		spr.rawTile.setPosition(fd.x,fd.y);
+		spr.rawTile.setSize(fd.wid,fd.hei);
+		var _this = spr.pivot;
+		if(!_this.isUndefined && !_this.usingFactor) {
+			spr.rawTile.dx = -(spr.pivot.coordX + fd.realX | 0);
+			spr.rawTile.dy = -(spr.pivot.coordY + fd.realY | 0);
+		} else {
+			var _this = spr.pivot;
+			if(!_this.isUndefined && _this.usingFactor) {
+				spr.rawTile.dx = -(fd.realWid * spr.pivot.centerFactorX + fd.realX | 0);
+				spr.rawTile.dy = -(fd.realHei * spr.pivot.centerFactorY + fd.realY | 0);
+			}
+		}
+	} else {
+		var _this = spr.pivot;
+		if(!_this.isUndefined && !_this.usingFactor) {
+			spr.rawTile.dx = -(spr.pivot.coordX | 0);
+			spr.rawTile.dy = -(spr.pivot.coordY | 0);
+		} else {
+			var _this = spr.pivot;
+			if(!_this.isUndefined && _this.usingFactor) {
+				spr.rawTile.dx = -(spr.rawTile.width * spr.pivot.centerFactorX | 0);
+				spr.rawTile.dy = -(spr.rawTile.height * spr.pivot.centerFactorY | 0);
+			}
+		}
+	}
+	this.hei = spr.rawTile.height | 0;
+	this.inter = new h2d_Interactive(this.wid,this.hei);
+	this.inter.onClick = function(e) {
+		onClick();
+		var this1 = hxd_Res.get_loader();
+		Assets.CREATE_SOUND(this1.loadCache("sfx/ui_click.wav",hxd_res_Sound),VolumeGroup.UI_Click);
+	};
+	this.addChildAt(this.inter,0);
+	var text = new h2d_Text(Assets.fontM5x7gold16);
+	text.set_text(str);
+	text.set_textColor(13031380);
+	var x = this.wid / 2 - text.get_textWidth() / 2;
+	var y = this.hei / 2 - text.get_textHeight() / 2;
+	text.posChanged = true;
+	text.x = x;
+	text.posChanged = true;
+	text.y = y;
+	this.addChildAt(text,2);
+	this.inter.onRelease = this.inter.onOver = function(e) {
+		var v = _gthis.hei / 2 - text.get_textHeight() / 2;
+		text.posChanged = true;
+		text.y = v;
+	};
+	this.inter.onReleaseOutside = this.inter.onOut = function(e) {
+		var v = _gthis.wid / 2 - text.get_textWidth() / 2;
+		text.posChanged = true;
+		text.x = v;
+		var v = _gthis.hei / 2 - text.get_textHeight() / 2;
+		text.posChanged = true;
+		text.y = v;
+		var l = null;
+		var g = idSpr + "Idle";
+		if(l != null) {
+			if(l.pages == null || l.pages.length == 0) {
+				throw haxe_Exception.thrown("sprite sheet has no backing texture, please generate one");
+			}
+			if(g == null) {
+				spr.groupName = null;
+				spr.group = null;
+				spr.frameData = null;
+			}
+			if(spr.allocated && spr.lib != null) {
+				spr.lib.removeChild(spr);
+			}
+			spr.lib = l;
+			if(spr.allocated) {
+				spr.lib.addChild(spr);
+			}
+			if(spr.pivot.isUndefined) {
+				var xRatio = spr.lib.defaultCenterX;
+				var yRatio = spr.lib.defaultCenterY;
+				if(yRatio == null) {
+					yRatio = 0.5;
+				}
+				if(xRatio == null) {
+					xRatio = 0.5;
+				}
+				var _this = spr.pivot;
+				_this.centerFactorX = xRatio;
+				_this.centerFactorY = yRatio;
+				_this.usingFactor = true;
+				_this.isUndefined = false;
+			}
+		}
+		if(g != null && g != spr.groupName) {
+			spr.groupName = g;
+		}
+		if(!spr.destroyed && spr.lib != null && spr.groupName != null) {
+			var _this = spr.lib;
+			var k = spr.groupName;
+			spr.group = k == null ? _this.currentGroup : _this.groups.h[k];
+			var _this = spr.lib;
+			var k = spr.groupName;
+			var frame = 0;
+			if(frame == null) {
+				frame = 0;
+			}
+			var g = k == null ? _this.currentGroup : _this.groups.h[k];
+			spr.frameData = g == null ? null : g.frames[frame];
+			if(spr.frameData == null) {
+				throw haxe_Exception.thrown("Unknown frame: " + spr.groupName + "(" + 0 + ")");
+			}
+			if(spr.rawTile == null) {
+				spr.rawTile = spr.lib.pages[spr.frameData.page].clone();
+			} else {
+				spr.rawTile.setTexture(spr.lib.pages[spr.frameData.page].innerTex);
+			}
+			spr.lastPage = spr.frameData.page;
+			spr.setFrame(0);
+		} else {
+			spr.setEmptyTexture();
+		}
+	};
+	this.inter.onPush = function(e) {
+		var v = _gthis.wid / 2 - text.get_textWidth() / 2 + 1;
+		text.posChanged = true;
+		text.x = v;
+		var v = _gthis.hei / 2 - text.get_textHeight() / 2 + 1;
+		text.posChanged = true;
+		text.y = v;
+		var l = null;
+		var g = idSpr + "Press";
+		if(l != null) {
+			if(l.pages == null || l.pages.length == 0) {
+				throw haxe_Exception.thrown("sprite sheet has no backing texture, please generate one");
+			}
+			if(g == null) {
+				spr.groupName = null;
+				spr.group = null;
+				spr.frameData = null;
+			}
+			if(spr.allocated && spr.lib != null) {
+				spr.lib.removeChild(spr);
+			}
+			spr.lib = l;
+			if(spr.allocated) {
+				spr.lib.addChild(spr);
+			}
+			if(spr.pivot.isUndefined) {
+				var xRatio = spr.lib.defaultCenterX;
+				var yRatio = spr.lib.defaultCenterY;
+				if(yRatio == null) {
+					yRatio = 0.5;
+				}
+				if(xRatio == null) {
+					xRatio = 0.5;
+				}
+				var _this = spr.pivot;
+				_this.centerFactorX = xRatio;
+				_this.centerFactorY = yRatio;
+				_this.usingFactor = true;
+				_this.isUndefined = false;
+			}
+		}
+		if(g != null && g != spr.groupName) {
+			spr.groupName = g;
+		}
+		if(!spr.destroyed && spr.lib != null && spr.groupName != null) {
+			var _this = spr.lib;
+			var k = spr.groupName;
+			spr.group = k == null ? _this.currentGroup : _this.groups.h[k];
+			var _this = spr.lib;
+			var k = spr.groupName;
+			var frame = 0;
+			if(frame == null) {
+				frame = 0;
+			}
+			var g = k == null ? _this.currentGroup : _this.groups.h[k];
+			spr.frameData = g == null ? null : g.frames[frame];
+			if(spr.frameData == null) {
+				throw haxe_Exception.thrown("Unknown frame: " + spr.groupName + "(" + 0 + ")");
+			}
+			if(spr.rawTile == null) {
+				spr.rawTile = spr.lib.pages[spr.frameData.page].clone();
+			} else {
+				spr.rawTile.setTexture(spr.lib.pages[spr.frameData.page].innerTex);
+			}
+			spr.lastPage = spr.frameData.page;
+			spr.setFrame(0);
+		} else {
+			spr.setEmptyTexture();
+		}
+	};
+};
+$hxClasses["ui.MixButton"] = ui_MixButton;
+ui_MixButton.__name__ = "ui.MixButton";
+ui_MixButton.__super__ = h2d_Layers;
+ui_MixButton.prototype = $extend(h2d_Layers.prototype,{
+	__class__: ui_MixButton
 });
 var ui_Window = function() {
 	dn_Process.call(this,Game.ME);

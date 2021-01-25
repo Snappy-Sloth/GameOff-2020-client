@@ -351,7 +351,7 @@ class Game extends Process {
 			timer += tmod;
 
 		if( !ui.Console.ME.isActive() && !ui.Modal.hasAny() ) {
-			if (ca.isKeyboardPressed(Key.ESCAPE)) {
+			if (ca.isKeyboardPressed(Key.P) || ca.isKeyboardPressed(Key.ESCAPE)) {
 				pause();
 				new ui.Pause();
 			}
